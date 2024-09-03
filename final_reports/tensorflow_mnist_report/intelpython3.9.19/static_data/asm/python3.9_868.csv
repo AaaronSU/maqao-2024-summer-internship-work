@@ -1,0 +1,25 @@
+address;source_location;insn;indent
+0x12f83c;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1425;MOV	0x28(%RSP),%RAX;
+0x12f841;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1426;MOV	0x48(%RSP),%RDX;
+0x12f846;:0;SUB	%FS:0x28,%RDX;
+0x12f84f;:0;JNE	12f9d8 <PyDict_GetItem+0x288>;
+0x12f9d8;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1426;CALLQ	0x24ed8a(%RIP);
+0x12f9de;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1411;LEA	0x30(%RSP),%RDX;
+0x12f9e3;:0;LEA	0x38(%RSP),%RSI;
+0x12f9e8;:0;LEA	0x40(%RSP),%RDI;
+0x12f9ed;:0;CALL	157840 <PyErr_Fetch>;
+0x12f9f2;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1412;MOV	0x20(%RBX),%RAX;
+0x12f9f6;:0;MOV	%RBX,%RDI;
+0x12f9f9;:0;MOV	%R15,%RDX;
+0x12f9fc;:0;MOV	%RBP,%RSI;
+0x12f9ff;:0;LEA	0x28(%RSP),%RCX;
+0x12fa04;:0;CALLQ	0x10(%RAX);
+0x12fa07;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1414;MOV	0x30(%RSP),%RDX;
+0x12fa0c;:0;MOV	0x38(%RSP),%RSI;
+0x12fa11;:0;MOV	0x40(%RSP),%RDI;
+0x12fa16;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1412;MOV	%RAX,%RBX;
+0x12fa19;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1414;CALL	157ac0 <PyErr_Restore>;
+0x12fa1e;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1415;TEST	%RBX,%RBX;
+0x12fa21;:0;JNS	12f83c <PyDict_GetItem+0xec>;
+0x12fa27;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:1391;XOR	%EAX,%EAX;
+0x12fa29;:0;JMP	12f841 <PyDict_GetItem+0xf1>;

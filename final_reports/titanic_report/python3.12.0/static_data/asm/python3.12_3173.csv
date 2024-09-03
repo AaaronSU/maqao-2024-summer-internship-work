@@ -1,0 +1,24 @@
+address;source_location;insn;indent
+0x60fba3;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:2681;CMP	0x10(%R13),%R12;
+0x60fba7;:0;JGE	60fc1d <list_remove+0x8d>;
+0x60fba9;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:2682;MOV	0x18(%R13),%RAX;
+0x60fbad;:0;MOV	(%RAX,%R12,8),%RBP;
+0x60fbb1;/usr/local/src/conda/python-3.12.0/Include/object.h:644;MOV	(%RBP),%EDX;
+0x60fbb4;:0;INC	%EDX;
+0x60fbb6;/usr/local/src/conda/python-3.12.0/Include/object.h:644;JE	60fbbb <list_remove+0x2b>;
+0x60fbb8;/usr/local/src/conda/python-3.12.0/Include/object.h:647;MOV	%EDX,(%RBP);
+0x60fbbb;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:2684;MOV	$0x2,%EDX;
+0x60fbc0;:0;MOV	%RBX,%RSI;
+0x60fbc3;:0;MOV	%RBP,%RDI;
+0x60fbc6;:0;CALL	55aad0 <PyObject_RichCompareBool>;
+0x60fbcb;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RBP),%RCX;
+0x60fbcf;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%ECX,%ECX;
+0x60fbd1;:0;JS	60fbe0 <list_remove+0x50>;
+0x60fbd3;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%RCX;
+0x60fbd6;:0;MOV	%RCX,(%RBP);
+0x60fbda;:0;JE	45b6b5 <list_remove.cold>;
+0x60fbe0;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:2686;TEST	%EAX,%EAX;
+0x60fbe2;:0;JLE	60fc12 <list_remove+0x82>;
+0x60fc12;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:2692;JNE	45b6ca <list_remove.cold+0x15>;
+0x60fc18;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:2681;INC	%R12;
+0x60fc1b;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:2681;JMP	60fba3 <list_remove+0x13>;

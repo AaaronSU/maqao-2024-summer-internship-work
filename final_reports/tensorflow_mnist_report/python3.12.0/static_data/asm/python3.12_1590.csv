@@ -1,0 +1,18 @@
+address;source_location;insn;indent
+0x55fc3b;/usr/local/src/conda/python-3.12.0/Objects/frameobject.c:909;MOVSXD	%R14D,%RSI;
+0x55fc3e;:0;LEA	(%R13,%RSI,8),%R8;
+0x55fc43;/usr/local/src/conda/python-3.12.0/Objects/frameobject.c:909;MOV	(%R8),%RDI;
+0x55fc46;/usr/local/src/conda/python-3.12.0/Objects/frameobject.c:909;TEST	%RDI,%RDI;
+0x55fc49;:0;JE	55fc62 <frame_dealloc+0x272>;
+0x55fc4b;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%R9;
+0x55fc4e;/usr/local/src/conda/python-3.12.0/Objects/frameobject.c:909;MOVQ	$0,(%R8);
+0x55fc55;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%R9D,%R9D;
+0x55fc58;:0;JS	55fc62 <frame_dealloc+0x272>;
+0x55fc5a;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%R9;
+0x55fc5d;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%R9,(%RDI);
+0x55fc60;:0;JE	55fcc2 <frame_dealloc+0x2d2>;
+0x55fc62;/usr/local/src/conda/python-3.12.0/Objects/frameobject.c:908;INC	%R14D;
+0x55fc65;/usr/local/src/conda/python-3.12.0/Objects/frameobject.c:908;CMP	%R14D,0x70(%RBP);
+0x55fc69;:0;JG	55fc3b <frame_dealloc+0x24b>;
+0x55fcc2;/usr/local/src/conda/python-3.12.0/Include/object.h:706;CALL	50c940 <_Py_Dealloc>;
+0x55fcc7;/usr/local/src/conda/python-3.12.0/Include/object.h:706;JMP	55fc62 <frame_dealloc+0x272>;

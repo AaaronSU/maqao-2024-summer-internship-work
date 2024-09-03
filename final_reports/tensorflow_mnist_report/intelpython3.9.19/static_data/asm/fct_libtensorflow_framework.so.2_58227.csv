@@ -1,0 +1,140 @@
+address;source_location;insn;indent
+0x7317e30;:0;PUSH	%RBP;
+0x7317e31;:0;MOV	%RSP,%RBP;
+0x7317e34;:0;PUSH	%R15;
+0x7317e36;:0;PUSH	%R14;
+0x7317e38;:0;PUSH	%R13;
+0x7317e3a;:0;PUSH	%R12;
+0x7317e3c;:0;PUSH	%RBX;
+0x7317e3d;:0;SUB	$0x18,%RSP;
+0x7317e41;:0;MOV	(%RDI),%EAX;
+0x7317e43;:0;TEST	$0x2,%AL;
+0x7317e45;:0;JE	7317f1c <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0xec>;
+0x7317e4b;:0;MOV	%RDI,%RBX;
+0x7317e4e;:0;XOR	%R15D,%R15D;
+0x7317e51;:0;MOV	$0x1,%ESI;
+0x7317e56;:0;MOV	$0x1,%EDX;
+0x7317e5b;:0;XOR	%ECX,%ECX;
+0x7317e5d;:0;CALL	768ef00 <_ZN5nsync24nsync_spin_test_and_set_EPSt6atomicIjEjjj@plt>;
+0x7317e62;:0;MOV	%EAX,%R14D;
+0x7317e65;:0;MOV	0x8(%RBX),%RDI;
+0x7317e69;:0;CALL	768ef90 <_ZN5nsync19nsync_dll_is_empty_EPNS_20nsync_dll_element_s_E@plt>;
+0x7317e6e;:0;TEST	%EAX,%EAX;
+0x7317e70;:0;JE	7317e7d <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x4d>;
+0x7317e72;:0;MOV	%R14D,%ECX;
+0x7317e75;:0;XOR	%R14D,%R14D;
+0x7317e78;:0;JMP	7317f0e <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0xde>;
+0x7317e7d;:0;MOV	%R14D,-0x3c(%RBP);
+0x7317e81;:0;MOV	0x8(%RBX),%RDI;
+0x7317e85;:0;CALL	768ef20 <_ZN5nsync16nsync_dll_first_EPNS_20nsync_dll_element_s_E@plt>;
+0x7317e8a;:0;MOV	%RAX,%R14;
+0x7317e8d;:0;MOV	0x8(%RBX),%RDI;
+0x7317e91;:0;MOV	%RAX,%RSI;
+0x7317e94;:0;CALL	768ef30 <_ZN5nsync17nsync_dll_remove_EPNS_20nsync_dll_element_s_ES1_@plt>;
+0x7317e99;:0;MOV	%RAX,0x8(%RBX);
+0x7317e9d;:0;MOV	0x10(%R14),%R15;
+0x7317ea1;:0;TESTB	$0x1,0x30(%R15);
+0x7317ea6;:0;JE	7317ec1 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x91>;
+0x7317ea8;:0;NOPL	(%RAX,%RAX,1);
+0x7317eb0;:0;MOV	0x10(%R14),%RCX;(42830) 
+0x7317eb4;:0;MOV	0x48(%RCX),%EAX;(42830) 
+0x7317eb7;:0;LEA	0x1(%RAX),%EDX;(42830) 
+0x7317eba;:0;LOCK CMPXCHG	%EDX,0x48(%RCX);(42830) 
+0x7317ebf;:0;JNE	7317eb0 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x80>;(42830) 
+0x7317ec1;:0;XOR	%EDI,%EDI;
+0x7317ec3;:0;MOV	%R14,%RSI;
+0x7317ec6;:0;CALL	768efc0 <_ZN5nsync28nsync_dll_make_last_in_list_EPNS_20nsync_dll_element_s_ES1_@plt>;
+0x7317ecb;:0;TESTB	$0x1,0x30(%R15);
+0x7317ed0;:0;MOV	%RAX,-0x38(%RBP);
+0x7317ed4;:0;JE	7317eea <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0xba>;
+0x7317ed6;:0;MOV	0x10(%R14),%RAX;
+0x7317eda;:0;MOV	0x40(%RAX),%RAX;
+0x7317ede;:0;MOV	0x402ba3(%RIP),%RCX;
+0x7317ee5;:0;CMP	(%RCX),%RAX;
+0x7317ee8;:0;JE	7317f44 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x114>;
+0x7317eea;:0;XOR	%EAX,%EAX;
+0x7317eec;:0;MOV	%RAX,-0x30(%RBP);
+0x7317ef0;:0;MOV	0x8(%RBX),%RDI;
+0x7317ef4;:0;CALL	768ef90 <_ZN5nsync19nsync_dll_is_empty_EPNS_20nsync_dll_element_s_E@plt>;
+0x7317ef9;:0;MOV	-0x3c(%RBP),%EDX;
+0x7317efc;:0;MOV	%EDX,%ECX;
+0x7317efe;:0;AND	$-0x3,%ECX;
+0x7317f01;:0;TEST	%EAX,%EAX;
+0x7317f03;:0;CMOVE	%EDX,%ECX;
+0x7317f06;:0;MOV	-0x30(%RBP),%R15;
+0x7317f0a;:0;MOV	-0x38(%RBP),%R14;
+0x7317f0e;:0;MOV	%ECX,(%RBX);
+0x7317f10;:0;MOV	%R14,%RDI;
+0x7317f13;:0;CALL	768ef90 <_ZN5nsync19nsync_dll_is_empty_EPNS_20nsync_dll_element_s_E@plt>;
+0x7317f18;:0;TEST	%EAX,%EAX;
+0x7317f1a;:0;JE	7317f2b <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0xfb>;
+0x7317f1c;:0;ADD	$0x18,%RSP;
+0x7317f20;:0;POP	%RBX;
+0x7317f21;:0;POP	%R12;
+0x7317f23;:0;POP	%R13;
+0x7317f25;:0;POP	%R14;
+0x7317f27;:0;POP	%R15;
+0x7317f29;:0;POP	%RBP;
+0x7317f2a;:0;RET;
+0x7317f2b;:0;MOV	%R14,%RDI;
+0x7317f2e;:0;MOV	%R15D,%ESI;
+0x7317f31;:0;ADD	$0x18,%RSP;
+0x7317f35;:0;POP	%RBX;
+0x7317f36;:0;POP	%R12;
+0x7317f38;:0;POP	%R13;
+0x7317f3a;:0;POP	%R14;
+0x7317f3c;:0;POP	%R15;
+0x7317f3e;:0;POP	%RBP;
+0x7317f3f;:0;JMP	7318010 <_ZN5nsyncL12wake_waitersEPNS_20nsync_dll_element_s_Ei>;
+0x7317f44;:0;MOV	0x8(%RBX),%RDI;
+0x7317f48;:0;CALL	768ef20 <_ZN5nsync16nsync_dll_first_EPNS_20nsync_dll_element_s_E@plt>;
+0x7317f4d;:0;TEST	%RAX,%RAX;
+0x7317f50;:0;JE	7318006 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x1d6>;
+0x7317f56;:0;MOV	%RAX,%R13;
+0x7317f59;:0;XOR	%R15D,%R15D;
+0x7317f5c;:0;MOV	$0x1,%EAX;
+0x7317f61;:0;MOV	%RAX,-0x30(%RBP);
+0x7317f65;:0;JMP	7317f92 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x162>;
+0x7317f67;:0;NOPW	(%RAX,%RAX,1);
+0x7317f70;:0;MOV	-0x38(%RBP),%RDI;(42828) 
+0x7317f74;:0;MOV	%R13,%RSI;(42828) 
+0x7317f77;:0;CALL	768efc0 <_ZN5nsync28nsync_dll_make_last_in_list_EPNS_20nsync_dll_element_s_ES1_@plt>;(42828) 
+0x7317f7c;:0;MOV	%RAX,-0x38(%RBP);(42828) 
+0x7317f80;:0;MOV	%R15D,%EAX;(42828) 
+0x7317f83;:0;MOV	%R14,%R13;(42828) 
+0x7317f86;:0;MOV	%EAX,%R15D;(42828) 
+0x7317f89;:0;TEST	%R14,%R14;(42828) 
+0x7317f8c;:0;JE	7317ef0 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0xc0>;(42828) 
+0x7317f92;:0;MOV	0x10(%R13),%R12;(42828) 
+0x7317f96;:0;MOV	0x8(%RBX),%RDI;(42828) 
+0x7317f9a;:0;MOV	%R13,%RSI;(42828) 
+0x7317f9d;:0;CALL	768f000 <_ZN5nsync15nsync_dll_next_EPNS_20nsync_dll_element_s_ES1_@plt>;(42828) 
+0x7317fa2;:0;MOV	%RAX,%R14;(42828) 
+0x7317fa5;:0;TESTB	$0x1,0x30(%R12);(42828) 
+0x7317fab;:0;JE	7317fc1 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x191>;(42828) 
+0x7317fad;:0;MOV	0x10(%R13),%RAX;(42828) 
+0x7317fb1;:0;MOV	0x40(%RAX),%RAX;(42828) 
+0x7317fb5;:0;MOV	0x402acc(%RIP),%RCX;(42828) 
+0x7317fbc;:0;CMP	(%RCX),%RAX;(42828) 
+0x7317fbf;:0;JE	7317fd7 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x1a7>;(42828) 
+0x7317fc1;:0;MOV	$0x1,%EAX;(42828) 
+0x7317fc6;:0;TEST	%R15D,%R15D;(42828) 
+0x7317fc9;:0;JNE	7317f83 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x153>;(42828) 
+0x7317fcb;:0;MOV	$0x1,%R15D;(42828) 
+0x7317fd1;:0;XOR	%EAX,%EAX;(42828) 
+0x7317fd3;:0;MOV	%RAX,-0x30(%RBP);(42828) 
+0x7317fd7;:0;MOV	0x8(%RBX),%RDI;(42828) 
+0x7317fdb;:0;MOV	%R13,%RSI;(42828) 
+0x7317fde;:0;CALL	768ef30 <_ZN5nsync17nsync_dll_remove_EPNS_20nsync_dll_element_s_ES1_@plt>;(42828) 
+0x7317fe3;:0;MOV	%RAX,0x8(%RBX);(42828) 
+0x7317fe7;:0;TESTB	$0x1,0x30(%R12);(42828) 
+0x7317fed;:0;JE	7317f70 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x140>;(42828) 
+0x7317fef;:0;NOP;(42828) 
+0x7317ff0;:0;MOV	0x10(%R13),%RCX;  (42829) 
+0x7317ff4;:0;MOV	0x48(%RCX),%EAX;  (42829) 
+0x7317ff7;:0;LEA	0x1(%RAX),%EDX;  (42829) 
+0x7317ffa;:0;LOCK CMPXCHG	%EDX,0x48(%RCX);  (42829) 
+0x7317fff;:0;JNE	7317ff0 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x1c0>;  (42829) 
+0x7318001;:0;JMP	7317f70 <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0x140>;(42828) 
+0x7318006;:0;MOV	$0x1,%EAX;
+0x731800b;:0;JMP	7317eec <_ZN5nsync15nsync_cv_signalEPNS_11nsync_cv_s_E+0xbc>;

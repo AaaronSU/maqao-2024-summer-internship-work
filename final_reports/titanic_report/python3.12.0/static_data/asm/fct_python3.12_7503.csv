@@ -1,0 +1,24 @@
+address;source_location;insn;indent
+0x644a40;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3710;SUB	$0x18,%RSP;
+0x644a44;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3710;MOV	%FS:0x28,%RAX;
+0x644a4d;:0;MOV	%RAX,0x8(%RSP);
+0x644a52;:0;XOR	%EAX,%EAX;
+0x644a54;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3715;MOV	%RSP,%RCX;
+0x644a57;:0;CALL	505980 <_Py_dict_lookup>;
+0x644a5c;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3716;CMP	$-0x3,%RAX;
+0x644a60;:0;JE	4841f6 <_PyDict_Contains_KnownHash.cold>;
+0x644a66;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3718;XOR	%R8D,%R8D;
+0x644a69;:0;INC	%RAX;
+0x644a6c;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3718;JNE	644a86 <_PyDict_Contains_KnownHash+0x46>;
+0x644a6e;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3719;MOV	0x8(%RSP),%RAX;
+0x644a73;:0;SUB	%FS:0x28,%RAX;
+0x644a7c;:0;JNE	644a94 <_PyDict_Contains_KnownHash+0x54>;
+0x644a7e;:0;MOV	%R8D,%EAX;
+0x644a81;:0;ADD	$0x18,%RSP;
+0x644a85;:0;RET;
+0x644a86;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3718;XOR	%R8D,%R8D;
+0x644a89;:0;CMPQ	$0,(%RSP);
+0x644a8e;:0;SETNE	%R8B;
+0x644a92;:0;JMP	644a6e <_PyDict_Contains_KnownHash+0x2e>;
+0x644a94;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3719;CALLQ	0x217cde(%RIP);
+0x644a9a;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:3719;NOPW	(%RAX,%RAX,1);

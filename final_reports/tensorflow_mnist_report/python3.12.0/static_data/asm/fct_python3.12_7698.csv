@@ -1,0 +1,20 @@
+address;source_location;insn;indent
+0x651610;/usr/local/src/conda/python-3.12.0/Modules/timemodule.c:152;SUB	$0x18,%RSP;
+0x651614;/usr/local/src/conda/python-3.12.0/Modules/timemodule.c:146;XOR	%ESI,%ESI;
+0x651616;/usr/local/src/conda/python-3.12.0/Modules/timemodule.c:152;MOV	%FS:0x28,%RAX;
+0x65161f;:0;MOV	%RAX,0x8(%RSP);
+0x651624;:0;XOR	%EAX,%EAX;
+0x651626;/usr/local/src/conda/python-3.12.0/Modules/timemodule.c:146;MOV	%RSP,%RDI;
+0x651629;:0;CALL	651660 <_PyTime_GetSystemClockWithInfo>;
+0x65162e;/usr/local/src/conda/python-3.12.0/Modules/timemodule.c:154;TEST	%EAX,%EAX;
+0x651630;:0;JS	48ea1c <time_time.cold>;
+0x651636;/usr/local/src/conda/python-3.12.0/Modules/timemodule.c:137;MOV	(%RSP),%RDI;
+0x65163a;:0;CALL	600070 <_PyTime_AsSecondsDouble>;
+0x65163f;/usr/local/src/conda/python-3.12.0/Modules/timemodule.c:138;CALL	514a60 <PyFloat_FromDouble>;
+0x651644;/usr/local/src/conda/python-3.12.0/Modules/timemodule.c:158;MOV	0x8(%RSP),%RDX;
+0x651649;:0;SUB	%FS:0x28,%RDX;
+0x651652;:0;JNE	651659 <time_time+0x49>;
+0x651654;:0;ADD	$0x18,%RSP;
+0x651658;:0;RET;
+0x651659;:0;CALLQ	0x20b119(%RIP);
+0x65165f;:0;NOP;

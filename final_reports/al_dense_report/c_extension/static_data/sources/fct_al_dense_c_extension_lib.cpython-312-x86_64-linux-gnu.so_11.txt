@@ -1,0 +1,76 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 193 - 254
+--------------------------------------------------------------------------------
+
+193: static PyObject* matrix_addition(PyObject* self, PyObject* args) {
+194:     PyObject *A_obj, *B_obj;
+195:     if (!PyArg_ParseTuple(args, "OO", &A_obj, &B_obj)) {
+196:         PyErr_SetString(CustomError, "Invalid arguments");
+197:         return NULL;
+198:     }
+199: 
+200:     if (!PyList_Check(A_obj) || !PyList_Check(B_obj)) {
+201:         PyErr_SetString(CustomError, "Arguments must be lists");
+202:         return NULL;
+203:     }
+204: 
+205:     Py_ssize_t A_row_size = PyList_Size(A_obj);
+206:     Py_ssize_t B_row_size = PyList_Size(B_obj);
+207: 
+208:     if (A_row_size != B_row_size) {
+209:         PyErr_SetString(CustomError, "matrix_addition: matrix size doesn't match");
+210:         return NULL;
+211:     }
+212: 
+213:     // Create the result matrix
+214:     PyObject *C_obj = PyList_New(A_row_size);
+215:     if (C_obj == NULL) {
+216:         return NULL;
+217:     }
+218: 
+219:     for (Py_ssize_t i = 0; i < A_row_size; i++) {
+220:         PyObject *A_row = PyList_GetItem(A_obj, i);
+221:         PyObject *B_row = PyList_GetItem(B_obj, i);
+222: 
+223:         if (!PyList_Check(A_row) || !PyList_Check(B_row) ||
+224:             PyList_Size(A_row) != PyList_Size(B_row)) {
+225:             PyErr_SetString(CustomError, "matrix_addition: matrix size doesn't match");
+226:             Py_DECREF(C_obj);
+227:             return NULL;
+228:         }
+229: 
+230:         PyObject *C_row = PyList_New(PyList_Size(A_row));
+231:         if (C_row == NULL) {
+232:             Py_DECREF(C_obj);
+233:             return NULL;
+234:         }
+235: 
+236:         for (Py_ssize_t j = 0; j < PyList_Size(A_row); j++) {
+237:             PyObject *A_elem = PyList_GetItem(A_row, j);
+238:             PyObject *B_elem = PyList_GetItem(B_row, j);
+239: 
+240:             PyObject *C_elem = PyFloat_FromDouble(PyFloat_AsDouble(A_elem) + PyFloat_AsDouble(B_elem));
+241:             if (C_elem == NULL) {
+[...]
+247:             PyList_SetItem(C_row, j, C_elem);
+248:         }
+249: 
+250:         PyList_SetItem(C_obj, i, C_row);
+251:     }
+252: 
+253:     return C_obj;
+254: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 220 - 966
+--------------------------------------------------------------------------------
+
+220:     return ob->ob_type;
+[...]
+242:     return _Py_CAST(PY_INT32_T, op->ob_refcnt) < 0;
+[...]
+700:     if (_Py_IsImmortal(op)) {
+701:         return;
+702:     }
+703:     _Py_DECREF_STAT_INC();
+704:     if (--op->ob_refcnt == 0) {
+705:         _Py_Dealloc(op);
+[...]
+966:     flags = type->tp_flags;

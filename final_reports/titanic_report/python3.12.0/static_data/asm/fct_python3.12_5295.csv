@@ -1,0 +1,60 @@
+address;source_location;insn;indent
+0x564380;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11572;PUSH	%R13;
+0x564382;:0;PUSH	%R12;
+0x564384;:0;PUSH	%RBP;
+0x564385;:0;PUSH	%RBX;
+0x564386;:0;PUSH	%RCX;
+0x564387;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:280;MOV	0x10(%RDI),%R13;
+0x56438b;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11575;TEST	%R13,%R13;
+0x56438e;:0;JE	44d5a4 <_PyUnicode_ScanIdentifier.cold>;
+0x564394;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11580;MOVZX	0x20(%RDI),%EAX;
+0x564398;:0;MOV	%EAX,%EBP;
+0x56439a;:0;SHR	$0x2,%BPL;
+0x56439e;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11580;AND	$0x7,%EBP;
+0x5643a1;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:262;TEST	$0x20,%AL;
+0x5643a3;:0;JE	44d5ac <_PyUnicode_ScanIdentifier.cold+0x8>;
+0x5643a9;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:247;TEST	$0x40,%AL;
+0x5643ab;:0;JE	56440a <_PyUnicode_ScanIdentifier+0x8a>;
+0x5643ad;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:248;LEA	0x28(%RDI),%RBX;
+0x5643b1;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:317;CMP	$0x1,%EBP;
+0x5643b4;:0;JNE	564410 <_PyUnicode_ScanIdentifier+0x90>;
+0x5643b6;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:318;MOVZX	(%RBX),%R12D;
+0x5643ba;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11591;MOV	%R12D,%EDI;
+0x5643bd;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11591;CALL	601590 <_PyUnicode_IsXidStart>;
+0x5643c2;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11591;TEST	%EAX,%EAX;
+0x5643c4;:0;JNE	5643cc <_PyUnicode_ScanIdentifier+0x4c>;
+0x5643c6;:0;CMP	$0x5f,%R12D;
+0x5643ca;:0;JNE	5643fa <_PyUnicode_ScanIdentifier+0x7a>;
+0x5643cc;:0;MOV	$0x1,%R12D;
+0x5643d2;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11591;JMP	5643ea <_PyUnicode_ScanIdentifier+0x6a>;
+0x5643d4;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:317;CMP	$0x1,%EBP;(1660) 
+0x5643d7;:0;JNE	5643ff <_PyUnicode_ScanIdentifier+0x7f>;(1660) 
+0x5643d9;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:318;MOVZX	(%RBX,%R12,1),%EDI;(1660) 
+0x5643de;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11597;CALL	564640 <_PyUnicode_IsXidContinue>;(1660) 
+0x5643e3;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11597;TEST	%EAX,%EAX;(1660) 
+0x5643e5;:0;JE	5643ef <_PyUnicode_ScanIdentifier+0x6f>;(1660) 
+0x5643e7;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11595;INC	%R12;(1660) 
+0x5643ea;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11595;CMP	%R13,%R12;(1660) 
+0x5643ed;:0;JL	5643d4 <_PyUnicode_ScanIdentifier+0x54>;(1660) 
+0x5643ef;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11602;POP	%RDX;
+0x5643f0;:0;MOV	%R12,%RAX;
+0x5643f3;:0;POP	%RBX;
+0x5643f4;:0;POP	%RBP;
+0x5643f5;:0;POP	%R12;
+0x5643f7;:0;POP	%R13;
+0x5643f9;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11602;RET;
+0x5643fa;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11577;XOR	%R12D,%R12D;
+0x5643fd;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11577;JMP	5643ef <_PyUnicode_ScanIdentifier+0x6f>;
+0x5643ff;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:320;CMP	$0x2,%EBP;(1660) 
+0x564402;:0;JE	56441f <_PyUnicode_ScanIdentifier+0x9f>;(1660) 
+0x564404;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:324;MOV	(%RBX,%R12,4),%EDI;(1660) 
+0x564408;:0;JMP	5643de <_PyUnicode_ScanIdentifier+0x5e>;(1660) 
+0x56440a;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:250;LEA	0x38(%RDI),%RBX;
+0x56440e;:0;JMP	5643b1 <_PyUnicode_ScanIdentifier+0x31>;
+0x564410;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:320;CMP	$0x2,%EBP;
+0x564413;:0;JNE	44d5b5 <_PyUnicode_ScanIdentifier.cold+0x11>;
+0x564419;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:321;MOVZX	(%RBX),%R12D;
+0x56441d;:0;JMP	5643ba <_PyUnicode_ScanIdentifier+0x3a>;
+0x56441f;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:321;MOVZX	(%RBX,%R12,2),%EDI;(1660) 
+0x564424;:0;JMP	5643de <_PyUnicode_ScanIdentifier+0x5e>;(1660) 
+0x564426;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:321;NOPW	%CS:(%RAX,%RAX,1);

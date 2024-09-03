@@ -1,0 +1,39 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 30 - 59
+--------------------------------------------------------------------------------
+
+30: static PyObject* vector_addition(PyObject* self, PyObject* args) {
+31:     PyObject* list1_obj;
+32:     PyObject* list2_obj;
+33:     if (!PyArg_ParseTuple(args, "OO", &list1_obj, &list2_obj)) {
+34:         return NULL;
+35:     }
+36:     if (!PyList_Check(list1_obj) || !PyList_Check(list2_obj)) {
+37:         PyErr_SetString(PyExc_TypeError, "Expected two lists");
+38:         return NULL;
+39:     }
+40: 
+41:     Py_ssize_t list_size = PyList_Size(list1_obj);
+42:     if (list_size != PyList_Size(list2_obj)) {
+43:         PyErr_SetString(CustomError, "vector_addition: vector size doesn't match");
+44:         return NULL;
+45:     }
+46: 
+47:     PyObject* result_list = PyList_New(list_size);
+48: 
+49:     for (Py_ssize_t i = 0; i < list_size; i++) {
+50:         PyObject* item1 = PyList_GetItem(list1_obj, i);
+51:         PyObject* item2 = PyList_GetItem(list2_obj, i);
+52:         double value1 = PyFloat_AsDouble(item1);
+53:         double value2 = PyFloat_AsDouble(item2);
+54:         PyObject* result_item = PyFloat_FromDouble(value1 + value2);
+55:         PyList_SetItem(result_list, i, result_item);
+56:     }
+57:     
+58:     return result_list;
+59: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 220 - 966
+--------------------------------------------------------------------------------
+
+220:     return ob->ob_type;
+[...]
+966:     flags = type->tp_flags;

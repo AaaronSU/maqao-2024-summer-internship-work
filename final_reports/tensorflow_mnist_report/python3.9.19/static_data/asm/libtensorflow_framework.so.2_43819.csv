@@ -1,0 +1,204 @@
+address;source_location;insn;indent
+0x73b89f1;:0;MOV	(%RBX),%R12;
+0x73b89f4;:0;TEST	$0x8,%R12B;
+0x73b89f8;:0;JNE	73b8a21 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0xb9>;
+0x73b89fa;:0;TEST	%R14,%R14;
+0x73b89fd;:0;JNE	73b8a47 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0xdf>;
+0x73b89ff;:0;MOV	%R12D,%EAX;
+0x73b8a02;:0;AND	$0x5,%EAX;
+0x73b8a05;:0;CMP	$0x1,%EAX;
+0x73b8a08;:0;JNE	73b8a47 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0xdf>;
+0x73b8a0a;:0;CMP	$0x200,%R12;
+0x73b8a11;:0;MOV	%R12,%RCX;
+0x73b8a14;:0;SBB	$0,%RCX;
+0x73b8a18;:0;ADD	$-0x100,%RCX;
+0x73b8a1f;:0;JMP	73b8a38 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0xd0>;
+0x73b8a21;:0;TEST	%R14,%R14;
+0x73b8a24;:0;JNE	73b89fa <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x92>;
+0x73b8a26;:0;MOV	%R12D,%EAX;
+0x73b8a29;:0;AND	$0x6,%EAX;
+0x73b8a2c;:0;CMP	$0x4,%EAX;
+0x73b8a2f;:0;JE	73b89fa <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x92>;
+0x73b8a31;:0;MOV	%R12,%RCX;
+0x73b8a34;:0;AND	$-0x29,%RCX;
+0x73b8a38;:0;MOV	%R12,%RAX;
+0x73b8a3b;:0;LOCK CMPXCHG	%RCX,(%RBX);
+0x73b8a40;:0;JNE	73b8a5e <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0xf6>;
+0x73b8a47;:0;TEST	$0x40,%R12B;
+0x73b8a4b;:0;JNE	73b8a5e <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0xf6>;
+0x73b8a4d;:0;MOV	%R12,%RCX;
+0x73b8a50;:0;OR	$0x40,%RCX;
+0x73b8a54;:0;MOV	%R12,%RAX;
+0x73b8a57;:0;LOCK CMPXCHG	%RCX,(%RBX);
+0x73b8a5c;:0;JE	73b8a6d <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x105>;
+0x73b8a5e;:0;MOV	%R15D,%EDI;
+0x73b8a61;:0;XOR	%ESI,%ESI;
+0x73b8a63;:0;CALL	768fbf0 <_ZN4absl12lts_2023080224synchronization_internal10MutexDelayEii@plt>;
+0x73b8a68;:0;MOV	%EAX,%R15D;
+0x73b8a6b;:0;JMP	73b89f1 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x89>;
+0x73b8a6d;:0;TEST	$0x4,%R12B;
+0x73b8a71;:0;JE	73b8d03 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x39b>;
+0x73b8a77;:0;MOV	%R12,%R8;
+0x73b8a7a;:0;AND	$-0x100,%R8;
+0x73b8a81;:0;TEST	$0x1,%R12B;
+0x73b8a85;:0;JE	73b8aa2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x13a>;
+0x73b8a87;:0;MOV	0x28(%R8),%RAX;
+0x73b8a8b;:0;MOV	%RAX,%RCX;
+0x73b8a8e;:0;AND	$-0x100,%RCX;
+0x73b8a95;:0;CMP	$0x101,%RCX;
+0x73b8a9c;:0;JGE	73b8ef4 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x58c>;
+0x73b8aa2;:0;CMPQ	$0,-0x30(%RBP);
+0x73b8aa7;:0;JE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8aa9;:0;CMPB	$0,0x13(%R8);
+0x73b8aae;:0;JE	73b8ff3 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x68b>;
+0x73b8ab4;:0;MOV	-0x30(%RBP),%RAX;
+0x73b8ab8;:0;CMPB	$0,0x10(%RAX);
+0x73b8abc;:0;JE	73b8c30 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x2c8>;
+0x73b8ac2;:0;MOV	(%R8),%RAX;
+0x73b8ac5;:0;MOV	0x20(%RAX),%RCX;
+0x73b8ac9;:0;LEA	-0x68472b8(%RIP),%RDX;
+0x73b8ad0;:0;CMP	%RDX,(%RCX);
+0x73b8ad3;:0;MOV	%R8,-0x58(%RBP);
+0x73b8ad7;:0;JNE	73b8af1 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x189>;
+0x73b8ad9;:0;MOV	0x8(%RCX),%RCX;
+0x73b8add;:0;TEST	%RCX,%RCX;
+0x73b8ae0;:0;JE	73b8dd4 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x46c>;
+0x73b8ae6;:0;CMPQ	$0,0x10(%RCX);
+0x73b8aeb;:0;JE	73b8dd4 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x46c>;
+0x73b8af1;:0;CMPQ	$0,-0x38(%RBP);
+0x73b8af6;:0;MOV	%R13,-0x40(%RBP);
+0x73b8afa;:0;JE	73b8b1e <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x1b6>;
+0x73b8afc;:0;MOV	-0x38(%RBP),%RAX;
+0x73b8b00;:0;MOV	0x20(%RAX),%RAX;
+0x73b8b04;:0;LEA	-0x68472f3(%RIP),%RCX;
+0x73b8b0b;:0;CMP	%RCX,(%RAX);
+0x73b8b0e;:0;JE	73b8de6 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x47e>;
+0x73b8b14;:0;CMP	%R8,-0x30(%RBP);
+0x73b8b18;:0;JE	73b8de6 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x47e>;
+0x73b8b1e;:0;MOV	-0x30(%RBP),%RDI;
+0x73b8b22;:0;CMP	%R8,%RDI;
+0x73b8b25;:0;JE	73b8d92 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x42a>;
+0x73b8b2b;:0;TEST	%RDI,%RDI;
+0x73b8b2e;:0;MOV	%RDI,%RAX;
+0x73b8b31;:0;CMOVE	%R8,%RAX;
+0x73b8b35;:0;MOV	(%RAX),%R13;
+0x73b8b38;:0;MOVB	$0,0x10(%R8);
+0x73b8b3d;:0;CMPQ	$0,0x8(%R8);
+0x73b8b42;:0;JNE	73b9043 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x6db>;
+0x73b8b48;:0;MOVB	$0x1,0x13(%R8);
+0x73b8b4d;:0;MOV	%R12,(%RBX);
+0x73b8b50;:0;MOV	%RDI,%R12;
+0x73b8b53;:0;MOVB	$0,0x11(%R13);  (43823) 
+0x73b8b58;:0;MOV	0x20(%R13),%RAX;  (43823) 
+0x73b8b5c;:0;MOV	0x8(%RAX),%RDI;  (43823) 
+0x73b8b60;:0;TEST	%RDI,%RDI;  (43823) 
+0x73b8b63;:0;JE	73b8b7e <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x216>;  (43823) 
+0x73b8b65;:0;CMP	-0x60(%RBP),%RDI;  (43823) 
+0x73b8b69;:0;JE	73b8bd9 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x271>;  (43823) 
+0x73b8b6b;:0;MOV	0x10(%RDI),%RAX;  (43823) 
+0x73b8b6f;:0;TEST	%RAX,%RAX;  (43823) 
+0x73b8b72;:0;JE	73b8b7e <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x216>;  (43823) 
+0x73b8b74;:0;CALL	%RAX;  (43823) 
+0x73b8b76;:0;MOV	-0x58(%RBP),%R8;  (43823) 
+0x73b8b7a;:0;TEST	%AL,%AL;  (43823) 
+0x73b8b7c;:0;JE	73b8bcd <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x265>;  (43823) 
+0x73b8b7e;:0;CMPQ	$0,-0x38(%RBP);  (43823) 
+0x73b8b83;:0;JE	73b8ba0 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x238>;  (43823) 
+0x73b8b85;:0;MOV	0x20(%R13),%RAX;  (43823) 
+0x73b8b89;:0;LEA	-0x6847350(%RIP),%RCX;  (43823) 
+0x73b8b90;:0;CMP	%RCX,(%RAX);  (43823) 
+0x73b8b93;:0;JE	73b8bc6 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x25e>;  (43823) 
+0x73b8b95;:0;MOV	$0x20,%EAX;  (43823) 
+0x73b8b9a;:0;MOV	%RAX,-0x40(%RBP);  (43823) 
+0x73b8b9e;:0;JMP	73b8bd9 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x271>;  (43823) 
+0x73b8ba0;:0;MOVB	$0x1,0x11(%R13);  (43823) 
+0x73b8ba5;:0;MOV	0x20(%R13),%RAX;  (43823) 
+0x73b8ba9;:0;LEA	-0x6847398(%RIP),%RCX;  (43823) 
+0x73b8bb0;:0;CMP	%RCX,(%RAX);  (43823) 
+0x73b8bb3;:0;JE	73b8ccf <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x367>;  (43823) 
+0x73b8bb9;:0;MOV	%R13,%RAX;  (43823) 
+0x73b8bbc;:0;MOV	%R13,-0x38(%RBP);  (43823) 
+0x73b8bc0;:0;MOV	%R12,-0x48(%RBP);  (43823) 
+0x73b8bc4;:0;JMP	73b8c12 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x2aa>;  (43823) 
+0x73b8bc6;:0;MOVB	$0x1,0x11(%R13);  (43823) 
+0x73b8bcb;:0;JMP	73b8c12 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x2aa>;  (43823) 
+0x73b8bcd;:0;MOV	0x20(%R13),%RAX;  (43823) 
+0x73b8bd1;:0;MOV	0x8(%RAX),%RAX;  (43823) 
+0x73b8bd5;:0;MOV	%RAX,-0x60(%RBP);  (43823) 
+0x73b8bd9;:0;CMPB	$0,0x11(%R13);  (43823) 
+0x73b8bde;:0;JNE	73b8c12 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x2aa>;  (43823) 
+0x73b8be0;:0;MOV	0x8(%R13),%RAX;  (43823) 
+0x73b8be4;:0;TEST	%RAX,%RAX;  (43823) 
+0x73b8be7;:0;JE	73b8c12 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x2aa>;  (43823) 
+0x73b8be9;:0;MOV	0x8(%RAX),%RCX;  (43823) 
+0x73b8bed;:0;TEST	%RCX,%RCX;  (43823) 
+0x73b8bf0;:0;JE	73b8c0b <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x2a3>;  (43823) 
+0x73b8bf2;:0;MOV	%R13,%RDX;  (43823) 
+0x73b8bf5;:0;MOV	%RAX,%RSI;    (43824) 
+0x73b8bf8;:0;MOV	%RCX,%RAX;    (43824) 
+0x73b8bfb;:0;MOV	%RCX,0x8(%RDX);    (43824) 
+0x73b8bff;:0;MOV	0x8(%RCX),%RCX;    (43824) 
+0x73b8c03;:0;MOV	%RSI,%RDX;    (43824) 
+0x73b8c06;:0;TEST	%RCX,%RCX;    (43824) 
+0x73b8c09;:0;JNE	73b8bf5 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x28d>;    (43824) 
+0x73b8c0b;:0;MOV	%RAX,0x8(%R13);  (43823) 
+0x73b8c0f;:0;MOV	%RAX,%R13;  (43823) 
+0x73b8c12;:0;CMP	%R8,%R13;  (43823) 
+0x73b8c15;:0;JE	73b8c23 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x2bb>;  (43823) 
+0x73b8c17;:0;MOV	%R13,%R12;  (43823) 
+0x73b8c1a;:0;MOV	(%R13),%R13;  (43823) 
+0x73b8c1e;:0;JMP	73b8b53 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x1eb>;  (43823) 
+0x73b8c23;:0;MOV	%R8,-0x30(%RBP);
+0x73b8c27;:0;MOV	-0x40(%RBP),%R13;
+0x73b8c2b;:0;JMP	73b89f1 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x89>;
+0x73b8c30;:0;MOV	-0x30(%RBP),%RAX;
+0x73b8c34;:0;MOVB	$0x1,0x10(%RAX);
+0x73b8c38;:0;CMPQ	$0,0x8(%RAX);
+0x73b8c3d;:0;JNE	73b901b <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x6b3>;
+0x73b8c43;:0;CMP	%R8,%RAX;
+0x73b8c46;:0;JE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8c4c;:0;MOV	-0x30(%RBP),%RCX;
+0x73b8c50;:0;MOV	(%RCX),%RAX;
+0x73b8c53;:0;MOV	0x20(%RCX),%RCX;
+0x73b8c57;:0;MOV	(%RCX),%RDX;
+0x73b8c5a;:0;MOV	0x20(%RAX),%RSI;
+0x73b8c5e;:0;CMP	(%RSI),%RDX;
+0x73b8c61;:0;JNE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8c67;:0;MOV	-0x30(%RBP),%RDX;
+0x73b8c6b;:0;MOV	0x18(%RDX),%EDX;
+0x73b8c6e;:0;CMP	0x18(%RAX),%EDX;
+0x73b8c71;:0;JNE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8c77;:0;MOV	0x8(%RCX),%RDX;
+0x73b8c7b;:0;MOV	0x8(%RSI),%RCX;
+0x73b8c7f;:0;TEST	%RDX,%RDX;
+0x73b8c82;:0;JE	73b8ce6 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x37e>;
+0x73b8c84;:0;MOV	0x10(%RDX),%RSI;
+0x73b8c88;:0;TEST	%RSI,%RSI;
+0x73b8c8b;:0;JE	73b8ce6 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x37e>;
+0x73b8c8d;:0;TEST	%RCX,%RCX;
+0x73b8c90;:0;JE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8c96;:0;MOV	0x10(%RCX),%RDI;
+0x73b8c9a;:0;TEST	%RDI,%RDI;
+0x73b8c9d;:0;JE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8ca3;:0;CMP	%RDI,%RSI;
+0x73b8ca6;:0;JNE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8cac;:0;MOV	0x18(%RDX),%RSI;
+0x73b8cb0;:0;CMP	0x18(%RCX),%RSI;
+0x73b8cb4;:0;JNE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8cba;:0;VMOVDQU	(%RDX),%XMM0;
+0x73b8cbe;:0;VPXOR	(%RCX),%XMM0,%XMM0;
+0x73b8cc2;:0;VPTEST	%XMM0,%XMM0;
+0x73b8cc7;:0;JNE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8ccd;:0;JMP	73b8cf6 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x38e>;
+0x73b8ccf;:0;MOV	%R8,-0x30(%RBP);
+0x73b8cd3;:0;MOV	%R12,-0x48(%RBP);
+0x73b8cd7;:0;MOV	%R13,-0x38(%RBP);
+0x73b8cdb;:0;MOV	$0x20,%R13D;
+0x73b8ce1;:0;JMP	73b89f1 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x89>;
+0x73b8ce6;:0;TEST	%RCX,%RCX;
+0x73b8ce9;:0;JE	73b8cf6 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x38e>;
+0x73b8ceb;:0;CMPQ	$0,0x10(%RCX);
+0x73b8cf0;:0;JNE	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;
+0x73b8cf6;:0;MOV	-0x30(%RBP),%RCX;
+0x73b8cfa;:0;MOV	%RAX,0x8(%RCX);
+0x73b8cfe;:0;JMP	73b8ac2 <_ZN4absl12lts_202308025Mutex10UnlockSlowEPNS0_15SynchWaitParamsE+0x15a>;

@@ -1,0 +1,17 @@
+address;source_location;insn;indent
+0x168ff7;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:589;MOV	0x18(%RSP),%RDX;
+0x168ffc;:0;SUB	%FS:0x28,%RDX;
+0x169005;:0;JNE	1690a8 <PyLong_AsLong+0xe8>;
+0x169067;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:547;OR	$-0x1,%RAX;
+0x16906b;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:588;JMP	168ff7 <PyLong_AsLong+0x37>;
+0x1690a8;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:589;CALLQ	0x2156ba(%RIP);
+0x1690ae;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:568;TEST	%ESI,%ESI;
+0x1690b0;:0;JNE	1690f3 <PyLong_AsLong+0x133>;
+0x1690b2;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:585;MOV	0x2484ff(%RIP),%RDI;
+0x1690b9;:0;LEA	0x11b7d0(%RIP),%RSI;
+0x1690c0;:0;CALL	18b430 <PyErr_SetString>;
+0x1690c5;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:585;JMP	169067 <PyLong_AsLong+0xa7>;
+0x1690f3;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RDI);
+0x1690f6;:0;JNE	1690b2 <PyLong_AsLong+0xf2>;
+0x1690f8;/usr/local/src/conda/python-3.9.19/Include/object.h:430;CALL	1296a0 <_Py_Dealloc>;
+0x1690fd;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:582;JMP	1690b2 <PyLong_AsLong+0xf2>;

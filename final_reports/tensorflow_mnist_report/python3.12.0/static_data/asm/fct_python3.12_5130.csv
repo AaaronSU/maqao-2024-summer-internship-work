@@ -1,0 +1,178 @@
+address;source_location;insn;indent
+0x546420;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1971;PUSH	%R15;
+0x546422;:0;PUSH	%R14;
+0x546424;:0;MOV	%RSI,%R14;
+0x546427;:0;PUSH	%R13;
+0x546429;:0;PUSH	%R12;
+0x54642b;:0;PUSH	%RBP;
+0x54642c;:0;PUSH	%RBX;
+0x54642d;:0;MOV	%RDI,%RBX;
+0x546430;:0;SUB	$0x28,%RSP;
+0x546434;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1971;MOV	%FS:0x28,%RAX;
+0x54643d;:0;MOV	%RAX,0x18(%RSP);
+0x546442;:0;XOR	%EAX,%EAX;
+0x546444;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1974;CMPQ	$0x93b8c0,0x8(%RSI);
+0x54644c;:0;JE	5465e2 <PyDict_DelItem+0x1c2>;
+0x546452;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1975;MOV	%R14,%RDI;
+0x546455;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1975;CALL	504e50 <PyObject_Hash>;
+0x54645a;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1975;MOV	%RAX,%R12;
+0x54645d;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1976;CMP	$-0x1,%RAX;
+0x546461;:0;JE	43d058 <PyDict_DelItem.cold+0xe4>;
+0x546467;/usr/local/src/conda/python-3.12.0/Include/object.h:967;MOV	0x8(%RBX),%RAX;
+0x54646b;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1990;TESTB	$0x20,0xab(%RAX);
+0x546472;:0;JE	43cf86 <PyDict_DelItem.cold+0x12>;
+0x546478;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1997;LEA	0x10(%RSP),%RCX;
+0x54647d;:0;MOV	%R12,%RDX;
+0x546480;:0;MOV	%R14,%RSI;
+0x546483;:0;MOV	%RBX,%RDI;
+0x546486;:0;CALL	505980 <_Py_dict_lookup>;
+0x54648b;:0;MOV	%RAX,%RBP;
+0x54648e;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1998;CMP	$-0x3,%RAX;
+0x546492;:0;JE	43d076 <PyDict_DelItem.cold+0x102>;
+0x546498;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:2000;CMP	$-0x1,%RAX;
+0x54649c;:0;JE	5466d1 <PyDict_DelItem+0x2b1>;
+0x5464a2;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:2000;MOV	0x10(%RSP),%R13;
+0x5464a7;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:2000;TEST	%R13,%R13;
+0x5464aa;:0;JE	5466d1 <PyDict_DelItem+0x2b1>;
+0x5464b0;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	%FS:,%RAX;
+0x5464b9;:0;LEA	-0x10(%RAX),%RAX;
+0x5464c0;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:170;MOVZX	0x18(%RBX),%R9D;
+0x5464c5;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	(%RAX),%RDX;
+0x5464c8;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	0x10(%RDX),%R15;
+0x5464cc;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:171;TEST	%R9D,%R9D;
+0x5464cf;:0;JNE	43cf9d <PyDict_DelItem.cold+0x29>;
+0x5464d5;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:175;MOV	0x42180(%R15),%RCX;
+0x5464dc;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1932;MOV	0x20(%RBX),%R14;
+0x5464e0;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:858;MOV	$0x1,%ESI;
+0x5464e5;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:175;LEA	0x100(%RCX),%R11;
+0x5464ec;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:345;LEA	0x20(%R14),%R8;
+0x5464f0;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:173;MOV	%R11,0x42180(%R15);
+0x5464f7;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:858;MOVZX	0x8(%R14),%ECX;
+0x5464fc;:0;SAL	%CL,%RSI;
+0x5464ff;:0;LEA	-0x1(%RSI),%RAX;
+0x546503;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:860;MOV	%R12,%RSI;
+0x546506;:0;AND	%RAX,%RSI;
+0x546509;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:344;CMP	$0x7,%ECX;
+0x54650c;:0;JG	546686 <PyDict_DelItem+0x266>;
+0x546512;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:346;MOVSX	(%R8,%RSI,1),%R9;
+0x546517;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:864;CMP	%R9,%RBP;
+0x54651a;:0;JNE	546610 <PyDict_DelItem+0x1f0>;
+0x546520;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1937;MOV	0x28(%RBX),%RDI;
+0x546524;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1935;DECQ	0x10(%RBX);
+0x546528;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1936;MOV	%R11,0x18(%RBX);
+0x54652c;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1937;TEST	%RDI,%RDI;
+0x54652f;:0;JNE	5466e1 <PyDict_DelItem+0x2c1>;
+0x546535;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1946;MOVL	$0,0xc(%R14);
+0x54653d;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:375;CMP	$0x7,%ECX;
+0x546540;:0;JG	546699 <PyDict_DelItem+0x279>;
+0x546546;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:378;MOVB	$-0x2,(%R8,%RSI,1);
+0x54654b;:0;MOV	0x20(%RBX),%R14;
+0x54654f;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:135;MOVZX	0x9(%R14),%ECX;
+0x546554;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:135;MOV	$0x1,%R12D;
+0x54655a;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:134;LEA	0x20(%R14),%RBX;
+0x54655e;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_dict.h:135;SAL	%CL,%R12;
+0x546561;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1948;CMPB	$0,0xa(%R14);
+0x546566;:0;JNE	5465f5 <PyDict_DelItem+0x1d5>;
+0x54656c;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1955;IMUL	$0x18,%RBP,%RBP;
+0x546570;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1957;PXOR	%XMM0,%XMM0;
+0x546574;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1955;ADD	%R12,%RBP;
+0x546577;:0;LEA	(%RBX,%RBP,1),%R11;
+0x54657b;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1959;MOVQ	$0,(%R11);
+0x546582;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1956;MOV	0x8(%R11),%RDI;
+0x546586;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1957;MOVUPS	%XMM0,0x8(%R11);
+0x54658b;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%RAX;
+0x54658e;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%EAX,%EAX;
+0x546590;:0;JS	54659f <PyDict_DelItem+0x17f>;
+0x546592;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%RAX;
+0x546595;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%RAX,(%RDI);
+0x546598;:0;JNE	54659f <PyDict_DelItem+0x17f>;
+0x54659a;/usr/local/src/conda/python-3.12.0/Include/object.h:706;CALL	50c940 <_Py_Dealloc>;
+0x54659f;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%R13),%R8;
+0x5465a3;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%R8D,%R8D;
+0x5465a6;:0;JS	5465bd <PyDict_DelItem+0x19d>;
+0x5465a8;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%R8;
+0x5465ab;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%R8,(%R13);
+0x5465af;:0;JNE	5465bd <PyDict_DelItem+0x19d>;
+0x5465b1;/usr/local/src/conda/python-3.12.0/Include/object.h:706;MOV	%R13,%RDI;
+0x5465b4;:0;CALL	50c940 <_Py_Dealloc>;
+0x5465b9;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:2008;XOR	%EAX,%EAX;
+0x5465bb;:0;JMP	5465bf <PyDict_DelItem+0x19f>;
+0x5465bd;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:2008;XOR	%EAX,%EAX;
+0x5465bf;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1981;MOV	0x18(%RSP),%RDX;
+0x5465c4;:0;SUB	%FS:0x28,%RDX;
+0x5465cd;:0;JNE	5466f6 <PyDict_DelItem+0x2d6>;
+0x5465d3;:0;ADD	$0x28,%RSP;
+0x5465d7;:0;POP	%RBX;
+0x5465d8;:0;POP	%RBP;
+0x5465d9;:0;POP	%R12;
+0x5465db;:0;POP	%R13;
+0x5465dd;:0;POP	%R14;
+0x5465df;:0;POP	%R15;
+0x5465e1;:0;RET;
+0x5465e2;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:284;MOV	0x18(%RSI),%R12;
+0x5465e6;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1974;CMP	$-0x1,%R12;
+0x5465ea;:0;JNE	546467 <PyDict_DelItem+0x47>;
+0x5465f0;:0;JMP	546452 <PyDict_DelItem+0x32>;
+0x5465f5;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1949;SAL	$0x4,%RBP;
+0x5465f9;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1951;PXOR	%XMM1,%XMM1;
+0x5465fd;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1949;ADD	%R12,%RBP;
+0x546600;:0;LEA	(%RBX,%RBP,1),%R14;
+0x546604;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1950;MOV	(%R14),%RDI;
+0x546607;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1951;MOVUPS	%XMM1,(%R14);
+0x54660b;:0;JMP	54658b <PyDict_DelItem+0x16b>;
+0x546610;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:867;INC	%R9;
+0x546613;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:867;JE	43d06d <PyDict_DelItem.cold+0xf9>;
+0x546619;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:870;MOV	%R12,%R10;
+0x54661c;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;LEA	(%RSI,%RSI,4),%RSI;
+0x546620;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:870;SHR	$0x5,%R10;
+0x546624;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;LEA	0x1(%R10,%RSI,1),%RSI;
+0x546629;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;AND	%RAX,%RSI;
+0x54662c;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:344;CMP	$0x7,%ECX;
+0x54662f;:0;JG	5466ae <PyDict_DelItem+0x28e>;
+0x546631;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:346;MOVSX	(%R8,%RSI,1),%RDI;
+0x546636;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:864;CMP	%RDI,%RBP;
+0x546639;:0;JE	546520 <PyDict_DelItem+0x100>;
+0x54663f;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:867;INC	%RDI;
+0x546642;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:867;JE	43d02f <PyDict_DelItem.cold+0xbb>;
+0x546648;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:870;SHR	$0xa,%R12;
+0x54664c;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;LEA	(%RSI,%RSI,4),%RDX;
+0x546650;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;LEA	0x1(%R12,%RDX,1),%RSI;
+0x546655;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;AND	%RAX,%RSI;
+0x546658;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:344;CMP	$0x7,%ECX;(1409) 
+0x54665b;:0;JG	5466c1 <PyDict_DelItem+0x2a1>;(1409) 
+0x54665d;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:346;MOVSX	(%R8,%RSI,1),%R15;(1409) 
+0x546662;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:864;CMP	%R15,%RBP;(1409) 
+0x546665;:0;JE	546520 <PyDict_DelItem+0x100>;(1409) 
+0x54666b;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:867;INC	%R15;(1409) 
+0x54666e;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:867;JE	43d01d <PyDict_DelItem.cold+0xa9>;(1409) 
+0x546674;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:870;SHR	$0x5,%R12;(1409) 
+0x546678;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;LEA	(%RSI,%RSI,4),%R9;(1409) 
+0x54667c;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;LEA	0x1(%R12,%R9,1),%RSI;(1409) 
+0x546681;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:871;AND	%RAX,%RSI;(1409) 
+0x546684;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:862;JMP	546658 <PyDict_DelItem+0x238>;(1409) 
+0x546686;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:348;CMP	$0xf,%ECX;
+0x546689;:0;JG	43d038 <PyDict_DelItem.cold+0xc4>;
+0x54668f;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:350;MOVSX	(%R8,%RSI,2),%R9;
+0x546694;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:350;JMP	546517 <PyDict_DelItem+0xf7>;
+0x546699;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:380;CMP	$0xf,%ECX;
+0x54669c;:0;JG	43d046 <PyDict_DelItem.cold+0xd2>;
+0x5466a2;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:383;MOVW	$-0x2,(%R8,%RSI,2);
+0x5466a9;:0;JMP	54654f <PyDict_DelItem+0x12f>;
+0x5466ae;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:348;CMP	$0xf,%ECX;
+0x5466b1;:0;JG	43d00f <PyDict_DelItem.cold+0x9b>;
+0x5466b7;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:350;MOVSX	(%R8,%RSI,2),%RDI;
+0x5466bc;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:350;JMP	546636 <PyDict_DelItem+0x216>;
+0x5466c1;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:348;CMP	$0xf,%ECX;(1409) 
+0x5466c4;:0;JG	43cf74 <PyDict_DelItem.cold>;(1409) 
+0x5466ca;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:350;MOVSX	(%R8,%RSI,2),%R15;(1409) 
+0x5466cf;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:350;JMP	546662 <PyDict_DelItem+0x242>;(1409) 
+0x5466d1;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:2001;MOV	%R14,%RDI;
+0x5466d4;:0;CALL	60d0c0 <_PyErr_SetKeyError>;
+0x5466d9;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:2002;OR	$-0x1,%EAX;
+0x5466dc;:0;JMP	5465bf <PyDict_DelItem+0x19f>;
+0x5466e1;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1939;MOVQ	$0,(%RDI,%RBP,8);
+0x5466e9;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1942;MOV	%RBP,%RSI;
+0x5466ec;:0;CALL	64d380 <delete_index_from_values>;
+0x5466f1;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1943;JMP	54659f <PyDict_DelItem+0x17f>;
+0x5466f6;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1981;CALLQ	0x31607c(%RIP);
+0x5466fc;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1981;NOPL	(%RAX);

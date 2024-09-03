@@ -1,0 +1,51 @@
+address;source_location;insn;indent
+0x73b69d0;:0;PUSH	%RBP;
+0x73b69d1;:0;MOV	%RSP,%RBP;
+0x73b69d4;:0;PUSH	%R15;
+0x73b69d6;:0;PUSH	%R14;
+0x73b69d8;:0;PUSH	%RBX;
+0x73b69d9;:0;PUSH	%RAX;
+0x73b69da;:0;MOV	%RSI,%RBX;
+0x73b69dd;:0;MOV	%RDI,%R14;
+0x73b69e0;:0;XOR	%ECX,%ECX;
+0x73b69e2;:0;MOV	$0x881,%R15D;
+0x73b69e8;:0;MOV	(%R14),%EAX;(43801) 
+0x73b69eb;:0;NOPL	(%RAX,%RAX,1);(43801) 
+0x73b69f0;:0;TEST	%EAX,%EAX;  (43802) 
+0x73b69f2;:0;JE	73b6a00 <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE+0x30>;  (43802) 
+0x73b69f4;:0;LEA	-0x1(%RAX),%EDX;  (43802) 
+0x73b69f7;:0;LOCK CMPXCHG	%EDX,(%R14);  (43802) 
+0x73b69fc;:0;JNE	73b69f0 <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE+0x20>;  (43802) 
+0x73b69fe;:0;JMP	73b6a30 <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE+0x60>;
+0x73b6a00;:0;TEST	$0x1,%CL;(43801) 
+0x73b6a03;:0;JE	73b6a0a <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE+0x3a>;(43801) 
+0x73b6a05;:0;CALL	768fb00 <_ZN4absl12lts_2023080224synchronization_internal10WaiterBase15MaybeBecomeIdleEv@plt>;(43801) 
+0x73b6a0a;:0;MOV	%R14,%RDI;(43801) 
+0x73b6a0d;:0;XOR	%ESI,%ESI;(43801) 
+0x73b6a0f;:0;MOV	%RBX,%RDX;(43801) 
+0x73b6a12;:0;CALL	768fac0 <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter9WaitUntilEPSt6atomicIiEiNS1_13KernelTimeoutE@plt>;(43801) 
+0x73b6a17;:0;LEA	0xb(%RAX),%EDX;(43801) 
+0x73b6a1a;:0;CMP	$0xb,%EDX;(43801) 
+0x73b6a1d;:0;JA	73b6a27 <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE+0x57>;(43801) 
+0x73b6a1f;:0;MOV	$0x1,%CL;(43801) 
+0x73b6a21;:0;BT	%EDX,%R15D;(43801) 
+0x73b6a25;:0;JB	73b69e8 <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE+0x18>;(43801) 
+0x73b6a27;:0;CMP	$-0x6e,%EAX;
+0x73b6a2a;:0;JNE	73b6a3d <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE+0x6d>;
+0x73b6a2c;:0;XOR	%EAX,%EAX;
+0x73b6a2e;:0;JMP	73b6a32 <_ZN4absl12lts_2023080224synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE+0x62>;
+0x73b6a30;:0;MOV	$0x1,%AL;
+0x73b6a32;:0;ADD	$0x8,%RSP;
+0x73b6a36;:0;POP	%RBX;
+0x73b6a37;:0;POP	%R14;
+0x73b6a39;:0;POP	%R15;
+0x73b6a3b;:0;POP	%RBP;
+0x73b6a3c;:0;RET;
+0x73b6a3d;:0;LEA	-0x69c0f77(%RIP),%RSI;
+0x73b6a44;:0;LEA	-0x697ad3b(%RIP),%RCX;
+0x73b6a4b;:0;MOV	$0x3,%EDI;
+0x73b6a50;:0;MOV	$0x55,%EDX;
+0x73b6a55;:0;MOV	%EAX,%R8D;
+0x73b6a58;:0;XOR	%EAX,%EAX;
+0x73b6a5a;:0;CALL	768a530 <_ZN4absl12lts_2023080216raw_log_internal6RawLogENS0_11LogSeverityEPKciS4_z@plt>;
+0x73b6a5f;:0;INT	$0x3;

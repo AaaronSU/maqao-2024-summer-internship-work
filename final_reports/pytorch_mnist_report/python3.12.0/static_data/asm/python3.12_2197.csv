@@ -1,0 +1,19 @@
+address;source_location;insn;indent
+0x596696;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RBX),%RSI;
+0x596699;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%ESI,%ESI;
+0x59669b;:0;JNS	5967fd <object_isinstance+0x25d>;
+0x5966a1;/usr/local/src/conda/python-3.12.0/Objects/abstract.c:2599;MOV	0x28(%RSP),%RDX;
+0x5966a6;:0;SUB	%FS:0x28,%RDX;
+0x5966af;:0;JNE	59684e <object_isinstance+0x2ae>;
+0x5967fd;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%RSI;
+0x596800;:0;MOV	%RSI,(%RBX);
+0x596803;:0;JNE	5966a1 <object_isinstance+0x101>;
+0x59684e;/usr/local/src/conda/python-3.12.0/Objects/abstract.c:2599;CALLQ	0x2c5f24(%RIP);
+0x596854;/usr/local/src/conda/python-3.12.0/Objects/abstract.c:2575;MOV	%RAX,%RBX;
+0x596857;/usr/local/src/conda/python-3.12.0/Include/object.h:967;MOV	0x8(%RBX),%RDX;
+0x59685b;/usr/local/src/conda/python-3.12.0/Objects/abstract.c:2575;TESTB	$-0x80,0xab(%RDX);
+0x596862;:0;JE	461e77 <object_isinstance.cold+0x7>;
+0x596868;/usr/local/src/conda/python-3.12.0/Objects/abstract.c:2576;MOV	%RBP,%RSI;
+0x59686b;:0;MOV	%RBX,%RDI;
+0x59686e;:0;CALL	5183f0 <PyType_IsSubtype>;
+0x596873;/usr/local/src/conda/python-3.12.0/Objects/abstract.c:2576;JMP	596696 <object_isinstance+0xf6>;

@@ -1,0 +1,22 @@
+address;source_location;insn;indent
+0xea5af;/usr/local/src/conda/python-3.9.19/Objects/object.c:802;SUB	$0x18,%RSP;
+0xea5b3;/usr/local/src/conda/python-3.9.19/Objects/object.c:802;MOV	%FS:0x28,%RAX;
+0xea5bc;/usr/local/src/conda/python-3.9.19/Objects/object.c:802;MOV	%RAX,0x8(%RSP);
+0xea5c1;/usr/local/src/conda/python-3.9.19/Objects/object.c:802;XOR	%EAX,%EAX;
+0xea5c3;/usr/local/src/conda/python-3.9.19/Objects/object.c:803;CALL	151b20 <PyObject_GetAttrString>;
+0xea5c8;/usr/local/src/conda/python-3.9.19/Objects/object.c:804;TEST	%RAX,%RAX;
+0xea5cb;/usr/local/src/conda/python-3.9.19/Objects/object.c:804;JE	ea5e1 <PyObject_HasAttrString+0x32>;
+0xea5cd;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RAX);
+0xea5d0;/usr/local/src/conda/python-3.9.19/Include/object.h:422;MOV	%RAX,%RDI;
+0xea5d3;/usr/local/src/conda/python-3.9.19/Include/object.h:422;JNE	ea5da <PyObject_HasAttrString+0x2b>;
+0xea5d5;/usr/local/src/conda/python-3.9.19/Include/object.h:430;CALL	1296a0 <_Py_Dealloc>;
+0xea5da;/usr/local/src/conda/python-3.9.19/Objects/object.c:806;MOV	$0x1,%EAX;
+0xea5df;/usr/local/src/conda/python-3.9.19/Objects/object.c:806;JMP	ea5e8 <PyObject_HasAttrString+0x39>;
+0xea5e1;/usr/local/src/conda/python-3.9.19/Objects/object.c:808;CALL	12fa40 <PyErr_Clear>;
+0xea5e6;/usr/local/src/conda/python-3.9.19/Objects/object.c:809;XOR	%EAX,%EAX;
+0xea5e8;/usr/local/src/conda/python-3.9.19/Objects/object.c:810;MOV	0x8(%RSP),%RDX;
+0xea5ed;/usr/local/src/conda/python-3.9.19/Objects/object.c:810;SUB	%FS:0x28,%RDX;
+0xea5f6;/usr/local/src/conda/python-3.9.19/Objects/object.c:810;JE	ea5fe <PyObject_HasAttrString+0x4f>;
+0xea5f8;/usr/local/src/conda/python-3.9.19/Objects/object.c:810;CALLQ	0x29416a(%RIP);
+0xea5fe;/usr/local/src/conda/python-3.9.19/Objects/object.c:810;ADD	$0x18,%RSP;
+0xea602;/usr/local/src/conda/python-3.9.19/Objects/object.c:810;RET;

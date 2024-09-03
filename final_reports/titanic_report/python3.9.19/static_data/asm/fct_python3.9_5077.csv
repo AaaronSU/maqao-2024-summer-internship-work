@@ -1,0 +1,15 @@
+address;source_location;insn;indent
+0x57a110;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5084;PUSH	%RSI;
+0x57a111;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5086;CALL	565730 <PyLong_AsDouble>;
+0x57a116;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5087;UCOMISD	0x138482(%RIP),%XMM0;
+0x57a11e;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5087;JP	57a122 <long_float+0x12>;
+0x57a120;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5087;JE	57a128 <long_float+0x18>;
+0x57a122;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5090;POP	%RCX;
+0x57a123;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5089;JMP	4e1620 <PyFloat_FromDouble>;
+0x57a128;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5087;CALL	4d9220 <PyErr_Occurred>;
+0x57a12d;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5087;TEST	%RAX,%RAX;
+0x57a130;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5087;JE	57a122 <long_float+0x12>;
+0x57a132;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5090;XOR	%EAX,%EAX;
+0x57a134;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5090;POP	%RDX;
+0x57a135;/usr/local/src/conda/python-3.9.19/Objects/longobject.c:5090;RET;
+0x57a136;:0;NOPW	%CS:(%RAX,%RAX,1);

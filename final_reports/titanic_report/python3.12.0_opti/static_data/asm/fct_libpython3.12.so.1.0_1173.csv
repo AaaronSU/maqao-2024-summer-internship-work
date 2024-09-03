@@ -1,0 +1,300 @@
+address;source_location;insn;indent
+0x18bdc0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:414;PUSH	%RBP;
+0x18bdc1;:0;MOV	%RSP,%RBP;
+0x18bdc4;:0;PUSH	%R15;
+0x18bdc6;:0;PUSH	%R14;
+0x18bdc8;:0;PUSH	%R13;
+0x18bdca;:0;PUSH	%R12;
+0x18bdcc;:0;MOV	%RSI,%R12;
+0x18bdcf;:0;PUSH	%RBX;
+0x18bdd0;:0;MOVSXD	%EDX,%RBX;
+0x18bdd3;:0;SUB	$0x38,%RSP;
+0x18bdd7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:414;MOV	%FS:0x28,%RAX;
+0x18bde0;:0;MOV	%RAX,-0x38(%RBP);
+0x18bde4;:0;XOR	%EAX,%EAX;
+0x18bde6;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/cpython/floatobject.h:16;VMOVSD	0x10(%RDI),%XMM1;
+0x18bdeb;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:220;MOV	0x8(%RSI),%RDI;
+0x18bdef;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:382;MOV	0x3d2d52(%RIP),%RSI;
+0x18bdf6;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:382;CMP	%RSI,%RDI;
+0x18bdf9;:0;JE	18be0e <float_richcompare+0x4e>;
+0x18bdfb;:0;VMOVSD	%XMM1,-0x58(%RBP);
+0x18be00;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:382;CALL	108f90 <PyType_IsSubtype@plt>;
+0x18be05;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:382;VMOVSD	-0x58(%RBP),%XMM1;
+0x18be0a;:0;TEST	%EAX,%EAX;
+0x18be0c;:0;JE	18be30 <float_richcompare+0x70>;
+0x18be0e;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/cpython/floatobject.h:16;VMOVSD	0x10(%R12),%XMM0;
+0x18be15;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:562;CMP	$0x5,%EBX;
+0x18be18;:0;JA	10ba00 <bytearray_richcompare.cold>;
+0x18be1e;:0;LEA	0x25283b(%RIP),%RDX;
+0x18be25;:0;MOV	%EBX,%EBX;
+0x18be27;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:562;MOVSXD	(%RDX,%RBX,4),%RAX;
+0x18be2b;:0;ADD	%RDX,%RAX;
+0x18be2e;:0;JMP	%RAX;
+0x18be30;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:967;MOV	0x8(%R12),%RAX;
+0x18be35;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:427;VANDPD	0x24b3f3(%RIP),%XMM1,%XMM0;
+0x18be3d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:427;VMOVSD	0x24acdb(%RIP),%XMM2;
+0x18be45;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:969;MOV	0xa8(%RAX),%RAX;
+0x18be4c;:0;AND	$0x1000000,%EAX;
+0x18be51;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:427;VUCOMISD	%XMM0,%XMM2;
+0x18be55;:0;JB	18bf50 <float_richcompare+0x190>;
+0x18be5b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:438;TEST	%RAX,%RAX;
+0x18be5e;:0;JE	18bf5d <float_richcompare+0x19d>;
+0x18be64;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:439;VXORPD	%XMM0,%XMM0,%XMM0;
+0x18be68;:0;VCOMISD	%XMM0,%XMM1;
+0x18be6c;:0;JP	18bf90 <float_richcompare+0x1d0>;
+0x18be72;:0;JE	18c160 <float_richcompare+0x3a0>;
+0x18be78;:0;MOV	$-0x1,%R14D;
+0x18be7e;:0;JA	18bf90 <float_richcompare+0x1d0>;
+0x18be84;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:440;MOV	%R12,%RDI;
+0x18be87;:0;VMOVSD	%XMM1,-0x58(%RBP);
+0x18be8c;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:440;CALL	109ef0 <_PyLong_Sign@plt>;
+0x18be91;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:444;VMOVSD	-0x58(%RBP),%XMM1;
+0x18be96;:0;CMP	%EAX,%R14D;
+0x18be99;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:440;MOV	%EAX,%R13D;
+0x18be9c;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:444;JE	18bfa0 <float_richcompare+0x1e0>;
+0x18bea2;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:448;VXORPD	%XMM3,%XMM3,%XMM3;
+0x18bea6;:0;VCVTSI2SD	%R14D,%XMM3,%XMM1;
+0x18beab;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:449;VCVTSI2SD	%EAX,%XMM3,%XMM0;
+0x18beaf;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:450;JMP	18be15 <float_richcompare+0x55>;
+0x18beb4;:0;NOPL	(%RAX);
+0x18beb8;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:582;XOR	%EDI,%EDI;
+0x18beba;:0;VCOMISD	%XMM0,%XMM1;
+0x18bebe;:0;SETA	%DIL;
+0x18bec2;:0;NOPW	(%RAX,%RAX,1);
+0x18bec8;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:582;MOV	-0x38(%RBP),%RAX;
+0x18becc;:0;SUB	%FS:0x28,%RAX;
+0x18bed5;:0;JNE	18c238 <float_richcompare+0x478>;
+0x18bedb;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:586;ADD	$0x38,%RSP;
+0x18bedf;:0;POP	%RBX;
+0x18bee0;:0;POP	%R12;
+0x18bee2;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:586;POP	%R13;
+0x18bee4;:0;POP	%R14;
+0x18bee6;:0;POP	%R15;
+0x18bee8;:0;POP	%RBP;
+0x18bee9;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:582;JMP	106e00 <PyBool_FromLong@plt>;
+0x18beee;:0;XCHG	%AX,%AX;
+0x18bef0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:582;XOR	%EDI,%EDI;
+0x18bef2;:0;VCOMISD	%XMM0,%XMM1;
+0x18bef6;:0;SETAE	%DIL;
+0x18befa;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:574;JMP	18bec8 <float_richcompare+0x108>;
+0x18befc;:0;NOPL	(%RAX);
+0x18bf00;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:582;XOR	%EDI,%EDI;
+0x18bf02;:0;VCOMISD	%XMM1,%XMM0;
+0x18bf06;:0;SETA	%DIL;
+0x18bf0a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:577;JMP	18bec8 <float_richcompare+0x108>;
+0x18bf0c;:0;NOPL	(%RAX);
+0x18bf10;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:582;XOR	%EDI,%EDI;
+0x18bf12;:0;VCOMISD	%XMM1,%XMM0;
+0x18bf16;:0;SETAE	%DIL;
+0x18bf1a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:571;JMP	18bec8 <float_richcompare+0x108>;
+0x18bf1c;:0;NOPL	(%RAX);
+0x18bf20;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:564;XOR	%EDI,%EDI;
+0x18bf22;:0;VUCOMISD	%XMM0,%XMM1;
+0x18bf26;:0;MOV	$0,%EAX;
+0x18bf2b;:0;SETNP	%DIL;
+0x18bf2f;:0;CMOVNE	%RAX,%RDI;
+0x18bf33;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:565;JMP	18bec8 <float_richcompare+0x108>;
+0x18bf35;:0;NOPL	(%RAX);
+0x18bf38;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:567;XOR	%EDI,%EDI;
+0x18bf3a;:0;VUCOMISD	%XMM0,%XMM1;
+0x18bf3e;:0;MOV	$0x1,%EAX;
+0x18bf43;:0;SETP	%DIL;
+0x18bf47;:0;CMOVNE	%RAX,%RDI;
+0x18bf4b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:568;JMP	18bec8 <float_richcompare+0x108>;
+0x18bf50;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:433;VXORPD	%XMM0,%XMM0,%XMM0;
+0x18bf54;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:428;TEST	%RAX,%RAX;
+0x18bf57;:0;JNE	18be15 <float_richcompare+0x55>;
+0x18bf5d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:585;MOV	0x3d2a64(%RIP),%RAX;
+0x18bf64;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:586;MOV	-0x38(%RBP),%RDX;(763) 
+0x18bf68;:0;SUB	%FS:0x28,%RDX;(763) 
+0x18bf71;:0;JNE	18c238 <float_richcompare+0x478>;(763) 
+0x18bf77;:0;ADD	$0x38,%RSP;
+0x18bf7b;:0;POP	%RBX;
+0x18bf7c;:0;POP	%R12;
+0x18bf7e;:0;POP	%R13;
+0x18bf80;:0;POP	%R14;
+0x18bf82;:0;POP	%R15;
+0x18bf84;:0;POP	%RBP;
+0x18bf85;:0;RET;
+0x18bf86;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x18bf90;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:439;MOV	$0x1,%R14D;
+0x18bf96;:0;JMP	18be84 <float_richcompare+0xc4>;
+0x18bf9b;:0;NOPL	(%RAX,%RAX,1);
+0x18bfa0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:454;MOV	%R12,%RDI;
+0x18bfa3;:0;VMOVSD	%XMM1,-0x58(%RBP);
+0x18bfa8;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:454;CALL	10a700 <_PyLong_NumBits@plt>;
+0x18bfad;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:455;VMOVSD	-0x58(%RBP),%XMM1;
+0x18bfb2;:0;CMP	$-0x1,%RAX;
+0x18bfb6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:454;MOV	%RAX,%R15;
+0x18bfb9;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:455;JE	18c185 <float_richcompare+0x3c5>;
+0x18bfbf;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:468;CMP	$0x30,%RAX;
+0x18bfc3;:0;JBE	18c1b3 <float_richcompare+0x3f3>;
+0x18bfc9;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:479;CMP	$-0x1,%R13D;
+0x18bfcd;:0;JNE	18bfe1 <float_richcompare+0x221>;
+0x18bfcf;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:484;MOV	0x3d2e4a(%RIP),%RAX;
+0x18bfd6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:483;VXORPD	0x24b242(%RIP),%XMM1,%XMM1;
+0x18bfde;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:484;MOV	(%RAX,%RBX,4),%EBX;
+0x18bfe1;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:487;LEA	-0x44(%RBP),%RDI;
+0x18bfe5;:0;VMOVAPD	%XMM1,%XMM0;
+0x18bfe9;:0;VMOVSD	%XMM1,-0x58(%RBP);
+0x18bfee;:0;CALL	106360 <frexp@plt>;
+0x18bff3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:491;MOVSXD	-0x44(%RBP),%RAX;
+0x18bff7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:491;TEST	%EAX,%EAX;
+0x18bff9;:0;JS	18c170 <float_richcompare+0x3b0>;
+0x18bfff;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:491;CMP	%R15,%RAX;
+0x18c002;:0;JB	18c170 <float_richcompare+0x3b0>;
+0x18c008;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:496;CMP	%RAX,%R15;
+0x18c00b;:0;JB	18c1ca <float_richcompare+0x40a>;
+0x18c011;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:512;CMP	$-0x1,%R13D;
+0x18c015;:0;VMOVSD	-0x58(%RBP),%XMM1;
+0x18c01a;:0;JE	18c1f1 <float_richcompare+0x431>;
+0x18c020;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:644;MOV	(%R12),%EAX;
+0x18c024;:0;INC	%EAX;
+0x18c026;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:644;JE	18c02c <float_richcompare+0x26c>;
+0x18c028;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:647;MOV	%EAX,(%R12);
+0x18c02c;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:520;LEA	-0x40(%RBP),%RDI;
+0x18c030;:0;VMOVAPD	%XMM1,%XMM0;
+0x18c034;:0;CALL	10adc0 <modf@plt>;
+0x18c039;:0;VMOVQ	%XMM0,%R13;
+0x18c03e;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:521;VMOVSD	-0x40(%RBP),%XMM0;
+0x18c043;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:521;CALL	107240 <PyLong_FromDouble@plt>;
+0x18c048;:0;MOV	%RAX,%R14;
+0x18c04b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:522;TEST	%RAX,%RAX;
+0x18c04e;:0;JE	18c20f <float_richcompare+0x44f>;
+0x18c054;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:525;VXORPD	%XMM0,%XMM0,%XMM0;
+0x18c058;:0;VMOVQ	%R13,%XMM4;
+0x18c05d;:0;VUCOMISD	%XMM0,%XMM4;
+0x18c061;:0;JP	18c069 <float_richcompare+0x2a9>;
+0x18c063;:0;JE	18c0fd <float_richcompare+0x33d>;
+0x18c069;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:531;MOV	$0x1,%ESI;
+0x18c06e;:0;MOV	%R12,%RDI;
+0x18c071;:0;CALL	10a6b0 <_PyLong_Lshift@plt>;
+0x18c076;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:531;MOV	%RAX,%R13;
+0x18c079;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:532;TEST	%RAX,%RAX;
+0x18c07c;:0;JE	18c1df <float_richcompare+0x41f>;
+0x18c082;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:243;MOV	(%R12),%RAX;
+0x18c086;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EAX,%EAX;
+0x18c088;:0;JS	18c097 <float_richcompare+0x2d7>;
+0x18c08a;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;DEC	%RAX;
+0x18c08d;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;MOV	%RAX,(%R12);
+0x18c091;:0;JE	18c22b <float_richcompare+0x46b>;
+0x18c097;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:536;MOV	$0x1,%ESI;
+0x18c09c;:0;MOV	%R14,%RDI;
+0x18c09f;:0;CALL	10a6b0 <_PyLong_Lshift@plt>;
+0x18c0a4;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:243;MOV	(%R14),%RDX;
+0x18c0a7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:536;MOV	%RAX,%R12;
+0x18c0aa;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:537;TEST	%RAX,%RAX;
+0x18c0ad;:0;JE	18c252 <float_richcompare+0x492>;
+0x18c0b3;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EDX,%EDX;
+0x18c0b5;:0;JS	18c0c3 <float_richcompare+0x303>;
+0x18c0b7;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;DEC	%RDX;
+0x18c0ba;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;MOV	%RDX,(%R14);
+0x18c0bd;:0;JE	18c264 <float_richcompare+0x4a4>;
+0x18c0c3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:541;MOV	0x3d2c36(%RIP),%RAX;
+0x18c0ca;:0;MOV	%R12,%RDI;
+0x18c0cd;:0;LEA	0xce8(%RAX),%RSI;
+0x18c0d4;:0;CALL	10a310 <PyNumber_Or@plt>;
+0x18c0d9;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:243;MOV	(%R12),%RDX;
+0x18c0dd;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:542;TEST	%RAX,%RAX;
+0x18c0e0;:0;JE	18c271 <float_richcompare+0x4b1>;
+0x18c0e6;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EDX,%EDX;
+0x18c0e8;:0;JS	18c0f7 <float_richcompare+0x337>;
+0x18c0ea;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;DEC	%RDX;
+0x18c0ed;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;MOV	%RDX,(%R12);
+0x18c0f1;:0;JE	18c23d <float_richcompare+0x47d>;
+0x18c0f7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:534;MOV	%R13,%R12;(763) 
+0x18c0fa;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:544;MOV	%RAX,%R14;(763) 
+0x18c0fd;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:547;MOV	%EBX,%EDX;(763) 
+0x18c0ff;:0;MOV	%R12,%RSI;(763) 
+0x18c102;:0;MOV	%R14,%RDI;(763) 
+0x18c105;:0;CALL	10aa90 <PyObject_RichCompareBool@plt>;(763) 
+0x18c10a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:548;TEST	%EAX,%EAX;(763) 
+0x18c10c;:0;JS	18c1df <float_richcompare+0x41f>;(763) 
+0x18c112;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:550;MOVSXD	%EAX,%RDI;(763) 
+0x18c115;:0;CALL	106e00 <PyBool_FromLong@plt>;(763) 
+0x18c11a;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:243;MOV	(%R14),%RDX;(763) 
+0x18c11d;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EDX,%EDX;(763) 
+0x18c11f;:0;JS	18c12d <float_richcompare+0x36d>;(763) 
+0x18c121;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;DEC	%RDX;(763) 
+0x18c124;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;MOV	%RDX,(%R14);(763) 
+0x18c127;:0;JE	18c216 <float_richcompare+0x456>;(763) 
+0x18c12d;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:243;MOV	(%R12),%RDX;(763) 
+0x18c131;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EDX,%EDX;(763) 
+0x18c133;:0;JS	18bf64 <float_richcompare+0x1a4>;(763) 
+0x18c139;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;DEC	%RDX;(763) 
+0x18c13c;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;MOV	%RDX,(%R12);(763) 
+0x18c140;:0;JNE	18bf64 <float_richcompare+0x1a4>;(763) 
+0x18c146;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;MOV	%R12,%RDI;(763) 
+0x18c149;:0;MOV	%RAX,-0x58(%RBP);(763) 
+0x18c14d;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;CALL	10a620 <_Py_Dealloc@plt>;(763) 
+0x18c152;:0;MOV	-0x58(%RBP),%RAX;(763) 
+0x18c156;:0;JMP	18bf64 <float_richcompare+0x1a4>;(763) 
+0x18c15b;:0;NOPL	(%RAX,%RAX,1);
+0x18c160;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;XOR	%R14D,%R14D;
+0x18c163;:0;JMP	18be84 <float_richcompare+0xc4>;
+0x18c168;:0;NOPL	(%RAX,%RAX,1);
+0x18c170;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:493;VMOVSD	0x24a9c0(%RIP),%XMM0;
+0x18c178;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:492;VMOVSD	0x24b090(%RIP),%XMM1;
+0x18c180;:0;JMP	18be15 <float_richcompare+0x55>;
+0x18c185;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:455;CALL	107dd0 <PyErr_Occurred@plt>;
+0x18c18a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:455;VMOVSD	-0x58(%RBP),%XMM1;
+0x18c18f;:0;TEST	%RAX,%RAX;
+0x18c192;:0;JE	18bfc9 <float_richcompare+0x209>;
+0x18c198;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:462;CALL	10a780 <PyErr_Clear@plt>;
+0x18c19d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:463;VXORPD	%XMM5,%XMM5,%XMM5;
+0x18c1a1;:0;VCVTSI2SD	%R14D,%XMM5,%XMM0;
+0x18c1a6;:0;VMOVAPD	%XMM0,%XMM1;
+0x18c1aa;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:465;VADDSD	%XMM0,%XMM0,%XMM0;
+0x18c1ae;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:466;JMP	18be15 <float_richcompare+0x55>;
+0x18c1b3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:469;MOV	%R12,%RDI;
+0x18c1b6;:0;VMOVSD	%XMM1,-0x58(%RBP);
+0x18c1bb;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:469;CALL	107f70 <PyLong_AsDouble@plt>;
+0x18c1c0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:472;VMOVSD	-0x58(%RBP),%XMM1;
+0x18c1c5;:0;JMP	18be15 <float_richcompare+0x55>;
+0x18c1ca;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:498;VMOVSD	0x24b03e(%RIP),%XMM0;
+0x18c1d2;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:497;VMOVSD	0x24a95e(%RIP),%XMM1;
+0x18c1da;:0;JMP	18be15 <float_richcompare+0x55>;
+0x18c1df;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:243;MOV	(%R14),%RDX;(763) 
+0x18c1e2;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:508;XOR	%EAX,%EAX;(763) 
+0x18c1e4;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EDX,%EDX;(763) 
+0x18c1e6;:0;JNS	18c121 <float_richcompare+0x361>;(763) 
+0x18c1ec;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;JMP	18c12d <float_richcompare+0x36d>;(763) 
+0x18c1f1;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:513;MOV	%R12,%RDI;
+0x18c1f4;:0;CALL	107590 <PyNumber_Negative@plt>;
+0x18c1f9;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:514;TEST	%RAX,%RAX;
+0x18c1fc;:0;JE	18bf64 <float_richcompare+0x1a4>;
+0x18c202;:0;VMOVSD	-0x58(%RBP),%XMM1;
+0x18c207;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:513;MOV	%RAX,%R12;
+0x18c20a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:513;JMP	18c02c <float_richcompare+0x26c>;
+0x18c20f;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:508;XOR	%EAX,%EAX;
+0x18c211;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:508;JMP	18c12d <float_richcompare+0x36d>;
+0x18c216;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;MOV	%R14,%RDI;(763) 
+0x18c219;:0;MOV	%RAX,-0x58(%RBP);(763) 
+0x18c21d;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;CALL	10a620 <_Py_Dealloc@plt>;(763) 
+0x18c222;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:798;MOV	-0x58(%RBP),%RAX;(763) 
+0x18c226;:0;JMP	18c12d <float_richcompare+0x36d>;(763) 
+0x18c22b;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;MOV	%R12,%RDI;
+0x18c22e;:0;CALL	10a620 <_Py_Dealloc@plt>;
+0x18c233;:0;JMP	18c097 <float_richcompare+0x2d7>;
+0x18c238;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:586;CALL	109c10 <__stack_chk_fail@plt>;(763) 
+0x18c23d;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;MOV	%R12,%RDI;(763) 
+0x18c240;:0;MOV	%RAX,-0x58(%RBP);(763) 
+0x18c244;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;CALL	10a620 <_Py_Dealloc@plt>;(763) 
+0x18c249;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;MOV	-0x58(%RBP),%RAX;(763) 
+0x18c24d;:0;JMP	18c0f7 <float_richcompare+0x337>;(763) 
+0x18c252;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:534;MOV	%R13,%R12;
+0x18c255;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:508;XOR	%EAX,%EAX;
+0x18c257;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EDX,%EDX;
+0x18c259;:0;JNS	18c121 <float_richcompare+0x361>;
+0x18c25f;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;JMP	18c12d <float_richcompare+0x36d>;
+0x18c264;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;MOV	%R14,%RDI;
+0x18c267;:0;CALL	10a620 <_Py_Dealloc@plt>;
+0x18c26c;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;JMP	18c0c3 <float_richcompare+0x303>;
+0x18c271;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EDX,%EDX;
+0x18c273;:0;JS	18c280 <float_richcompare+0x4c0>;
+0x18c275;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:539;MOV	%R12,%R14;
+0x18c278;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:534;MOV	%R13,%R12;
+0x18c27b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:534;JMP	18c121 <float_richcompare+0x361>;
+0x18c280;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:534;MOV	%R13,%R12;
+0x18c283;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:534;JMP	18c12d <float_richcompare+0x36d>;
+0x18c288;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/floatobject.c:534;NOPL	(%RAX,%RAX,1);

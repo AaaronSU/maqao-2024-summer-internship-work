@@ -1,0 +1,160 @@
+address;source_location;insn;indent
+0x5c63a0;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1184;PUSH	%R15;
+0x5c63a2;:0;PUSH	%R14;
+0x5c63a4;:0;PUSH	%R13;
+0x5c63a6;:0;PUSH	%R12;
+0x5c63a8;:0;MOV	%RDI,%R12;
+0x5c63ab;:0;PUSH	%RBP;
+0x5c63ac;:0;PUSH	%RBX;
+0x5c63ad;:0;PUSH	%R8;
+0x5c63af;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1098;MOV	0x8(%RDI),%RDI;
+0x5c63b3;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1190;CMP	%RSI,%R12;
+0x5c63b6;:0;JE	5c65a0 <set_intersection+0x200>;
+0x5c63bc;:0;MOV	%RSI,%R14;
+0x5c63bf;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1193;XOR	%ESI,%ESI;
+0x5c63c1;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1193;CALL	5c65c0 <make_new_set_basetype>;
+0x5c63c6;:0;MOV	%RAX,%R13;
+0x5c63c9;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1194;TEST	%RAX,%RAX;
+0x5c63cc;:0;JE	5c6575 <set_intersection+0x1d5>;
+0x5c63d2;/usr/local/src/conda/python-3.9.19/Include/object.h:128;MOV	0x8(%R14),%R9;
+0x5c63d6;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1197;CMP	$0x73a380,%R9;
+0x5c63dd;:0;JE	5c6480 <set_intersection+0xe0>;
+0x5c63e3;:0;CMP	$0x73a520,%R9;
+0x5c63ea;:0;JE	5c6480 <set_intersection+0xe0>;
+0x5c63f0;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1197;MOV	$0x73a520,%ESI;
+0x5c63f5;:0;MOV	%R9,%RDI;
+0x5c63f8;:0;CALL	4db300 <PyType_IsSubtype>;
+0x5c63fd;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1197;TEST	%EAX,%EAX;
+0x5c63ff;:0;JNE	5c6480 <set_intersection+0xe0>;
+0x5c6401;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1197;MOV	$0x73a380,%ESI;
+0x5c6406;:0;MOV	%R9,%RDI;
+0x5c6409;:0;CALL	4db300 <PyType_IsSubtype>;
+0x5c640e;:0;TEST	%EAX,%EAX;
+0x5c6410;:0;JNE	5c6480 <set_intersection+0xe0>;
+0x5c6412;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1229;MOV	%R14,%RDI;
+0x5c6415;:0;CALL	4f8430 <PyObject_GetIter>;
+0x5c641a;:0;MOV	%RAX,%R15;
+0x5c641d;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1230;TEST	%RAX,%RAX;
+0x5c6420;:0;JE	5c658d <set_intersection+0x1ed>;
+0x5c6426;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1235;MOV	%R15,%RDI;(2916) 
+0x5c6429;:0;CALL	50a5e0 <PyIter_Next>;(2916) 
+0x5c642e;:0;MOV	%RAX,%RBP;(2916) 
+0x5c6431;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1235;TEST	%RAX,%RAX;(2916) 
+0x5c6434;:0;JE	5c650c <set_intersection+0x16c>;(2916) 
+0x5c643a;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1236;MOV	%RBP,%RDI;(2916) 
+0x5c643d;:0;CALL	4d5150 <PyObject_Hash>;(2916) 
+0x5c6442;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1236;MOV	%RAX,%R14;(2916) 
+0x5c6445;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1237;CMP	$-0x1,%RAX;(2916) 
+0x5c6449;:0;JE	5c6550 <set_intersection+0x1b0>;(2916) 
+0x5c644f;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:301;MOV	%RAX,%RDX;(2916) 
+0x5c6452;:0;MOV	%RBP,%RSI;(2916) 
+0x5c6455;:0;MOV	%R12,%RDI;(2916) 
+0x5c6458;:0;CALL	51a9a0 <set_lookkey>;(2916) 
+0x5c645d;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:302;TEST	%RAX,%RAX;(2916) 
+0x5c6460;:0;JE	5c6550 <set_intersection+0x1b0>;(2916) 
+0x5c6466;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1242;CMPQ	$0,(%RAX);(2916) 
+0x5c646a;:0;JNE	5c653a <set_intersection+0x19a>;(2916) 
+0x5c6470;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RBP);(2916) 
+0x5c6474;:0;JNE	5c6426 <set_intersection+0x86>;(2916) 
+0x5c6476;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%RBP,%RDI;(2916) 
+0x5c6479;:0;CALL	4d6450 <_Py_Dealloc>;(2916) 
+0x5c647e;:0;JMP	5c6426 <set_intersection+0x86>;(2916) 
+0x5c6480;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1201;MOV	0x18(%R12),%RAX;
+0x5c6485;:0;CMP	%RAX,0x18(%R14);
+0x5c6489;:0;JG	5c6532 <set_intersection+0x192>;
+0x5c648f;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1198;XOR	%R15D,%R15D;
+0x5c6492;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:455;MOV	%R15,%RCX;(2915) 
+0x5c6495;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:454;MOV	0x20(%R14),%RDX;(2915) 
+0x5c6499;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:455;SAL	$0x4,%RCX;(2915) 
+0x5c649d;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:455;ADD	0x28(%R14),%RCX;(2915) 
+0x5c64a1;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:456;CMP	%R15,%RDX;  (2914) 
+0x5c64a4;:0;JL	5c6523 <set_intersection+0x183>;  (2914) 
+0x5c64a6;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:456;MOV	(%RCX),%RBP;  (2914) 
+0x5c64a9;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:457;INC	%R15;  (2914) 
+0x5c64ac;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:456;TEST	%RBP,%RBP;  (2914) 
+0x5c64af;:0;JE	5c64ba <set_intersection+0x11a>;  (2914) 
+0x5c64b1;:0;CMP	$0x73a6e0,%RBP;  (2914) 
+0x5c64b8;:0;JNE	5c64c0 <set_intersection+0x120>;  (2914) 
+0x5c64ba;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:458;ADD	$0x10,%RCX;  (2914) 
+0x5c64be;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:458;JMP	5c64a1 <set_intersection+0x101>;  (2914) 
+0x5c64c0;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1209;MOV	0x8(%RCX),%RBX;(2915) 
+0x5c64c4;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RBP);(2915) 
+0x5c64c8;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:301;MOV	%RBP,%RSI;(2915) 
+0x5c64cb;:0;MOV	%R12,%RDI;(2915) 
+0x5c64ce;:0;MOV	%RBX,%RDX;(2915) 
+0x5c64d1;:0;CALL	51a9a0 <set_lookkey>;(2915) 
+0x5c64d6;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:302;TEST	%RAX,%RAX;(2915) 
+0x5c64d9;:0;JE	5c65b0 <set_intersection+0x210>;(2915) 
+0x5c64df;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1217;CMPQ	$0,(%RAX);(2915) 
+0x5c64e3;:0;JNE	5c64f5 <set_intersection+0x155>;(2915) 
+0x5c64e5;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RBP);(2915) 
+0x5c64e9;:0;JNE	5c6492 <set_intersection+0xf2>;(2915) 
+0x5c64eb;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%RBP,%RDI;(2915) 
+0x5c64ee;:0;CALL	4d6450 <_Py_Dealloc>;(2915) 
+0x5c64f3;:0;JMP	5c6492 <set_intersection+0xf2>;(2915) 
+0x5c64f5;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1218;MOV	%RBX,%RDX;(2915) 
+0x5c64f8;:0;MOV	%RBP,%RSI;(2915) 
+0x5c64fb;:0;MOV	%R13,%RDI;(2915) 
+0x5c64fe;:0;CALL	50a170 <set_add_entry>;(2915) 
+0x5c6503;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1218;TEST	%EAX,%EAX;(2915) 
+0x5c6505;:0;JE	5c64e5 <set_intersection+0x145>;(2915) 
+0x5c6507;:0;JMP	45dd74 <set_intersection.cold>;
+0x5c650c;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%R15);
+0x5c650f;:0;JNE	5c6519 <set_intersection+0x179>;
+0x5c6511;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%R15,%RDI;
+0x5c6514;:0;CALL	4d6450 <_Py_Dealloc>;
+0x5c6519;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1249;CALL	4d9220 <PyErr_Occurred>;
+0x5c651e;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1249;TEST	%RAX,%RAX;
+0x5c6521;:0;JNE	5c657a <set_intersection+0x1da>;
+0x5c6523;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1259;POP	%RDX;
+0x5c6524;:0;MOV	%R13,%RAX;
+0x5c6527;:0;POP	%RBX;
+0x5c6528;:0;POP	%RBP;
+0x5c6529;:0;POP	%R12;
+0x5c652b;:0;POP	%R13;
+0x5c652d;:0;POP	%R14;
+0x5c652f;:0;POP	%R15;
+0x5c6531;:0;RET;
+0x5c6532;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1201;XCHG	%R12,%R14;
+0x5c6535;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1201;JMP	5c648f <set_intersection+0xef>;
+0x5c653a;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1243;MOV	%R14,%RDX;(2916) 
+0x5c653d;:0;MOV	%RBP,%RSI;(2916) 
+0x5c6540;:0;MOV	%R13,%RDI;(2916) 
+0x5c6543;:0;CALL	50a170 <set_add_entry>;(2916) 
+0x5c6548;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1243;TEST	%EAX,%EAX;(2916) 
+0x5c654a;:0;JE	5c6470 <set_intersection+0xd0>;(2916) 
+0x5c6550;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%R15);
+0x5c6553;:0;JNE	5c655d <set_intersection+0x1bd>;
+0x5c6555;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%R15,%RDI;
+0x5c6558;:0;CALL	4d6450 <_Py_Dealloc>;
+0x5c655d;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%R13);
+0x5c6561;:0;JNE	5c656b <set_intersection+0x1cb>;
+0x5c6563;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%R13,%RDI;
+0x5c6566;:0;CALL	4d6450 <_Py_Dealloc>;
+0x5c656b;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RBP);
+0x5c656f;:0;JE	45dd9c <set_intersection.cold+0x28>;
+0x5c6575;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1195;XOR	%R13D,%R13D;
+0x5c6578;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1195;JMP	5c6523 <set_intersection+0x183>;
+0x5c657a;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%R13);
+0x5c657e;:0;JNE	5c6575 <set_intersection+0x1d5>;
+0x5c6580;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%R13,%RDI;
+0x5c6583;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1251;XOR	%R13D,%R13D;
+0x5c6586;/usr/local/src/conda/python-3.9.19/Include/object.h:430;CALL	4d6450 <_Py_Dealloc>;
+0x5c658b;/usr/local/src/conda/python-3.9.19/Include/object.h:430;JMP	5c6523 <set_intersection+0x183>;
+0x5c658d;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%R13);
+0x5c6591;:0;JNE	5c6575 <set_intersection+0x1d5>;
+0x5c6593;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%R13,%RDI;
+0x5c6596;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1232;XOR	%R13D,%R13D;
+0x5c6599;/usr/local/src/conda/python-3.9.19/Include/object.h:430;CALL	4d6450 <_Py_Dealloc>;
+0x5c659e;/usr/local/src/conda/python-3.9.19/Include/object.h:430;JMP	5c6523 <set_intersection+0x183>;
+0x5c65a0;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1259;POP	%RCX;
+0x5c65a1;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1098;MOV	%R12,%RSI;
+0x5c65a4;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1259;POP	%RBX;
+0x5c65a5;:0;POP	%RBP;
+0x5c65a6;:0;POP	%R12;
+0x5c65a8;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1259;POP	%R13;
+0x5c65aa;:0;POP	%R14;
+0x5c65ac;:0;POP	%R15;
+0x5c65ae;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1098;JMP	5c65c0 <make_new_set_basetype>;
+0x5c65b0;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1098;JMP	45ddac <set_intersection.cold+0x38>;
+0x5c65b5;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1098;NOPW	%CS:(%RAX,%RAX,1);

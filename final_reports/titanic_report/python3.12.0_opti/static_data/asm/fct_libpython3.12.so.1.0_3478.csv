@@ -1,0 +1,132 @@
+address;source_location;insn;indent
+0x2d09c0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:284;PUSH	%RBP;
+0x2d09c1;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:284;MOV	%RSP,%RBP;
+0x2d09c4;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:284;PUSH	%R15;
+0x2d09c6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:284;PUSH	%R14;
+0x2d09c8;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:284;PUSH	%R13;
+0x2d09ca;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:284;PUSH	%R12;
+0x2d09cc;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:284;PUSH	%RBX;
+0x2d09cd;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:284;SUB	$0x28,%RSP;
+0x2d09d1;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:294;MOV	0x10(%RDI),%RBX;
+0x2d09d5;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:295;MOV	0x10(%RBX),%EAX;
+0x2d09d8;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:295;TEST	%EAX,%EAX;
+0x2d09da;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:295;JE	2d0bc9 <drop_gil+0x209>;
+0x2d09e0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:295;MOV	%RDI,%R13;
+0x2d09e3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:295;MOV	%RSI,%R12;
+0x2d09e6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:300;TEST	%RSI,%RSI;
+0x2d09e9;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:300;JE	2d09ef <drop_gil+0x2f>;
+0x2d09eb;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:304;MOV	%RSI,0x8(%RBX);
+0x2d09ef;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:307;LEA	0x50(%RBX),%R14;
+0x2d09f3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:307;MOV	%R14,%RDI;
+0x2d09f6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:307;CALL	10af70 <pthread_mutex_lock@plt>;
+0x2d09fb;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:307;TEST	%EAX,%EAX;
+0x2d09fd;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:307;JNE	2d0bb6 <drop_gil+0x1f6>;
+0x2d0a03;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:309;MOVL	$0,0x10(%RBX);
+0x2d0a0a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:310;LEA	0x20(%RBX),%RDI;
+0x2d0a0e;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:310;CALL	106c30 <pthread_cond_signal@plt>;
+0x2d0a13;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:310;TEST	%EAX,%EAX;
+0x2d0a15;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:310;JNE	2d0ba3 <drop_gil+0x1e3>;
+0x2d0a1b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:311;MOV	%R14,%RDI;
+0x2d0a1e;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:311;CALL	10b440 <pthread_mutex_unlock@plt>;
+0x2d0a23;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:311;TEST	%EAX,%EAX;
+0x2d0a25;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:311;JNE	2d0b90 <drop_gil+0x1d0>;
+0x2d0a2b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:322;TEST	%R12,%R12;
+0x2d0a2e;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:322;JE	2d0a38 <drop_gil+0x78>;
+0x2d0a30;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:322;MOV	0x4(%R13),%EAX;
+0x2d0a34;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:322;TEST	%EAX,%EAX;
+0x2d0a36;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:322;JNE	2d0a50 <drop_gil+0x90>;
+0x2d0a38;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;ADD	$0x28,%RSP;
+0x2d0a3c;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;POP	%RBX;
+0x2d0a3d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;POP	%R12;
+0x2d0a3f;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;POP	%R13;
+0x2d0a41;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;POP	%R14;
+0x2d0a43;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;POP	%R15;
+0x2d0a45;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;POP	%RBP;
+0x2d0a46;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;RET;
+0x2d0a47;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:338;NOPW	(%RAX,%RAX,1);
+0x2d0a50;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;LEA	0xa8(%RBX),%R13;
+0x2d0a57;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;MOV	%R13,%RDI;
+0x2d0a5a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;CALL	10af70 <pthread_mutex_lock@plt>;
+0x2d0a5f;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;MOV	%EAX,%R14D;
+0x2d0a62;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;TEST	%EAX,%EAX;
+0x2d0a64;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;JNE	2d0bdc <drop_gil+0x21c>;
+0x2d0a6a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:325;MOV	0x8(%RBX),%RAX;
+0x2d0a6e;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:325;CMP	%RAX,%R12;
+0x2d0a71;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:325;JE	2d0a98 <drop_gil+0xd8>;
+0x2d0a73;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:335;MOV	%R13,%RDI;(3358) 
+0x2d0a76;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:335;CALL	10b440 <pthread_mutex_unlock@plt>;(3358) 
+0x2d0a7b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:335;TEST	%EAX,%EAX;(3358) 
+0x2d0a7d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:335;JE	2d0a38 <drop_gil+0x78>;(3358) 
+0x2d0a7f;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:335;LEA	0xfe662(%RIP),%RSI;(3358) 
+0x2d0a86;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:335;LEA	0x14363b(%RIP),%RDI;(3358) 
+0x2d0a8d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:335;CALL	1077f0 <_Py_FatalErrorFunc@plt>;(3358) 
+0x2d0a92;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:335;NOPW	(%RAX,%RAX,1);(3358) 
+0x2d0a98;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:328;MOV	0x10(%R12),%R15;(3358) 
+0x2d0a9d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:91;MOV	0x60(%R15),%R12;(3358) 
+0x2d0aa1;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:93;MOVL	$0,0x174(%R15);(3358) 
+0x2d0aac;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	0x174(%R15),%EAX;(3358) 
+0x2d0ab3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	%EAX,-0x34(%RBP);(3358) 
+0x2d0ab6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	0x7d8(%R12),%EAX;(3358) 
+0x2d0abe;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;TEST	%EAX,%EAX;(3358) 
+0x2d0ac0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;JNE	2d0b40 <drop_gil+0x180>;(3358) 
+0x2d0ac2;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	0x28e237(%RIP),%RSI;(3358) 
+0x2d0ac9;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOVL	$0,-0x44(%RBP);  (3359) 
+0x2d0ad0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	%RSI,-0x40(%RBP);  (3359) 
+0x2d0ad4;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	0x1a0(%R15),%EAX;  (3359) 
+0x2d0adb;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	%EAX,-0x38(%RBP);  (3359) 
+0x2d0ade;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:19;CALL	1086f0 <PyThread_get_thread_ident@plt>;  (3359) 
+0x2d0ae3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	-0x40(%RBP),%RSI;  (3359) 
+0x2d0ae7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;CMP	0x40(%RSI),%RAX;  (3359) 
+0x2d0aeb;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;JE	2d0b70 <drop_gil+0x1b0>;  (3359) 
+0x2d0af1;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	-0x34(%RBP),%EAX;  (3359) 
+0x2d0af4;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	-0x44(%RBP),%ECX;  (3359) 
+0x2d0af7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;LEA	0x78(%RBX),%RDI;  (3359) 
+0x2d0afb;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;MOV	%R13,%RSI;  (3359) 
+0x2d0afe;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	-0x38(%RBP),%EDX;  (3359) 
+0x2d0b01;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;OR	0x1a4(%R15),%EAX;  (3359) 
+0x2d0b08;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;OR	%ECX,%EAX;  (3359) 
+0x2d0b0a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;OR	%EDX,%EAX;  (3359) 
+0x2d0b0c;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	0x18c(%R15),%EDX;  (3359) 
+0x2d0b13;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;OR	%R14D,%EAX;  (3359) 
+0x2d0b16;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;OR	%EDX,%EAX;  (3359) 
+0x2d0b18;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	%EAX,0x170(%R15);  (3359) 
+0x2d0b1f;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;CALL	10a350 <pthread_cond_wait@plt>;  (3359) 
+0x2d0b24;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;TEST	%EAX,%EAX;  (3359) 
+0x2d0b26;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;JE	2d0a73 <drop_gil+0xb3>;  (3359) 
+0x2d0b2c;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;LEA	0xfe58d(%RIP),%RSI;  (3359) 
+0x2d0b33;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;LEA	0x14358e(%RIP),%RDI;  (3359) 
+0x2d0b3a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;CALL	1077f0 <_Py_FatalErrorFunc@plt>;  (3359) 
+0x2d0b3f;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:333;NOP;  (3359) 
+0x2d0b40;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:19;CALL	1086f0 <PyThread_get_thread_ident@plt>;  (3359) 
+0x2d0b45;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:20;MOV	0x28e1b4(%RIP),%RSI;  (3359) 
+0x2d0b4c;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:59;CMP	0x40(%RSI),%RAX;  (3359) 
+0x2d0b50;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:59;JNE	2d0ac9 <drop_gil+0x109>;  (3359) 
+0x2d0b56;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:59;XOR	%EAX,%EAX;  (3359) 
+0x2d0b58;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:59;CMP	%R15,0x30(%RSI);  (3359) 
+0x2d0b5c;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:59;SETE	%AL;  (3359) 
+0x2d0b5f;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:59;MOV	%EAX,-0x44(%RBP);  (3359) 
+0x2d0b62;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:59;JMP	2d0ad0 <drop_gil+0x110>;  (3359) 
+0x2d0b67;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/internal/pycore_pystate.h:59;NOPW	(%RAX,%RAX,1);
+0x2d0b70;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;CMP	0x30(%RSI),%R15;  (3359) 
+0x2d0b74;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;JNE	2d0af1 <drop_gil+0x131>;  (3359) 
+0x2d0b7a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;MOV	0x7f0(%R12),%EAX;  (3359) 
+0x2d0b82;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;XOR	%R14D,%R14D;  (3359) 
+0x2d0b85;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;TEST	%EAX,%EAX;  (3359) 
+0x2d0b87;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;SETNE	%R14B;  (3359) 
+0x2d0b8b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:67;JMP	2d0af1 <drop_gil+0x131>;  (3359) 
+0x2d0b90;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:311;LEA	0xfe4d9(%RIP),%RSI;
+0x2d0b97;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:311;LEA	0x14352a(%RIP),%RDI;
+0x2d0b9e;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:311;CALL	1077f0 <_Py_FatalErrorFunc@plt>;
+0x2d0ba3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:310;LEA	0xfe4a6(%RIP),%RSI;
+0x2d0baa;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:310;LEA	0x143517(%RIP),%RDI;
+0x2d0bb1;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:310;CALL	1077f0 <_Py_FatalErrorFunc@plt>;
+0x2d0bb6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:307;LEA	0xfe473(%RIP),%RSI;
+0x2d0bbd;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:307;LEA	0x143504(%RIP),%RDI;
+0x2d0bc4;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:307;CALL	1077f0 <_Py_FatalErrorFunc@plt>;
+0x2d0bc9;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:296;LEA	0xdea24(%RIP),%RSI;
+0x2d0bd0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:296;LEA	0x1434f1(%RIP),%RDI;
+0x2d0bd7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:296;CALL	1077f0 <_Py_FatalErrorFunc@plt>;
+0x2d0bdc;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;LEA	0xfe4b5(%RIP),%RSI;
+0x2d0be3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;LEA	0x1434de(%RIP),%RDI;
+0x2d0bea;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/ceval_gil.c:323;CALL	1077f0 <_Py_FatalErrorFunc@plt>;
+0x2d0bef;:0;NOP;

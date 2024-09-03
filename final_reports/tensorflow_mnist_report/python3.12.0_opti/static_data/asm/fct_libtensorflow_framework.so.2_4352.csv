@@ -1,0 +1,127 @@
+address;source_location;insn;indent
+0x624f550;:0;PUSH	%RBP;
+0x624f551;:0;MOV	%RSP,%RBP;
+0x624f554;:0;PUSH	%R15;
+0x624f556;:0;PUSH	%R14;
+0x624f558;:0;PUSH	%RBX;
+0x624f559;:0;SUB	$0x198,%RSP;
+0x624f560;:0;MOV	%RSI,%RBX;
+0x624f563;:0;MOV	%RDI,%R15;
+0x624f566;:0;MOV	%FS:0x28,%RAX;
+0x624f56f;:0;MOV	%RAX,-0x20(%RBP);
+0x624f573;:0;MOV	0x120(%RDI),%RDI;
+0x624f57a;:0;LEA	0x98(%R15),%RSI;
+0x624f581;:0;MOV	%RBX,%RDX;
+0x624f584;:0;XOR	%ECX,%ECX;
+0x624f586;:0;CALL	763cd20 <_ZNK10tensorflow29ProcessFunctionLibraryRuntime17GetHandleOnDeviceERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmb@plt>;
+0x624f58b;:0;CMP	$-0x1,%RAX;
+0x624f58f;:0;JE	624f67d <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0x12d>;
+0x624f595;:0;MOV	%RAX,%R14;
+0x624f598;:0;LEA	0xf8(%R15),%RBX;
+0x624f59f;:0;MOV	%RBX,%RDI;
+0x624f5a2;:0;CALL	76329b0 <_ZN3tsl5mutex11lock_sharedEv@plt>;
+0x624f5a7;:0;MOV	0x110(%R15),%RSI;
+0x624f5ae;:0;MOV	(%RSI),%RCX;
+0x624f5b1;:0;MOV	0x14c0cb0(%RIP),%RAX;
+0x624f5b8;:0;ADD	%R14,%RAX;
+0x624f5bb;:0;MOV	$-0x622015f714c7d297,%RDX;
+0x624f5c5;:0;MUL	%RDX;
+0x624f5c8;:0;PREFETCHT2	(%RCX);
+0x624f5cb;:0;XOR	%RAX,%RDX;
+0x624f5ce;:0;MOV	0x8(%RSI),%RAX;
+0x624f5d2;:0;MOV	0x10(%RSI),%RSI;
+0x624f5d6;:0;MOV	%RDX,%R8;
+0x624f5d9;:0;SHR	$0x7,%R8;
+0x624f5dd;:0;MOV	%RCX,%RDI;
+0x624f5e0;:0;SHR	$0xc,%RDI;
+0x624f5e4;:0;XOR	%R8,%RDI;
+0x624f5e7;:0;AND	$0x7f,%DL;
+0x624f5ea;:0;VMOVD	%EDX,%XMM0;
+0x624f5ee;:0;VPXOR	%XMM1,%XMM1,%XMM1;
+0x624f5f2;:0;VPSHUFB	%XMM1,%XMM0,%XMM0;
+0x624f5f7;:0;XOR	%EDX,%EDX;
+0x624f5f9;:0;AND	%RSI,%RDI;(5271) 
+0x624f5fc;:0;VMOVDQU	(%RCX,%RDI,1),%XMM1;(5271) 
+0x624f601;:0;VPCMPEQB	%XMM1,%XMM0,%XMM2;(5271) 
+0x624f605;:0;VPMOVMSKB	%XMM2,%R8D;(5271) 
+0x624f609;:0;TEST	%R8D,%R8D;(5271) 
+0x624f60c;:0;JE	624f640 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0xf0>;(5271) 
+0x624f60e;:0;MOVZX	%R8W,%R8D;(5271) 
+0x624f612;:0;TZCNT	%R8D,%R9D;  (5272) 
+0x624f617;:0;ADD	%RDI,%R9;  (5272) 
+0x624f61a;:0;AND	%RSI,%R9;  (5272) 
+0x624f61d;:0;SAL	$0x4,%R9;  (5272) 
+0x624f621;:0;CMP	%R14,(%RAX,%R9,1);  (5272) 
+0x624f625;:0;JE	624f65f <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0x10f>;  (5272) 
+0x624f627;:0;LEA	-0x1(%R8),%R9D;  (5272) 
+0x624f62b;:0;AND	%R8D,%R9D;  (5272) 
+0x624f62e;:0;MOV	%R9D,%R8D;  (5272) 
+0x624f631;:0;JNE	624f612 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0xc2>;  (5272) 
+0x624f633;:0;NOPW	%CS:(%RAX,%RAX,1);(5271) 
+0x624f640;:0;VPSIGNB	%XMM1,%XMM1,%XMM1;(5271) 
+0x624f645;:0;VPMOVMSKB	%XMM1,%R8D;(5271) 
+0x624f649;:0;TEST	%R8D,%R8D;(5271) 
+0x624f64c;:0;JNE	624f714 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0x1c4>;(5271) 
+0x624f652;:0;ADD	%RDX,%RDI;(5271) 
+0x624f655;:0;ADD	$0x10,%RDI;(5271) 
+0x624f659;:0;ADD	$0x10,%RDX;(5271) 
+0x624f65d;:0;JMP	624f5f9 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0xa9>;(5271) 
+0x624f65f;:0;TEST	%RCX,%RCX;
+0x624f662;:0;JE	624f714 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0x1c4>;
+0x624f668;:0;ADD	%R9,%RAX;
+0x624f66b;:0;MOV	0x8(%RAX),%RAX;
+0x624f66f;:0;MOV	0x18(%RAX),%R14;
+0x624f673;:0;MOV	%RBX,%RDI;
+0x624f676;:0;CALL	7632a60 <_ZN3tsl5mutex13unlock_sharedEv@plt>;
+0x624f67b;:0;JMP	624f6f4 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0x1a4>;
+0x624f67d;:0;LEA	-0x580cf59(%RIP),%RSI;
+0x624f684;:0;LEA	-0x1a8(%RBP),%R14;
+0x624f68b;:0;MOV	%R14,%RDI;
+0x624f68e;:0;MOV	$0x24a,%EDX;
+0x624f693;:0;MOV	$0x2,%ECX;
+0x624f698;:0;CALL	7632c00 <_ZN3tsl8internal10LogMessageC1EPKcii@plt>;
+0x624f69d;:0;LEA	-0x585ef6f(%RIP),%RSI;
+0x624f6a4;:0;MOV	$0x17,%EDX;
+0x624f6a9;:0;MOV	%R14,%RDI;
+0x624f6ac;:0;CALL	7632a30 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>;
+0x624f6b1;:0;MOV	%R14,%RDI;
+0x624f6b4;:0;MOV	%RBX,%RSI;
+0x624f6b7;:0;CALL	7637070 <_ZNSo9_M_insertImEERSoT_@plt>;
+0x624f6bc;:0;MOV	%RAX,%RBX;
+0x624f6bf;:0;LEA	-0x5865953(%RIP),%RSI;
+0x624f6c6;:0;MOV	$0xc,%EDX;
+0x624f6cb;:0;MOV	%RAX,%RDI;
+0x624f6ce;:0;CALL	7632a30 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>;
+0x624f6d3;:0;MOV	0x98(%R15),%RSI;
+0x624f6da;:0;MOV	0xa0(%R15),%RDX;
+0x624f6e1;:0;MOV	%RBX,%RDI;
+0x624f6e4;:0;CALL	7632a30 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>;
+0x624f6e9;:0;MOV	%R14,%RDI;
+0x624f6ec;:0;CALL	7632c10 <_ZN3tsl8internal10LogMessageD1Ev@plt>;
+0x624f6f1;:0;XOR	%R14D,%R14D;
+0x624f6f4;:0;MOV	%FS:0x28,%RAX;
+0x624f6fd;:0;CMP	-0x20(%RBP),%RAX;
+0x624f701;:0;JNE	624f746 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetFunctionBodyEm+0x1f6>;
+0x624f703;:0;MOV	%R14,%RAX;
+0x624f706;:0;ADD	$0x198,%RSP;
+0x624f70d;:0;POP	%RBX;
+0x624f70e;:0;POP	%R14;
+0x624f710;:0;POP	%R15;
+0x624f712;:0;POP	%RBP;
+0x624f713;:0;RET;
+0x624f714;:0;LEA	-0x580cff0(%RIP),%RSI;
+0x624f71b;:0;LEA	-0x1a8(%RBP),%RBX;
+0x624f722;:0;MOV	%RBX,%RDI;
+0x624f725;:0;MOV	$0x251,%EDX;
+0x624f72a;:0;CALL	76329f0 <_ZN3tsl8internal15LogMessageFatalC1EPKci@plt>;
+0x624f72f;:0;LEA	-0x58be4e7(%RIP),%RSI;
+0x624f736;:0;MOV	%RBX,%RDI;
+0x624f739;:0;CALL	763cd30 <_ZStlsIN3tsl8internal15LogMessageFatalEA37_cENSt9enable_ifIXsr6__and_ISt6__not_ISt19is_lvalue_referenceIT_EESt33__is_convertible_to_basic_ostreamIS7_ESt15__is_insertableINSB_14__ostream_typeERKT0_vEEE5valueESD_E4typeEOS7_SG_@plt>;
+0x624f73e;:0;MOV	%RBX,%RDI;
+0x624f741;:0;CALL	7632a10 <_ZN3tsl8internal15LogMessageFatalD1Ev@plt>;
+0x624f746;:0;CALL	7632560 <__stack_chk_fail@plt>;
+0x624f74b;:0;INT	$0x3;
+0x624f74c;:0;INT	$0x3;
+0x624f74d;:0;INT	$0x3;
+0x624f74e;:0;INT	$0x3;
+0x624f74f;:0;INT	$0x3;

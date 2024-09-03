@@ -1,0 +1,71 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_cython_lib.c: 9743 - 9833
+--------------------------------------------------------------------------------
+
+9743:     if (unlikely(!j)) return NULL;
+9744:     r = PyObject_GetItem(o, j);
+[...]
+9761:     return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+[...]
+9784: static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
+9785:                                                      CYTHON_NCP_UNUSED int wraparound,
+9786:                                                      CYTHON_NCP_UNUSED int boundscheck) {
+9787: #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
+9788:     if (is_list || PyList_CheckExact(o)) {
+9789:         Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
+9790:         if ((!boundscheck) || (likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o))))) {
+9791:             PyObject *r = PyList_GET_ITEM(o, n);
+9792:             Py_INCREF(r);
+9793:             return r;
+9794:         }
+9795:     }
+9796:     else if (PyTuple_CheckExact(o)) {
+9797:         Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
+9798:         if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyTuple_GET_SIZE(o)))) {
+9799:             PyObject *r = PyTuple_GET_ITEM(o, n);
+9800:             Py_INCREF(r);
+9801:             return r;
+9802:         }
+9803:     } else {
+9804:         PyMappingMethods *mm = Py_TYPE(o)->tp_as_mapping;
+9805:         PySequenceMethods *sm = Py_TYPE(o)->tp_as_sequence;
+9806:         if (mm && mm->mp_subscript) {
+9807:             PyObject *r, *key = PyInt_FromSsize_t(i);
+9808:             if (unlikely(!key)) return NULL;
+9809:             r = mm->mp_subscript(o, key);
+9810:             Py_DECREF(key);
+9811:             return r;
+9812:         }
+9813:         if (likely(sm && sm->sq_item)) {
+9814:             if (wraparound && unlikely(i < 0) && likely(sm->sq_length)) {
+9815:                 Py_ssize_t l = sm->sq_length(o);
+9816:                 if (likely(l >= 0)) {
+9817:                     i += l;
+9818:                 } else {
+9819:                     if (!PyErr_ExceptionMatches(PyExc_OverflowError))
+9820:                         return NULL;
+9821:                     PyErr_Clear();
+9822:                 }
+9823:             }
+9824:             return sm->sq_item(o, i);
+[...]
+9833: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 220 - 705
+--------------------------------------------------------------------------------
+
+220:     return ob->ob_type;
+[...]
+233:     return  _PyVarObject_CAST(ob)->ob_size;
+[...]
+242:     return _Py_CAST(PY_INT32_T, op->ob_refcnt) < 0;
+[...]
+643:     if (new_refcnt == 0) {
+644:         return;
+645:     }
+646:     op->ob_refcnt_split[PY_BIG_ENDIAN] = new_refcnt;
+[...]
+700:     if (_Py_IsImmortal(op)) {
+701:         return;
+702:     }
+703:     _Py_DECREF_STAT_INC();
+704:     if (--op->ob_refcnt == 0) {
+705:         _Py_Dealloc(op);

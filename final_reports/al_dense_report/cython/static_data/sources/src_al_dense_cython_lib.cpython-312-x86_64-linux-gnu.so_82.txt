@@ -1,0 +1,52 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_cython_lib.c: 4243 - 9761
+--------------------------------------------------------------------------------
+
+4243:     __PYX_ERR(0, 26, __pyx_L1_error)
+[...]
+4289:   for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
+[...]
+4299:     __pyx_t_3 = PyFloat_FromDouble(__pyx_v_sum); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
+[...]
+4305:     __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_A, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 31, __pyx_L1_error)
+[...]
+4311:     __pyx_t_8 = __Pyx_GetItemInt_List(__pyx_v_B, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 31, __pyx_L1_error)
+4312:     __Pyx_GOTREF(__pyx_t_8);
+4313:     __pyx_t_9 = PyNumber_Multiply(__pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 31, __pyx_L1_error)
+4314:     __Pyx_GOTREF(__pyx_t_9);
+4315:     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+4316:     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+4317:     __pyx_t_8 = PyNumber_InPlaceAdd(__pyx_t_3, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 31, __pyx_L1_error)
+4318:     __Pyx_GOTREF(__pyx_t_8);
+4319:     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+4320:     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+4321:     __pyx_t_10 = __pyx_PyFloat_AsFloat(__pyx_t_8); if (unlikely((__pyx_t_10 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L1_error)
+[...]
+9743:     if (unlikely(!j)) return NULL;
+9744:     r = PyObject_GetItem(o, j);
+[...]
+9756:     if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
+9757:         PyObject *r = PyList_GET_ITEM(o, wrapped_i);
+9758:         Py_INCREF(r);
+9759:         return r;
+9760:     }
+9761:     return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 242 - 705
+--------------------------------------------------------------------------------
+
+242:     return _Py_CAST(PY_INT32_T, op->ob_refcnt) < 0;
+[...]
+643:     if (new_refcnt == 0) {
+644:         return;
+645:     }
+646:     op->ob_refcnt_split[PY_BIG_ENDIAN] = new_refcnt;
+[...]
+700:     if (_Py_IsImmortal(op)) {
+701:         return;
+702:     }
+703:     _Py_DECREF_STAT_INC();
+704:     if (--op->ob_refcnt == 0) {
+705:         _Py_Dealloc(op);
+/home/aaron/.conda/envs/anon/include/python3.12/cpython/floatobject.h: 16 - 16
+--------------------------------------------------------------------------------
+
+16:     return _PyFloat_CAST(op)->ob_fval;

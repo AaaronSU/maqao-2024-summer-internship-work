@@ -1,0 +1,28 @@
+address;source_location;insn;indent
+0x5363a0;/usr/local/src/conda/python-3.12.0/Python/ceval_gil.c:737;PUSH	%RBX;
+0x5363a1;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:92;TEST	%RDI,%RDI;
+0x5363a4;:0;JE	4364d0 <PyEval_RestoreThread.cold>;
+0x5363aa;:0;MOV	%RDI,%RBX;
+0x5363ad;/usr/local/src/conda/python-3.12.0/Python/ceval_gil.c:740;CALL	503a50 <take_gil>;
+0x5363b2;/usr/local/src/conda/python-3.12.0/Python/pystate.c:72;MOV	%FS:,%RAX;
+0x5363bb;:0;LEA	-0x10(%RAX),%RAX;
+0x5363c2;:0;MOV	(%RAX),%RAX;
+0x5363c5;/usr/local/src/conda/python-3.12.0/Python/pystate.c:1814;TEST	%RAX,%RAX;
+0x5363c8;:0;JE	5363ce <PyEval_RestoreThread+0x2e>;
+0x5363ca;/usr/local/src/conda/python-3.12.0/Python/pystate.c:1728;ANDB	$-0x11,0x18(%RAX);
+0x5363ce;/usr/local/src/conda/python-3.12.0/Python/pystate.c:84;MOV	%FS:,%RAX;
+0x5363d7;:0;LEA	-0x10(%RAX),%RAX;
+0x5363de;/usr/local/src/conda/python-3.12.0/Python/pystate.c:84;MOV	%RBX,(%RAX);
+0x5363e1;/usr/local/src/conda/python-3.12.0/Python/pystate.c:1713;MOVZX	0x18(%RBX),%EAX;
+0x5363e5;/usr/local/src/conda/python-3.12.0/Python/pystate.c:1713;TEST	$0x8,%AL;
+0x5363e7;:0;JE	5363f1 <PyEval_RestoreThread+0x51>;
+0x5363e9;/usr/local/src/conda/python-3.12.0/Python/pystate.c:1717;OR	$0x10,%EAX;
+0x5363ec;:0;MOV	%AL,0x18(%RBX);
+0x5363ef;/usr/local/src/conda/python-3.12.0/Python/ceval_gil.c:743;POP	%RBX;
+0x5363f0;/usr/local/src/conda/python-3.12.0/Python/ceval_gil.c:743;RET;
+0x5363f1;/usr/local/src/conda/python-3.12.0/Python/pystate.c:1714;MOV	%RBX,%RDI;
+0x5363f4;:0;CALL	5e64b0 <bind_gilstate_tstate>;
+0x5363f9;/usr/local/src/conda/python-3.12.0/Python/pystate.c:1717;ORB	$0x10,0x18(%RBX);
+0x5363fd;/usr/local/src/conda/python-3.12.0/Python/ceval_gil.c:743;POP	%RBX;
+0x5363fe;/usr/local/src/conda/python-3.12.0/Python/ceval_gil.c:743;RET;
+0x5363ff;/usr/local/src/conda/python-3.12.0/Python/ceval_gil.c:743;NOP;

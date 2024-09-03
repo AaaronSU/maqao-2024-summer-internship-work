@@ -1,0 +1,22 @@
+address;source_location;insn;indent
+0x5ae313;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2601;CMP	%R12,0x10(%R13);
+0x5ae317;:0;JLE	5ae37b <list_remove+0x7b>;
+0x5ae319;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2602;MOV	0x18(%R13),%RAX;
+0x5ae31d;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2604;MOV	$0x2,%EDX;
+0x5ae322;:0;MOV	%RBX,%RSI;
+0x5ae325;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2602;MOV	(%RAX,%R12,8),%RBP;
+0x5ae329;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RBP);
+0x5ae32d;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2604;MOV	%RBP,%RDI;
+0x5ae330;:0;CALL	4fdad0 <PyObject_RichCompareBool>;
+0x5ae335;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RBP);
+0x5ae339;:0;JE	5ae390 <list_remove+0x90>;
+0x5ae33b;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2606;TEST	%EAX,%EAX;
+0x5ae33d;:0;JG	5ae34a <list_remove+0x4a>;
+0x5ae33f;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2612;JNE	44ddbc <list_remove.cold>;
+0x5ae345;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2601;INC	%R12;
+0x5ae348;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2601;JMP	5ae313 <list_remove+0x13>;
+0x5ae390;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%RBP,%RDI;
+0x5ae393;:0;MOV	%EAX,0xc(%RSP);
+0x5ae397;/usr/local/src/conda/python-3.9.19/Include/object.h:430;CALL	4d6450 <_Py_Dealloc>;
+0x5ae39c;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	0xc(%RSP),%EAX;
+0x5ae3a0;:0;JMP	5ae33b <list_remove+0x3b>;

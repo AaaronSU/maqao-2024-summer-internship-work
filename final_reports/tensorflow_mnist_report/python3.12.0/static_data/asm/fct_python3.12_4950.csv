@@ -1,0 +1,17 @@
+address;source_location;insn;indent
+0x512cb0;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1728;SUB	$0x18,%RSP;
+0x512cb4;/usr/local/src/conda/python-3.12.0/Include/object.h:967;MOV	%FS:0x28,%RAX;
+0x512cbd;:0;MOV	%RAX,0x8(%RSP);
+0x512cc2;:0;MOV	0x8(%RDI),%RAX;
+0x512cc6;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1733;TESTB	$0x20,0xab(%RAX);
+0x512ccd;:0;JE	427b39 <_PyDict_GetItem_KnownHash.cold>;
+0x512cd3;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1738;MOV	%RSP,%RCX;
+0x512cd6;:0;CALL	505980 <_Py_dict_lookup>;
+0x512cdb;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1740;MOV	(%RSP),%RAX;
+0x512cdf;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1741;MOV	0x8(%RSP),%RDX;
+0x512ce4;:0;SUB	%FS:0x28,%RDX;
+0x512ced;:0;JNE	512cf4 <_PyDict_GetItem_KnownHash+0x44>;
+0x512cef;:0;ADD	$0x18,%RSP;
+0x512cf3;:0;RET;
+0x512cf4;:0;CALLQ	0x349a7e(%RIP);
+0x512cfa;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1741;NOPW	(%RAX,%RAX,1);

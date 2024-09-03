@@ -1,0 +1,55 @@
+address;source_location;insn;indent
+0x521c50;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1774;PUSH	%R12;
+0x521c52;:0;MOV	%RDI,%R12;
+0x521c55;:0;PUSH	%RBP;
+0x521c56;:0;MOV	%RSI,%RBP;
+0x521c59;:0;SUB	$0x18,%RSP;
+0x521c5d;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1776;MOV	%FS:0x28,%RAX;
+0x521c66;:0;MOV	%RAX,0x8(%RSP);
+0x521c6b;:0;MOV	0x8(%RSI),%RAX;
+0x521c6f;:0;MOV	0x78(%RAX),%RAX;
+0x521c73;:0;CMP	$0x504e80,%RAX;
+0x521c79;:0;JNE	521d0a <_PyDict_GetItemWithError+0xba>;
+0x521c7f;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11143;MOV	0x18(%RSI),%RDX;
+0x521c83;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11143;CMP	$-0x1,%RDX;
+0x521c87;:0;JE	521cc5 <_PyDict_GetItemWithError+0x75>;
+0x521c89;/usr/local/src/conda/python-3.12.0/Include/object.h:967;MOV	0x8(%R12),%RCX;(1183) 
+0x521c8e;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1733;TESTB	$0x20,0xab(%RCX);(1183) 
+0x521c95;:0;JE	42cb76 <_PyDict_GetItemWithError.cold+0x10>;(1183) 
+0x521c9b;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1738;MOV	%RSP,%RCX;(1183) 
+0x521c9e;:0;MOV	%RBP,%RSI;(1183) 
+0x521ca1;:0;MOV	%R12,%RDI;(1183) 
+0x521ca4;:0;CALL	505980 <_Py_dict_lookup>;(1183) 
+0x521ca9;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1740;MOV	(%RSP),%RAX;(1183) 
+0x521cad;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1781;MOV	0x8(%RSP),%RDX;(1183) 
+0x521cb2;:0;SUB	%FS:0x28,%RDX;(1183) 
+0x521cbb;:0;JNE	521cfe <_PyDict_GetItemWithError+0xae>;(1183) 
+0x521cbd;:0;ADD	$0x18,%RSP;
+0x521cc1;:0;POP	%RBP;
+0x521cc2;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1781;POP	%R12;
+0x521cc4;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1781;RET;
+0x521cc5;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11147;MOVZX	0x20(%RSI),%EAX;
+0x521cc9;:0;MOV	%EAX,%ESI;
+0x521ccb;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11147;SHR	$0x2,%SIL;
+0x521ccf;:0;AND	$0x7,%ESI;
+0x521cd2;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11146;IMUL	0x10(%RBP),%RSI;
+0x521cd7;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:262;TEST	$0x20,%AL;
+0x521cd9;:0;JE	42cb66 <_PyDict_GetItemWithError.cold>;
+0x521cdf;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:247;TEST	$0x40,%AL;
+0x521ce1;:0;JE	521d04 <_PyDict_GetItemWithError+0xb4>;
+0x521ce3;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:248;LEA	0x28(%RBP),%RDI;
+0x521ce7;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11146;CALL	504f20 <_Py_HashBytes>;(1183) 
+0x521cec;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11148;MOV	%RAX,0x18(%RBP);(1183) 
+0x521cf0;/usr/local/src/conda/python-3.12.0/Objects/unicodeobject.c:11146;MOV	%RAX,%RDX;(1183) 
+0x521cf3;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1777;CMP	$-0x1,%RDX;(1183) 
+0x521cf7;:0;JNE	521c89 <_PyDict_GetItemWithError+0x39>;(1183) 
+0x521cf9;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1777;JMP	42cb6f <_PyDict_GetItemWithError.cold+0x9>;
+0x521cfe;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1781;CALLQ	0x33aa74(%RIP);(1183) 
+0x521d04;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:250;LEA	0x38(%RBP),%RDI;(1183) 
+0x521d08;/usr/local/src/conda/python-3.12.0/Include/cpython/unicodeobject.h:250;JMP	521ce7 <_PyDict_GetItemWithError+0x97>;(1183) 
+0x521d0a;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1776;MOV	%RSI,%RDI;
+0x521d0d;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1776;CALL	%RAX;
+0x521d0f;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1776;MOV	%RAX,%RDX;
+0x521d12;:0;JMP	521cf3 <_PyDict_GetItemWithError+0xa3>;
+0x521d14;/usr/local/src/conda/python-3.12.0/Objects/dictobject.c:1776;NOPW	%CS:(%RAX,%RAX,1);
+0x521d1f;:0;NOP;

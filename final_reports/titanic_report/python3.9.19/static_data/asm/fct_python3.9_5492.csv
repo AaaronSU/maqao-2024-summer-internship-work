@@ -1,0 +1,20 @@
+address;source_location;insn;indent
+0x5990a0;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:28;PUSH	%RBP;
+0x5990a1;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:29;CMPQ	$0,0x18(%RDI);
+0x5990a6;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:28;MOV	%RDI,%RBP;
+0x5990a9;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:29;JNE	5990d3 <lock_dealloc+0x33>;
+0x5990ab;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:31;MOV	0x10(%RBP),%RDI;
+0x5990af;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:31;TEST	%RDI,%RDI;
+0x5990b2;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:31;JE	5990bf <lock_dealloc+0x1f>;
+0x5990b4;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:33;CMPB	$0,0x20(%RBP);
+0x5990b8;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:33;JNE	5990c8 <lock_dealloc+0x28>;
+0x5990ba;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:35;CALL	50b4c0 <PyThread_free_lock>;
+0x5990bf;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:37;MOV	%RBP,%RDI;
+0x5990c2;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:38;POP	%RBP;
+0x5990c3;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:37;JMP	4d68b0 <PyObject_Free>;
+0x5990c8;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:34;CALL	4d2470 <PyThread_release_lock>;
+0x5990cd;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:34;MOV	0x10(%RBP),%RDI;
+0x5990d1;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:34;JMP	5990ba <lock_dealloc+0x1a>;
+0x5990d3;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:30;CALL	5098f0 <PyObject_ClearWeakRefs>;
+0x5990d8;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:30;JMP	5990ab <lock_dealloc+0xb>;
+0x5990da;:0;NOPW	(%RAX,%RAX,1);

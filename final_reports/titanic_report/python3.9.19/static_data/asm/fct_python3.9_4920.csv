@@ -1,0 +1,222 @@
+address;source_location;insn;indent
+0x55f4c0;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:87;PUSH	%R12;
+0x55f4c2;:0;PUSH	%RBP;
+0x55f4c3;:0;PUSH	%RBX;
+0x55f4c4;:0;SUB	$0x20,%RSP;
+0x55f4c8;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:87;MOV	%FS:0x28,%RAX;
+0x55f4d1;:0;MOV	%RAX,0x18(%RSP);
+0x55f4d6;:0;XOR	%EAX,%EAX;
+0x55f4d8;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:92;MOVSD	%XMM0,0x8(%RSP);
+0x55f4de;:0;CALLQ	0x1b1164(%RIP);
+0x55f4e4;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:92;MOVSD	0x8(%RSP),%XMM0;
+0x55f4ea;:0;TEST	%EAX,%EAX;
+0x55f4ec;:0;JE	55f825 <_Py_HashDouble+0x365>;
+0x55f4f2;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:99;LEA	0x14(%RSP),%RDI;
+0x55f4f7;:0;CALLQ	0x1b146b(%RIP);
+0x55f4fd;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:102;PXOR	%XMM1,%XMM1;
+0x55f501;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:101;MOV	$0x1,%EDI;
+0x55f506;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:102;COMISD	%XMM0,%XMM1;
+0x55f50a;:0;JA	55f77f <_Py_HashDouble+0x2bf>;
+0x55f510;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:110;MOV	0x14(%RSP),%EAX;
+0x55f514;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:112;MOVSD	0x153284(%RIP),%XMM3;
+0x55f51c;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:110;XOR	%R10D,%R10D;
+0x55f51f;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:109;XOR	%ESI,%ESI;
+0x55f521;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;MOVSD	0x153127(%RIP),%XMM2;
+0x55f529;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;MOV	$0x1fffffffffffffff,%R9;
+0x55f533;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;MOV	$-0x8000000000000000,%R11;
+0x55f53d;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:117;MOV	$0x1ffffffffffffffe,%R8;
+0x55f547;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:118;MOV	$-0x1fffffffffffffff,%RBX;
+0x55f551;:0;MOV	%EAX,%EDX;
+0x55f553;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:110;UCOMISD	%XMM1,%XMM0;
+0x55f557;:0;JP	55f55f <_Py_HashDouble+0x9f>;
+0x55f559;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:110;JE	55f6a0 <_Py_HashDouble+0x1e0>;
+0x55f55f;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:112;MULSD	%XMM3,%XMM0;
+0x55f563;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;MOV	%RSI,%RCX;
+0x55f566;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;SHR	$0x21,%RSI;
+0x55f56a;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:113;LEA	-0x1c(%RDX),%R10D;
+0x55f56e;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;SAL	$0x1c,%RCX;
+0x55f572;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;AND	%R9,%RCX;
+0x55f575;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;OR	%RCX,%RSI;
+0x55f578;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;COMISD	%XMM2,%XMM0;
+0x55f57c;:0;JAE	55f721 <_Py_HashDouble+0x261>;
+0x55f582;:0;CVTTSD2SI	%XMM0,%RCX;
+0x55f587;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;TEST	%RCX,%RCX;
+0x55f58a;:0;JS	55f736 <_Py_HashDouble+0x276>;
+0x55f590;:0;PXOR	%XMM5,%XMM5;
+0x55f594;:0;CVTSI2SD	%RCX,%XMM5;
+0x55f599;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:116;ADD	%RCX,%RSI;
+0x55f59c;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;SUBSD	%XMM5,%XMM0;
+0x55f5a0;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:117;CMP	%R8,%RSI;
+0x55f5a3;:0;JA	45ef34 <_Py_HashDouble.cold>;
+0x55f5a9;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:110;UCOMISD	%XMM1,%XMM0;
+0x55f5ad;:0;JP	55f5b5 <_Py_HashDouble+0xf5>;
+0x55f5af;:0;JE	55f716 <_Py_HashDouble+0x256>;
+0x55f5b5;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:112;MULSD	%XMM3,%XMM0;
+0x55f5b9;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;MOV	%RSI,%R10;
+0x55f5bc;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;SHR	$0x21,%RSI;
+0x55f5c0;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;SAL	$0x1c,%R10;
+0x55f5c4;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;AND	%R9,%R10;
+0x55f5c7;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;OR	%R10,%RSI;
+0x55f5ca;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:113;LEA	-0x38(%RDX),%R10D;
+0x55f5ce;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;COMISD	%XMM2,%XMM0;
+0x55f5d2;:0;JAE	55f76a <_Py_HashDouble+0x2aa>;
+0x55f5d8;:0;CVTTSD2SI	%XMM0,%RCX;
+0x55f5dd;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;TEST	%RCX,%RCX;
+0x55f5e0;:0;JS	55f78f <_Py_HashDouble+0x2cf>;
+0x55f5e6;:0;PXOR	%XMM7,%XMM7;
+0x55f5ea;:0;CVTSI2SD	%RCX,%XMM7;
+0x55f5ef;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:116;ADD	%RCX,%RSI;
+0x55f5f2;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;SUBSD	%XMM7,%XMM0;
+0x55f5f6;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:117;CMP	%R8,%RSI;
+0x55f5f9;:0;JA	45ef34 <_Py_HashDouble.cold>;
+0x55f5ff;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:110;UCOMISD	%XMM1,%XMM0;
+0x55f603;:0;JP	55f60b <_Py_HashDouble+0x14b>;
+0x55f605;:0;JE	55f716 <_Py_HashDouble+0x256>;
+0x55f60b;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:112;MULSD	%XMM3,%XMM0;
+0x55f60f;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;MOV	%RSI,%R10;
+0x55f612;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;SHR	$0x21,%RSI;
+0x55f616;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;SAL	$0x1c,%R10;
+0x55f61a;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;AND	%R9,%R10;
+0x55f61d;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;OR	%R10,%RSI;
+0x55f620;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:113;LEA	-0x54(%RDX),%R10D;
+0x55f624;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;COMISD	%XMM2,%XMM0;
+0x55f628;:0;JAE	55f7b1 <_Py_HashDouble+0x2f1>;
+0x55f62e;:0;CVTTSD2SI	%XMM0,%RDX;
+0x55f633;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;TEST	%RDX,%RDX;
+0x55f636;:0;JS	55f7c8 <_Py_HashDouble+0x308>;
+0x55f63c;:0;PXOR	%XMM9,%XMM9;
+0x55f641;:0;CVTSI2SD	%RDX,%XMM9;
+0x55f646;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:116;ADD	%RDX,%RSI;(2036) 
+0x55f649;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;SUBSD	%XMM9,%XMM0;(2036) 
+0x55f64e;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:117;CMP	%R8,%RSI;(2036) 
+0x55f651;:0;JA	45ef34 <_Py_HashDouble.cold>;(2036) 
+0x55f657;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:110;UCOMISD	%XMM1,%XMM0;(2036) 
+0x55f65b;:0;JP	55f663 <_Py_HashDouble+0x1a3>;(2036) 
+0x55f65d;:0;JE	55f716 <_Py_HashDouble+0x256>;(2036) 
+0x55f663;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:112;MULSD	%XMM3,%XMM0;(2036) 
+0x55f667;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;MOV	%RSI,%RDX;(2036) 
+0x55f66a;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;SHR	$0x21,%RSI;(2036) 
+0x55f66e;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:113;SUB	$0x1c,%R10D;(2036) 
+0x55f672;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;SAL	$0x1c,%RDX;(2036) 
+0x55f676;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;AND	%R9,%RDX;(2036) 
+0x55f679;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:111;OR	%RSI,%RDX;(2036) 
+0x55f67c;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;COMISD	%XMM2,%XMM0;(2036) 
+0x55f680;:0;JAE	55f7eb <_Py_HashDouble+0x32b>;(2036) 
+0x55f686;:0;CVTTSD2SI	%XMM0,%RSI;(2036) 
+0x55f68b;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;TEST	%RSI,%RSI;(2036) 
+0x55f68e;:0;JS	55f802 <_Py_HashDouble+0x342>;(2036) 
+0x55f694;:0;PXOR	%XMM9,%XMM9;(2036) 
+0x55f699;:0;CVTSI2SD	%RSI,%XMM9;(2036) 
+0x55f69e;:0;JMP	55f646 <_Py_HashDouble+0x186>;(2036) 
+0x55f6a0;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;TEST	%R10B,%R10B;
+0x55f6a3;:0;JNE	55f719 <_Py_HashDouble+0x259>;
+0x55f6a5;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:122;TEST	%EAX,%EAX;
+0x55f6a7;:0;JNS	55f758 <_Py_HashDouble+0x298>;
+0x55f6ad;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:122;NOT	%EAX;
+0x55f6af;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:122;MOV	$0x3d,%EBX;
+0x55f6b4;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:122;MOV	$0x3c,%R8D;
+0x55f6ba;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:122;CLTD;
+0x55f6bb;:0;IDIV	%EBX;
+0x55f6bd;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:122;SUB	%EDX,%R8D;
+0x55f6c0;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:123;MOV	%RSI,%R11;
+0x55f6c3;:0;MOV	%R8D,%ECX;
+0x55f6c6;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:125;MOVSXD	%EDI,%RAX;
+0x55f6c9;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:123;MOV	$0x1fffffffffffffff,%R12;
+0x55f6d3;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:123;SAL	%CL,%R11;
+0x55f6d6;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:123;MOV	$0x3d,%ECX;
+0x55f6db;:0;SUB	%R8D,%ECX;
+0x55f6de;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:123;AND	%R12,%R11;
+0x55f6e1;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:123;SHR	%CL,%RSI;
+0x55f6e4;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:123;OR	%R11,%RSI;
+0x55f6e7;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:125;IMUL	%RSI,%RAX;
+0x55f6eb;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:128;MOV	$-0x2,%RSI;
+0x55f6f2;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:128;CMP	%RSI,%RAX;
+0x55f6f5;:0;CMOVA	%RSI,%RAX;
+0x55f6f9;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:129;MOV	0x18(%RSP),%RDX;
+0x55f6fe;:0;SUB	%FS:0x28,%RDX;
+0x55f707;:0;JNE	55f85a <_Py_HashDouble+0x39a>;
+0x55f70d;:0;ADD	$0x20,%RSP;
+0x55f711;:0;POP	%RBX;
+0x55f712;:0;POP	%RBP;
+0x55f713;:0;POP	%R12;
+0x55f715;:0;RET;
+0x55f716;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:118;MOV	%R10D,%EDX;
+0x55f719;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:118;MOV	%EDX,0x14(%RSP);
+0x55f71d;:0;MOV	%EDX,%EAX;
+0x55f71f;:0;JMP	55f6a5 <_Py_HashDouble+0x1e5>;
+0x55f721;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;MOVAPD	%XMM0,%XMM4;
+0x55f725;:0;SUBSD	%XMM2,%XMM4;
+0x55f729;:0;CVTTSD2SI	%XMM4,%RCX;
+0x55f72e;:0;XOR	%R11,%RCX;
+0x55f731;:0;JMP	55f587 <_Py_HashDouble+0xc7>;
+0x55f736;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;MOV	%RCX,%RBP;
+0x55f739;:0;MOV	%RCX,%R12;
+0x55f73c;:0;PXOR	%XMM5,%XMM5;
+0x55f740;:0;SHR	$0x1,%RBP;
+0x55f743;:0;AND	$0x1,%R12D;
+0x55f747;:0;OR	%R12,%RBP;
+0x55f74a;:0;CVTSI2SD	%RBP,%XMM5;
+0x55f74f;:0;ADDSD	%XMM5,%XMM5;
+0x55f753;:0;JMP	55f599 <_Py_HashDouble+0xd9>;
+0x55f758;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:122;MOV	$0x3d,%R9D;
+0x55f75e;:0;CLTD;
+0x55f75f;:0;IDIV	%R9D;
+0x55f762;:0;MOV	%EDX,%R8D;
+0x55f765;:0;JMP	55f6c0 <_Py_HashDouble+0x200>;
+0x55f76a;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;MOVAPD	%XMM0,%XMM6;
+0x55f76e;:0;SUBSD	%XMM2,%XMM6;
+0x55f772;:0;CVTTSD2SI	%XMM6,%RCX;
+0x55f777;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;XOR	%R11,%RCX;
+0x55f77a;:0;JMP	55f5dd <_Py_HashDouble+0x11d>;
+0x55f77f;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:104;XORPD	0x152b09(%RIP),%XMM0;
+0x55f787;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:103;OR	$-0x1,%EDI;
+0x55f78a;:0;JMP	55f510 <_Py_HashDouble+0x50>;
+0x55f78f;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;MOV	%RCX,%RBP;
+0x55f792;:0;MOV	%RCX,%R12;
+0x55f795;:0;PXOR	%XMM7,%XMM7;
+0x55f799;:0;SHR	$0x1,%RBP;
+0x55f79c;:0;AND	$0x1,%R12D;
+0x55f7a0;:0;OR	%R12,%RBP;
+0x55f7a3;:0;CVTSI2SD	%RBP,%XMM7;
+0x55f7a8;:0;ADDSD	%XMM7,%XMM7;
+0x55f7ac;:0;JMP	55f5ef <_Py_HashDouble+0x12f>;
+0x55f7b1;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;MOVAPD	%XMM0,%XMM8;
+0x55f7b6;:0;SUBSD	%XMM2,%XMM8;
+0x55f7bb;:0;CVTTSD2SI	%XMM8,%RDX;
+0x55f7c0;:0;XOR	%R11,%RDX;
+0x55f7c3;:0;JMP	55f633 <_Py_HashDouble+0x173>;
+0x55f7c8;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;MOV	%RDX,%RCX;
+0x55f7cb;:0;MOV	%RDX,%RBP;
+0x55f7ce;:0;PXOR	%XMM9,%XMM9;
+0x55f7d3;:0;SHR	$0x1,%RCX;
+0x55f7d6;:0;AND	$0x1,%EBP;
+0x55f7d9;:0;OR	%RBP,%RCX;
+0x55f7dc;:0;CVTSI2SD	%RCX,%XMM9;
+0x55f7e1;:0;ADDSD	%XMM9,%XMM9;
+0x55f7e6;:0;JMP	55f646 <_Py_HashDouble+0x186>;
+0x55f7eb;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:114;MOVAPD	%XMM0,%XMM10;(2036) 
+0x55f7f0;:0;SUBSD	%XMM2,%XMM10;(2036) 
+0x55f7f5;:0;CVTTSD2SI	%XMM10,%RSI;(2036) 
+0x55f7fa;:0;XOR	%R11,%RSI;(2036) 
+0x55f7fd;:0;JMP	55f68b <_Py_HashDouble+0x1cb>;(2036) 
+0x55f802;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:115;MOV	%RSI,%R12;(2036) 
+0x55f805;:0;MOV	%RSI,%RBP;(2036) 
+0x55f808;:0;PXOR	%XMM9,%XMM9;(2036) 
+0x55f80d;:0;SHR	$0x1,%R12;(2036) 
+0x55f810;:0;AND	$0x1,%EBP;(2036) 
+0x55f813;:0;OR	%RBP,%R12;(2036) 
+0x55f816;:0;CVTSI2SD	%R12,%XMM9;(2036) 
+0x55f81b;:0;ADDSD	%XMM9,%XMM9;(2036) 
+0x55f820;:0;JMP	55f646 <_Py_HashDouble+0x186>;(2036) 
+0x55f825;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:93;CALLQ	0x1b0f7d(%RIP);
+0x55f82b;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:93;MOV	%EAX,%EDX;
+0x55f82d;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:96;XOR	%EAX,%EAX;
+0x55f82f;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:93;TEST	%EDX,%EDX;
+0x55f831;:0;JE	55f6f9 <_Py_HashDouble+0x239>;
+0x55f837;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:94;MOVSD	0x8(%RSP),%XMM0;
+0x55f83d;:0;COMISD	0x152973(%RIP),%XMM0;
+0x55f845;:0;MOV	$0x4cb2f,%EAX;
+0x55f84a;:0;MOV	$-0x4cb2f,%RCX;
+0x55f851;:0;CMOVBE	%RCX,%RAX;
+0x55f855;:0;JMP	55f6f9 <_Py_HashDouble+0x239>;
+0x55f85a;/usr/local/src/conda/python-3.9.19/Python/pyhash.c:129;CALLQ	0x1b0f28(%RIP);

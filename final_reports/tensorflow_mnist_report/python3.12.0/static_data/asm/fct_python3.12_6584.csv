@@ -1,0 +1,23 @@
+address;source_location;insn;indent
+0x60fb40;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:407;PUSH	%RBX;
+0x60fb41;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:407;MOV	%RDI,%RBX;
+0x60fb44;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:408;CALL	502cb0 <PyThread_get_thread_ident>;
+0x60fb49;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:410;MOV	0x20(%RBX),%RDX;
+0x60fb4d;:0;TEST	%RDX,%RDX;
+0x60fb50;:0;JE	45b69d <rlock_release.cold>;
+0x60fb56;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:410;CMP	%RAX,0x18(%RBX);
+0x60fb5a;:0;JNE	45b69d <rlock_release.cold>;
+0x60fb60;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:415;LEA	-0x1(%RDX),%RAX;
+0x60fb64;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:415;MOV	%RAX,0x20(%RBX);
+0x60fb68;:0;TEST	%RAX,%RAX;
+0x60fb6b;:0;JNE	60fb85 <rlock_release+0x45>;
+0x60fb6d;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:416;MOVQ	$0,0x18(%RBX);
+0x60fb75;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:417;MOV	0x10(%RBX),%RDI;
+0x60fb79;:0;CALL	502f20 <PyThread_release_lock>;
+0x60fb7e;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:419;MOV	$0x942580,%EAX;
+0x60fb83;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:420;POP	%RBX;
+0x60fb84;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:420;RET;
+0x60fb85;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:419;MOV	$0x942580,%EAX;
+0x60fb8a;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:420;POP	%RBX;
+0x60fb8b;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:420;RET;
+0x60fb8c;/usr/local/src/conda/python-3.12.0/Modules/_threadmodule.c:420;NOPL	(%RAX);

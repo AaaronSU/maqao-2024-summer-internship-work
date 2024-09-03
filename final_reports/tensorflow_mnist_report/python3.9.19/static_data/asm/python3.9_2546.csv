@@ -1,0 +1,21 @@
+address;source_location;insn;indent
+0x592028;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:344;CMP	$0xff,%RCX;
+0x59202f;:0;JG	59203f <lookdict_index+0x2f>;
+0x592031;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:346;MOVSX	(%RDI,%R11,1),%RAX;
+0x592036;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:736;CMP	%RAX,%RDX;
+0x592039;:0;JNE	59204f <lookdict_index+0x3f>;
+0x59203f;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:348;CMP	$0xffff,%RCX;
+0x592046;:0;JG	592067 <lookdict_index+0x57>;
+0x592048;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:350;MOVSX	(%RDI,%R11,2),%RAX;
+0x59204d;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:350;JMP	592036 <lookdict_index+0x26>;
+0x59204f;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:739;CMP	$-0x1,%RAX;
+0x592053;:0;JE	59203e <lookdict_index+0x2e>;
+0x592055;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:742;SHR	$0x5,%RSI;
+0x592059;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:743;LEA	(%R11,%R11,4),%RAX;
+0x59205d;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:743;LEA	0x1(%RSI,%RAX,1),%R11;
+0x592062;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:743;AND	%R9,%R11;
+0x592065;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:734;JMP	592028 <lookdict_index+0x18>;
+0x592067;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:353;CMP	%R10,%RCX;
+0x59206a;:0;JG	427b7c <lookdict_index.cold>;
+0x592070;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:360;MOVSXD	(%RDI,%R11,4),%RAX;
+0x592074;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:360;JMP	592036 <lookdict_index+0x26>;

@@ -1,0 +1,28 @@
+address;source_location;insn;indent
+0x512c52;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RAX);
+0x512c55;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:14526;MOV	0x28(%RSP),%RDX;
+0x512c5a;:0;SUB	%FS:0x28,%RDX;
+0x512c63;:0;JNE	512ee6 <unicode_subscript+0x386>;
+0x512ee6;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:14526;CALLQ	0x1fd89c(%RIP);
+0x512eec;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2134;MOVSXD	%R12D,%R14;
+0x512eef;:0;MOV	%R12D,%R13D;
+0x512ef2;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2134;MOV	0x74fb60(,%R14,8),%RAX;
+0x512efa;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2135;TEST	%RAX,%RAX;
+0x512efd;:0;JNE	512c52 <unicode_subscript+0xf2>;
+0x512f03;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2141;MOV	%R12D,%ESI;
+0x512f06;:0;MOV	$0x1,%EDI;
+0x512f0b;:0;CALL	4d45c0 <PyUnicode_New>;
+0x512f10;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2142;TEST	%RAX,%RAX;
+0x512f13;:0;JE	437443 <unicode_subscript.cold+0x69>;
+0x512f19;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2146;MOVZX	0x20(%RAX),%R9D;
+0x512f1e;:0;TEST	$0x20,%R9B;
+0x512f22;:0;JE	43753e <unicode_subscript.cold+0x164>;
+0x512f28;:0;AND	$0x40,%R9B;
+0x512f2c;:0;JE	5131a2 <unicode_subscript+0x642>;
+0x512f32;:0;LEA	0x30(%RAX),%R8;
+0x512f36;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2146;MOV	%R13B,(%R8);
+0x512f39;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2151;MOV	%RAX,0x74fb60(,%R14,8);
+0x512f41;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RAX);
+0x512f44;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2153;JMP	512c55 <unicode_subscript+0xf5>;
+0x5131a2;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:2146;LEA	0x48(%RAX),%R8;
+0x5131a6;:0;JMP	512f36 <unicode_subscript+0x3d6>;

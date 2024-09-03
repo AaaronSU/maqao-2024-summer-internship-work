@@ -1,0 +1,22 @@
+address;source_location;insn;indent
+0x1f29c0;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:169;PUSH	%RBX;
+0x1f29c1;:0;SUB	$0x10,%RSP;
+0x1f29c5;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:169;MOV	%FS:0x28,%RAX;
+0x1f29ce;:0;MOV	%RAX,0x8(%RSP);
+0x1f29d3;:0;XOR	%EAX,%EAX;
+0x1f29d5;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:171;CMPB	$0,0x20(%RDI);
+0x1f29d9;:0;JE	735c4 <lock_PyThread_release_lock.cold>;
+0x1f29df;:0;MOV	%RDI,%RBX;
+0x1f29e2;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:176;MOV	0x10(%RDI),%RDI;
+0x1f29e6;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:176;CALL	124fd0 <PyThread_release_lock>;
+0x1f29eb;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:177;MOVB	$0,0x20(%RBX);
+0x1f29ef;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:178;LEA	0x1b730a(%RIP),%RAX;
+0x1f29f6;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	0x1b7303(%RIP);
+0x1f29fd;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:179;MOV	0x8(%RSP),%RDX;
+0x1f2a02;:0;SUB	%FS:0x28,%RDX;
+0x1f2a0b;:0;JNE	1f2a13 <lock_PyThread_release_lock+0x53>;
+0x1f2a0d;:0;ADD	$0x10,%RSP;
+0x1f2a11;:0;POP	%RBX;
+0x1f2a12;:0;RET;
+0x1f2a13;:0;CALLQ	0x18bd4f(%RIP);
+0x1f2a19;/usr/local/src/conda/python-3.9.19/Modules/_threadmodule.c:179;NOPL	(%RAX);

@@ -1,0 +1,25 @@
+address;source_location;insn;indent
+0x6501b0;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:621;PUSH	%RBP;
+0x6501b1;:0;PUSH	%RBX;
+0x6501b2;:0;PUSH	%RCX;
+0x6501b3;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:625;CMPQ	$0,0x30(%RDI);
+0x6501b8;:0;JE	48da74 <_odict_find_node.cold>;
+0x6501be;:0;MOV	%RDI,%RBX;
+0x6501c1;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:627;MOV	%RSI,%RDI;
+0x6501c4;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:627;MOV	%RSI,%RBP;
+0x6501c7;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:627;CALL	504e50 <PyObject_Hash>;
+0x6501cc;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:627;MOV	%RAX,%RDX;
+0x6501cf;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:628;CMP	$-0x1,%RAX;
+0x6501d3;:0;JE	48da74 <_odict_find_node.cold>;
+0x6501d9;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:630;MOV	%RBP,%RSI;
+0x6501dc;:0;MOV	%RBX,%RDI;
+0x6501df;:0;CALL	64fc80 <_odict_get_index>;
+0x6501e4;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:631;TEST	%RAX,%RAX;
+0x6501e7;:0;JS	48da74 <_odict_find_node.cold>;
+0x6501ed;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:634;MOV	0x40(%RBX),%RDX;
+0x6501f1;:0;MOV	(%RDX,%RAX,8),%RAX;
+0x6501f5;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:635;POP	%RDX;
+0x6501f6;:0;POP	%RBX;
+0x6501f7;:0;POP	%RBP;
+0x6501f8;:0;RET;
+0x6501f9;:0;NOPL	(%RAX);

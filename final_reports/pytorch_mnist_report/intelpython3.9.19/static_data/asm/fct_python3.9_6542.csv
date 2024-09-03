@@ -1,0 +1,26 @@
+address;source_location;insn;indent
+0x2402c0;/usr/local/src/conda/python-3.9.19/Python/ceval.c:382;PUSH	%RBX;
+0x2402c1;:0;SUB	$0x10,%RSP;
+0x2402c5;/usr/local/src/conda/python-3.9.19/Python/ceval.c:382;MOV	%FS:0x28,%RAX;
+0x2402ce;:0;MOV	%RAX,0x8(%RSP);
+0x2402d3;:0;XOR	%EAX,%EAX;
+0x2402d5;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_pystate.h:82;TEST	%RDI,%RDI;
+0x2402d8;:0;JE	b511a <PyEval_AcquireThread.cold+0x13>;
+0x2402de;:0;MOV	%RDI,%RBX;
+0x2402e1;/usr/local/src/conda/python-3.9.19/Python/ceval.c:385;CALL	125090 <take_gil>;
+0x2402e6;/usr/local/src/conda/python-3.9.19/Python/ceval.c:387;MOV	0x10(%RBX),%RAX;
+0x2402ea;/usr/local/src/conda/python-3.9.19/Python/ceval.c:388;MOV	%RBX,%RSI;
+0x2402ed;/usr/local/src/conda/python-3.9.19/Python/ceval.c:387;MOV	0x10(%RAX),%RDI;
+0x2402f1;:0;ADD	$0x230,%RDI;
+0x2402f8;/usr/local/src/conda/python-3.9.19/Python/ceval.c:388;CALL	125010 <_PyThreadState_Swap>;
+0x2402fd;/usr/local/src/conda/python-3.9.19/Python/ceval.c:388;TEST	%RAX,%RAX;
+0x240300;:0;JNE	b5107 <PyEval_AcquireThread.cold>;
+0x240306;/usr/local/src/conda/python-3.9.19/Python/ceval.c:391;MOV	0x8(%RSP),%RAX;
+0x24030b;:0;SUB	%FS:0x28,%RAX;
+0x240314;:0;JNE	24031c <PyEval_AcquireThread+0x5c>;
+0x240316;:0;ADD	$0x10,%RSP;
+0x24031a;:0;POP	%RBX;
+0x24031b;/usr/local/src/conda/python-3.9.19/Python/ceval.c:391;RET;
+0x24031c;/usr/local/src/conda/python-3.9.19/Python/ceval.c:391;CALLQ	0x13e446(%RIP);
+0x240322;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x24032d;:0;NOPL	(%RAX);

@@ -1,0 +1,74 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 292 - 356
+--------------------------------------------------------------------------------
+
+292: static PyObject* matrix_vector_multiply(PyObject* self, PyObject* args) {
+293:     PyObject *matrix_obj, *vector_obj;
+294:     PyObject *row_obj;
+295:     Py_ssize_t i, j, num_rows, num_cols;
+296: 
+297:     if (!PyArg_ParseTuple(args, "OO", &matrix_obj, &vector_obj)) {
+298:         return NULL;
+299:     }
+300: 
+301:     if (!PyList_Check(matrix_obj) || !PyList_Check(vector_obj)) {
+302:         PyErr_SetString(PyExc_TypeError, "Arguments must be lists");
+303:         return NULL;
+304:     }
+305: 
+306:     num_rows = PyList_Size(matrix_obj);
+307:     if (num_rows == 0) {
+308:         PyErr_SetString(PyExc_ValueError, "Matrix must have at least one row");
+309:         return NULL;
+310:     }
+311: 
+312:     row_obj = PyList_GetItem(matrix_obj, 0);
+313:     if (!PyList_Check(row_obj)) {
+314:         PyErr_SetString(PyExc_ValueError, "First row of the matrix must be a list");
+315:         return NULL;
+316:     }
+317: 
+318:     num_cols = PyList_Size(row_obj);
+319: 
+320:     for (Py_ssize_t i = 1; i < num_rows; i++) {
+321:         PyObject* row = PyList_GetItem(matrix_obj, i);
+322:         if (!PyList_Check(row) || PyList_Size(row) != num_cols) {
+323:             PyErr_SetString(CustomError, "matrix_vector_multiply: matrix row size not equal");
+324:             return NULL;
+325:         }
+326:     }
+327: 
+328:     if (num_cols != PyList_Size(vector_obj)) {
+329:         PyErr_SetString(CustomError, "matrix_vector_multiply: matrix row size doesn't match vector column size");
+330:         return NULL;
+331:     }
+332: 
+333:     PyObject *result_list = PyList_New(num_rows);
+334:     if (result_list == NULL) {
+335:         return NULL;
+336:     }
+337: 
+338:     // matrix-vector multiplication
+339:     for (i = 0; i < num_rows; i++) {
+340:         PyObject *row = PyList_GetItem(matrix_obj, i);
+341:         double sum = 0.0;
+342: 
+343:         for (j = 0; j < num_cols; j++) {
+344:             PyObject *matrix_element = PyList_GetItem(row, j);
+345:             PyObject *vector_element = PyList_GetItem(vector_obj, j);
+346:             double matrix_value = PyFloat_AsDouble(matrix_element);
+347:             double vector_value = PyFloat_AsDouble(vector_element);
+348:             sum += matrix_value * vector_value;
+349:         }
+350: 
+351:         PyObject *result_value = PyFloat_FromDouble(sum);
+352:         PyList_SetItem(result_list, i, result_value);
+353:     }
+354: 
+355:     return result_list;
+356: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 220 - 966
+--------------------------------------------------------------------------------
+
+220:     return ob->ob_type;
+[...]
+966:     flags = type->tp_flags;

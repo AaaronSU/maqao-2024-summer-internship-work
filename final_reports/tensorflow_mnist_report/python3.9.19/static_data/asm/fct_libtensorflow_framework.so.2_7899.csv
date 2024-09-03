@@ -1,0 +1,162 @@
+address;source_location;insn;indent
+0x63f0fe0;:0;PUSH	%RBP;
+0x63f0fe1;:0;MOV	%RSP,%RBP;
+0x63f0fe4;:0;PUSH	%R15;
+0x63f0fe6;:0;PUSH	%R14;
+0x63f0fe8;:0;PUSH	%R12;
+0x63f0fea;:0;PUSH	%RBX;
+0x63f0feb;:0;SUB	$0x1c0,%RSP;
+0x63f0ff2;:0;MOV	%FS:0x28,%RAX;
+0x63f0ffb;:0;MOV	%RAX,-0x28(%RBP);
+0x63f0fff;:0;MOV	(%RSI),%RCX;
+0x63f1002;:0;TEST	%RCX,%RCX;
+0x63f1005;:0;JE	63f119a <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1ba>;
+0x63f100b;:0;MOV	%RSI,%RBX;
+0x63f100e;:0;CMPQ	$0,0x120(%RCX);
+0x63f1016;:0;JE	63f1182 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1a2>;
+0x63f101c;:0;MOV	0x130(%RCX),%R14;
+0x63f1023;:0;TEST	%R14,%R14;
+0x63f1026;:0;JE	63f1182 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1a2>;
+0x63f102c;:0;MOV	0x8(%R14),%EAX;
+0x63f1030;:0;TEST	%EAX,%EAX;(9524) 
+0x63f1032;:0;JE	63f1182 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1a2>;(9524) 
+0x63f1038;:0;LEA	0x1(%RAX),%EDX;(9524) 
+0x63f103b;:0;LOCK CMPXCHG	%EDX,0x8(%R14);(9524) 
+0x63f1041;:0;JNE	63f1030 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x50>;(9524) 
+0x63f1043;:0;MOV	0x8(%R14),%EAX;
+0x63f1047;:0;TEST	%EAX,%EAX;
+0x63f1049;:0;JE	63f111d <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x13d>;
+0x63f104f;:0;MOV	0x128(%RCX),%R15;
+0x63f1056;:0;TEST	%R15,%R15;
+0x63f1059;:0;JE	63f111d <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x13d>;
+0x63f105f;:0;MOV	0x8(%RBX),%RAX;
+0x63f1063;:0;VMOVUPS	(%RBX),%XMM0;
+0x63f1067;:0;VMOVAPS	%XMM0,-0x1e0(%RBP);
+0x63f106f;:0;TEST	%RAX,%RAX;
+0x63f1072;:0;JE	63f1087 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0xa7>;
+0x63f1074;:0;CMPQ	$0,0x131ece4(%RIP);
+0x63f107c;:0;JE	63f1084 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0xa4>;
+0x63f107e;:0;LOCK INCL	0x8(%RAX);
+0x63f1082;:0;JMP	63f1087 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0xa7>;
+0x63f1084;:0;INCL	0x8(%RAX);
+0x63f1087;:0;LEA	0x8(%R15),%R12;
+0x63f108b;:0;MOV	%R12,%RDI;
+0x63f108e;:0;CALL	7632630 <_ZN3tsl5mutex4lockEv@plt>;
+0x63f1093;:0;ADD	$0x108,%R15;
+0x63f109a;:0;LEA	-0x1e0(%RBP),%RSI;
+0x63f10a1;:0;MOV	%R15,%RDI;
+0x63f10a4;:0;CALL	7645bd0 <_ZNSt7__cxx114listISt10shared_ptrIN10tensorflow4data5model4NodeEESaIS6_EE6removeERKS6_@plt>;
+0x63f10a9;:0;MOV	%R12,%RDI;
+0x63f10ac;:0;CALL	76326d0 <_ZN3tsl5mutex6unlockEv@plt>;
+0x63f10b1;:0;MOV	-0x1d8(%RBP),%R15;
+0x63f10b8;:0;TEST	%R15,%R15;
+0x63f10bb;:0;JE	63f111d <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x13d>;
+0x63f10bd;:0;CMPQ	$0,0x131ec9b(%RIP);
+0x63f10c5;:0;JE	63f10d4 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0xf4>;
+0x63f10c7;:0;MOV	$-0x1,%EAX;
+0x63f10cc;:0;LOCK XADD	%EAX,0x8(%R15);
+0x63f10d2;:0;JMP	63f10df <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0xff>;
+0x63f10d4;:0;MOV	0x8(%R15),%EAX;
+0x63f10d8;:0;LEA	-0x1(%RAX),%ECX;
+0x63f10db;:0;MOV	%ECX,0x8(%R15);
+0x63f10df;:0;CMP	$0x1,%EAX;
+0x63f10e2;:0;JNE	63f111d <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x13d>;
+0x63f10e4;:0;MOV	(%R15),%RAX;
+0x63f10e7;:0;MOV	%R15,%RDI;
+0x63f10ea;:0;CALLQ	0x10(%RAX);
+0x63f10ed;:0;CMPQ	$0,0x131ec6b(%RIP);
+0x63f10f5;:0;JE	63f1104 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x124>;
+0x63f10f7;:0;MOV	$-0x1,%EAX;
+0x63f10fc;:0;LOCK XADD	%EAX,0xc(%R15);
+0x63f1102;:0;JMP	63f110f <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x12f>;
+0x63f1104;:0;MOV	0xc(%R15),%EAX;
+0x63f1108;:0;LEA	-0x1(%RAX),%ECX;
+0x63f110b;:0;MOV	%ECX,0xc(%R15);
+0x63f110f;:0;CMP	$0x1,%EAX;
+0x63f1112;:0;JNE	63f111d <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x13d>;
+0x63f1114;:0;MOV	(%R15),%RAX;
+0x63f1117;:0;MOV	%R15,%RDI;
+0x63f111a;:0;CALLQ	0x18(%RAX);
+0x63f111d;:0;CMPQ	$0,0x131ec3b(%RIP);
+0x63f1125;:0;JE	63f1139 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x159>;
+0x63f1127;:0;MOV	$-0x1,%EAX;
+0x63f112c;:0;LOCK XADD	%EAX,0x8(%R14);
+0x63f1132;:0;CMP	$0x1,%EAX;
+0x63f1135;:0;JE	63f1149 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x169>;
+0x63f1137;:0;JMP	63f1182 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1a2>;
+0x63f1139;:0;MOV	0x8(%R14),%EAX;
+0x63f113d;:0;LEA	-0x1(%RAX),%ECX;
+0x63f1140;:0;MOV	%ECX,0x8(%R14);
+0x63f1144;:0;CMP	$0x1,%EAX;
+0x63f1147;:0;JNE	63f1182 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1a2>;
+0x63f1149;:0;MOV	(%R14),%RAX;
+0x63f114c;:0;MOV	%R14,%RDI;
+0x63f114f;:0;CALLQ	0x10(%RAX);
+0x63f1152;:0;CMPQ	$0,0x131ec06(%RIP);
+0x63f115a;:0;JE	63f1169 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x189>;
+0x63f115c;:0;MOV	$-0x1,%EAX;
+0x63f1161;:0;LOCK XADD	%EAX,0xc(%R14);
+0x63f1167;:0;JMP	63f1174 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x194>;
+0x63f1169;:0;MOV	0xc(%R14),%EAX;
+0x63f116d;:0;LEA	-0x1(%RAX),%ECX;
+0x63f1170;:0;MOV	%ECX,0xc(%R14);
+0x63f1174;:0;CMP	$0x1,%EAX;
+0x63f1177;:0;JNE	63f1182 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1a2>;
+0x63f1179;:0;MOV	(%R14),%RAX;
+0x63f117c;:0;MOV	%R14,%RDI;
+0x63f117f;:0;CALLQ	0x18(%RAX);
+0x63f1182;:0;MOVZX	0x13bda37(%RIP),%EAX;
+0x63f1189;:0;TEST	%AL,%AL;
+0x63f118b;:0;JE	63f1241 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x261>;
+0x63f1191;:0;CMPB	$0,0x13bda20(%RIP);(9523) 
+0x63f1198;:0;JNE	63f11bd <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1dd>;(9523) 
+0x63f119a;:0;MOV	%FS:0x28,%RAX;(9523) 
+0x63f11a3;:0;CMP	-0x28(%RBP),%RAX;(9523) 
+0x63f11a7;:0;JNE	63f123c <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x25c>;(9523) 
+0x63f11ad;:0;ADD	$0x1c0,%RSP;
+0x63f11b4;:0;POP	%RBX;
+0x63f11b5;:0;POP	%R12;
+0x63f11b7;:0;POP	%R14;
+0x63f11b9;:0;POP	%R15;
+0x63f11bb;:0;POP	%RBP;
+0x63f11bc;:0;RET;
+0x63f11bd;:0;LEA	-0x5a3affe(%RIP),%RSI;(9523) 
+0x63f11c4;:0;LEA	-0x1b0(%RBP),%R14;(9523) 
+0x63f11cb;:0;MOV	%R14,%RDI;(9523) 
+0x63f11ce;:0;MOV	$0x9a0,%EDX;(9523) 
+0x63f11d3;:0;XOR	%ECX,%ECX;(9523) 
+0x63f11d5;:0;CALL	7632c00 <_ZN3tsl8internal10LogMessageC1EPKcii@plt>;(9523) 
+0x63f11da;:0;LEA	-0x59b9962(%RIP),%RSI;(9523) 
+0x63f11e1;:0;MOV	$0x9,%EDX;(9523) 
+0x63f11e6;:0;MOV	%R14,%RDI;(9523) 
+0x63f11e9;:0;CALL	7632a30 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>;(9523) 
+0x63f11ee;:0;MOV	(%RBX),%RSI;(9523) 
+0x63f11f1;:0;LEA	-0x1d0(%RBP),%RDI;(9523) 
+0x63f11f8;:0;CALL	7645790 <_ZNK10tensorflow4data5model4Node9long_nameB5cxx11Ev@plt>;(9523) 
+0x63f11fd;:0;MOV	-0x1d0(%RBP),%RSI;(9523) 
+0x63f1204;:0;MOV	-0x1c8(%RBP),%RDX;(9523) 
+0x63f120b;:0;MOV	%R14,%RDI;(9523) 
+0x63f120e;:0;CALL	7632a30 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>;(9523) 
+0x63f1213;:0;MOV	-0x1d0(%RBP),%RDI;(9523) 
+0x63f121a;:0;LEA	-0x1c0(%RBP),%RAX;(9523) 
+0x63f1221;:0;CMP	%RAX,%RDI;(9523) 
+0x63f1224;:0;JE	63f122b <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x24b>;(9523) 
+0x63f1226;:0;CALL	7632540 <_ZdlPv@plt>;(9523) 
+0x63f122b;:0;LEA	-0x1b0(%RBP),%RDI;(9523) 
+0x63f1232;:0;CALL	7632c10 <_ZN3tsl8internal10LogMessageD1Ev@plt>;(9523) 
+0x63f1237;:0;JMP	63f119a <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1ba>;(9523) 
+0x63f123c;:0;CALL	7632560 <__stack_chk_fail@plt>;(9523) 
+0x63f1241;:0;LEA	0x13bd978(%RIP),%RDI;(9523) 
+0x63f1248;:0;CALL	7632c20 <__cxa_guard_acquire@plt>;(9523) 
+0x63f124d;:0;TEST	%EAX,%EAX;(9523) 
+0x63f124f;:0;JE	63f1191 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1b1>;(9523) 
+0x63f1255;:0;LEA	-0x5a3b096(%RIP),%RDI;(9523) 
+0x63f125c;:0;MOV	$0x3,%ESI;(9523) 
+0x63f1261;:0;CALL	7632c30 <_ZN3tsl8internal10LogMessage16VmoduleActivatedEPKci@plt>;(9523) 
+0x63f1266;:0;MOV	%AL,0x13bd94c(%RIP);(9523) 
+0x63f126c;:0;LEA	0x13bd94d(%RIP),%RDI;(9523) 
+0x63f1273;:0;CALL	7632c40 <__cxa_guard_release@plt>;(9523) 
+0x63f1278;:0;JMP	63f1191 <_ZN10tensorflow4data5model5Model10RemoveNodeESt10shared_ptrINS1_4NodeEE+0x1b1>;(9523) 
+0x63f127d;:0;INT	$0x3;
+0x63f127e;:0;INT	$0x3;
+0x63f127f;:0;INT	$0x3;

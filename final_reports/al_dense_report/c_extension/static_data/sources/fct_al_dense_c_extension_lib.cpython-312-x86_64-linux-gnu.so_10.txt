@@ -1,0 +1,111 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 358 - 454
+--------------------------------------------------------------------------------
+
+358: static PyObject* matrix_multiply(PyObject* self, PyObject* args) {
+359:     PyObject *A_obj, *B_obj;
+360:     if (!PyArg_ParseTuple(args, "OO", &A_obj, &B_obj)) {
+361:         PyErr_SetString(CustomError, "Invalid arguments");
+362:         return NULL;
+363:     }
+364: 
+365:     if (!PyList_Check(A_obj) || !PyList_Check(B_obj)) {
+366:         PyErr_SetString(CustomError, "Arguments must be lists");
+367:         return NULL;
+368:     }
+369: 
+370:     Py_ssize_t A_row_size = PyList_Size(A_obj);
+371:     Py_ssize_t B_row_size = PyList_Size(B_obj);
+372: 
+373:     if (A_row_size == 0 || B_row_size == 0) {
+374:         PyErr_SetString(CustomError, "Matrices cannot be empty");
+375:         return NULL;
+376:     }
+377: 
+378:     PyObject *A_first_row = PyList_GetItem(A_obj, 0);
+379:     PyObject *B_first_row = PyList_GetItem(B_obj, 0);
+380: 
+381:     if (!PyList_Check(A_first_row) || !PyList_Check(B_first_row)) {
+382:         PyErr_SetString(CustomError, "Each matrix must be a list of lists");
+383:         return NULL;
+384:     }
+385: 
+386:     Py_ssize_t A_col_size = PyList_Size(A_first_row);
+387:     Py_ssize_t B_col_size = PyList_Size(B_first_row);
+388: 
+389:     for (Py_ssize_t i = 1; i < A_row_size; i++) {
+390:         PyObject *row = PyList_GetItem(A_obj, i);
+391:         if (!PyList_Check(row) || PyList_Size(row) != A_col_size) {
+392:             PyErr_SetString(CustomError, "matrix_multiply: matrix A row size not equal");
+393:             return NULL;
+394:         }
+395:     }
+396: 
+397:     for (Py_ssize_t i = 1; i < B_row_size; i++) {
+398:         PyObject *row = PyList_GetItem(B_obj, i);
+399:         if (!PyList_Check(row) || PyList_Size(row) != B_col_size) {
+400:             PyErr_SetString(CustomError, "matrix_multiply: matrix B row size not equal");
+401:             return NULL;
+402:         }
+403:     }
+404: 
+405:     if (A_col_size != B_row_size) {
+406:         PyErr_SetString(CustomError, "matrix_multiply: matrix A row size not equal to matrix B column size");
+407:         return NULL;
+408:     }
+409: 
+410:     // result C 
+411:     PyObject *C_obj = PyList_New(A_row_size);
+412:     if (C_obj == NULL) {
+413:         return NULL;
+414:     }
+415: 
+416:     for (Py_ssize_t i = 0; i < A_row_size; i++) {
+417:         PyObject *A_row = PyList_GetItem(A_obj, i);
+418:         if (!PyList_Check(A_row)) {
+419:             PyErr_SetString(CustomError, "Matrix rows must be lists");
+420:             Py_DECREF(C_obj);
+421:             return NULL;
+422:         }
+423: 
+424:         PyObject *C_row = PyList_New(B_col_size);
+425:         if (C_row == NULL) {
+426:             Py_DECREF(C_obj);
+427:             return NULL;
+428:         }
+429: 
+430:         for (Py_ssize_t j = 0; j < B_col_size; j++) {
+431:             double sum = 0.0;
+432: 
+433:             for (Py_ssize_t k = 0; k < A_col_size; k++) {
+434:                 PyObject *A_elem = PyList_GetItem(A_row, k);
+435:                 PyObject *B_elem = PyList_GetItem(PyList_GetItem(B_obj, k), j);
+436: 
+437:                 sum += PyFloat_AsDouble(A_elem) * PyFloat_AsDouble(B_elem);
+438:             }
+439: 
+440:             PyObject *C_elem = PyFloat_FromDouble(sum);
+441:             if (C_elem == NULL) {
+[...]
+447:             PyList_SetItem(C_row, j, C_elem);
+448:         }
+449: 
+450:         PyList_SetItem(C_obj, i, C_row);
+451:     }
+452: 
+453:     return C_obj;
+454: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 220 - 966
+--------------------------------------------------------------------------------
+
+220:     return ob->ob_type;
+[...]
+242:     return _Py_CAST(PY_INT32_T, op->ob_refcnt) < 0;
+[...]
+700:     if (_Py_IsImmortal(op)) {
+701:         return;
+702:     }
+703:     _Py_DECREF_STAT_INC();
+704:     if (--op->ob_refcnt == 0) {
+705:         _Py_Dealloc(op);
+[...]
+966:     flags = type->tp_flags;

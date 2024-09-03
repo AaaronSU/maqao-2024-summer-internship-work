@@ -1,0 +1,160 @@
+address;source_location;insn;indent
+0x63088f0;:0;CMP	%R15,%R14;
+0x63088f3;:0;JNE	6308920 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x3a0>;
+0x6308920;:0;TEST	%R14,%R14;
+0x6308923;:0;MOV	%R14,%RAX;
+0x6308926;:0;CMOVE	%R12,%RAX;
+0x630892a;:0;MOV	(%RAX),%RBX;
+0x630892d;:0;MOVSXD	0x14(%RBX),%RSI;
+0x6308931;:0;CMP	$-0x1,%RSI;
+0x6308935;:0;JE	6308ba4 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x624>;
+0x630893b;:0;MOVSXD	0x18(%RBX),%R13;
+0x630893f;:0;TEST	%R13,%R13;
+0x6308942;:0;JS	6308cdc <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x75c>;
+0x6308948;:0;MOV	(%RBX),%RDX;
+0x630894b;:0;MOV	-0x70(%RBP),%RDI;
+0x630894f;:0;MOV	0x20(%RDI),%RAX;
+0x6308953;:0;PREFETCHT2	(%RAX);
+0x6308956;:0;MOV	%RDX,%R9;
+0x6308959;:0;SHR	$0x6,%R9;
+0x630895d;:0;ADD	%RDX,%R9;
+0x6308960;:0;MOV	0x28(%RDI),%RCX;
+0x6308964;:0;MOV	0x30(%RDI),%RDI;
+0x6308968;:0;MOV	%R9,%R10;
+0x630896b;:0;SHR	$0x7,%R10;
+0x630896f;:0;MOV	%RAX,%R8;
+0x6308972;:0;SHR	$0xc,%R8;
+0x6308976;:0;XOR	%R10,%R8;
+0x6308979;:0;AND	$0x7f,%R9B;
+0x630897d;:0;VMOVD	%R9D,%XMM0;
+0x6308982;:0;VPSHUFB	-0x58a69cb(%RIP),%XMM0,%XMM0;
+0x630898b;:0;XOR	%R9D,%R9D;
+0x630898e;:0;AND	%RDI,%R8;  (7223) 
+0x6308991;:0;VMOVDQU	(%RAX,%R8,1),%XMM1;  (7223) 
+0x6308997;:0;VPCMPEQB	%XMM1,%XMM0,%XMM2;  (7223) 
+0x630899b;:0;VPMOVMSKB	%XMM2,%R10D;  (7223) 
+0x630899f;:0;TEST	%R10D,%R10D;  (7223) 
+0x63089a2;:0;JE	63089d0 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x450>;  (7223) 
+0x63089a4;:0;MOVZX	%R10W,%R10D;
+0x63089a8;:0;TZCNT	%R10D,%R11D;  (7226) 
+0x63089ad;:0;ADD	%R8,%R11;  (7226) 
+0x63089b0;:0;AND	%RDI,%R11;  (7226) 
+0x63089b3;:0;SAL	$0x4,%R11;  (7226) 
+0x63089b7;:0;CMP	%RDX,(%RCX,%R11,1);  (7226) 
+0x63089bb;:0;JE	63089f0 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x470>;  (7226) 
+0x63089bd;:0;LEA	-0x1(%R10),%R11D;  (7226) 
+0x63089c1;:0;AND	%R10D,%R11D;  (7226) 
+0x63089c4;:0;MOV	%R11D,%R10D;  (7226) 
+0x63089c7;:0;JNE	63089a8 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x428>;  (7226) 
+0x63089c9;:0;NOPL	(%RAX);  (7223) 
+0x63089d0;:0;VPSIGNB	%XMM1,%XMM1,%XMM1;  (7223) 
+0x63089d5;:0;VPMOVMSKB	%XMM1,%R10D;  (7223) 
+0x63089d9;:0;TEST	%R10D,%R10D;  (7223) 
+0x63089dc;:0;JNE	6308ab0 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x530>;  (7223) 
+0x63089e2;:0;ADD	%R9,%R8;  (7223) 
+0x63089e5;:0;ADD	$0x10,%R8;  (7223) 
+0x63089e9;:0;ADD	$0x10,%R9;  (7223) 
+0x63089ed;:0;JMP	630898e <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x40e>;  (7223) 
+0x63089f0;:0;TEST	%RAX,%RAX;
+0x63089f3;:0;JE	6308ab0 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x530>;
+0x63089f9;:0;ADD	%R11,%RCX;
+0x63089fc;:0;MOV	0x8(%RCX),%RAX;
+0x6308a00;:0;MOV	0x88(%RAX),%RCX;
+0x6308a07;:0;MOV	0x90(%RAX),%RDX;
+0x6308a0e;:0;SUB	%RCX,%RDX;
+0x6308a11;:0;SAR	$0x3,%RDX;
+0x6308a15;:0;CMP	%RSI,%RDX;
+0x6308a18;:0;JBE	6308e7b <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x8fb>;
+0x6308a1e;:0;MOV	(%RCX,%RSI,8),%RCX;
+0x6308a22;:0;MOV	-0x68(%RBP),%RDX;
+0x6308a26;:0;MOV	0x30(%RDX),%RDX;
+0x6308a2a;:0;MOV	%RCX,(%RDX,%R13,8);
+0x6308a2e;:0;MOVSXD	0x14(%RBX),%RSI;
+0x6308a32;:0;MOV	0xf8(%RAX),%RAX;
+0x6308a39;:0;MOV	(%RAX,%RSI,8),%R13;
+0x6308a3d;:0;TEST	%R13,%R13;
+0x6308a40;:0;MOV	-0x60(%RBP),%RDI;
+0x6308a44;:0;JE	6308ba4 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x624>;
+0x6308a4a;:0;MOV	(%RBX),%RDI;
+0x6308a4d;:0;VZEROUPPER;
+0x6308a50;:0;CALL	763c4d0 <_ZNK10tensorflow4Node11output_typeEi@plt>;
+0x6308a55;:0;MOV	0x18(%RBX),%R12D;
+0x6308a59;:0;MOV	0x8(%R13),%RDI;
+0x6308a5d;:0;MOV	(%R13),%RAX;
+0x6308a61;:0;MOV	%RDI,%R15;
+0x6308a64;:0;SUB	%RAX,%R15;
+0x6308a67;:0;SAR	$0x4,%R15;
+0x6308a6b;:0;MOV	$-0x3333333333333333,%RCX;
+0x6308a75;:0;IMUL	%RCX,%R15;
+0x6308a79;:0;VPXOR	%XMM0,%XMM0,%XMM0;
+0x6308a7d;:0;VMOVDQA	%XMM0,-0x90(%RBP);
+0x6308a85;:0;MOVQ	$0,-0x80(%RBP);
+0x6308a8d;:0;SUB	%RAX,%RDI;
+0x6308a90;:0;JE	6308acc <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x54c>;
+0x6308a92;:0;MOV	$0x19999999999999a,%RAX;
+0x6308a9c;:0;CMP	%RAX,%R15;
+0x6308a9f;:0;JAE	6308e9d <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x91d>;
+0x6308aa5;:0;CALL	76325c0 <_Znwm@plt>;
+0x6308aaa;:0;MOV	%RAX,%RBX;
+0x6308aad;:0;JMP	6308ace <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x54e>;
+0x6308ab0;:0;MOV	-0x68(%RBP),%RBX;
+0x6308ab4;:0;MOV	%RBX,%RDI;
+0x6308ab7;:0;VZEROUPPER;
+0x6308aba;:0;CALL	7640740 <_ZN10tensorflow15shape_inference16InferenceContext12UnknownShapeEv@plt>;
+0x6308abf;:0;MOV	0x30(%RBX),%RCX;
+0x6308ac3;:0;MOV	%RAX,(%RCX,%R13,8);
+0x6308ac7;:0;JMP	6308ba0 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x620>;
+0x6308acc;:0;XOR	%EBX,%EBX;
+0x6308ace;:0;MOV	%RBX,-0x90(%RBP);
+0x6308ad5;:0;MOV	%RBX,-0x88(%RBP);
+0x6308adc;:0;LEA	(%R15,%R15,4),%RAX;
+0x6308ae0;:0;SAL	$0x4,%RAX;
+0x6308ae4;:0;ADD	%RBX,%RAX;
+0x6308ae7;:0;MOV	%RAX,-0x80(%RBP);
+0x6308aeb;:0;MOV	(%R13),%R15;
+0x6308aef;:0;MOV	0x8(%R13),%R13;
+0x6308af3;:0;CMP	%R13,%R15;
+0x6308af6;:0;JE	6308b27 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x5a7>;
+0x6308af8;:0;NOPL	(%RAX,%RAX,1);
+0x6308b00;:0;MOV	0x8(%R15),%EAX;  (7225) 
+0x6308b04;:0;MOV	%EAX,0x8(%RBX);  (7225) 
+0x6308b07;:0;MOV	(%R15),%RAX;  (7225) 
+0x6308b0a;:0;MOV	%RAX,(%RBX);  (7225) 
+0x6308b0d;:0;LEA	0x10(%RBX),%RDI;  (7225) 
+0x6308b11;:0;LEA	0x10(%R15),%RSI;  (7225) 
+0x6308b15;:0;CALL	763dc40 <_ZN10tensorflow11FullTypeDefC1ERKS0_@plt>;  (7225) 
+0x6308b1a;:0;ADD	$0x50,%RBX;  (7225) 
+0x6308b1e;:0;ADD	$0x50,%R15;  (7225) 
+0x6308b22;:0;CMP	%R13,%R15;  (7225) 
+0x6308b25;:0;JNE	6308b00 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x580>;  (7225) 
+0x6308b27;:0;MOV	%RBX,-0x88(%RBP);
+0x6308b2e;:0;MOV	-0x68(%RBP),%RDI;
+0x6308b32;:0;MOV	%R12D,%ESI;
+0x6308b35;:0;LEA	-0x90(%RBP),%RDX;
+0x6308b3c;:0;CALL	7640790 <_ZN10tensorflow15shape_inference16InferenceContext33set_input_handle_shapes_and_typesEiRKSt6vectorINS0_12ShapeAndTypeESaIS3_EE@plt>;
+0x6308b41;:0;MOV	-0x90(%RBP),%RBX;
+0x6308b48;:0;MOV	-0x88(%RBP),%R15;
+0x6308b4f;:0;CMP	%R15,%RBX;
+0x6308b52;:0;JE	6308b7b <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x5fb>;
+0x6308b54;:0;MOV	-0xa8(%RBP),%R12;
+0x6308b5b;:0;NOPL	(%RAX,%RAX,1);
+0x6308b60;:0;LEA	0x10(%RBX),%RDI;  (7224) 
+0x6308b64;:0;CALL	763dc60 <_ZN10tensorflow11FullTypeDefD1Ev@plt>;  (7224) 
+0x6308b69;:0;ADD	$0x50,%RBX;  (7224) 
+0x6308b6d;:0;CMP	%R15,%RBX;  (7224) 
+0x6308b70;:0;JNE	6308b60 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x5e0>;  (7224) 
+0x6308b72;:0;MOV	-0x90(%RBP),%RBX;
+0x6308b79;:0;JMP	6308b82 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x602>;
+0x6308b7b;:0;MOV	-0xa8(%RBP),%R12;
+0x6308b82;:0;TEST	%RBX,%RBX;
+0x6308b85;:0;MOV	-0x110(%RBP),%R15;
+0x6308b8c;:0;JE	6308ba0 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x620>;
+0x6308b8e;:0;MOV	%RBX,%RDI;
+0x6308b91;:0;CALL	7632540 <_ZdlPv@plt>;
+0x6308b96;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x6308ba0;:0;MOV	-0x60(%RBP),%RDI;
+0x6308ba4;:0;TEST	%R14,%R14;
+0x6308ba7;:0;JE	6308bc0 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x640>;
+0x6308ba9;:0;ADD	$0x8,%R14;
+0x6308bad;:0;TEST	%R14,%R14;
+0x6308bb0;:0;JNE	63088f0 <_ZN10tensorflow12ShapeRefiner15AddNodeInternalEPKNS_4NodeEPNS_15shape_inference16InferenceContextE+0x370>;

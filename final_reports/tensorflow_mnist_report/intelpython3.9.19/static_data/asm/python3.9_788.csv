@@ -1,0 +1,25 @@
+address;source_location;insn;indent
+0x127945;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:15726;MOV	0x2969bc(%RIP),%RDI;
+0x12794c;:0;MOV	%RBX,%RDX;
+0x12794f;:0;MOV	%RBX,%RSI;
+0x127952;:0;CALL	127b90 <PyDict_SetDefault>;
+0x127957;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:15728;TEST	%RAX,%RAX;
+0x12795a;:0;JE	62755 <PyUnicode_InternInPlace.cold>;
+0x127960;/usr/local/src/conda/python-3.9.19/Include/object.h:408;MOV	(%RAX),%RDX;
+0x127963;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:15733;CMP	%RAX,%RBX;
+0x127966;:0;JE	12799b <PyUnicode_InternInPlace+0xbb>;
+0x127968;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:15735;MOV	(%RBP),%RDI;
+0x12796c;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INC	%RDX;
+0x12796f;:0;MOV	%RDX,(%RAX);
+0x127972;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:15735;MOV	%RAX,(%RBP);
+0x127976;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RDI);
+0x127979;:0;JNE	12791d <PyUnicode_InternInPlace+0x3d>;
+0x12797b;/usr/local/src/conda/python-3.9.19/Objects/object.c:2209;MOV	0x8(%RSP),%RAX;
+0x127980;:0;SUB	%FS:0x28,%RAX;
+0x127989;/usr/local/src/conda/python-3.9.19/Objects/object.c:2209;JNE	1279ba <PyUnicode_InternInPlace+0xda>;
+0x1279ba;/usr/local/src/conda/python-3.9.19/Objects/object.c:2209;CALLQ	0x256da8(%RIP);
+0x1279c0;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:15718;CALL	1279e0 <PyDict_New>;
+0x1279c5;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:15718;MOV	%RAX,0x29693c(%RIP);
+0x1279cc;/usr/local/src/conda/python-3.9.19/Objects/unicodeobject.c:15719;TEST	%RAX,%RAX;
+0x1279cf;:0;JE	62755 <PyUnicode_InternInPlace.cold>;
+0x1279d5;:0;JMP	127945 <PyUnicode_InternInPlace+0x65>;

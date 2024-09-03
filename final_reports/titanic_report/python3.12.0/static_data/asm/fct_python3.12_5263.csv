@@ -1,0 +1,93 @@
+address;source_location;insn;indent
+0x55eb70;/usr/local/src/conda/python-3.12.0/Python/traceback.c:164;PUSH	%RBP;
+0x55eb71;:0;MOV	%RDI,%RBP;
+0x55eb74;:0;PUSH	%RBX;
+0x55eb75;:0;SUB	$0x8,%RSP;
+0x55eb79;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:30;MOV	-0x10(%RDI),%RDX;
+0x55eb7d;/usr/local/src/conda/python-3.12.0/Modules/gcmodule.c:2241;TEST	%RDX,%RDX;
+0x55eb80;:0;JE	55ec6b <tb_dealloc+0xfb>;
+0x55eb86;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:68;MOV	-0x8(%RDI),%RCX;
+0x55eb8a;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:74;MOV	0x8(%RDX),%RBX;
+0x55eb8e;/usr/local/src/conda/python-3.12.0/Objects/object.c:2552;MOV	0x8(%RDI),%RSI;
+0x55eb92;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:68;AND	$-0x4,%RCX;
+0x55eb96;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:74;AND	$0x3,%EBX;
+0x55eb99;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:74;OR	%RCX,%RBX;
+0x55eb9c;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:63;MOV	%RDX,(%RCX);
+0x55eb9f;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:74;MOV	%RBX,0x8(%RDX);
+0x55eba3;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_object.h:248;MOVQ	$0,-0x10(%RDI);
+0x55ebab;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_object.h:249;ANDQ	$0x1,-0x8(%RDI);
+0x55ebb0;/usr/local/src/conda/python-3.12.0/Python/traceback.c:166;CMPQ	$0x55eb70,0x30(%RSI);
+0x55ebb8;:0;JNE	55ecca <tb_dealloc+0x15a>;
+0x55ebbe;/usr/local/src/conda/python-3.12.0/Python/pystate.c:72;MOV	%FS:,%RAX;
+0x55ebc7;:0;LEA	-0x10(%RAX),%RAX;
+0x55ebce;/usr/local/src/conda/python-3.12.0/Python/pystate.c:72;MOV	(%RAX),%RBX;
+0x55ebd1;/usr/local/src/conda/python-3.12.0/Objects/object.c:2479;TEST	%RBX,%RBX;
+0x55ebd4;:0;JE	44ac3c <tb_dealloc.cold+0x13>;
+0x55ebda;/usr/local/src/conda/python-3.12.0/Objects/object.c:2521;MOV	0x98(%RBX),%R9D;
+0x55ebe1;/usr/local/src/conda/python-3.12.0/Objects/object.c:2480;LEA	0x98(%RBX),%RDI;
+0x55ebe8;/usr/local/src/conda/python-3.12.0/Objects/object.c:2521;CMP	$0x31,%R9D;
+0x55ebec;:0;JG	55ec82 <tb_dealloc+0x112>;
+0x55ebf2;/usr/local/src/conda/python-3.12.0/Objects/object.c:2527;INC	%R9D;
+0x55ebf5;:0;MOV	%R9D,(%RDI);
+0x55ebf8;/usr/local/src/conda/python-3.12.0/Python/traceback.c:167;MOV	0x10(%RBP),%RDI;
+0x55ebfc;/usr/local/src/conda/python-3.12.0/Include/object.h:798;TEST	%RDI,%RDI;
+0x55ebff;:0;JE	55ec11 <tb_dealloc+0xa1>;
+0x55ec01;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%R10;
+0x55ec04;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%R10D,%R10D;
+0x55ec07;:0;JS	55ec11 <tb_dealloc+0xa1>;
+0x55ec09;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%R10;
+0x55ec0c;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%R10,(%RDI);
+0x55ec0f;:0;JE	55ec64 <tb_dealloc+0xf4>;
+0x55ec11;/usr/local/src/conda/python-3.12.0/Python/traceback.c:168;MOV	0x18(%RBP),%RDI;
+0x55ec15;/usr/local/src/conda/python-3.12.0/Include/object.h:798;TEST	%RDI,%RDI;
+0x55ec18;:0;JE	55ec2a <tb_dealloc+0xba>;
+0x55ec1a;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%R11;
+0x55ec1d;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%R11D,%R11D;
+0x55ec20;:0;JS	55ec2a <tb_dealloc+0xba>;
+0x55ec22;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%R11;
+0x55ec25;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%R11,(%RDI);
+0x55ec28;:0;JE	55ec5d <tb_dealloc+0xed>;
+0x55ec2a;/usr/local/src/conda/python-3.12.0/Python/traceback.c:169;MOV	%RBP,%RDI;
+0x55ec2d;:0;CALL	510cd0 <PyObject_GC_Del>;
+0x55ec32;/usr/local/src/conda/python-3.12.0/Python/traceback.c:170;TEST	%RBX,%RBX;
+0x55ec35;:0;JE	55ec56 <tb_dealloc+0xe6>;
+0x55ec37;/usr/local/src/conda/python-3.12.0/Objects/object.c:2537;MOV	0x98(%RBX),%EDX;
+0x55ec3d;/usr/local/src/conda/python-3.12.0/Objects/object.c:2537;LEA	-0x1(%RDX),%EAX;
+0x55ec40;:0;MOV	%EAX,0x98(%RBX);
+0x55ec46;/usr/local/src/conda/python-3.12.0/Objects/object.c:2538;TEST	%EAX,%EAX;
+0x55ec48;:0;JG	55ec56 <tb_dealloc+0xe6>;
+0x55ec4a;/usr/local/src/conda/python-3.12.0/Objects/object.c:2539;MOV	0xa0(%RBX),%RDI;
+0x55ec51;/usr/local/src/conda/python-3.12.0/Objects/object.c:2539;TEST	%RDI,%RDI;
+0x55ec54;:0;JNE	55ec97 <tb_dealloc+0x127>;
+0x55ec56;/usr/local/src/conda/python-3.12.0/Python/traceback.c:171;ADD	$0x8,%RSP;
+0x55ec5a;:0;POP	%RBX;
+0x55ec5b;:0;POP	%RBP;
+0x55ec5c;/usr/local/src/conda/python-3.12.0/Python/traceback.c:171;RET;
+0x55ec5d;/usr/local/src/conda/python-3.12.0/Include/object.h:706;CALL	50c940 <_Py_Dealloc>;
+0x55ec62;/usr/local/src/conda/python-3.12.0/Include/object.h:706;JMP	55ec2a <tb_dealloc+0xba>;
+0x55ec64;/usr/local/src/conda/python-3.12.0/Include/object.h:706;CALL	50c940 <_Py_Dealloc>;
+0x55ec69;/usr/local/src/conda/python-3.12.0/Include/object.h:706;JMP	55ec11 <tb_dealloc+0xa1>;
+0x55ec6b;/usr/local/src/conda/python-3.12.0/Objects/object.c:2552;MOV	0x8(%RDI),%RAX;
+0x55ec6f;/usr/local/src/conda/python-3.12.0/Python/traceback.c:166;CMPQ	$0x55eb70,0x30(%RAX);
+0x55ec77;:0;JE	55ebbe <tb_dealloc+0x4e>;
+0x55ec7d;:0;JMP	44ac29 <tb_dealloc.cold>;
+0x55ec82;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:74;MOV	-0x8(%RBP),%RBX;
+0x55ec86;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:74;AND	$0x3,%EBX;
+0x55ec89;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:74;OR	0x8(%RDI),%RBX;
+0x55ec8d;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:74;MOV	%RBX,-0x8(%RBP);
+0x55ec91;/usr/local/src/conda/python-3.12.0/Objects/object.c:2434;MOV	%RBP,0x8(%RDI);
+0x55ec95;/usr/local/src/conda/python-3.12.0/Objects/object.c:2434;JMP	55ec56 <tb_dealloc+0xe6>;
+0x55ec97;/usr/local/src/conda/python-3.12.0/Objects/object.c:2454;MOV	%EDX,0x98(%RBX);
+0x55ec9d;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:68;MOV	-0x8(%RDI),%R8;(1581) 
+0x55eca1;/usr/local/src/conda/python-3.12.0/Objects/object.c:2457;MOV	0x8(%RDI),%RCX;(1581) 
+0x55eca5;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_gc.h:68;AND	$-0x4,%R8;(1581) 
+0x55eca9;/usr/local/src/conda/python-3.12.0/Objects/object.c:2457;MOV	0x30(%RCX),%RSI;(1581) 
+0x55ecad;/usr/local/src/conda/python-3.12.0/Objects/object.c:2459;MOV	%R8,0xa0(%RBX);(1581) 
+0x55ecb4;/usr/local/src/conda/python-3.12.0/Objects/object.c:2469;CALL	%RSI;(1581) 
+0x55ecb6;/usr/local/src/conda/python-3.12.0/Objects/object.c:2455;MOV	0xa0(%RBX),%RDI;(1581) 
+0x55ecbd;/usr/local/src/conda/python-3.12.0/Objects/object.c:2455;TEST	%RDI,%RDI;(1581) 
+0x55ecc0;:0;JNE	55ec9d <tb_dealloc+0x12d>;(1581) 
+0x55ecc2;/usr/local/src/conda/python-3.12.0/Objects/object.c:2472;DECL	0x98(%RBX);
+0x55ecc8;/usr/local/src/conda/python-3.12.0/Python/traceback.c:171;JMP	55ec56 <tb_dealloc+0xe6>;
+0x55ecca;/usr/local/src/conda/python-3.12.0/Python/traceback.c:171;JMP	44ac29 <tb_dealloc.cold>;
+0x55eccf;/usr/local/src/conda/python-3.12.0/Python/traceback.c:171;NOP;

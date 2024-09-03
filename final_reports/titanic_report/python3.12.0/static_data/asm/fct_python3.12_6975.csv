@@ -1,0 +1,26 @@
+address;source_location;insn;indent
+0x6255a0;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:203;PUSH	%R12;
+0x6255a2;:0;PUSH	%RBX;
+0x6255a3;:0;MOV	%RDI,%RBX;
+0x6255a6;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:205;XOR	%EDI,%EDI;
+0x6255a8;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:203;PUSH	%RSI;
+0x6255a9;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:205;CALL	507940 <PyList_New>;
+0x6255ae;:0;MOV	%RAX,%R12;
+0x6255b1;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:206;TEST	%RAX,%RAX;
+0x6255b4;:0;JE	6255e9 <list_new_prealloc+0x49>;
+0x6255b6;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:210;MOV	$0xfffffffffffffff,%RAX;
+0x6255c0;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:210;CMP	%RAX,%RBX;
+0x6255c3;:0;JA	468448 <list_new_prealloc.cold>;
+0x6255c9;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:210;LEA	(,%RBX,8),%RDI;
+0x6255d1;:0;CALL	50b2c0 <PyMem_Malloc>;
+0x6255d6;:0;MOV	%RAX,0x18(%R12);
+0x6255db;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:211;TEST	%RAX,%RAX;
+0x6255de;:0;JE	468451 <list_new_prealloc.cold+0x9>;
+0x6255e4;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:215;MOV	%RBX,0x20(%R12);
+0x6255e9;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:217;MOV	%R12,%RAX;
+0x6255ec;:0;POP	%RDX;
+0x6255ed;:0;POP	%RBX;
+0x6255ee;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:217;POP	%R12;
+0x6255f0;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:217;RET;
+0x6255f1;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:217;NOPW	%CS:(%RAX,%RAX,1);
+0x6255fc;:0;NOPL	(%RAX);

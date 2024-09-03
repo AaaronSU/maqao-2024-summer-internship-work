@@ -1,0 +1,178 @@
+address;source_location;insn;indent
+0x73183c0;:0;PUSH	%RBP;
+0x73183c1;:0;MOV	%RSP,%RBP;
+0x73183c4;:0;PUSH	%R15;
+0x73183c6;:0;PUSH	%R14;
+0x73183c8;:0;PUSH	%R13;
+0x73183ca;:0;PUSH	%R12;
+0x73183cc;:0;PUSH	%RBX;
+0x73183cd;:0;SUB	$0x38,%RSP;
+0x73183d1;:0;MOV	%R8,-0x60(%RBP);
+0x73183d5;:0;MOV	%RCX,-0x58(%RBP);
+0x73183d9;:0;MOV	%RDX,-0x50(%RBP);
+0x73183dd;:0;MOV	%RSI,%R12;
+0x73183e0;:0;MOV	%RDI,%RBX;
+0x73183e3;:0;CALL	768ef10 <_ZN5nsync17nsync_waiter_new_Ev@plt>;
+0x73183e8;:0;MOV	%RAX,%R14;
+0x73183eb;:0;MOVL	$0x1,0x128(%RAX);
+0x73183f5;:0;VXORPS	%XMM0,%XMM0,%XMM0;
+0x73183f9;:0;VMOVUPS	%XMM0,0x158(%RAX);
+0x7318401;:0;MOVQ	$0,0x168(%RAX);
+0x731840c;:0;MOV	%RAX,-0x38(%RBP);
+0x7318410;:0;MOV	%R12,0x140(%RAX);
+0x7318417;:0;TEST	%R12,%R12;
+0x731841a;:0;JE	731843d <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x7d>;
+0x731841c;:0;MOV	(%R12),%EAX;
+0x7318420;:0;TEST	$0x1,%AL;
+0x7318422;:0;JNE	731844a <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x8a>;
+0x7318424;:0;CMP	$0x100,%EAX;
+0x7318429;:0;JAE	731865c <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x29c>;
+0x731842f;:0;LEA	-0x696f6e9(%RIP),%RDI;
+0x7318436;:0;CALL	768efd0 <_ZN5nsync12nsync_panic_EPKc@plt>;
+0x731843b;:0;JMP	731846e <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0xae>;
+0x731843d;:0;MOVQ	$0,0x148(%R14);
+0x7318448;:0;JMP	731846e <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0xae>;
+0x731844a;:0;CMP	$0x100,%EAX;
+0x731844f;:0;JB	731845d <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x9d>;
+0x7318451;:0;LEA	-0x690ecff(%RIP),%RDI;
+0x7318458;:0;CALL	768efd0 <_ZN5nsync12nsync_panic_EPKc@plt>;
+0x731845d;:0;MOV	0x40261c(%RIP),%RAX;
+0x7318464;:0;MOV	(%RAX),%RAX;
+0x7318467;:0;MOV	%RAX,0x148(%R14);
+0x731846e;:0;MOV	$0x1,%R13B;
+0x7318471;:0;MOV	%RBX,%RDI;
+0x7318474;:0;MOV	$0x1,%ESI;
+0x7318479;:0;MOV	$0x3,%EDX;
+0x731847e;:0;XOR	%ECX,%ECX;
+0x7318480;:0;CALL	768ef00 <_ZN5nsync24nsync_spin_test_and_set_EPSt6atomicIjEjjj@plt>;
+0x7318485;:0;MOV	%EAX,%R15D;
+0x7318488;:0;MOV	0x8(%RBX),%RDI;
+0x731848c;:0;MOV	-0x38(%RBP),%RSI;
+0x7318490;:0;ADD	$0x110,%RSI;
+0x7318497;:0;MOV	%RSI,-0x38(%RBP);
+0x731849b;:0;CALL	768efc0 <_ZN5nsync28nsync_dll_make_last_in_list_EPNS_20nsync_dll_element_s_ES1_@plt>;
+0x73184a0;:0;MOV	%RAX,0x8(%RBX);
+0x73184a4;:0;MOV	0x150(%R14),%EAX;
+0x73184ab;:0;MOV	%EAX,-0x40(%RBP);
+0x73184ae;:0;OR	$0x2,%R15D;
+0x73184b2;:0;MOV	%R15D,(%RBX);
+0x73184b5;:0;TEST	%R13B,%R13B;
+0x73184b8;:0;MOV	%R13D,-0x3c(%RBP);
+0x73184bc;:0;MOV	%R12,%RDI;
+0x73184bf;:0;JE	73184c8 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x108>;
+0x73184c1;:0;CALL	768ee10 <_ZN5nsync15nsync_mu_unlockEPNS_11nsync_mu_s_E@plt>;
+0x73184c6;:0;JMP	73184cd <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x10d>;
+0x73184c8;:0;CALL	768ee40 <_ZN5nsync16nsync_mu_runlockEPNS_11nsync_mu_s_E@plt>;
+0x73184cd;:0;MOV	%R12,-0x48(%RBP);
+0x73184d1;:0;MOV	0x128(%R14),%EAX;
+0x73184d8;:0;TEST	%EAX,%EAX;
+0x73184da;:0;JE	73185ef <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x22f>;
+0x73184e0;:0;XOR	%R13D,%R13D;
+0x73184e3;:0;XOR	%R12D,%R12D;
+0x73184e6;:0;MOVL	$0,-0x2c(%RBP);
+0x73184ed;:0;JMP	73184ff <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x13f>;
+0x73184ef;:0;NOP;
+0x73184f0;:0;MOV	0x128(%R14),%EAX;(42836) 
+0x73184f7;:0;TEST	%EAX,%EAX;(42836) 
+0x73184f9;:0;JE	73185f6 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x236>;(42836) 
+0x73184ff;:0;TEST	%R13D,%R13D;(42836) 
+0x7318502;:0;JNE	7318523 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x163>;(42836) 
+0x7318504;:0;MOV	%R14,%RDI;(42836) 
+0x7318507;:0;MOV	-0x50(%RBP),%RSI;(42836) 
+0x731850b;:0;MOV	-0x58(%RBP),%RDX;(42836) 
+0x731850f;:0;MOV	-0x60(%RBP),%RCX;(42836) 
+0x7318513;:0;CALL	768efe0 <_ZN5nsync27nsync_sem_wait_with_cancel_EPNS_6waiterE8timespecPNS_13nsync_note_s_E@plt>;(42836) 
+0x7318518;:0;MOV	%EAX,%R13D;(42836) 
+0x731851b;:0;TEST	%EAX,%EAX;(42836) 
+0x731851d;:0;JE	73185be <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x1fe>;(42836) 
+0x7318523;:0;MOV	0x128(%R14),%EAX;(42836) 
+0x731852a;:0;TEST	%EAX,%EAX;(42836) 
+0x731852c;:0;JE	73185d0 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x210>;(42836) 
+0x7318532;:0;MOV	%RBX,%RDI;(42836) 
+0x7318535;:0;MOV	$0x1,%ESI;(42836) 
+0x731853a;:0;MOV	$0x1,%EDX;(42836) 
+0x731853f;:0;XOR	%ECX,%ECX;(42836) 
+0x7318541;:0;CALL	768ef00 <_ZN5nsync24nsync_spin_test_and_set_EPSt6atomicIjEjjj@plt>;(42836) 
+0x7318546;:0;MOV	%EAX,%R15D;(42836) 
+0x7318549;:0;MOV	0x128(%R14),%EAX;(42836) 
+0x7318550;:0;TEST	%EAX,%EAX;(42836) 
+0x7318552;:0;JE	73185b9 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x1f9>;(42836) 
+0x7318554;:0;MOV	0x150(%R14),%EAX;(42836) 
+0x731855b;:0;CMP	%EAX,-0x40(%RBP);(42836) 
+0x731855e;:0;JNE	73185b9 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x1f9>;(42836) 
+0x7318560;:0;MOV	0x8(%RBX),%RDI;(42836) 
+0x7318564;:0;MOV	-0x38(%RBP),%RSI;(42836) 
+0x7318568;:0;CALL	768ef30 <_ZN5nsync17nsync_dll_remove_EPNS_20nsync_dll_element_s_ES1_@plt>;(42836) 
+0x731856d;:0;MOV	%RAX,0x8(%RBX);(42836) 
+0x7318571;:0;NOPW	%CS:(%RAX,%RAX,1);(42836) 
+0x7318580;:0;MOV	0x150(%R14),%EAX;  (42837) 
+0x7318587;:0;LEA	0x1(%RAX),%ECX;  (42837) 
+0x731858a;:0;LOCK CMPXCHG	%ECX,0x150(%R14);  (42837) 
+0x7318593;:0;JNE	7318580 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x1c0>;  (42837) 
+0x7318595;:0;MOV	0x8(%RBX),%RDI;(42836) 
+0x7318599;:0;CALL	768ef90 <_ZN5nsync19nsync_dll_is_empty_EPNS_20nsync_dll_element_s_E@plt>;(42836) 
+0x731859e;:0;MOV	%R15D,%ECX;(42836) 
+0x73185a1;:0;AND	$-0x3,%ECX;(42836) 
+0x73185a4;:0;TEST	%EAX,%EAX;(42836) 
+0x73185a6;:0;CMOVNE	%ECX,%R15D;(42836) 
+0x73185aa;:0;MOVL	$0,0x128(%R14);(42836) 
+0x73185b5;:0;MOV	%R13D,-0x2c(%RBP);(42836) 
+0x73185b9;:0;MOV	%R15D,(%RBX);(42836) 
+0x73185bc;:0;JMP	73185d0 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x210>;(42836) 
+0x73185be;:0;XOR	%R13D,%R13D;(42836) 
+0x73185c1;:0;NOPW	%CS:(%RAX,%RAX,1);(42836) 
+0x73185d0;:0;MOV	0x128(%R14),%EAX;(42836) 
+0x73185d7;:0;TEST	%EAX,%EAX;(42836) 
+0x73185d9;:0;JE	73184f0 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x130>;(42836) 
+0x73185df;:0;MOV	%R12D,%EDI;(42836) 
+0x73185e2;:0;CALL	768eee0 <_ZN5nsync17nsync_spin_delay_Ej@plt>;(42836) 
+0x73185e7;:0;MOV	%EAX,%R12D;(42836) 
+0x73185ea;:0;JMP	73184f0 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x130>;(42836) 
+0x73185ef;:0;MOVL	$0,-0x2c(%RBP);
+0x73185f6;:0;MOV	-0x48(%RBP),%RBX;
+0x73185fa;:0;TEST	%RBX,%RBX;
+0x73185fd;:0;JE	7318609 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x249>;
+0x73185ff;:0;CMPQ	$0,0x140(%R14);
+0x7318607;:0;JE	731862b <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x26b>;
+0x7318609;:0;MOV	%R14,%RDI;
+0x731860c;:0;CALL	768ef80 <_ZN5nsync18nsync_waiter_free_EPNS_6waiterE@plt>;
+0x7318611;:0;CMPB	$0,-0x3c(%RBP);
+0x7318615;:0;JE	7318621 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x261>;
+0x7318617;:0;MOV	%RBX,%RDI;
+0x731861a;:0;CALL	768edf0 <_ZN5nsync13nsync_mu_lockEPNS_11nsync_mu_s_E@plt>;
+0x731861f;:0;JMP	731864a <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x28a>;
+0x7318621;:0;MOV	%RBX,%RDI;
+0x7318624;:0;CALL	768ee20 <_ZN5nsync14nsync_mu_rlockEPNS_11nsync_mu_s_E@plt>;
+0x7318629;:0;JMP	731864a <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0x28a>;
+0x731862b;:0;MOV	0x148(%R14),%RCX;
+0x7318632;:0;MOV	%RBX,%RDI;
+0x7318635;:0;MOV	%R14,%RSI;
+0x7318638;:0;MOV	$0x8,%EDX;
+0x731863d;:0;CALL	768eff0 <_ZN5nsync19nsync_mu_lock_slow_EPNS_11nsync_mu_s_EPNS_6waiterEjPNS_11lock_type_sE@plt>;
+0x7318642;:0;MOV	%R14,%RDI;
+0x7318645;:0;CALL	768ef80 <_ZN5nsync18nsync_waiter_free_EPNS_6waiterE@plt>;
+0x731864a;:0;MOV	-0x2c(%RBP),%EAX;
+0x731864d;:0;ADD	$0x38,%RSP;
+0x7318651;:0;POP	%RBX;
+0x7318652;:0;POP	%R12;
+0x7318654;:0;POP	%R13;
+0x7318656;:0;POP	%R14;
+0x7318658;:0;POP	%R15;
+0x731865a;:0;POP	%RBP;
+0x731865b;:0;RET;
+0x731865c;:0;MOV	0x402425(%RIP),%RAX;
+0x7318663;:0;MOV	(%RAX),%RAX;
+0x7318666;:0;MOV	%RAX,0x148(%R14);
+0x731866d;:0;XOR	%R13D,%R13D;
+0x7318670;:0;JMP	7318471 <_ZN5nsync27nsync_cv_wait_with_deadlineEPNS_11nsync_cv_s_EPNS_11nsync_mu_s_E8timespecPNS_13nsync_note_s_E+0xb1>;
+0x7318675;:0;INT	$0x3;
+0x7318676;:0;INT	$0x3;
+0x7318677;:0;INT	$0x3;
+0x7318678;:0;INT	$0x3;
+0x7318679;:0;INT	$0x3;
+0x731867a;:0;INT	$0x3;
+0x731867b;:0;INT	$0x3;
+0x731867c;:0;INT	$0x3;
+0x731867d;:0;INT	$0x3;
+0x731867e;:0;INT	$0x3;
+0x731867f;:0;INT	$0x3;

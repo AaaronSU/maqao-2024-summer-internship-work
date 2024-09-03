@@ -1,0 +1,159 @@
+address;source_location;insn;indent
+0x5c3b80;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:616;PUSH	%RBX;
+0x5c3b81;:0;SUB	$0x20,%RSP;
+0x5c3b85;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:616;MOV	%RSI,0x8(%RSP);
+0x5c3b8a;/usr/local/src/conda/python-3.12.0/Include/object.h:220;MOV	%FS:0x28,%RAX;
+0x5c3b93;:0;MOV	%RAX,0x18(%RSP);
+0x5c3b98;:0;MOV	0x8(%RDI),%RAX;
+0x5c3b9c;/usr/local/src/conda/python-3.12.0/Include/object.h:382;CMP	$0x9492e0,%RAX;
+0x5c3ba2;:0;JE	5c3d20 <float_mul+0x1a0>;
+0x5c3ba8;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:335;MOV	0x158(%RAX),%RDX;
+0x5c3baf;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2124;TEST	%RDX,%RDX;
+0x5c3bb2;:0;JE	48a46a <float_mul.cold+0x29>;
+0x5c3bb8;/usr/local/src/conda/python-3.12.0/Include/object.h:234;MOV	0x10(%RDX),%RBX;
+0x5c3bbc;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;TEST	%RBX,%RBX;
+0x5c3bbf;:0;JLE	5c3c20 <float_mul+0xa0>;
+0x5c3bc1;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2131;CMPQ	$0x9492e0,0x18(%RDX);
+0x5c3bc9;:0;JE	5c3d20 <float_mul+0x1a0>;
+0x5c3bcf;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;CMP	$0x1,%RBX;
+0x5c3bd3;:0;JE	5c3c20 <float_mul+0xa0>;
+0x5c3bd5;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2131;CMPQ	$0x9492e0,0x20(%RDX);
+0x5c3bdd;:0;JE	5c3d20 <float_mul+0x1a0>;
+0x5c3be3;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;CMP	$0x2,%RBX;
+0x5c3be7;:0;JE	5c3c20 <float_mul+0xa0>;
+0x5c3be9;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2131;CMPQ	$0x9492e0,0x28(%RDX);
+0x5c3bf1;:0;JE	5c3d20 <float_mul+0x1a0>;
+0x5c3bf7;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;CMP	$0x3,%RBX;
+0x5c3bfb;:0;JE	5c3c20 <float_mul+0xa0>;
+0x5c3bfd;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;MOV	$0x3,%ESI;
+0x5c3c02;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2131;CMPQ	$0x9492e0,0x18(%RDX,%RSI,8);(2608) 
+0x5c3c0b;:0;JE	5c3d20 <float_mul+0x1a0>;(2608) 
+0x5c3c11;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;INC	%RSI;(2608) 
+0x5c3c14;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;CMP	%RSI,%RBX;(2608) 
+0x5c3c17;:0;JNE	5c3c02 <float_mul+0x82>;(2608) 
+0x5c3c19;:0;NOPL	(%RAX);
+0x5c3c20;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:366;TESTB	$0x1,0xab(%RAX);
+0x5c3c27;:0;JE	5c3e48 <float_mul+0x2c8>;
+0x5c3c2d;/usr/local/src/conda/python-3.12.0/Include/cpython/longintrepr.h:111;MOV	0x10(%RDI),%R8;
+0x5c3c31;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:3220;CMP	$0xf,%R8;
+0x5c3c35;:0;JA	5c3e02 <float_mul+0x282>;
+0x5c3c3b;/usr/local/src/conda/python-3.12.0/Include/cpython/longintrepr.h:121;AND	$0x3,%R8D;
+0x5c3c3f;/usr/local/src/conda/python-3.12.0/Include/cpython/longintrepr.h:122;MOV	0x18(%RDI),%R11D;
+0x5c3c43;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:3225;PXOR	%XMM0,%XMM0;
+0x5c3c47;/usr/local/src/conda/python-3.12.0/Include/cpython/longintrepr.h:121;MOV	$0x1,%R10D;
+0x5c3c4d;:0;SUB	%R8,%R10;
+0x5c3c50;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:368;MOVSD	0x22cf90(%RIP),%XMM1;
+0x5c3c58;/usr/local/src/conda/python-3.12.0/Include/cpython/longintrepr.h:122;IMUL	%R11,%R10;
+0x5c3c5c;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:3225;CVTSI2SD	%R10,%XMM0;
+0x5c3c61;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:368;UCOMISD	%XMM1,%XMM0;
+0x5c3c65;:0;JP	5c3c6d <float_mul+0xed>;
+0x5c3c67;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:368;JE	5c3e60 <float_mul+0x2e0>;
+0x5c3c6d;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:619;MOV	0x8(%RSP),%RAX;
+0x5c3c72;/usr/local/src/conda/python-3.12.0/Include/object.h:220;MOV	0x8(%RAX),%RDX;
+0x5c3c76;/usr/local/src/conda/python-3.12.0/Include/object.h:382;CMP	$0x9492e0,%RDX;
+0x5c3c7d;:0;JNE	5c3d30 <float_mul+0x1b0>;
+0x5c3c83;/usr/local/src/conda/python-3.12.0/Include/cpython/floatobject.h:16;MOVSD	0x10(%RAX),%XMM3;
+0x5c3c88;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:619;MOVSD	%XMM3,0x10(%RSP);
+0x5c3c8e;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:620;MULSD	%XMM0,%XMM3;
+0x5c3c92;:0;MOVQ	%XMM3,%RBX;
+0x5c3c97;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	%FS:,%RAX;
+0x5c3ca0;:0;LEA	-0x10(%RAX),%RAX;
+0x5c3ca7;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	(%RAX),%RDI;
+0x5c3caa;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	0x10(%RDI),%R8;
+0x5c3cae;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:136;MOV	0x41498(%R8),%RAX;
+0x5c3cb5;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:137;TEST	%RAX,%RAX;
+0x5c3cb8;:0;JE	5c3dd5 <float_mul+0x255>;
+0x5c3cbe;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:142;MOV	0x8(%RAX),%R9;
+0x5c3cc2;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:143;DECL	0x41490(%R8);
+0x5c3cc9;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:142;MOV	%R9,0x41498(%R8);
+0x5c3cd0;/usr/local/src/conda/python-3.12.0/Include/object.h:274;MOVQ	$0x9492e0,0x8(%RAX);
+0x5c3cd8;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_object.h:167;TESTB	$0x2,0x3856aa(%RIP);
+0x5c3cdf;:0;JNE	5c3e86 <float_mul+0x306>;
+0x5c3ce5;/usr/local/src/conda/python-3.12.0/Objects/object.c:2193;MOV	0x395468(%RIP),%R11D;
+0x5c3cec;:0;TEST	%R11D,%R11D;
+0x5c3cef;:0;JNE	5c3e1e <float_mul+0x29e>;
+0x5c3cf5;/usr/local/src/conda/python-3.12.0/Objects/object.c:2197;MOVQ	$0x1,(%RAX);
+0x5c3cfc;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:155;MOV	%RBX,0x10(%RAX);
+0x5c3d00;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:622;MOV	0x18(%RSP),%RDX;(2606) 
+0x5c3d05;:0;SUB	%FS:0x28,%RDX;(2606) 
+0x5c3d0e;:0;JNE	5c3e79 <float_mul+0x2f9>;(2606) 
+0x5c3d14;:0;ADD	$0x20,%RSP;
+0x5c3d18;:0;POP	%RBX;
+0x5c3d19;:0;RET;
+0x5c3d1a;:0;NOPW	(%RAX,%RAX,1);
+0x5c3d20;/usr/local/src/conda/python-3.12.0/Include/cpython/floatobject.h:16;MOVSD	0x10(%RDI),%XMM0;
+0x5c3d25;/usr/local/src/conda/python-3.12.0/Include/cpython/floatobject.h:16;JMP	5c3c6d <float_mul+0xed>;
+0x5c3d2a;:0;NOPW	(%RAX,%RAX,1);
+0x5c3d30;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:335;MOV	0x158(%RDX),%RCX;
+0x5c3d37;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2124;TEST	%RCX,%RCX;
+0x5c3d3a;:0;JE	48a44e <float_mul.cold+0xd>;
+0x5c3d40;/usr/local/src/conda/python-3.12.0/Include/object.h:234;MOV	0x10(%RCX),%RBX;
+0x5c3d44;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;TEST	%RBX,%RBX;
+0x5c3d47;:0;JLE	5c3da8 <float_mul+0x228>;
+0x5c3d49;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2131;CMPQ	$0x9492e0,0x18(%RCX);
+0x5c3d51;:0;JE	5c3c83 <float_mul+0x103>;
+0x5c3d57;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;CMP	$0x1,%RBX;
+0x5c3d5b;:0;JE	5c3da8 <float_mul+0x228>;
+0x5c3d5d;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2131;CMPQ	$0x9492e0,0x20(%RCX);
+0x5c3d65;:0;JE	5c3c83 <float_mul+0x103>;
+0x5c3d6b;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;CMP	$0x2,%RBX;
+0x5c3d6f;:0;JE	5c3da8 <float_mul+0x228>;
+0x5c3d71;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2131;CMPQ	$0x9492e0,0x28(%RCX);
+0x5c3d79;:0;JE	5c3c83 <float_mul+0x103>;
+0x5c3d7f;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;CMP	$0x3,%RBX;
+0x5c3d83;:0;JE	5c3da8 <float_mul+0x228>;
+0x5c3d85;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;MOV	$0x3,%ESI;
+0x5c3d8a;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2131;CMPQ	$0x9492e0,0x18(%RCX,%RSI,8);(2607) 
+0x5c3d93;:0;JE	5c3c83 <float_mul+0x103>;(2607) 
+0x5c3d99;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;INC	%RSI;(2607) 
+0x5c3d9c;/usr/local/src/conda/python-3.12.0/Objects/typeobject.c:2130;CMP	%RSI,%RBX;(2607) 
+0x5c3d9f;:0;JNE	5c3d8a <float_mul+0x20a>;(2607) 
+0x5c3da1;:0;NOPL	(%RAX);
+0x5c3da8;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:619;LEA	0x10(%RSP),%RSI;
+0x5c3dad;:0;LEA	0x8(%RSP),%RDI;
+0x5c3db2;:0;MOVSD	%XMM0,(%RSP);
+0x5c3db7;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:619;CALL	5c3e90 <convert_to_double>;
+0x5c3dbc;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:619;MOVSD	(%RSP),%XMM2;
+0x5c3dc1;:0;TEST	%EAX,%EAX;
+0x5c3dc3;:0;JS	5c3e3e <float_mul+0x2be>;
+0x5c3dc5;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:620;MULSD	0x10(%RSP),%XMM2;
+0x5c3dcb;:0;MOVQ	%XMM2,%RBX;
+0x5c3dd0;:0;JMP	5c3c97 <float_mul+0x117>;
+0x5c3dd5;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:149;MOV	$0x18,%EDI;
+0x5c3dda;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:149;CALL	504280 <PyObject_Malloc>;
+0x5c3ddf;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:150;TEST	%RAX,%RAX;
+0x5c3de2;:0;JE	48a4a3 <float_mul.cold+0x62>;
+0x5c3de8;/usr/local/src/conda/python-3.12.0/Include/object.h:274;MOVQ	$0x9492e0,0x8(%RAX);
+0x5c3df0;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_object.h:167;TESTB	$0x2,0x385592(%RIP);
+0x5c3df7;:0;JE	5c3ce5 <float_mul+0x165>;
+0x5c3dfd;:0;JMP	48a487 <float_mul.cold+0x46>;
+0x5c3e02;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_object.h:167;CALL	5c06f0 <PyLong_AsDouble.part.0>;
+0x5c3e07;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:368;MOVSD	0x22cdd9(%RIP),%XMM1;
+0x5c3e0f;:0;UCOMISD	%XMM1,%XMM0;
+0x5c3e13;:0;JNP	5c3c67 <float_mul+0xe7>;
+0x5c3e19;:0;JMP	5c3c6d <float_mul+0xed>;
+0x5c3e1e;/usr/local/src/conda/python-3.12.0/Objects/object.c:2194;MOV	%RAX,%RDI;
+0x5c3e21;:0;MOV	%RAX,(%RSP);
+0x5c3e25;:0;CALL	5b0370 <_PyTraceMalloc_NewReference.isra.0>;
+0x5c3e2a;/usr/local/src/conda/python-3.12.0/Objects/object.c:2197;MOV	(%RSP),%RAX;
+0x5c3e2e;:0;MOVQ	$0x1,(%RAX);
+0x5c3e35;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:155;MOV	%RBX,0x10(%RAX);
+0x5c3e39;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:156;JMP	5c3d00 <float_mul+0x180>;
+0x5c3e3e;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:619;MOV	0x8(%RSP),%RAX;
+0x5c3e43;:0;JMP	5c3d00 <float_mul+0x180>;
+0x5c3e48;/usr/local/src/conda/python-3.12.0/Include/object.h:644;MOV	0x37e742(%RIP),%EDI;
+0x5c3e4e;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:374;MOV	$0x942590,%EAX;
+0x5c3e53;/usr/local/src/conda/python-3.12.0/Include/object.h:644;INC	%EDI;
+0x5c3e55;/usr/local/src/conda/python-3.12.0/Include/object.h:644;JE	5c3d00 <float_mul+0x180>;
+0x5c3e5b;:0;JMP	48a45f <float_mul.cold+0x1e>;
+0x5c3e60;/usr/local/src/conda/python-3.12.0/Include/object.h:644;MOVSD	%XMM1,(%RSP);
+0x5c3e65;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:368;CALL	5112b0 <PyErr_Occurred>;
+0x5c3e6a;:0;TEST	%RAX,%RAX;
+0x5c3e6d;:0;JNE	5c3e7f <float_mul+0x2ff>;
+0x5c3e6f;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:367;MOVSD	(%RSP),%XMM0;
+0x5c3e74;:0;JMP	5c3c6d <float_mul+0xed>;
+0x5c3e79;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:622;CALLQ	0x2988f9(%RIP);(2606) 
+0x5c3e7f;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:369;XOR	%EAX,%EAX;(2606) 
+0x5c3e81;:0;JMP	5c3d00 <float_mul+0x180>;(2606) 
+0x5c3e86;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:369;JMP	48a487 <float_mul.cold+0x46>;
+0x5c3e8b;/usr/local/src/conda/python-3.12.0/Objects/floatobject.c:369;NOPL	(%RAX,%RAX,1);

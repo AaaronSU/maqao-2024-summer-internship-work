@@ -1,0 +1,48 @@
+address;source_location;insn;indent
+0x1f2110;/usr/local/src/conda/python-3.9.19/Python/import.c:157;PUSH	%RBP;
+0x1f2111;:0;PUSH	%RBX;
+0x1f2112;:0;SUB	$0x18,%RSP;
+0x1f2116;/usr/local/src/conda/python-3.9.19/Python/import.c:157;MOV	%FS:0x28,%RAX;
+0x1f211f;:0;MOV	%RAX,0x8(%RSP);
+0x1f2124;:0;XOR	%EAX,%EAX;
+0x1f2126;/usr/local/src/conda/python-3.9.19/Python/import.c:158;CALL	124000 <PyThread_get_thread_ident>;
+0x1f212b;/usr/local/src/conda/python-3.9.19/Python/import.c:159;CMP	$-0x1,%RAX;
+0x1f212f;:0;JE	1f2172 <_PyImport_AcquireLock+0x62>;
+0x1f2131;/usr/local/src/conda/python-3.9.19/Python/import.c:161;CMPQ	$0,0x1cb577(%RIP);
+0x1f2139;:0;MOV	%RAX,%RBX;
+0x1f213c;/usr/local/src/conda/python-3.9.19/Python/import.c:161;JE	1f2189 <_PyImport_AcquireLock+0x79>;
+0x1f213e;/usr/local/src/conda/python-3.9.19/Python/import.c:166;MOV	0x18d07b(%RIP),%RAX;
+0x1f2145;/usr/local/src/conda/python-3.9.19/Python/import.c:166;CMP	%RBX,%RAX;
+0x1f2148;:0;JE	1f21c5 <_PyImport_AcquireLock+0xb5>;
+0x1f214a;/usr/local/src/conda/python-3.9.19/Python/import.c:170;INC	%RAX;
+0x1f214d;:0;JNE	1f21a2 <_PyImport_AcquireLock+0x92>;
+0x1f214f;/usr/local/src/conda/python-3.9.19/Python/import.c:171;MOV	0x1cb55a(%RIP),%RDI;
+0x1f2156;:0;XOR	%ESI,%ESI;
+0x1f2158;:0;CALL	124de0 <PyThread_acquire_lock>;
+0x1f215d;/usr/local/src/conda/python-3.9.19/Python/import.c:170;TEST	%EAX,%EAX;
+0x1f215f;:0;JE	1f21a2 <_PyImport_AcquireLock+0x92>;
+0x1f2161;/usr/local/src/conda/python-3.9.19/Python/import.c:178;MOV	%RBX,0x18d058(%RIP);(3086) 
+0x1f2168;/usr/local/src/conda/python-3.9.19/Python/import.c:179;MOVL	$0x1,0x1cb546(%RIP);(3086) 
+0x1f2172;/usr/local/src/conda/python-3.9.19/Python/import.c:180;MOV	0x8(%RSP),%RAX;(3086) 
+0x1f2177;:0;SUB	%FS:0x28,%RAX;(3086) 
+0x1f2180;:0;JNE	1f219c <_PyImport_AcquireLock+0x8c>;(3086) 
+0x1f2182;:0;ADD	$0x18,%RSP;
+0x1f2186;:0;POP	%RBX;
+0x1f2187;:0;POP	%RBP;
+0x1f2188;:0;RET;
+0x1f2189;/usr/local/src/conda/python-3.9.19/Python/import.c:162;CALL	123eb0 <PyThread_allocate_lock>;
+0x1f218e;/usr/local/src/conda/python-3.9.19/Python/import.c:162;MOV	%RAX,0x1cb51b(%RIP);
+0x1f2195;/usr/local/src/conda/python-3.9.19/Python/import.c:163;TEST	%RAX,%RAX;
+0x1f2198;:0;JNE	1f213e <_PyImport_AcquireLock+0x2e>;
+0x1f219a;:0;JMP	1f2172 <_PyImport_AcquireLock+0x62>;
+0x1f219c;/usr/local/src/conda/python-3.9.19/Python/import.c:180;CALLQ	0x18c5c6(%RIP);(3086) 
+0x1f21a2;/usr/local/src/conda/python-3.9.19/Python/import.c:173;CALL	16aa10 <PyEval_SaveThread>;(3086) 
+0x1f21a7;/usr/local/src/conda/python-3.9.19/Python/import.c:174;MOV	0x1cb502(%RIP),%RDI;(3086) 
+0x1f21ae;:0;MOV	$0x1,%ESI;(3086) 
+0x1f21b3;/usr/local/src/conda/python-3.9.19/Python/import.c:173;MOV	%RAX,%RBP;(3086) 
+0x1f21b6;/usr/local/src/conda/python-3.9.19/Python/import.c:174;CALL	124de0 <PyThread_acquire_lock>;(3086) 
+0x1f21bb;/usr/local/src/conda/python-3.9.19/Python/import.c:175;MOV	%RBP,%RDI;(3086) 
+0x1f21be;:0;CALL	16ab30 <PyEval_RestoreThread>;(3086) 
+0x1f21c3;:0;JMP	1f2161 <_PyImport_AcquireLock+0x51>;(3086) 
+0x1f21c5;/usr/local/src/conda/python-3.9.19/Python/import.c:175;JMP	72fc6 <_PyImport_AcquireLock.cold>;
+0x1f21ca;:0;NOPW	(%RAX,%RAX,1);

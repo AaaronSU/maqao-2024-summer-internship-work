@@ -1,0 +1,60 @@
+/home/aaron/.conda/envs/anon/include/python3.12/cpython/listobject.h: 44 - 44
+--------------------------------------------------------------------------------
+
+44:     list->ob_item[index] = value;
+/home/aaron/python_al/python_al_dense_code/al_dense_cython_lib.c: 6491 - 9886
+--------------------------------------------------------------------------------
+
+6491:     for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
+[...]
+6508:       __pyx_t_11 = __Pyx_GetItemInt_List(__pyx_v_A, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 114, __pyx_L1_error)
+6509:       __Pyx_GOTREF(__pyx_t_11);
+6510:       __pyx_t_12 = __Pyx_GetItemInt(__pyx_t_11, __pyx_v_j, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 114, __pyx_L1_error)
+[...]
+6517:       __pyx_t_11 = __Pyx_GetItemInt_List(__pyx_v_B, __pyx_v_j, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 114, __pyx_L1_error)
+6518:       __Pyx_GOTREF(__pyx_t_11);
+6519:       __pyx_t_13 = PyNumber_Multiply(__pyx_t_12, __pyx_t_11); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 114, __pyx_L1_error)
+6520:       __Pyx_GOTREF(__pyx_t_13);
+6521:       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+6522:       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+6523:       __pyx_t_11 = PyNumber_InPlaceAdd(__pyx_t_2, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 114, __pyx_L1_error)
+6524:       __Pyx_GOTREF(__pyx_t_11);
+6525:       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+6526:       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
+6527:       if (unlikely((__Pyx_SetItemInt(__pyx_v_C, __pyx_t_10, __pyx_t_11, int, 1, __Pyx_PyInt_From_int, 1, 1, 1) < 0))) __PYX_ERR(0, 114, __pyx_L1_error)
+[...]
+9743:     if (unlikely(!j)) return NULL;
+9744:     r = PyObject_GetItem(o, j);
+[...]
+9756:     if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
+9757:         PyObject *r = PyList_GET_ITEM(o, wrapped_i);
+9758:         Py_INCREF(r);
+9759:         return r;
+9760:     }
+9761:     return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+[...]
+9838:     if (unlikely(!j)) return -1;
+9839:     r = PyObject_SetItem(o, j, v);
+[...]
+9848:         if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o)))) {
+9849:             PyObject* old = PyList_GET_ITEM(o, n);
+[...]
+9886:     return __Pyx_SetItemInt_Generic(o, PyInt_FromSsize_t(i), v);
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 242 - 797
+--------------------------------------------------------------------------------
+
+242:     return _Py_CAST(PY_INT32_T, op->ob_refcnt) < 0;
+[...]
+643:     if (new_refcnt == 0) {
+644:         return;
+645:     }
+646:     op->ob_refcnt_split[PY_BIG_ENDIAN] = new_refcnt;
+[...]
+700:     if (_Py_IsImmortal(op)) {
+701:         return;
+702:     }
+703:     _Py_DECREF_STAT_INC();
+704:     if (--op->ob_refcnt == 0) {
+705:         _Py_Dealloc(op);
+[...]
+797:     if (op != _Py_NULL) {

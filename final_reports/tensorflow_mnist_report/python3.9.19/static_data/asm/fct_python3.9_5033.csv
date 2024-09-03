@@ -1,0 +1,91 @@
+address;source_location;insn;indent
+0x5717f0;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:574;PUSH	%R12;
+0x5717f2;:0;MOV	%RDI,%R9;
+0x5717f5;:0;SUB	$0x40,%RSP;
+0x5717f9;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:574;MOV	%RDI,0x18(%RSP);
+0x5717fe;/usr/local/src/conda/python-3.9.19/Include/object.h:128;MOV	0x8(%RDI),%RDI;
+0x571802;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:574;MOV	%RSI,0x10(%RSP);
+0x571807;:0;MOV	%FS:0x28,%RAX;
+0x571810;:0;MOV	%RAX,0x38(%RSP);
+0x571815;:0;XOR	%EAX,%EAX;
+0x571817;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:576;CMP	$0x73fb00,%RDI;
+0x57181e;:0;JNE	57194d <float_div+0x15d>;
+0x571824;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:576;MOVSD	0x10(%R9),%XMM1;
+0x57182a;:0;MOV	%RSI,%R10;
+0x57182d;:0;MOVSD	%XMM1,0x30(%RSP);
+0x571833;/usr/local/src/conda/python-3.9.19/Include/object.h:128;MOV	0x8(%R10),%RDI;
+0x571837;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:577;CMP	$0x73fb00,%RDI;
+0x57183e;:0;JNE	571914 <float_div+0x124>;
+0x571844;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:577;MOVSD	0x10(%R10),%XMM2;
+0x57184a;:0;MOVSD	%XMM2,0x28(%RSP);
+0x571850;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:578;UCOMISD	0x140960(%RIP),%XMM2;
+0x571858;:0;JP	571860 <float_div+0x70>;
+0x57185a;:0;JE	57198b <float_div+0x19b>;
+0x571860;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:583;MOVSD	0x30(%RSP),%XMM3;
+0x571866;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:118;MOV	0x1f7d2b(%RIP),%R12;
+0x57186d;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:583;DIVSD	%XMM2,%XMM3;
+0x571871;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:119;TEST	%R12,%R12;
+0x571874;:0;JE	5718d8 <float_div+0xe8>;
+0x571876;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:120;MOV	0x8(%R12),%RAX;
+0x57187b;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:121;DECL	0x1f7d1f(%RIP);
+0x571881;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:120;MOV	%RAX,0x1f7d10(%RIP);
+0x571888;/usr/local/src/conda/python-3.9.19/Include/object.h:138;MOVQ	$0x73fb00,0x8(%R12);
+0x571891;/usr/local/src/conda/python-3.9.19/Include/cpython/objimpl.h:69;TESTB	$0x2,0x1ce311(%RIP);
+0x571898;:0;JNE	57190b <float_div+0x11b>;
+0x57189a;/usr/local/src/conda/python-3.9.19/Objects/object.c:1824;MOV	0x1c995c(%RIP),%EDX;
+0x5718a0;:0;TEST	%EDX,%EDX;
+0x5718a2;:0;JNE	46e3c8 <float_div.cold+0x23>;
+0x5718a8;/usr/local/src/conda/python-3.9.19/Include/object.h:133;MOVQ	$0x1,(%R12);
+0x5718b0;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:129;MOVSD	%XMM3,0x10(%R12);
+0x5718b7;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:585;MOV	0x38(%RSP),%RAX;(2236) 
+0x5718bc;:0;SUB	%FS:0x28,%RAX;(2236) 
+0x5718c5;:0;JNE	571985 <float_div+0x195>;(2236) 
+0x5718cb;:0;ADD	$0x40,%RSP;
+0x5718cf;:0;MOV	%R12,%RAX;
+0x5718d2;:0;POP	%R12;
+0x5718d4;:0;RET;
+0x5718d5;:0;NOPL	(%RAX);
+0x5718d8;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:123;MOV	$0x18,%EDI;
+0x5718dd;:0;MOVSD	%XMM3,0x8(%RSP);
+0x5718e3;:0;CALL	4d2b90 <PyObject_Malloc>;
+0x5718e8;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:123;MOV	%RAX,%R12;
+0x5718eb;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:124;TEST	%RAX,%RAX;
+0x5718ee;:0;JE	46e3bb <float_div.cold+0x16>;
+0x5718f4;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:124;MOVSD	0x8(%RSP),%XMM3;
+0x5718fa;/usr/local/src/conda/python-3.9.19/Include/object.h:138;MOVQ	$0x73fb00,0x8(%RAX);
+0x571902;/usr/local/src/conda/python-3.9.19/Include/cpython/objimpl.h:69;TESTB	$0x2,0x1ce2a0(%RIP);
+0x571909;:0;JE	57189a <float_div+0xaa>;
+0x57190b;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	0x1ce1ee(%RIP);
+0x571912;/usr/local/src/conda/python-3.9.19/Include/object.h:409;JMP	57189a <float_div+0xaa>;
+0x571914;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:577;MOV	$0x73fb00,%ESI;
+0x571919;:0;CALL	4db300 <PyType_IsSubtype>;
+0x57191e;:0;TEST	%EAX,%EAX;
+0x571920;:0;JNE	571844 <float_div+0x54>;
+0x571926;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:577;LEA	0x28(%RSP),%RSI;
+0x57192b;:0;LEA	0x10(%RSP),%RDI;
+0x571930;:0;CALL	5655f0 <convert_to_double>;
+0x571935;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:578;MOVSD	0x28(%RSP),%XMM2;
+0x57193b;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:577;MOV	0x10(%RSP),%R12;
+0x571940;:0;TEST	%EAX,%EAX;
+0x571942;:0;JNS	571850 <float_div+0x60>;
+0x571948;:0;JMP	5718b7 <float_div+0xc7>;
+0x57194d;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:576;MOV	$0x73fb00,%ESI;
+0x571952;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:576;CALL	4db300 <PyType_IsSubtype>;
+0x571957;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:576;TEST	%EAX,%EAX;
+0x571959;:0;JNE	46e3a5 <float_div.cold>;
+0x57195f;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:576;LEA	0x30(%RSP),%RSI;
+0x571964;:0;LEA	0x18(%RSP),%RDI;
+0x571969;:0;CALL	5655f0 <convert_to_double>;
+0x57196e;:0;MOV	0x18(%RSP),%R12;
+0x571973;:0;TEST	%EAX,%EAX;
+0x571975;:0;JS	5718b7 <float_div+0xc7>;
+0x57197b;:0;MOV	0x10(%RSP),%R10;
+0x571980;:0;JMP	571833 <float_div+0x43>;
+0x571985;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:585;CALLQ	0x19edfd(%RIP);(2236) 
+0x57198b;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:579;MOV	0x1d1ae6(%RIP),%RDI;(2236) 
+0x571992;:0;MOV	$0x631a64,%ESI;(2236) 
+0x571997;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:581;XOR	%R12D,%R12D;(2236) 
+0x57199a;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:579;CALL	5347e0 <PyErr_SetString>;(2236) 
+0x57199f;/usr/local/src/conda/python-3.9.19/Objects/floatobject.c:581;JMP	5718b7 <float_div+0xc7>;(2236) 
+0x5719a4;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x5719af;:0;NOP;

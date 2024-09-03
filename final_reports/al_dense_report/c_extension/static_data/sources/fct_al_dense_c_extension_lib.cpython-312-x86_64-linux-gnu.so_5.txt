@@ -1,0 +1,40 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 122 - 152
+--------------------------------------------------------------------------------
+
+122: static PyObject* saxpy(PyObject* self, PyObject* args) {
+123:     double alpha;
+124:     PyObject* x_list_obj;
+125:     PyObject* y_list_obj;
+126:     if (!PyArg_ParseTuple(args, "dOO", &alpha, &x_list_obj, &y_list_obj)) {
+127:         return NULL;
+128:     }
+129:     if (!PyList_Check(x_list_obj) || !PyList_Check(y_list_obj)) {
+130:         PyErr_SetString(PyExc_TypeError, "Expected two lists");
+131:         return NULL;
+132:     }
+133: 
+134:     Py_ssize_t list_size = PyList_Size(x_list_obj);
+135:     if (list_size != PyList_Size(y_list_obj)) {
+136:         PyErr_SetString(CustomError, "saxpy: vector X and Y size doesn't match");
+137:         return NULL;
+138:     }
+139: 
+140:     PyObject* result_list = PyList_New(list_size);
+141: 
+142:     for (Py_ssize_t i = 0; i < list_size; i++) {
+143:         PyObject* x_item = PyList_GetItem(x_list_obj, i);
+144:         PyObject* y_item = PyList_GetItem(y_list_obj, i);
+145:         double x_value = PyFloat_AsDouble(x_item);
+146:         double y_value = PyFloat_AsDouble(y_item);
+147:         PyObject* result_item = PyFloat_FromDouble(alpha * x_value + y_value);
+148:         PyList_SetItem(result_list, i, result_item);
+149:     }
+150:     
+151:     return result_list;
+152: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 220 - 966
+--------------------------------------------------------------------------------
+
+220:     return ob->ob_type;
+[...]
+966:     flags = type->tp_flags;

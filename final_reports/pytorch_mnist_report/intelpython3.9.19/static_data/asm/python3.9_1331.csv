@@ -1,0 +1,21 @@
+address;source_location;insn;indent
+0x15a8ed;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:2165;MOV	0x38(%RSP),%RDX;
+0x15a8f2;:0;SUB	%FS:0x28,%RDX;
+0x15a8fb;:0;JNE	15a9a4 <dict_subscript+0x2d4>;
+0x15a9a4;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:2165;CALLQ	0x223dbe(%RIP);
+0x15a9aa;/usr/local/src/conda/python-3.9.19/Objects/object.c:775;CMPQ	$0,0x108(%R13);
+0x15a9b2;:0;JNE	70cf7 <dict_subscript.cold+0x45>;
+0x15a9b8;/usr/local/src/conda/python-3.9.19/Objects/object.c:776;MOV	%R13,%RDI;
+0x15a9bb;/usr/local/src/conda/python-3.9.19/Objects/object.c:776;CALL	12a070 <PyType_Ready>;
+0x15a9c0;/usr/local/src/conda/python-3.9.19/Objects/object.c:776;TEST	%EAX,%EAX;
+0x15a9c2;:0;JS	15a99d <dict_subscript+0x2cd>;
+0x15a9c4;/usr/local/src/conda/python-3.9.19/Objects/object.c:778;MOV	0x78(%R13),%RAX;
+0x15a9c8;/usr/local/src/conda/python-3.9.19/Objects/object.c:778;TEST	%RAX,%RAX;
+0x15a9cb;:0;JE	70cf7 <dict_subscript.cold+0x45>;
+0x15a9d1;/usr/local/src/conda/python-3.9.19/Objects/object.c:779;MOV	%RBX,%RDI;
+0x15a9d4;:0;CALL	%RAX;
+0x15a9d6;:0;MOV	%RAX,%RBP;
+0x15a9d9;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:2140;CMP	$-0x1,%RBP;
+0x15a9dd;:0;JNE	15a727 <dict_subscript+0x57>;
+0x15a9e3;/usr/local/src/conda/python-3.9.19/Objects/dictobject.c:2141;XOR	%EAX,%EAX;
+0x15a9e5;:0;JMP	15a8ed <dict_subscript+0x21d>;

@@ -1,0 +1,15 @@
+address;source_location;insn;indent
+0x51931c;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:206;MOV	0x18(%RBP,%RBX,8),%RDI;
+0x519321;/usr/local/src/conda/python-3.12.0/Include/object.h:798;TEST	%RDI,%RDI;
+0x519324;:0;JE	519339 <tupledealloc+0x159>;
+0x519326;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%RDX;
+0x519329;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%EDX,%EDX;
+0x51932b;:0;JS	519339 <tupledealloc+0x159>;
+0x51932d;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%RDX;
+0x519330;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%RDX,(%RDI);
+0x519333;:0;JE	519518 <tupledealloc+0x338>;
+0x519339;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:205;SUB	$0x1,%RBX;
+0x51933d;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:205;JAE	51931c <tupledealloc+0x13c>;
+0x519518;/usr/local/src/conda/python-3.12.0/Objects/object.c:2611;MOV	0x8(%RDI),%RAX;
+0x51951c;/usr/local/src/conda/python-3.12.0/Objects/object.c:2625;CALLQ	0x30(%RAX);
+0x51951f;/usr/local/src/conda/python-3.12.0/Objects/object.c:2649;JMP	519339 <tupledealloc+0x159>;

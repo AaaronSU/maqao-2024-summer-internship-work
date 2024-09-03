@@ -1,0 +1,21 @@
+address;source_location;insn;indent
+0x570880;/usr/local/src/conda/python-3.12.0/Objects/setobject.c:495;MOV	(%RBP),%RDI;
+0x570884;/usr/local/src/conda/python-3.12.0/Objects/setobject.c:495;CMP	$0x9414a0,%RDI;
+0x57088b;:0;JE	5709f0 <set_dealloc+0x220>;
+0x570891;/usr/local/src/conda/python-3.12.0/Objects/setobject.c:495;TEST	%RDI,%RDI;
+0x570894;:0;JE	5709f0 <set_dealloc+0x220>;
+0x57089a;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%R10;
+0x57089d;/usr/local/src/conda/python-3.12.0/Objects/setobject.c:496;DEC	%RBX;
+0x5708a0;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%R10D,%R10D;
+0x5708a3;:0;JNS	570a00 <set_dealloc+0x230>;
+0x5708a9;/usr/local/src/conda/python-3.12.0/Objects/setobject.c:494;ADD	$0x10,%RBP;
+0x5708ad;/usr/local/src/conda/python-3.12.0/Objects/setobject.c:494;TEST	%RBX,%RBX;
+0x5708b0;:0;JNE	570880 <set_dealloc+0xb0>;
+0x5709f0;/usr/local/src/conda/python-3.12.0/Objects/setobject.c:494;ADD	$0x10,%RBP;
+0x5709f4;/usr/local/src/conda/python-3.12.0/Objects/setobject.c:494;JMP	570880 <set_dealloc+0xb0>;
+0x570a00;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%R10;
+0x570a03;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%R10,(%RDI);
+0x570a06;:0;JNE	5708a9 <set_dealloc+0xd9>;
+0x570a0c;/usr/local/src/conda/python-3.12.0/Objects/object.c:2611;MOV	0x8(%RDI),%R11;
+0x570a10;/usr/local/src/conda/python-3.12.0/Objects/object.c:2625;CALLQ	0x30(%R11);
+0x570a14;/usr/local/src/conda/python-3.12.0/Objects/object.c:2649;JMP	5708a9 <set_dealloc+0xd9>;

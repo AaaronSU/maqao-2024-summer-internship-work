@@ -1,0 +1,496 @@
+address;source_location;insn;indent
+0x61f0f20;:0;PUSH	%RBP;
+0x61f0f21;:0;MOV	%RSP,%RBP;
+0x61f0f24;:0;PUSH	%R15;
+0x61f0f26;:0;PUSH	%R14;
+0x61f0f28;:0;PUSH	%R13;
+0x61f0f2a;:0;PUSH	%R12;
+0x61f0f2c;:0;PUSH	%RBX;
+0x61f0f2d;:0;SUB	$0x208,%RSP;
+0x61f0f34;:0;MOV	%RSI,-0x200(%RBP);
+0x61f0f3b;:0;MOV	%RDI,%R14;
+0x61f0f3e;:0;MOV	%FS:0x28,%RAX;
+0x61f0f47;:0;MOV	%RAX,-0x30(%RBP);
+0x61f0f4b;:0;MOV	0x8(%RDI),%RDI;
+0x61f0f4f;:0;TEST	%RDI,%RDI;
+0x61f0f52;:0;JE	61f17cb <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x8ab>;
+0x61f0f58;:0;CMPB	$0,0x10(%R14);
+0x61f0f5d;:0;JE	61f0fa6 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x86>;
+0x61f0f5f;:0;XOR	%R15D,%R15D;
+0x61f0f62;:0;CMP	$-0x1,%EDX;
+0x61f0f65;:0;CMOVNE	%EDX,%R15D;
+0x61f0f69;:0;LEA	0x18(%R14),%RBX;
+0x61f0f6d;:0;MOV	%RBX,%RDI;
+0x61f0f70;:0;CALL	76329b0 <_ZN3tsl5mutex11lock_sharedEv@plt>;
+0x61f0f75;:0;MOV	0x58(%R14),%RAX;
+0x61f0f79;:0;MOV	0x60(%R14),%RCX;
+0x61f0f7d;:0;SUB	%RAX,%RCX;
+0x61f0f80;:0;SHR	$0x3,%RCX;
+0x61f0f84;:0;IMUL	$-0x33333333,%ECX,%ECX;
+0x61f0f8a;:0;MOV	%R15D,-0x1c4(%RBP);
+0x61f0f91;:0;CMP	%ECX,%R15D;
+0x61f0f94;:0;JGE	61f0fd5 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0xb5>;
+0x61f0f96;:0;MOV	%RBX,%RDI;
+0x61f0f99;:0;MOV	(%RAX),%RBX;
+0x61f0f9c;:0;CALL	7632a60 <_ZN3tsl5mutex13unlock_sharedEv@plt>;
+0x61f0fa1;:0;JMP	61f17a7 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x887>;
+0x61f0fa6;:0;MOV	(%RDI),%RAX;
+0x61f0fa9;:0;MOV	0x10(%RAX),%RAX;
+0x61f0fad;:0;MOV	%FS:0x28,%RCX;
+0x61f0fb6;:0;CMP	-0x30(%RBP),%RCX;
+0x61f0fba;:0;JNE	61f1818 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x8f8>;
+0x61f0fc0;:0;MOV	%EDX,%ESI;
+0x61f0fc2;:0;ADD	$0x208,%RSP;
+0x61f0fc9;:0;POP	%RBX;
+0x61f0fca;:0;POP	%R12;
+0x61f0fcc;:0;POP	%R13;
+0x61f0fce;:0;POP	%R14;
+0x61f0fd0;:0;POP	%R15;
+0x61f0fd2;:0;POP	%RBP;
+0x61f0fd3;:0;JMP	%RAX;
+0x61f0fd5;:0;MOV	%RBX,%RDI;
+0x61f0fd8;:0;CALL	7632a60 <_ZN3tsl5mutex13unlock_sharedEv@plt>;
+0x61f0fdd;:0;MOV	%RBX,-0x208(%RBP);
+0x61f0fe4;:0;MOV	%RBX,%RDI;
+0x61f0fe7;:0;CALL	7632630 <_ZN3tsl5mutex4lockEv@plt>;
+0x61f0fec;:0;MOV	0x28(%R14),%RAX;
+0x61f0ff0;:0;MOV	0x30(%R14),%RDX;
+0x61f0ff4;:0;SUB	%RAX,%RDX;
+0x61f0ff7;:0;SAR	$0x3,%RDX;
+0x61f0ffb;:0;MOV	$-0x3333333333333333,%RCX;
+0x61f1005;:0;IMUL	%RDX,%RCX;
+0x61f1009;:0;TEST	%ECX,%ECX;
+0x61f100b;:0;JLE	61f1032 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x112>;
+0x61f100d;:0;LEA	0x58(%R14),%RDX;
+0x61f1011;:0;MOV	%RDX,-0x210(%RBP);
+0x61f1018;:0;MOV	%ECX,%ECX;
+0x61f101a;:0;XOR	%EBX,%EBX;
+0x61f101c;:0;NOPL	(%RAX);
+0x61f1020;:0;CMPQ	$0,(%RAX);(4404) 
+0x61f1024;:0;JNE	61f1064 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x144>;(4404) 
+0x61f1026;:0;INC	%RBX;(4404) 
+0x61f1029;:0;ADD	$0x28,%RAX;(4404) 
+0x61f102d;:0;CMP	%RBX,%RCX;(4404) 
+0x61f1030;:0;JNE	61f1020 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x100>;(4404) 
+0x61f1032;:0;LEA	-0x57ec449(%RIP),%RDX;
+0x61f1039;:0;XOR	%EDI,%EDI;
+0x61f103b;:0;XOR	%ESI,%ESI;
+0x61f103d;:0;CALL	763b220 <_ZN4absl12lts_2023080212log_internal17MakeCheckOpStringIPKvS4_EEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEET_T0_PKc@plt>;
+0x61f1042;:0;MOV	(%RAX),%R8;
+0x61f1045;:0;MOV	0x8(%RAX),%RCX;
+0x61f1049;:0;LEA	-0x57cc106(%RIP),%RSI;
+0x61f1050;:0;LEA	-0x1c0(%RBP),%RBX;
+0x61f1057;:0;MOV	%RBX,%RDI;
+0x61f105a;:0;MOV	$0x14e,%EDX;
+0x61f105f;:0;JMP	61f17ed <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x8cd>;
+0x61f1064;:0;MOV	0x151f87d(%RIP),%RAX;
+0x61f106b;:0;MOV	(%RAX),%R15;
+0x61f106e;:0;LEA	-0x1b0(%RBP),%R13;
+0x61f1075;:0;MOV	%R13,-0x1c0(%RBP);
+0x61f107c;:0;TEST	%R15,%R15;
+0x61f107f;:0;JE	61f181d <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x8fd>;
+0x61f1085;:0;MOV	%R15,%RDI;
+0x61f1088;:0;CALL	76324e0 <strlen@plt>;
+0x61f108d;:0;MOV	%RAX,%R12;
+0x61f1090;:0;MOV	%RAX,-0x1d8(%RBP);
+0x61f1097;:0;MOV	%R13,%RAX;
+0x61f109a;:0;CMP	$0x10,%R12;
+0x61f109e;:0;JB	61f10ca <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x1aa>;
+0x61f10a0;:0;LEA	-0x1c0(%RBP),%RDI;
+0x61f10a7;:0;LEA	-0x1d8(%RBP),%RSI;
+0x61f10ae;:0;XOR	%EDX,%EDX;
+0x61f10b0;:0;CALL	76324f0 <_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm@plt>;
+0x61f10b5;:0;MOV	%RAX,-0x1c0(%RBP);
+0x61f10bc;:0;MOV	-0x1d8(%RBP),%RCX;
+0x61f10c3;:0;MOV	%RCX,-0x1b0(%RBP);
+0x61f10ca;:0;TEST	%R12,%R12;
+0x61f10cd;:0;JE	61f10eb <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x1cb>;
+0x61f10cf;:0;CMP	$0x1,%R12;
+0x61f10d3;:0;JNE	61f10dd <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x1bd>;
+0x61f10d5;:0;MOVZX	(%R15),%ECX;
+0x61f10d9;:0;MOV	%CL,(%RAX);
+0x61f10db;:0;JMP	61f10eb <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x1cb>;
+0x61f10dd;:0;MOV	%RAX,%RDI;
+0x61f10e0;:0;MOV	%R15,%RSI;
+0x61f10e3;:0;MOV	%R12,%RDX;
+0x61f10e6;:0;CALL	7632500 <memcpy@plt>;
+0x61f10eb;:0;MOV	-0x1d8(%RBP),%RAX;
+0x61f10f2;:0;MOV	%RAX,-0x1b8(%RBP);
+0x61f10f9;:0;MOV	-0x1c0(%RBP),%RCX;
+0x61f1100;:0;MOVB	$0,(%RCX,%RAX,1);
+0x61f1104;:0;CALL	763a640 <_ZN15stream_executor17GPUMachineManagerEv@plt>;
+0x61f1109;:0;MOV	%RAX,%R15;
+0x61f110c;:0;MOVL	$0,-0x1e0(%RBP);
+0x61f1116;:0;LEA	-0x1d8(%RBP),%RDI;
+0x61f111d;:0;LEA	-0x1c0(%RBP),%RSI;
+0x61f1124;:0;LEA	-0x1e0(%RBP),%RCX;
+0x61f112b;:0;MOV	%EBX,%EDX;
+0x61f112d;:0;CALL	763a870 <_ZN3tsl15DeviceIdManager20TfToPlatformDeviceIdERKNS_10DeviceTypeENS_3gtl7IntTypeINS_15TfDeviceId_tag_EiEEPNS5_INS_21PlatformDeviceId_tag_EiEE@plt>;
+0x61f1132;:0;MOV	-0x1d8(%RBP),%RAX;
+0x61f1139;:0;TEST	%RAX,%RAX;
+0x61f113c;:0;JNE	61f17fa <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x8da>;
+0x61f1142;:0;MOV	-0x1e0(%RBP),%EDX;
+0x61f1148;:0;MOV	(%R15),%RAX;
+0x61f114b;:0;LEA	-0x1d8(%RBP),%RDI;
+0x61f1152;:0;MOV	%R15,%RSI;
+0x61f1155;:0;CALLQ	0x40(%RAX);
+0x61f1158;:0;MOV	-0x1d8(%RBP),%RAX;
+0x61f115f;:0;TEST	%RAX,%RAX;
+0x61f1162;:0;JNE	61f17fa <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x8da>;
+0x61f1168;:0;MOV	-0x1d0(%RBP),%RAX;
+0x61f116f;:0;MOV	%RAX,-0x1f8(%RBP);
+0x61f1176;:0;MOV	-0x1c0(%RBP),%RDI;
+0x61f117d;:0;CMP	%R13,%RDI;
+0x61f1180;:0;JE	61f1187 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x267>;
+0x61f1182;:0;CALL	7632540 <_ZdlPv@plt>;
+0x61f1187;:0;CMPQ	$0,-0x1f8(%RBP);
+0x61f118f;:0;JE	61f1032 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x112>;
+0x61f1195;:0;MOV	-0x200(%RBP),%RAX;
+0x61f119c;:0;MOV	0x20(%RAX),%RAX;
+0x61f11a0;:0;TEST	%RAX,%RAX;
+0x61f11a3;:0;JNE	61f11ac <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x28c>;
+0x61f11a5;:0;MOV	0x151f754(%RIP),%RAX;
+0x61f11ac;:0;VMOVSS	0x54(%RAX),%XMM0;
+0x61f11b1;:0;VMULSS	-0x578c81d(%RIP),%XMM0,%XMM0;
+0x61f11b9;:0;VCVTTSS2SI	%XMM0,%RBX;
+0x61f11be;:0;TEST	%RBX,%RBX;
+0x61f11c1;:0;JG	61f129d <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x37d>;
+0x61f11c7;:0;MOVQ	$-0x1,-0x1d8(%RBP);
+0x61f11d2;:0;LEA	-0x57ba501(%RIP),%RDX;
+0x61f11d9;:0;LEA	-0x1e0(%RBP),%RDI;
+0x61f11e0;:0;LEA	-0x1d8(%RBP),%R8;
+0x61f11e7;:0;MOV	$0x1b,%ESI;
+0x61f11ec;:0;MOV	$0x20000,%ECX;
+0x61f11f1;:0;CALL	763a900 <_ZN3tsl19ReadInt64FromEnvVarESt17basic_string_viewIcSt11char_traitsIcEElPl@plt>;
+0x61f11f6;:0;CMPQ	$0,-0x1e0(%RBP);
+0x61f11fe;:0;JE	61f125f <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x33f>;
+0x61f1200;:0;LEA	-0x57cc2bd(%RIP),%RSI;
+0x61f1207;:0;LEA	-0x1c0(%RBP),%RBX;
+0x61f120e;:0;MOV	%RBX,%RDI;
+0x61f1211;:0;MOV	$0x158,%EDX;
+0x61f1216;:0;MOV	$0x2,%ECX;
+0x61f121b;:0;CALL	7632c00 <_ZN3tsl8internal10LogMessageC1EPKcii@plt>;
+0x61f1220;:0;LEA	-0x5807790(%RIP),%RSI;
+0x61f1227;:0;MOV	$0x15,%EDX;
+0x61f122c;:0;MOV	%RBX,%RDI;
+0x61f122f;:0;CALL	7632a30 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>;
+0x61f1234;:0;MOV	-0x1e0(%RBP),%RAX;
+0x61f123b;:0;TEST	$0x1,%AL;
+0x61f123d;:0;JNE	61f1268 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x348>;
+0x61f123f;:0;AND	$0x3,%EAX;
+0x61f1242;:0;XOR	%ESI,%ESI;
+0x61f1244;:0;CMP	$0x2,%RAX;
+0x61f1248;:0;MOV	$0x1b,%EDX;
+0x61f124d;:0;CMOVNE	%RSI,%RDX;
+0x61f1251;:0;CMP	$0x2,%EAX;
+0x61f1254;:0;JNE	61f1270 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x350>;
+0x61f1256;:0;MOV	0x151eb93(%RIP),%RSI;
+0x61f125d;:0;JMP	61f1270 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x350>;
+0x61f125f;:0;MOV	-0x1d8(%RBP),%RBX;
+0x61f1266;:0;JMP	61f1299 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x379>;
+0x61f1268;:0;MOV	0x7(%RAX),%RSI;
+0x61f126c;:0;MOV	0xf(%RAX),%RDX;
+0x61f1270;:0;MOV	%RBX,%RDI;
+0x61f1273;:0;CALL	7632a30 <_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@plt>;
+0x61f1278;:0;MOV	%RBX,%RDI;
+0x61f127b;:0;CALL	7632c10 <_ZN3tsl8internal10LogMessageD1Ev@plt>;
+0x61f1280;:0;MOV	-0x1e0(%RBP),%RDI;
+0x61f1287;:0;MOV	-0x1d8(%RBP),%RBX;
+0x61f128e;:0;TEST	$0x1,%DIL;
+0x61f1292;:0;JE	61f1299 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x379>;
+0x61f1294;:0;CALL	7632530 <_ZN4absl12lts_202308026Status15UnrefNonInlinedEm@plt>;
+0x61f1299;:0;SAL	$0x14,%RBX;
+0x61f129d;:0;MOV	%RBX,-0x228(%RBP);
+0x61f12a4;:0;MOV	0x58(%R14),%RAX;
+0x61f12a8;:0;MOV	0x60(%R14),%RCX;
+0x61f12ac;:0;SUB	%RAX,%RCX;
+0x61f12af;:0;SHR	$0x3,%RCX;
+0x61f12b3;:0;IMUL	$-0x33333333,%ECX,%ECX;
+0x61f12b9;:0;CMP	%ECX,-0x1c4(%RBP);
+0x61f12bf;:0;JL	61f1798 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x878>;
+0x61f12c5;:0;LEA	0x70(%R14),%R13;
+0x61f12c9;:0;MOVSXD	-0x1c4(%RBP),%RBX;
+0x61f12d0;:0;LEA	0x88(%R14),%RAX;
+0x61f12d7;:0;MOV	%RAX,-0x230(%RBP);
+0x61f12de;:0;MOV	0x151f733(%RIP),%RAX;
+0x61f12e5;:0;ADD	$0x10,%RAX;
+0x61f12e9;:0;MOV	%RAX,-0x220(%RBP);
+0x61f12f0;:0;MOV	0x151ef49(%RIP),%RAX;
+0x61f12f7;:0;ADD	$0x10,%RAX;
+0x61f12fb;:0;MOV	%RAX,-0x218(%RBP);
+0x61f1302;:0;VXORPS	%XMM0,%XMM0,%XMM0;
+0x61f1306;:0;MOV	%R13,-0x1f0(%RBP);
+0x61f130d;:0;JMP	61f1324 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x404>;
+0x61f130f;:0;NOP;
+0x61f1310;:0;VMOVUPS	%XMM0,(%RSI);(4400) 
+0x61f1314;:0;MOVQ	$0,0x10(%RSI);(4400) 
+0x61f131c;:0;ADD	$0x18,%RSI;(4400) 
+0x61f1320;:0;MOV	%RSI,0x78(%R14);(4400) 
+0x61f1324;:0;MOV	0x70(%R14),%R15;(4400) 
+0x61f1328;:0;MOV	0x78(%R14),%RSI;(4400) 
+0x61f132c;:0;MOV	%RSI,%RAX;(4400) 
+0x61f132f;:0;SUB	%R15,%RAX;(4400) 
+0x61f1332;:0;SAR	$0x3,%RAX;(4400) 
+0x61f1336;:0;MOV	$-0x5555555555555555,%RCX;(4400) 
+0x61f1340;:0;IMUL	%RCX,%RAX;(4400) 
+0x61f1344;:0;CMP	%RBX,%RAX;(4400) 
+0x61f1347;:0;JA	61f13f1 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x4d1>;(4400) 
+0x61f134d;:0;VMOVAPS	%XMM0,-0x1c0(%RBP);(4400) 
+0x61f1355;:0;MOVQ	$0,-0x1b0(%RBP);(4400) 
+0x61f1360;:0;CMP	0x80(%R14),%RSI;(4400) 
+0x61f1367;:0;JNE	61f1310 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x3f0>;(4400) 
+0x61f1369;:0;MOV	%R13,%RDI;(4400) 
+0x61f136c;:0;LEA	-0x1c0(%RBP),%RDX;(4400) 
+0x61f1373;:0;CALL	763b200 <_ZNSt6vectorIS_ISt8functionIFvPvimEESaIS3_EESaIS5_EE17_M_realloc_insertIJS5_EEEvN9__gnu_cxx17__normal_iteratorIPS5_S7_EEDpOT_@plt>;(4400) 
+0x61f1378;:0;MOV	-0x1c0(%RBP),%R12;(4400) 
+0x61f137f;:0;MOV	-0x1b8(%RBP),%R15;(4400) 
+0x61f1386;:0;VXORPS	%XMM0,%XMM0,%XMM0;(4400) 
+0x61f138a;:0;CMP	%R15,%R12;(4400) 
+0x61f138d;:0;JNE	61f13a9 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x489>;(4400) 
+0x61f138f;:0;TEST	%R15,%R15;(4400) 
+0x61f1392;:0;JNE	61f13e0 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x4c0>;(4400) 
+0x61f1394;:0;JMP	61f1324 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x404>;(4400) 
+0x61f1396;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x61f13a0;:0;ADD	$0x20,%R12;  (4403) 
+0x61f13a4;:0;CMP	%R15,%R12;  (4403) 
+0x61f13a7;:0;JE	61f13d0 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x4b0>;  (4403) 
+0x61f13a9;:0;MOV	0x10(%R12),%RAX;  (4403) 
+0x61f13ae;:0;TEST	%RAX,%RAX;  (4403) 
+0x61f13b1;:0;JE	61f13a0 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x480>;  (4403) 
+0x61f13b3;:0;MOV	%R12,%RDI;  (4403) 
+0x61f13b6;:0;MOV	%R12,%RSI;  (4403) 
+0x61f13b9;:0;MOV	$0x3,%EDX;  (4403) 
+0x61f13be;:0;CALL	%RAX;  (4403) 
+0x61f13c0;:0;VXORPS	%XMM0,%XMM0,%XMM0;  (4403) 
+0x61f13c4;:0;JMP	61f13a0 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x480>;  (4403) 
+0x61f13c6;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x61f13d0;:0;MOV	-0x1c0(%RBP),%R15;(4400) 
+0x61f13d7;:0;TEST	%R15,%R15;(4400) 
+0x61f13da;:0;JE	61f1324 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x404>;(4400) 
+0x61f13e0;:0;MOV	%R15,%RDI;(4400) 
+0x61f13e3;:0;CALL	7632540 <_ZdlPv@plt>;(4400) 
+0x61f13e8;:0;VXORPS	%XMM0,%XMM0,%XMM0;(4400) 
+0x61f13ec;:0;JMP	61f1324 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x404>;(4400) 
+0x61f13f1;:0;MOV	0x88(%R14),%R12;(4400) 
+0x61f13f8;:0;MOV	0x90(%R14),%RSI;(4400) 
+0x61f13ff;:0;MOV	%RSI,%RAX;(4400) 
+0x61f1402;:0;SUB	%R12,%RAX;(4400) 
+0x61f1405;:0;SAR	$0x3,%RAX;(4400) 
+0x61f1409;:0;IMUL	%RCX,%RAX;(4400) 
+0x61f140d;:0;CMP	%RBX,%RAX;(4400) 
+0x61f1410;:0;JBE	61f1466 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x546>;(4400) 
+0x61f1412;:0;JMP	61f1515 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x5f5>;(4400) 
+0x61f1417;:0;NOPW	(%RAX,%RAX,1);
+0x61f1420;:0;VMOVUPS	%XMM0,(%RSI);  (4401) 
+0x61f1424;:0;MOVQ	$0,0x10(%RSI);  (4401) 
+0x61f142c;:0;ADD	$0x18,%RSI;  (4401) 
+0x61f1430;:0;MOV	%RSI,0x90(%R14);  (4401) 
+0x61f1437;:0;MOV	0x88(%R14),%R12;  (4401) 
+0x61f143e;:0;MOV	0x90(%R14),%RSI;  (4401) 
+0x61f1445;:0;MOV	%RSI,%RAX;  (4401) 
+0x61f1448;:0;SUB	%R12,%RAX;  (4401) 
+0x61f144b;:0;SAR	$0x3,%RAX;  (4401) 
+0x61f144f;:0;MOV	$-0x5555555555555555,%RCX;  (4401) 
+0x61f1459;:0;IMUL	%RCX,%RAX;  (4401) 
+0x61f145d;:0;CMP	%RBX,%RAX;  (4401) 
+0x61f1460;:0;JA	61f1511 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x5f1>;  (4401) 
+0x61f1466;:0;VMOVAPS	%XMM0,-0x1c0(%RBP);  (4401) 
+0x61f146e;:0;MOVQ	$0,-0x1b0(%RBP);  (4401) 
+0x61f1479;:0;CMP	0x98(%R14),%RSI;  (4401) 
+0x61f1480;:0;JNE	61f1420 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x500>;  (4401) 
+0x61f1482;:0;MOV	-0x230(%RBP),%RDI;  (4401) 
+0x61f1489;:0;LEA	-0x1c0(%RBP),%RDX;  (4401) 
+0x61f1490;:0;CALL	763b200 <_ZNSt6vectorIS_ISt8functionIFvPvimEESaIS3_EESaIS5_EE17_M_realloc_insertIJS5_EEEvN9__gnu_cxx17__normal_iteratorIPS5_S7_EEDpOT_@plt>;  (4401) 
+0x61f1495;:0;MOV	-0x1c0(%RBP),%R12;  (4401) 
+0x61f149c;:0;MOV	-0x1b8(%RBP),%R15;  (4401) 
+0x61f14a3;:0;VXORPS	%XMM0,%XMM0,%XMM0;  (4401) 
+0x61f14a7;:0;CMP	%R15,%R12;  (4401) 
+0x61f14aa;:0;JNE	61f14c9 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x5a9>;  (4401) 
+0x61f14ac;:0;TEST	%R15,%R15;  (4401) 
+0x61f14af;:0;JNE	61f1500 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x5e0>;  (4401) 
+0x61f14b1;:0;JMP	61f1437 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x517>;  (4401) 
+0x61f14b3;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x61f14c0;:0;ADD	$0x20,%R12;    (4402) 
+0x61f14c4;:0;CMP	%R15,%R12;    (4402) 
+0x61f14c7;:0;JE	61f14f0 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x5d0>;    (4402) 
+0x61f14c9;:0;MOV	0x10(%R12),%RAX;    (4402) 
+0x61f14ce;:0;TEST	%RAX,%RAX;    (4402) 
+0x61f14d1;:0;JE	61f14c0 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x5a0>;    (4402) 
+0x61f14d3;:0;MOV	%R12,%RDI;    (4402) 
+0x61f14d6;:0;MOV	%R12,%RSI;    (4402) 
+0x61f14d9;:0;MOV	$0x3,%EDX;    (4402) 
+0x61f14de;:0;CALL	%RAX;    (4402) 
+0x61f14e0;:0;VXORPS	%XMM0,%XMM0,%XMM0;    (4402) 
+0x61f14e4;:0;JMP	61f14c0 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x5a0>;    (4402) 
+0x61f14e6;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x61f14f0;:0;MOV	-0x1c0(%RBP),%R15;  (4401) 
+0x61f14f7;:0;TEST	%R15,%R15;  (4401) 
+0x61f14fa;:0;JE	61f1437 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x517>;  (4401) 
+0x61f1500;:0;MOV	%R15,%RDI;  (4401) 
+0x61f1503;:0;CALL	7632540 <_ZdlPv@plt>;  (4401) 
+0x61f1508;:0;VXORPS	%XMM0,%XMM0,%XMM0;  (4401) 
+0x61f150c;:0;JMP	61f1437 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x517>;  (4401) 
+0x61f1511;:0;MOV	(%R13),%R15;(4400) 
+0x61f1515;:0;MOV	$0x70,%EDI;(4400) 
+0x61f151a;:0;CALL	76325c0 <_Znwm@plt>;(4400) 
+0x61f151f;:0;MOV	%RAX,%R13;(4400) 
+0x61f1522;:0;LEA	(,%RBX,8),%RAX;(4400) 
+0x61f152a;:0;LEA	(%RAX,%RAX,2),%RAX;(4400) 
+0x61f152e;:0;ADD	%RAX,%R15;(4400) 
+0x61f1531;:0;ADD	%RAX,%R12;(4400) 
+0x61f1534;:0;MOV	%R13,%RDI;(4400) 
+0x61f1537;:0;MOV	%R15,%RSI;(4400) 
+0x61f153a;:0;MOV	%R12,%RDX;(4400) 
+0x61f153d;:0;CALL	763b1e0 <_ZN3tsl12SubAllocatorC2ERKSt6vectorISt8functionIFvPvimEESaIS5_EES9_@plt>;(4400) 
+0x61f1542;:0;MOV	-0x220(%RBP),%RAX;(4400) 
+0x61f1549;:0;MOV	%RAX,(%R13);(4400) 
+0x61f154d;:0;MOV	-0x1f8(%RBP),%RAX;(4400) 
+0x61f1554;:0;MOV	%RAX,0x38(%R13);(4400) 
+0x61f1558;:0;MOV	-0x1c4(%RBP),%EAX;(4400) 
+0x61f155e;:0;MOV	%EAX,0x40(%R13);(4400) 
+0x61f1562;:0;MOVQ	$0,0x48(%R13);(4400) 
+0x61f156a;:0;MOV	-0x218(%RBP),%RAX;(4400) 
+0x61f1571;:0;MOV	%RAX,0x50(%R13);(4400) 
+0x61f1575;:0;VXORPS	%XMM0,%XMM0,%XMM0;(4400) 
+0x61f1579;:0;VMOVUPS	%XMM0,0x58(%R13);(4400) 
+0x61f157f;:0;MOVQ	$0,0x68(%R13);(4400) 
+0x61f1587;:0;MOVW	$0x1,-0x1d7(%RBP);(4400) 
+0x61f1590;:0;MOVQ	$0,-0x1d0(%RBP);(4400) 
+0x61f159b;:0;MOV	-0x200(%RBP),%RAX;(4400) 
+0x61f15a2;:0;MOV	0x20(%RAX),%RAX;(4400) 
+0x61f15a6;:0;TEST	%RAX,%RAX;(4400) 
+0x61f15a9;:0;JNE	61f15b2 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x692>;(4400) 
+0x61f15ab;:0;MOV	0x151f34e(%RIP),%RAX;(4400) 
+0x61f15b2;:0;MOVZX	0x5c(%RAX),%EAX;(4400) 
+0x61f15b6;:0;XOR	$0x1,%AL;(4400) 
+0x61f15b8;:0;MOV	%AL,-0x1d8(%RBP);(4400) 
+0x61f15be;:0;MOV	$0x640,%EDI;(4400) 
+0x61f15c3;:0;CALL	76325c0 <_Znwm@plt>;(4400) 
+0x61f15c8;:0;MOV	%RAX,%R15;(4400) 
+0x61f15cb;:0;MOV	%R13,-0x1e8(%RBP);(4400) 
+0x61f15d2;:0;LEA	-0x1b0(%RBP),%R12;(4400) 
+0x61f15d9;:0;MOV	%R12,-0x1c0(%RBP);(4400) 
+0x61f15e0;:0;MOV	$0x74736f685f757067,%RAX;(4400) 
+0x61f15ea;:0;MOV	%RAX,(%R12);(4400) 
+0x61f15ee;:0;MOVL	$0x6366625f,0x8(%R12);(4400) 
+0x61f15f7;:0;MOVQ	$0xc,-0x1b8(%RBP);(4400) 
+0x61f1602;:0;MOVB	$0,-0x1a4(%RBP);(4400) 
+0x61f1609;:0;MOV	%R15,%RDI;(4400) 
+0x61f160c;:0;LEA	-0x1e8(%RBP),%RSI;(4400) 
+0x61f1613;:0;MOV	-0x228(%RBP),%RDX;(4400) 
+0x61f161a;:0;LEA	-0x1c0(%RBP),%RCX;(4400) 
+0x61f1621;:0;LEA	-0x1d8(%RBP),%R8;(4400) 
+0x61f1628;:0;CALL	763b230 <_ZN3tsl12BFCAllocatorC1ESt10unique_ptrINS_12SubAllocatorESt14default_deleteIS2_EEmRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS0_7OptionsE@plt>;(4400) 
+0x61f162d;:0;MOV	-0x1c0(%RBP),%RDI;(4400) 
+0x61f1634;:0;CMP	%R12,%RDI;(4400) 
+0x61f1637;:0;JE	61f163e <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x71e>;(4400) 
+0x61f1639;:0;CALL	7632540 <_ZdlPv@plt>;(4400) 
+0x61f163e;:0;MOV	-0x1e8(%RBP),%RDI;(4400) 
+0x61f1645;:0;TEST	%RDI,%RDI;(4400) 
+0x61f1648;:0;JE	61f1650 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x730>;(4400) 
+0x61f164a;:0;MOV	(%RDI),%RAX;(4400) 
+0x61f164d;:0;CALLQ	0x8(%RAX);(4400) 
+0x61f1650;:0;MOVQ	$0,-0x1e8(%RBP);(4400) 
+0x61f165b;:0;CALL	7633c20 <_ZN10tensorflow9LogMemory9IsEnabledEv@plt>;(4400) 
+0x61f1660;:0;TEST	%AL,%AL;(4400) 
+0x61f1662;:0;JE	61f1691 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x771>;(4400) 
+0x61f1664;:0;MOV	(%R15),%RAX;(4400) 
+0x61f1667;:0;MOV	%R15,%RDI;(4400) 
+0x61f166a;:0;CALLQ	0x30(%RAX);(4400) 
+0x61f166d;:0;TEST	%AL,%AL;(4400) 
+0x61f166f;:0;JNE	61f1691 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x771>;(4400) 
+0x61f1671;:0;MOV	$0xd0,%EDI;(4400) 
+0x61f1676;:0;CALL	76325c0 <_Znwm@plt>;(4400) 
+0x61f167b;:0;MOV	%RAX,%R12;(4400) 
+0x61f167e;:0;MOV	%RAX,%RDI;(4400) 
+0x61f1681;:0;MOV	%R15,%RSI;(4400) 
+0x61f1684;:0;MOV	$0x1,%EDX;(4400) 
+0x61f1689;:0;CALL	763b240 <_ZN3tsl17TrackingAllocatorC1EPNS_9AllocatorEb@plt>;(4400) 
+0x61f168e;:0;MOV	%R12,%R15;(4400) 
+0x61f1691;:0;MOV	%R15,-0x1c0(%RBP);(4400) 
+0x61f1698;:0;LEA	-0x1b0(%RBP),%RCX;(4400) 
+0x61f169f;:0;VXORPS	%XMM0,%XMM0,%XMM0;(4400) 
+0x61f16a3;:0;VMOVUPS	%XMM0,-0x8(%RCX);(4400) 
+0x61f16a8;:0;MOV	%R13,-0x1a8(%RBP);(4400) 
+0x61f16af;:0;MOVQ	$0,-0x1a0(%RBP);(4400) 
+0x61f16ba;:0;MOV	0x60(%R14),%RSI;(4400) 
+0x61f16be;:0;CMP	0x68(%R14),%RSI;(4400) 
+0x61f16c2;:0;JE	61f170e <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x7ee>;(4400) 
+0x61f16c4;:0;MOVQ	$0,-0x1c0(%RBP);(4400) 
+0x61f16cf;:0;MOV	%R15,(%RSI);(4400) 
+0x61f16d2;:0;MOV	-0x1b8(%RBP),%RAX;(4400) 
+0x61f16d9;:0;MOVQ	$0,-0x1b8(%RBP);(4400) 
+0x61f16e4;:0;MOV	%RAX,0x8(%RSI);(4400) 
+0x61f16e8;:0;VMOVUPS	(%RCX),%XMM0;(4400) 
+0x61f16ec;:0;VMOVUPS	%XMM0,0x10(%RSI);(4400) 
+0x61f16f1;:0;MOV	-0x1a0(%RBP),%RAX;(4400) 
+0x61f16f8;:0;MOVQ	$0,-0x1a0(%RBP);(4400) 
+0x61f1703;:0;MOV	%RAX,0x20(%RSI);(4400) 
+0x61f1707;:0;ADDQ	$0x28,0x60(%R14);(4400) 
+0x61f170c;:0;JMP	61f1721 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x801>;(4400) 
+0x61f170e;:0;MOV	-0x210(%RBP),%RDI;(4400) 
+0x61f1715;:0;LEA	-0x1c0(%RBP),%RDX;(4400) 
+0x61f171c;:0;CALL	763b250 <_ZNSt6vectorIN10tensorflow15GPUProcessState14AllocatorPartsESaIS2_EE17_M_realloc_insertIJS2_EEEvN9__gnu_cxx17__normal_iteratorIPS2_S4_EEDpOT_@plt>;(4400) 
+0x61f1721;:0;MOV	-0x1f0(%RBP),%R13;(4400) 
+0x61f1728;:0;MOV	-0x1a0(%RBP),%RDI;(4400) 
+0x61f172f;:0;TEST	%RDI,%RDI;(4400) 
+0x61f1732;:0;JE	61f173a <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x81a>;(4400) 
+0x61f1734;:0;MOV	(%RDI),%RAX;(4400) 
+0x61f1737;:0;CALLQ	0x8(%RAX);(4400) 
+0x61f173a;:0;MOVQ	$0,-0x1a0(%RBP);(4400) 
+0x61f1745;:0;MOV	-0x1b8(%RBP),%RDI;(4400) 
+0x61f174c;:0;TEST	%RDI,%RDI;(4400) 
+0x61f174f;:0;JE	61f1756 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x836>;(4400) 
+0x61f1751;:0;CALL	7632540 <_ZdlPv@plt>;(4400) 
+0x61f1756;:0;MOVQ	$0,-0x1b8(%RBP);(4400) 
+0x61f1761;:0;MOV	-0x1c0(%RBP),%RDI;(4400) 
+0x61f1768;:0;TEST	%RDI,%RDI;(4400) 
+0x61f176b;:0;JE	61f1773 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x853>;(4400) 
+0x61f176d;:0;MOV	(%RDI),%RAX;(4400) 
+0x61f1770;:0;CALLQ	0x8(%RAX);(4400) 
+0x61f1773;:0;MOV	0x58(%R14),%RAX;(4400) 
+0x61f1777;:0;MOV	0x60(%R14),%RCX;(4400) 
+0x61f177b;:0;SUB	%RAX,%RCX;(4400) 
+0x61f177e;:0;SHR	$0x3,%RCX;(4400) 
+0x61f1782;:0;IMUL	$-0x33333333,%ECX,%ECX;(4400) 
+0x61f1788;:0;CMP	%ECX,-0x1c4(%RBP);(4400) 
+0x61f178e;:0;VXORPS	%XMM0,%XMM0,%XMM0;(4400) 
+0x61f1792;:0;JGE	61f1324 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x404>;(4400) 
+0x61f1798;:0;MOV	(%RAX),%RBX;
+0x61f179b;:0;MOV	-0x208(%RBP),%RDI;
+0x61f17a2;:0;CALL	76326d0 <_ZN3tsl5mutex6unlockEv@plt>;
+0x61f17a7;:0;MOV	%FS:0x28,%RAX;
+0x61f17b0;:0;CMP	-0x30(%RBP),%RAX;
+0x61f17b4;:0;JNE	61f1818 <_ZN10tensorflow15GPUProcessState19GetGpuHostAllocatorERKNS_10GPUOptionsEi+0x8f8>;
+0x61f17b6;:0;MOV	%RBX,%RAX;
+0x61f17b9;:0;ADD	$0x208,%RSP;
+0x61f17c0;:0;POP	%RBX;
+0x61f17c1;:0;POP	%R12;
+0x61f17c3;:0;POP	%R13;
+0x61f17c5;:0;POP	%R14;
+0x61f17c7;:0;POP	%R15;
+0x61f17c9;:0;POP	%RBP;
+0x61f17ca;:0;RET;
+0x61f17cb;:0;LEA	-0x57cc888(%RIP),%RSI;
+0x61f17d2;:0;LEA	-0x57e7372(%RIP),%R8;
+0x61f17d9;:0;LEA	-0x1c0(%RBP),%RBX;
+0x61f17e0;:0;MOV	$0xe,%ECX;
+0x61f17e5;:0;MOV	%RBX,%RDI;
+0x61f17e8;:0;MOV	$0x11b,%EDX;
+0x61f17ed;:0;CALL	7633150 <_ZN4absl12lts_2023080212log_internal15LogMessageFatalC1EPKciSt17basic_string_viewIcSt11char_traitsIcEE@plt>;
+0x61f17f2;:0;MOV	%RBX,%RDI;
+0x61f17f5;:0;CALL	7633160 <_ZN4absl12lts_2023080212log_internal15LogMessageFatalD1Ev@plt>;
+0x61f17fa;:0;MOV	%RAX,-0x1e0(%RBP);
+0x61f1801;:0;MOVQ	$0x36,-0x1d8(%RBP);
+0x61f180c;:0;LEA	-0x1e0(%RBP),%RDI;
+0x61f1813;:0;CALL	7634ee0 <_ZN4absl12lts_2023080217internal_statusor22ThrowBadStatusOrAccessENS0_6StatusE@plt>;
+0x61f1818;:0;CALL	7632560 <__stack_chk_fail@plt>;
+0x61f181d;:0;LEA	-0x57b5472(%RIP),%RDI;
+0x61f1824;:0;CALL	7632550 <_ZSt19__throw_logic_errorPKc@plt>;
+0x61f1829;:0;INT	$0x3;
+0x61f182a;:0;INT	$0x3;
+0x61f182b;:0;INT	$0x3;
+0x61f182c;:0;INT	$0x3;
+0x61f182d;:0;INT	$0x3;
+0x61f182e;:0;INT	$0x3;
+0x61f182f;:0;INT	$0x3;

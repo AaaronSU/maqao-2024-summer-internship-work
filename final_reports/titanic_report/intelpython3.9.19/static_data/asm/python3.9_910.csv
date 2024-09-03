@@ -1,0 +1,28 @@
+address;source_location;insn;indent
+0x131d9d;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2625;MOV	0x18(%R13),%RAX;
+0x131da1;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2625;MOV	(%RAX,%RBX,8),%RBP;
+0x131da5;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2625;TEST	%RBP,%RBP;
+0x131da8;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2625;JE	131d98 <list_traverse+0x38>;
+0x131daa;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:112;MOV	0x8(%RBP),%RAX;
+0x131dae;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:113;TESTB	$0x40,0xa9(%RAX);
+0x131db5;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:113;JE	131d98 <list_traverse+0x38>;
+0x131db7;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:113;MOV	0x148(%RAX),%RAX;
+0x131dbe;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:113;TEST	%RAX,%RAX;
+0x131dc1;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:113;JNE	131e18 <list_traverse+0xb8>;
+0x131dc3;/usr/local/src/conda/python-3.9.19/Modules/gcmodule.c:81;MOV	-0x8(%RBP),%RAX;
+0x131dc7;/usr/local/src/conda/python-3.9.19/Modules/gcmodule.c:449;TEST	$0x2,%AL;
+0x131dc9;/usr/local/src/conda/python-3.9.19/Modules/gcmodule.c:449;JE	131d98 <list_traverse+0x38>;
+0x131dcb;/usr/local/src/conda/python-3.9.19/Modules/gcmodule.c:117;SUB	$0x4,%RAX;
+0x131dcf;/usr/local/src/conda/python-3.9.19/Modules/gcmodule.c:117;MOV	%RAX,-0x8(%RBP);
+0x131dd3;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2624;DEC	%RBX;
+0x131dd6;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2624;JNS	131d9d <list_traverse+0x3d>;
+0x131e18;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2624;LEA	0x361(%RIP),%RDX;
+0x131e1f;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2624;CMP	%RDX,%RAX;
+0x131e22;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:2624;JNE	131e38 <list_traverse+0xd8>;
+0x131e24;/usr/local/src/conda/python-3.9.19/Objects/typeobject.c:3764;MOV	0xa8(%RBP),%EAX;
+0x131e2a;/usr/local/src/conda/python-3.9.19/Objects/typeobject.c:3764;AND	$0x200,%EAX;
+0x131e2f;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:114;TEST	%EAX,%EAX;
+0x131e31;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:114;JNE	131dc3 <list_traverse+0x63>;
+0x131e38;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:114;MOV	%RBP,%RDI;
+0x131e3b;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:114;CALL	%RAX;
+0x131e3d;/usr/local/src/conda/python-3.9.19/Include/internal/pycore_object.h:114;JMP	131e2f <list_traverse+0xcf>;

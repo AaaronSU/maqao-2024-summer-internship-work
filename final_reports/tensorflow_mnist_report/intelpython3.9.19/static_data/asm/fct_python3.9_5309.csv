@@ -1,0 +1,27 @@
+address;source_location;insn;indent
+0x1ec150;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:238;SUB	$0x18,%RSP;
+0x1ec154;/usr/local/src/conda/python-3.9.19/Include/object.h:628;MOV	%FS:0x28,%RCX;
+0x1ec15d;:0;MOV	%RCX,0x8(%RSP);
+0x1ec162;:0;MOV	0x8(%RDI),%RCX;
+0x1ec166;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:240;TESTB	$0x2,0xab(%RCX);
+0x1ec16d;:0;JE	65fc6 <PyList_SetItem.cold+0x25>;
+0x1ec173;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:245;CMP	0x10(%RDI),%RSI;
+0x1ec177;:0;JAE	65fa1 <PyList_SetItem.cold>;
+0x1ec17d;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:251;MOV	0x18(%RDI),%RAX;
+0x1ec181;:0;LEA	(%RAX,%RSI,8),%RAX;
+0x1ec185;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:252;MOV	(%RAX),%RDI;
+0x1ec188;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:252;MOV	%RDX,(%RAX);
+0x1ec18b;/usr/local/src/conda/python-3.9.19/Include/object.h:496;TEST	%RDI,%RDI;
+0x1ec18e;:0;JNE	1ec1a7 <PyList_SetItem+0x57>;
+0x1ec190;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:253;XOR	%EAX,%EAX;
+0x1ec192;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:254;MOV	0x8(%RSP),%RDX;
+0x1ec197;:0;SUB	%FS:0x28,%RDX;
+0x1ec1a0;:0;JNE	1ec1b3 <PyList_SetItem+0x63>;
+0x1ec1a2;:0;ADD	$0x18,%RSP;
+0x1ec1a6;:0;RET;
+0x1ec1a7;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RDI);
+0x1ec1aa;:0;JNE	1ec190 <PyList_SetItem+0x40>;
+0x1ec1ac;/usr/local/src/conda/python-3.9.19/Include/object.h:430;CALL	1296a0 <_Py_Dealloc>;
+0x1ec1b1;/usr/local/src/conda/python-3.9.19/Include/object.h:430;JMP	1ec190 <PyList_SetItem+0x40>;
+0x1ec1b3;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:254;CALLQ	0x1925af(%RIP);
+0x1ec1b9;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:254;NOPL	(%RAX);

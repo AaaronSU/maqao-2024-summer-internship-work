@@ -1,0 +1,39 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 90 - 119
+--------------------------------------------------------------------------------
+
+90: static PyObject* hadamard_product(PyObject* self, PyObject* args) {
+91:     PyObject* list1_obj;
+92:     PyObject* list2_obj;
+93:     if (!PyArg_ParseTuple(args, "OO", &list1_obj, &list2_obj)) {
+94:         return NULL;
+95:     }
+96:     if (!PyList_Check(list1_obj) || !PyList_Check(list2_obj)) {
+97:         PyErr_SetString(PyExc_TypeError, "Expected two lists");
+98:         return NULL;
+99:     }
+100: 
+101:     Py_ssize_t list_size = PyList_Size(list1_obj);
+102:     if (list_size != PyList_Size(list2_obj)) {
+103:         PyErr_SetString(CustomError, "hadamard_product: vector size doesn't match");
+104:         return NULL;
+105:     }
+106: 
+107:     PyObject* result_list = PyList_New(list_size);
+108: 
+109:     for (Py_ssize_t i = 0; i < list_size; i++) {
+110:         PyObject* item1 = PyList_GetItem(list1_obj, i);
+111:         PyObject* item2 = PyList_GetItem(list2_obj, i);
+112:         double value1 = PyFloat_AsDouble(item1);
+113:         double value2 = PyFloat_AsDouble(item2);
+114:         PyObject* result_item = PyFloat_FromDouble(value1 * value2);
+115:         PyList_SetItem(result_list, i, result_item);
+116:     }
+117:     
+118:     return result_list;
+119: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 220 - 966
+--------------------------------------------------------------------------------
+
+220:     return ob->ob_type;
+[...]
+966:     flags = type->tp_flags;

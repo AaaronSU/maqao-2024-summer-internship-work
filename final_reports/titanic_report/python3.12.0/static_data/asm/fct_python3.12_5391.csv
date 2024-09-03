@@ -1,0 +1,46 @@
+address;source_location;insn;indent
+0x57a990;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:620;SUB	$0x8,%RSP;
+0x57a994;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:625;TEST	%RDI,%RDI;
+0x57a997;:0;JE	457bb6 <PyLong_AsUnsignedLong.cold+0x1a>;
+0x57a99d;/usr/local/src/conda/python-3.12.0/Include/object.h:967;MOV	0x8(%RDI),%RAX;
+0x57a9a1;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:629;TESTB	$0x1,0xab(%RAX);
+0x57a9a8;:0;JE	457b9c <PyLong_AsUnsignedLong.cold>;
+0x57a9ae;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_long.h:146;MOV	0x10(%RDI),%RCX;
+0x57a9b2;/usr/local/src/conda/python-3.12.0/Include/cpython/longintrepr.h:121;MOV	%RCX,%RDX;
+0x57a9b5;:0;AND	$0x3,%EDX;
+0x57a9b8;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:635;CMP	$0x8,%RCX;
+0x57a9bc;:0;JA	57a9d2 <PyLong_AsUnsignedLong+0x42>;
+0x57a9be;/usr/local/src/conda/python-3.12.0/Include/cpython/longintrepr.h:122;MOV	0x18(%RDI),%EDI;
+0x57a9c1;/usr/local/src/conda/python-3.12.0/Include/cpython/longintrepr.h:121;MOV	$0x1,%EAX;
+0x57a9c6;:0;SUB	%RDX,%RAX;
+0x57a9c9;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:666;IMUL	%RDI,%RAX;
+0x57a9cd;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:666;ADD	$0x8,%RSP;
+0x57a9d1;:0;RET;
+0x57a9d2;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:646;CMP	$0x2,%RDX;
+0x57a9d6;:0;JE	57aa08 <PyLong_AsUnsignedLong+0x78>;
+0x57a9d8;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_long.h:179;SHR	$0x3,%RCX;
+0x57a9dc;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:652;XOR	%EAX,%EAX;
+0x57a9de;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:653;LEA	-0x1(%RCX),%R8;
+0x57a9e2;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:655;MOV	%RAX,%RSI;(1897) 
+0x57a9e5;:0;MOV	%RAX,%R9;(1897) 
+0x57a9e8;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:655;MOV	0x18(%RDI,%R8,4),%EAX;(1897) 
+0x57a9ed;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:655;SAL	$0x1e,%RSI;(1897) 
+0x57a9f1;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:655;OR	%RSI,%RAX;(1897) 
+0x57a9f4;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:656;MOV	%RAX,%R10;(1897) 
+0x57a9f7;:0;SHR	$0x1e,%R10;(1897) 
+0x57a9fb;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:656;CMP	%R9,%R10;(1897) 
+0x57a9fe;:0;JNE	57aa1f <PyLong_AsUnsignedLong+0x8f>;(1897) 
+0x57aa00;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:653;SUB	$0x1,%R8;(1897) 
+0x57aa04;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:653;JAE	57a9e2 <PyLong_AsUnsignedLong+0x52>;(1897) 
+0x57aa06;:0;JMP	57a9cd <PyLong_AsUnsignedLong+0x3d>;
+0x57aa08;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:647;MOV	0x3d1319(%RIP),%RDI;
+0x57aa0f;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:647;MOV	$0x69c5c8,%ESI;
+0x57aa14;:0;CALL	59a420 <PyErr_SetString>;
+0x57aa19;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:649;OR	$-0x1,%RAX;
+0x57aa1d;:0;JMP	57a9cd <PyLong_AsUnsignedLong+0x3d>;
+0x57aa1f;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:662;MOV	0x3d1302(%RIP),%RDI;
+0x57aa26;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:662;MOV	$0x69c5f8,%ESI;
+0x57aa2b;:0;CALL	59a420 <PyErr_SetString>;
+0x57aa30;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:665;OR	$-0x1,%RAX;
+0x57aa34;:0;JMP	57a9cd <PyLong_AsUnsignedLong+0x3d>;
+0x57aa36;/usr/local/src/conda/python-3.12.0/Objects/longobject.c:665;NOPW	%CS:(%RAX,%RAX,1);

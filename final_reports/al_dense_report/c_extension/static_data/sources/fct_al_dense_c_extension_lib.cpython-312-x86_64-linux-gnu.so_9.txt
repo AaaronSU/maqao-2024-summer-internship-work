@@ -1,0 +1,37 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 61 - 88
+--------------------------------------------------------------------------------
+
+61: static PyObject* dot_product(PyObject* self, PyObject* args) {
+62:     PyObject* list1_obj;
+63:     PyObject* list2_obj;
+64:     if (!PyArg_ParseTuple(args, "OO", &list1_obj, &list2_obj)) {
+65:         return NULL;
+66:     }
+67:     if (!PyList_Check(list1_obj) || !PyList_Check(list2_obj)) {
+68:         PyErr_SetString(PyExc_TypeError, "Expected two lists");
+69:         return NULL;
+70:     }
+71: 
+72:     Py_ssize_t list_size = PyList_Size(list1_obj);
+73:     if (list_size != PyList_Size(list2_obj)) {
+74:         PyErr_SetString(CustomError, "dot_product: vector size doesn't match");
+75:         return NULL;
+76:     }
+77: 
+78:     double dot = 0.0;
+79:     for (Py_ssize_t i = 0; i < list_size; i++) {
+80:         PyObject* item1 = PyList_GetItem(list1_obj, i);
+81:         PyObject* item2 = PyList_GetItem(list2_obj, i);
+82:         double value1 = PyFloat_AsDouble(item1);
+83:         double value2 = PyFloat_AsDouble(item2);
+84:         dot += value1 * value2;
+85:     }
+86:     
+87:     return Py_BuildValue("d", dot);
+88: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 220 - 966
+--------------------------------------------------------------------------------
+
+220:     return ob->ob_type;
+[...]
+966:     flags = type->tp_flags;

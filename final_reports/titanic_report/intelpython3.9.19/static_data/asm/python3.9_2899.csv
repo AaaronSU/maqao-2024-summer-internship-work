@@ -1,0 +1,27 @@
+address;source_location;insn;indent
+0x1d92b3;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RAX);
+0x1d92b6;/usr/local/src/conda/python-3.9.19/Python/context.c:249;XOR	%EAX,%EAX;
+0x1d92b8;/usr/local/src/conda/python-3.9.19/Python/context.c:249;MOV	0x8(%RSP),%RDX;
+0x1d92bd;:0;SUB	%FS:0x28,%RDX;
+0x1d92c6;:0;JNE	1d92d3 <PyContextVar_Get+0x93>;
+0x1d92d3;:0;CALLQ	0x1a548f(%RIP);
+0x1d92d9;/usr/local/src/conda/python-3.9.19/Python/context.c:210;MOV	0x18(%RDX),%RDI;
+0x1d92dd;/usr/local/src/conda/python-3.9.19/Python/context.c:212;XOR	%ECX,%ECX;
+0x1d92df;/usr/local/src/conda/python-3.9.19/Python/context.c:213;MOV	%RSP,%RDX;
+0x1d92e2;:0;MOV	%RBX,%RSI;
+0x1d92e5;/usr/local/src/conda/python-3.9.19/Python/context.c:212;MOV	%RCX,(%RSP);
+0x1d92e9;/usr/local/src/conda/python-3.9.19/Python/context.c:213;CALL	256f00 <_PyHamt_Find.constprop.0>;
+0x1d92ee;/usr/local/src/conda/python-3.9.19/Python/context.c:214;TEST	%EAX,%EAX;
+0x1d92f0;:0;JS	c0817 <PyContextVar_Get.cold+0x1b>;
+0x1d92f6;/usr/local/src/conda/python-3.9.19/Python/context.c:217;DEC	%EAX;
+0x1d92f8;/usr/local/src/conda/python-3.9.19/Python/context.c:217;JNE	1d9322 <PyContextVar_Get+0xe2>;
+0x1d92fa;/usr/local/src/conda/python-3.9.19/Python/context.c:220;MOVDQU	0xf8(%R12),%XMM0;
+0x1d9304;/usr/local/src/conda/python-3.9.19/Python/context.c:219;MOV	(%RSP),%RAX;
+0x1d9308;/usr/local/src/conda/python-3.9.19/Python/context.c:221;SHUFPD	$0x1,%XMM0,%XMM0;
+0x1d930d;/usr/local/src/conda/python-3.9.19/Python/context.c:219;MOV	%RAX,0x20(%RBX);
+0x1d9311;/usr/local/src/conda/python-3.9.19/Python/context.c:220;MOVUPS	%XMM0,0x28(%RBX);
+0x1d9315;/usr/local/src/conda/python-3.9.19/Python/context.c:223;MOV	%RAX,(%RBP);
+0x1d9319;/usr/local/src/conda/python-3.9.19/Include/object.h:487;TEST	%RAX,%RAX;
+0x1d931c;:0;JNE	1d92b3 <PyContextVar_Get+0x73>;
+0x1d931e;/usr/local/src/conda/python-3.9.19/Python/context.c:244;XOR	%EAX,%EAX;
+0x1d9320;/usr/local/src/conda/python-3.9.19/Python/context.c:244;JMP	1d92b8 <PyContextVar_Get+0x78>;

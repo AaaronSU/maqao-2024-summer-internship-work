@@ -1,0 +1,33 @@
+address;source_location;insn;indent
+0x14b9de;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:167;MOV	0x28(%RBX),%RAX;
+0x14b9e2;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:167;TESTB	$0x2,0x18(%RAX);
+0x14b9e6;:0;JNE	14bc09 <member_get+0x259>;
+0x14ba20;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:175;MOV	0x18(%RSP),%RAX;
+0x14ba25;:0;SUB	%FS:0x28,%RAX;
+0x14ba2e;:0;JNE	14bc7e <member_get+0x2ce>;
+0x14baa1;/usr/local/src/conda/python-3.9.19/Objects/typeobject.c:1432;MOV	%RBX,%RDI;
+0x14baa4;:0;CALL	1ee130 <descr_setcheck.part.0.isra.0>;
+0x14baa9;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:163;TEST	%EAX,%EAX;
+0x14baab;:0;JNS	14b9de <member_get+0x2e>;
+0x14bab1;/usr/local/src/conda/python-3.9.19/Python/structmember.c:88;XOR	%EBX,%EBX;
+0x14bab3;/usr/local/src/conda/python-3.9.19/Python/structmember.c:88;JMP	14ba20 <member_get+0x70>;
+0x14bc09;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:168;MOV	(%RAX),%RCX;
+0x14bc0c;:0;MOV	%RBP,%RDX;
+0x14bc0f;:0;XOR	%EAX,%EAX;
+0x14bc11;:0;LEA	0x150b61(%RIP),%RSI;
+0x14bc18;:0;LEA	0x150b5d(%RIP),%RDI;
+0x14bc1f;:0;CALL	124560 <PySys_Audit>;
+0x14bc24;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:168;TEST	%EAX,%EAX;
+0x14bc26;:0;JS	14bab1 <member_get+0x101>;
+0x14bc7e;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:175;CALLQ	0x232ae4(%RIP);
+0x14bc84;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:175;MOV	%RSI,%RDX;
+0x14bc87;/usr/local/src/conda/python-3.9.19/Objects/typeobject.c:1414;MOV	0x100(%RDX),%RDX;  (1157) 
+0x14bc8e;/usr/local/src/conda/python-3.9.19/Objects/typeobject.c:1415;TEST	%RDX,%RDX;  (1157) 
+0x14bc91;:0;JE	14bc9e <member_get+0x2ee>;  (1157) 
+0x14bc93;/usr/local/src/conda/python-3.9.19/Objects/typeobject.c:1412;CMP	%RDX,%RAX;  (1157) 
+0x14bc96;:0;JE	14b9de <member_get+0x2e>;  (1157) 
+0x14bc9c;:0;JMP	14bc87 <member_get+0x2d7>;  (1157) 
+0x14bc9e;/usr/local/src/conda/python-3.9.19/Objects/descrobject.c:77;LEA	0x25b0bb(%RIP),%RDX;
+0x14bca5;:0;CMP	%RDX,%RAX;
+0x14bca8;:0;JE	14b9de <member_get+0x2e>;
+0x14bcae;:0;JMP	14baa1 <member_get+0xf1>;

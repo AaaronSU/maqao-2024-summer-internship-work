@@ -1,0 +1,17 @@
+address;source_location;insn;indent
+0x545b00;/usr/local/src/conda/python-3.12.0/Python/frame.c:140;MOVSXD	%EBX,%RCX;
+0x545b03;:0;MOV	0x48(%RBP,%RCX,8),%RDI;
+0x545b08;/usr/local/src/conda/python-3.12.0/Include/object.h:798;TEST	%RDI,%RDI;
+0x545b0b;:0;JE	545b1c <_PyFrame_ClearExceptCode+0x3c>;
+0x545b0d;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%RSI;
+0x545b10;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%ESI,%ESI;
+0x545b12;:0;JS	545b1c <_PyFrame_ClearExceptCode+0x3c>;
+0x545b14;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%RSI;
+0x545b17;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%RSI,(%RDI);
+0x545b1a;:0;JE	545b70 <_PyFrame_ClearExceptCode+0x90>;
+0x545b1c;/usr/local/src/conda/python-3.12.0/Python/frame.c:139;INC	%EBX;
+0x545b1e;/usr/local/src/conda/python-3.12.0/Python/frame.c:139;CMP	%EBX,0x40(%RBP);
+0x545b21;:0;JG	545b00 <_PyFrame_ClearExceptCode+0x20>;
+0x545b70;/usr/local/src/conda/python-3.12.0/Objects/object.c:2611;MOV	0x8(%RDI),%R8;
+0x545b74;/usr/local/src/conda/python-3.12.0/Objects/object.c:2625;CALLQ	0x30(%R8);
+0x545b78;/usr/local/src/conda/python-3.12.0/Objects/object.c:2625;JMP	545b1c <_PyFrame_ClearExceptCode+0x3c>;

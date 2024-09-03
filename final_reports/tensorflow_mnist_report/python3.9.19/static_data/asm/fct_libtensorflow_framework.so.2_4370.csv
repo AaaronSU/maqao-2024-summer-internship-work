@@ -1,0 +1,105 @@
+address;source_location;insn;indent
+0x6251d50;:0;PUSH	%RBP;
+0x6251d51;:0;MOV	%RSP,%RBP;
+0x6251d54;:0;PUSH	%R15;
+0x6251d56;:0;PUSH	%R14;
+0x6251d58;:0;PUSH	%R13;
+0x6251d5a;:0;PUSH	%R12;
+0x6251d5c;:0;PUSH	%RBX;
+0x6251d5d;:0;PUSH	%RAX;
+0x6251d5e;:0;MOV	%RCX,%R15;
+0x6251d61;:0;MOV	%RDX,%R13;
+0x6251d64;:0;MOV	%RSI,%R12;
+0x6251d67;:0;MOV	%RDI,%RBX;
+0x6251d6a;:0;LEA	0xf8(%RSI),%R14;
+0x6251d71;:0;MOV	%R14,%RDI;
+0x6251d74;:0;CALL	76329b0 <_ZN3tsl5mutex11lock_sharedEv@plt>;
+0x6251d79;:0;MOV	0x110(%R12),%RSI;
+0x6251d81;:0;MOV	(%RSI),%RCX;
+0x6251d84;:0;MOV	0x14be4dd(%RIP),%RAX;
+0x6251d8b;:0;ADD	%R13,%RAX;
+0x6251d8e;:0;MOV	$-0x622015f714c7d297,%RDX;
+0x6251d98;:0;MUL	%RDX;
+0x6251d9b;:0;PREFETCHT2	(%RCX);
+0x6251d9e;:0;XOR	%RAX,%RDX;
+0x6251da1;:0;MOV	0x8(%RSI),%RAX;
+0x6251da5;:0;MOV	0x10(%RSI),%RSI;
+0x6251da9;:0;MOV	%RDX,%R8;
+0x6251dac;:0;SHR	$0x7,%R8;
+0x6251db0;:0;MOV	%RCX,%RDI;
+0x6251db3;:0;SHR	$0xc,%RDI;
+0x6251db7;:0;XOR	%R8,%RDI;
+0x6251dba;:0;AND	$0x7f,%DL;
+0x6251dbd;:0;VMOVD	%EDX,%XMM0;
+0x6251dc1;:0;VPXOR	%XMM1,%XMM1,%XMM1;
+0x6251dc5;:0;VPSHUFB	%XMM1,%XMM0,%XMM0;
+0x6251dca;:0;XOR	%EDX,%EDX;
+0x6251dcc;:0;AND	%RSI,%RDI;(5280) 
+0x6251dcf;:0;VMOVDQU	(%RCX,%RDI,1),%XMM1;(5280) 
+0x6251dd4;:0;VPCMPEQB	%XMM1,%XMM0,%XMM2;(5280) 
+0x6251dd8;:0;VPMOVMSKB	%XMM2,%R8D;(5280) 
+0x6251ddc;:0;TEST	%R8D,%R8D;(5280) 
+0x6251ddf;:0;JE	6251e10 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0xc0>;(5280) 
+0x6251de1;:0;MOVZX	%R8W,%R8D;(5280) 
+0x6251de5;:0;TZCNT	%R8D,%R9D;  (5281) 
+0x6251dea;:0;ADD	%RDI,%R9;  (5281) 
+0x6251ded;:0;AND	%RSI,%R9;  (5281) 
+0x6251df0;:0;SAL	$0x4,%R9;  (5281) 
+0x6251df4;:0;CMP	%R13,(%RAX,%R9,1);  (5281) 
+0x6251df8;:0;JE	6251e2b <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0xdb>;  (5281) 
+0x6251dfa;:0;LEA	-0x1(%R8),%R9D;  (5281) 
+0x6251dfe;:0;AND	%R8D,%R9D;  (5281) 
+0x6251e01;:0;MOV	%R9D,%R8D;  (5281) 
+0x6251e04;:0;JNE	6251de5 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0x95>;  (5281) 
+0x6251e06;:0;NOPW	%CS:(%RAX,%RAX,1);(5280) 
+0x6251e10;:0;VPSIGNB	%XMM1,%XMM1,%XMM1;(5280) 
+0x6251e15;:0;VPMOVMSKB	%XMM1,%R8D;(5280) 
+0x6251e19;:0;TEST	%R8D,%R8D;(5280) 
+0x6251e1c;:0;JNE	6251e4a <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0xfa>;(5280) 
+0x6251e1e;:0;ADD	%RDX,%RDI;(5280) 
+0x6251e21;:0;ADD	$0x10,%RDI;(5280) 
+0x6251e25;:0;ADD	$0x10,%RDX;(5280) 
+0x6251e29;:0;JMP	6251dcc <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0x7c>;(5280) 
+0x6251e2b;:0;TEST	%RCX,%RCX;
+0x6251e2e;:0;JE	6251e4a <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0xfa>;
+0x6251e30;:0;ADD	%R9,%RAX;
+0x6251e33;:0;MOV	0x8(%RAX),%RAX;
+0x6251e37;:0;MOV	%RAX,(%R15);
+0x6251e3a;:0;CMPQ	$0,0x20(%RAX);
+0x6251e3f;:0;JE	6251e7d <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0x12d>;
+0x6251e41;:0;MOVQ	$0,(%RBX);
+0x6251e48;:0;JMP	6251e63 <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0x113>;
+0x6251e4a;:0;LEA	-0x57f7688(%RIP),%RSI;
+0x6251e51;:0;LEA	-0x58c66d4(%RIP),%RCX;
+0x6251e58;:0;MOV	%RBX,%RDI;
+0x6251e5b;:0;MOV	%R13,%RDX;
+0x6251e5e;:0;CALL	763ced0 <_ZN3tsl6errors8InternalIJPKcmS3_EEEN4absl12lts_202308026StatusEDpT_@plt>;
+0x6251e63;:0;MOV	%R14,%RDI;
+0x6251e66;:0;CALL	7632a60 <_ZN3tsl5mutex13unlock_sharedEv@plt>;
+0x6251e6b;:0;MOV	%RBX,%RAX;
+0x6251e6e;:0;ADD	$0x8,%RSP;
+0x6251e72;:0;POP	%RBX;
+0x6251e73;:0;POP	%R12;
+0x6251e75;:0;POP	%R13;
+0x6251e77;:0;POP	%R14;
+0x6251e79;:0;POP	%R15;
+0x6251e7b;:0;POP	%RBP;
+0x6251e7c;:0;RET;
+0x6251e7d;:0;MOV	%R14,%RDI;
+0x6251e80;:0;CALL	7632a60 <_ZN3tsl5mutex13unlock_sharedEv@plt>;
+0x6251e85;:0;MOV	%RBX,%RDI;
+0x6251e88;:0;MOV	%R12,%RSI;
+0x6251e8b;:0;MOV	%R15,%RDX;
+0x6251e8e;:0;CALL	763cfd0 <_ZN10tensorflow26FunctionLibraryRuntimeImpl10CreateItemEPPNS0_4ItemE@plt>;
+0x6251e93;:0;JMP	6251e6b <_ZN10tensorflow26FunctionLibraryRuntimeImpl15GetOrCreateItemEmPPNS0_4ItemE+0x11b>;
+0x6251e95;:0;INT	$0x3;
+0x6251e96;:0;INT	$0x3;
+0x6251e97;:0;INT	$0x3;
+0x6251e98;:0;INT	$0x3;
+0x6251e99;:0;INT	$0x3;
+0x6251e9a;:0;INT	$0x3;
+0x6251e9b;:0;INT	$0x3;
+0x6251e9c;:0;INT	$0x3;
+0x6251e9d;:0;INT	$0x3;
+0x6251e9e;:0;INT	$0x3;
+0x6251e9f;:0;INT	$0x3;

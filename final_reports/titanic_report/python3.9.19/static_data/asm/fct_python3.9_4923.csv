@@ -1,0 +1,149 @@
+address;source_location;insn;indent
+0x55f980;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:549;TEST	%RSI,%RSI;
+0x55f983;:0;JLE	55fb75 <list_repeat+0x1f5>;
+0x55f989;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:549;MOV	$0x7fffffffffffffff,%RAX;
+0x55f993;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:541;PUSH	%R12;
+0x55f995;:0;MOV	%RDI,%R12;
+0x55f998;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:549;CQTO;
+0x55f99a;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:541;PUSH	%RBP;
+0x55f99b;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:549;IDIV	%RSI;
+0x55f99e;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:541;PUSH	%RBX;
+0x55f99f;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:549;MOV	0x10(%RDI),%RBP;
+0x55f9a3;:0;MOV	%RSI,%RBX;
+0x55f9a6;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:549;CMP	%RAX,%RBP;
+0x55f9a9;:0;JG	45ef63 <list_repeat.cold>;
+0x55f9af;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:551;IMUL	%RSI,%RBP;
+0x55f9b3;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:552;TEST	%RBP,%RBP;
+0x55f9b6;:0;JE	55fb6a <list_repeat+0x1ea>;
+0x55f9bc;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:554;MOV	%RBP,%RDI;
+0x55f9bf;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:554;CALL	53f460 <list_new_prealloc>;
+0x55f9c4;:0;MOV	%RAX,%R8;
+0x55f9c7;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:555;TEST	%RAX,%RAX;
+0x55f9ca;:0;JE	55fabe <list_repeat+0x13e>;
+0x55f9d0;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:558;MOV	0x10(%R12),%RSI;
+0x55f9d5;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:559;MOV	0x18(%RAX),%RAX;
+0x55f9d9;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:560;MOV	0x18(%R12),%RDX;
+0x55f9de;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:558;CMP	$0x1,%RSI;
+0x55f9e2;:0;JNE	55fac6 <list_repeat+0x146>;
+0x55f9e8;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:560;MOV	(%RDX),%RCX;
+0x55f9eb;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;MOV	(%RCX),%R10;
+0x55f9ee;:0;CMP	$0x1,%RBX;
+0x55f9f2;:0;JE	55fb62 <list_repeat+0x1e2>;
+0x55f9f8;:0;MOV	%RBX,%RSI;
+0x55f9fb;:0;MOVQ	%RCX,%XMM1;
+0x55fa00;:0;MOV	%RAX,%RDX;
+0x55fa03;:0;SHR	$0x1,%RSI;
+0x55fa06;:0;MOVDDUP	%XMM1,%XMM0;
+0x55fa0a;:0;SAL	$0x4,%RSI;
+0x55fa0e;:0;LEA	(%RSI,%RAX,1),%RDI;
+0x55fa12;:0;SUB	$0x10,%RSI;
+0x55fa16;:0;SHR	$0x4,%RSI;
+0x55fa1a;:0;INC	%RSI;
+0x55fa1d;:0;AND	$0x7,%ESI;
+0x55fa20;:0;JE	55fa7c <list_repeat+0xfc>;
+0x55fa22;:0;CMP	$0x1,%RSI;
+0x55fa26;:0;JE	55fa70 <list_repeat+0xf0>;
+0x55fa28;:0;CMP	$0x2,%RSI;
+0x55fa2c;:0;JE	55fa69 <list_repeat+0xe9>;
+0x55fa2e;:0;CMP	$0x3,%RSI;
+0x55fa32;:0;JE	55fa62 <list_repeat+0xe2>;
+0x55fa34;:0;CMP	$0x4,%RSI;
+0x55fa38;:0;JE	55fa5b <list_repeat+0xdb>;
+0x55fa3a;:0;CMP	$0x5,%RSI;
+0x55fa3e;:0;JE	55fa54 <list_repeat+0xd4>;
+0x55fa40;:0;CMP	$0x6,%RSI;
+0x55fa44;:0;JE	55fa4d <list_repeat+0xcd>;
+0x55fa46;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,(%RAX);
+0x55fa49;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;LEA	0x10(%RAX),%RDX;
+0x55fa4d;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,(%RDX);
+0x55fa50;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;ADD	$0x10,%RDX;
+0x55fa54;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,(%RDX);
+0x55fa57;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;ADD	$0x10,%RDX;
+0x55fa5b;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,(%RDX);
+0x55fa5e;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;ADD	$0x10,%RDX;
+0x55fa62;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,(%RDX);
+0x55fa65;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;ADD	$0x10,%RDX;
+0x55fa69;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,(%RDX);
+0x55fa6c;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;ADD	$0x10,%RDX;
+0x55fa70;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,(%RDX);
+0x55fa73;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;ADD	$0x10,%RDX;
+0x55fa77;:0;CMP	%RDX,%RDI;
+0x55fa7a;:0;JE	55faa4 <list_repeat+0x124>;
+0x55fa7c;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,(%RDX);(2039) 
+0x55fa7f;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;SUB	$-0x80,%RDX;(2039) 
+0x55fa83;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,-0x70(%RDX);(2039) 
+0x55fa87;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,-0x60(%RDX);(2039) 
+0x55fa8b;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,-0x50(%RDX);(2039) 
+0x55fa8f;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,-0x40(%RDX);(2039) 
+0x55fa93;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,-0x30(%RDX);(2039) 
+0x55fa97;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,-0x20(%RDX);(2039) 
+0x55fa9b;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOVUPS	%XMM0,-0x10(%RDX);(2039) 
+0x55fa9f;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;CMP	%RDX,%RDI;(2039) 
+0x55faa2;:0;JNE	55fa7c <list_repeat+0xfc>;(2039) 
+0x55faa4;:0;MOV	%RBX,%R11;
+0x55faa7;:0;AND	$-0x2,%R11;
+0x55faab;:0;TEST	$0x1,%BL;
+0x55faae;:0;JE	55fab4 <list_repeat+0x134>;
+0x55fab0;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:562;MOV	%RCX,(%RAX,%R11,8);
+0x55fab4;/usr/local/src/conda/python-3.9.19/Include/object.h:408;ADD	%RBX,%R10;
+0x55fab7;:0;MOV	%R10,(%RCX);
+0x55faba;/usr/local/src/conda/python-3.9.19/Include/object.h:143;MOV	%RBP,0x10(%R8);
+0x55fabe;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:579;POP	%RBX;
+0x55fabf;:0;MOV	%R8,%RAX;
+0x55fac2;:0;POP	%RBP;
+0x55fac3;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:579;POP	%R12;
+0x55fac5;:0;RET;
+0x55fac6;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:579;TEST	%RSI,%RSI;
+0x55fac9;:0;JLE	55faba <list_repeat+0x13a>;
+0x55facb;:0;LEA	(,%RSI,8),%R9;
+0x55fad3;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:569;XOR	%EDI,%EDI;
+0x55fad5;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	(%RDX),%RCX;(2037) 
+0x55fad8;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	%RCX,(%RAX);(2037) 
+0x55fadb;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	0x8(%RDX),%R10;(2037) 
+0x55fadf;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RCX);(2037) 
+0x55fae2;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	%R10,0x8(%RAX);(2037) 
+0x55fae6;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%R10);(2037) 
+0x55fae9;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:570;CMP	$0x2,%RSI;(2037) 
+0x55faed;:0;JE	55fb4e <list_repeat+0x1ce>;(2037) 
+0x55faef;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	0x10(%RDX),%R11;(2037) 
+0x55faf3;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	%R11,0x10(%RAX);(2037) 
+0x55faf7;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%R11);(2037) 
+0x55fafa;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:570;CMP	$0x3,%RSI;(2037) 
+0x55fafe;:0;JE	55fb4e <list_repeat+0x1ce>;(2037) 
+0x55fb00;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	0x18(%RDX),%R12;(2037) 
+0x55fb04;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	%R12,0x18(%RAX);(2037) 
+0x55fb08;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%R12);(2037) 
+0x55fb0c;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:570;CMP	$0x4,%RSI;(2037) 
+0x55fb10;:0;JE	55fb4e <list_repeat+0x1ce>;(2037) 
+0x55fb12;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	0x20(%RDX),%RCX;(2037) 
+0x55fb16;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	%RCX,0x20(%RAX);(2037) 
+0x55fb1a;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RCX);(2037) 
+0x55fb1d;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:570;CMP	$0x5,%RSI;(2037) 
+0x55fb21;:0;JE	55fb4e <list_repeat+0x1ce>;(2037) 
+0x55fb23;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	0x28(%RDX),%R10;(2037) 
+0x55fb27;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:570;MOV	$0x6,%R11D;(2037) 
+0x55fb2d;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	%R10,0x28(%RAX);(2037) 
+0x55fb31;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%R10);(2037) 
+0x55fb34;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:570;CMP	$0x6,%RSI;(2037) 
+0x55fb38;:0;JE	55fb4e <list_repeat+0x1ce>;(2037) 
+0x55fb3a;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	(%RDX,%R11,8),%R12;  (2038) 
+0x55fb3e;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:571;MOV	%R12,(%RAX,%R11,8);  (2038) 
+0x55fb42;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:570;INC	%R11;  (2038) 
+0x55fb45;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%R12);  (2038) 
+0x55fb49;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:570;CMP	%R11,%RSI;  (2038) 
+0x55fb4c;:0;JNE	55fb3a <list_repeat+0x1ba>;  (2038) 
+0x55fb4e;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:569;INC	%RDI;(2037) 
+0x55fb51;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:573;ADD	%R9,%RAX;(2037) 
+0x55fb54;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:569;CMP	%RDI,%RBX;(2037) 
+0x55fb57;:0;JNE	55fad5 <list_repeat+0x155>;(2037) 
+0x55fb5d;:0;JMP	55faba <list_repeat+0x13a>;
+0x55fb62;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:561;XOR	%R11D,%R11D;
+0x55fb65;:0;JMP	55fab0 <list_repeat+0x130>;
+0x55fb6a;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:579;POP	%RBX;
+0x55fb6b;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:553;XOR	%EDI,%EDI;
+0x55fb6d;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:579;POP	%RBP;
+0x55fb6e;:0;POP	%R12;
+0x55fb70;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:553;JMP	4d27d0 <PyList_New>;
+0x55fb75;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:553;XOR	%EDI,%EDI;
+0x55fb77;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:553;JMP	4d27d0 <PyList_New>;
+0x55fb7c;/usr/local/src/conda/python-3.9.19/Objects/listobject.c:553;NOPL	(%RAX);

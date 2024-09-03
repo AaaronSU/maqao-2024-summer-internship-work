@@ -1,0 +1,39 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_cython_lib.c: 7011 - 7051
+--------------------------------------------------------------------------------
+
+7011:       for (__pyx_t_17 = 0; __pyx_t_17 < __pyx_t_16; __pyx_t_17+=1) {
+[...]
+7020:         __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_v_C, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
+7021:         __Pyx_GOTREF(__pyx_t_2);
+7022:         __pyx_t_18 = __pyx_v_j;
+7023:         __pyx_t_11 = __Pyx_GetItemInt(__pyx_t_2, __pyx_t_18, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 136, __pyx_L1_error)
+[...]
+7029:         __pyx_t_19 = __Pyx_GetItemInt_List(__pyx_v_A, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 136, __pyx_L1_error)
+7030:         __Pyx_GOTREF(__pyx_t_19);
+7031:         __pyx_t_20 = __Pyx_GetItemInt(__pyx_t_19, __pyx_v_k, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 136, __pyx_L1_error)
+[...]
+7038:         __pyx_t_19 = __Pyx_GetItemInt_List(__pyx_v_B, __pyx_v_k, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 136, __pyx_L1_error)
+7039:         __Pyx_GOTREF(__pyx_t_19);
+7040:         __pyx_t_21 = __Pyx_GetItemInt(__pyx_t_19, __pyx_v_j, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 136, __pyx_L1_error)
+7041:         __Pyx_GOTREF(__pyx_t_21);
+7042:         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
+7043:         __pyx_t_19 = PyNumber_Multiply(__pyx_t_20, __pyx_t_21); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 136, __pyx_L1_error)
+7044:         __Pyx_GOTREF(__pyx_t_19);
+7045:         __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
+7046:         __Pyx_DECREF(__pyx_t_21); __pyx_t_21 = 0;
+7047:         __pyx_t_21 = PyNumber_InPlaceAdd(__pyx_t_11, __pyx_t_19); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 136, __pyx_L1_error)
+7048:         __Pyx_GOTREF(__pyx_t_21);
+7049:         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
+7050:         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
+7051:         if (unlikely((__Pyx_SetItemInt(__pyx_t_2, __pyx_t_18, __pyx_t_21, int, 1, __Pyx_PyInt_From_int, 0, 1, 1) < 0))) __PYX_ERR(0, 136, __pyx_L1_error)
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 242 - 705
+--------------------------------------------------------------------------------
+
+242:     return _Py_CAST(PY_INT32_T, op->ob_refcnt) < 0;
+[...]
+700:     if (_Py_IsImmortal(op)) {
+701:         return;
+702:     }
+703:     _Py_DECREF_STAT_INC();
+704:     if (--op->ob_refcnt == 0) {
+705:         _Py_Dealloc(op);

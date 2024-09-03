@@ -1,0 +1,30 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 6 - 28
+--------------------------------------------------------------------------------
+
+6: static PyObject* vector_scalar_multiply(PyObject* self, PyObject* args) {
+7:     PyObject* list_obj;
+8:     double scalar;
+9:     if (!PyArg_ParseTuple(args, "Od", &list_obj, &scalar)) { // "Od" stand for Object double
+10:         return NULL;
+11:     }
+12:     if (!PyList_Check(list_obj)) {
+13:         PyErr_SetString(PyExc_TypeError, "Expected a list");
+14:         return NULL;
+15:     }
+16:     
+17:     Py_ssize_t list_size = PyList_Size(list_obj);
+18:     PyObject* result_list = PyList_New(list_size);
+19: 
+20:     for (Py_ssize_t i = 0; i < list_size; i++) {
+21:         PyObject* item = PyList_GetItem(list_obj, i);
+22:         double value = PyFloat_AsDouble(item);
+23:         PyObject* result_item = PyFloat_FromDouble(value * scalar);
+24:         PyList_SetItem(result_list, i, result_item);
+25:     }
+26:     
+27:     return result_list;
+28: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 966 - 966
+--------------------------------------------------------------------------------
+
+966:     flags = type->tp_flags;

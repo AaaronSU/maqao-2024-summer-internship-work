@@ -1,0 +1,16 @@
+address;source_location;insn;indent
+0x50c9f8;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:356;MOV	(%RBP,%RBX,8),%RDI;
+0x50c9fd;/usr/local/src/conda/python-3.12.0/Include/object.h:798;TEST	%RDI,%RDI;
+0x50ca00;:0;JE	50ca20 <list_dealloc+0xd0>;
+0x50ca02;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%RDX;
+0x50ca05;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%EDX,%EDX;
+0x50ca07;:0;JS	50ca20 <list_dealloc+0xd0>;
+0x50ca09;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%RDX;
+0x50ca0c;/usr/local/src/conda/python-3.12.0/Include/object.h:705;MOV	%RDX,(%RDI);
+0x50ca0f;:0;JNE	50ca20 <list_dealloc+0xd0>;
+0x50ca11;/usr/local/src/conda/python-3.12.0/Objects/object.c:2611;MOV	0x8(%RDI),%RAX;
+0x50ca15;/usr/local/src/conda/python-3.12.0/Objects/object.c:2625;CALLQ	0x30(%RAX);
+0x50ca18;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:358;MOV	0x18(%R13),%RBP;
+0x50ca1c;:0;NOPL	(%RAX);
+0x50ca20;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:355;SUB	$0x1,%RBX;
+0x50ca24;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:355;JAE	50c9f8 <list_dealloc+0xa8>;

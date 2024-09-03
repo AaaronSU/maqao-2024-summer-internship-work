@@ -1,0 +1,59 @@
+address;source_location;insn;indent
+0x6154b0;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:685;PUSH	%R12;
+0x6154b2;:0;PUSH	%RBP;
+0x6154b3;:0;PUSH	%RBX;
+0x6154b4;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:686;CMP	$0x93ff80,%RDI;
+0x6154bb;:0;JNE	6154d2 <tuple_new_impl+0x22>;
+0x6154bd;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:689;TEST	%RSI,%RSI;
+0x6154c0;:0;JE	615559 <tuple_new_impl+0xa9>;
+0x6154c6;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:695;POP	%RBX;
+0x6154c7;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:693;MOV	%RSI,%RDI;
+0x6154ca;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:695;POP	%RBP;
+0x6154cb;:0;POP	%R12;
+0x6154cd;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:693;JMP	50b9a0 <PySequence_Tuple>;
+0x6154d2;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:693;MOV	%RDI,%R12;
+0x6154d5;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:728;MOV	$0x93ff80,%EDI;
+0x6154da;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:728;CALL	6154b0 <tuple_new_impl>;
+0x6154df;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:728;MOV	%RAX,%RBP;
+0x6154e2;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:729;TEST	%RAX,%RAX;
+0x6154e5;:0;JE	45e00c <tuple_new_impl.cold+0x6f>;
+0x6154eb;/usr/local/src/conda/python-3.12.0/Include/object.h:234;MOV	0x10(%RAX),%RBX;
+0x6154ef;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:733;MOV	%R12,%RDI;
+0x6154f2;:0;MOV	%RBX,%RSI;
+0x6154f5;:0;CALLQ	0x130(%R12);
+0x6154fd;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:738;XOR	%R9D,%R9D;
+0x615500;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:733;MOV	%RAX,%R12;
+0x615503;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:734;TEST	%RAX,%RAX;
+0x615506;:0;JNE	615525 <tuple_new_impl+0x75>;
+0x615508;:0;JMP	45dffb <tuple_new_impl.cold+0x5e>;
+0x61550d;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:739;MOV	0x18(%RBP,%R9,8),%R10;(3221) 
+0x615512;/usr/local/src/conda/python-3.12.0/Include/object.h:644;MOV	(%R10),%R11D;(3221) 
+0x615515;:0;INC	%R11D;(3221) 
+0x615518;/usr/local/src/conda/python-3.12.0/Include/object.h:644;JE	61551d <tuple_new_impl+0x6d>;(3221) 
+0x61551a;/usr/local/src/conda/python-3.12.0/Include/object.h:647;MOV	%R11D,(%R10);(3221) 
+0x61551d;/usr/local/src/conda/python-3.12.0/Include/cpython/tupleobject.h:34;MOV	%R10,0x18(%R12,%R9,8);(3221) 
+0x615522;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:738;INC	%R9;(3221) 
+0x615525;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:738;CMP	%R9,%RBX;(3221) 
+0x615528;:0;JG	61550d <tuple_new_impl+0x5d>;(3221) 
+0x61552a;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RBP),%RDX;
+0x61552e;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%EDX,%EDX;
+0x615530;:0;JS	61553b <tuple_new_impl+0x8b>;
+0x615532;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%RDX;
+0x615535;:0;MOV	%RDX,(%RBP);
+0x615539;:0;JE	61554f <tuple_new_impl+0x9f>;
+0x61553b;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:745;CMPQ	$0,-0x10(%R12);
+0x615541;:0;JE	45df9d <tuple_new_impl.cold>;
+0x615547;/usr/local/src/conda/python-3.12.0/Objects/tupleobject.c:695;MOV	%R12,%RAX;
+0x61554a;:0;POP	%RBX;
+0x61554b;:0;POP	%RBP;
+0x61554c;:0;POP	%R12;
+0x61554e;:0;RET;
+0x61554f;/usr/local/src/conda/python-3.12.0/Include/object.h:706;MOV	%RBP,%RDI;
+0x615552;:0;CALL	50c940 <_Py_Dealloc>;
+0x615557;/usr/local/src/conda/python-3.12.0/Include/object.h:706;JMP	61553b <tuple_new_impl+0x8b>;
+0x615559;/usr/local/src/conda/python-3.12.0/Include/object.h:644;MOV	0x355b09(%RIP),%EAX;
+0x61555f;:0;MOV	$0x96b068,%R12D;
+0x615565;/usr/local/src/conda/python-3.12.0/Include/object.h:644;INC	%EAX;
+0x615567;/usr/local/src/conda/python-3.12.0/Include/object.h:644;JE	615547 <tuple_new_impl+0x97>;
+0x615569;:0;JMP	45dff0 <tuple_new_impl.cold+0x53>;
+0x61556e;/usr/local/src/conda/python-3.12.0/Include/object.h:644;XCHG	%AX,%AX;

@@ -1,0 +1,134 @@
+address;source_location;insn;indent
+0x5900b0;/usr/local/src/conda/python-3.12.0/Python/codecs.c:129;PUSH	%R15;
+0x5900b2;:0;PUSH	%R14;
+0x5900b4;:0;PUSH	%R13;
+0x5900b6;:0;PUSH	%R12;
+0x5900b8;:0;PUSH	%RBP;
+0x5900b9;:0;PUSH	%RBX;
+0x5900ba;:0;SUB	$0x28,%RSP;
+0x5900be;/usr/local/src/conda/python-3.12.0/Python/codecs.c:129;MOV	%FS:0x28,%RAX;
+0x5900c7;:0;MOV	%RAX,0x18(%RSP);
+0x5900cc;:0;XOR	%EAX,%EAX;
+0x5900ce;/usr/local/src/conda/python-3.12.0/Python/codecs.c:130;TEST	%RDI,%RDI;
+0x5900d1;:0;JE	45fc13 <_PyCodec_Lookup.cold+0xf1>;
+0x5900d7;:0;MOV	%RDI,%R13;
+0x5900da;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	%FS:,%RAX;
+0x5900e3;:0;LEA	-0x10(%RAX),%RAX;
+0x5900ea;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	(%RAX),%RAX;
+0x5900ed;/usr/local/src/conda/python-3.12.0/Include/internal/pycore_pystate.h:118;MOV	0x10(%RAX),%RBX;
+0x5900f1;/usr/local/src/conda/python-3.12.0/Python/codecs.c:136;CMPQ	$0,0x4e0(%RBX);
+0x5900f9;:0;JE	590270 <_PyCodec_Lookup+0x1c0>;
+0x5900ff;/usr/local/src/conda/python-3.12.0/Python/codecs.c:88;MOV	%R13,%RDI;
+0x590102;:0;CALLQ	0x2cc658(%RIP);
+0x590108;/usr/local/src/conda/python-3.12.0/Python/codecs.c:97;LEA	0x1(%RAX),%R12;
+0x59010c;:0;MOV	%R12,%RDI;
+0x59010f;:0;CALL	50b2c0 <PyMem_Malloc>;
+0x590114;/usr/local/src/conda/python-3.12.0/Python/codecs.c:97;MOV	%RAX,%RBP;
+0x590117;/usr/local/src/conda/python-3.12.0/Python/codecs.c:98;TEST	%RAX,%RAX;
+0x59011a;:0;JE	5902cf <_PyCodec_Lookup+0x21f>;
+0x590120;/usr/local/src/conda/python-3.12.0/Python/codecs.c:101;MOV	%R12,%RDX;
+0x590123;:0;MOV	%RAX,%RSI;
+0x590126;:0;MOV	%R13,%RDI;
+0x590129;:0;CALL	5e10d0 <_Py_normalize_encoding>;
+0x59012e;/usr/local/src/conda/python-3.12.0/Python/codecs.c:101;TEST	%EAX,%EAX;
+0x590130;:0;JE	45fba6 <_PyCodec_Lookup.cold+0x84>;
+0x590136;/usr/local/src/conda/python-3.12.0/Python/codecs.c:108;MOV	%RBP,%RDI;
+0x590139;:0;CALL	50deb0 <PyUnicode_FromString>;
+0x59013e;/usr/local/src/conda/python-3.12.0/Python/codecs.c:109;MOV	%RBP,%RDI;
+0x590141;/usr/local/src/conda/python-3.12.0/Python/codecs.c:108;MOV	%RAX,%R14;
+0x590144;/usr/local/src/conda/python-3.12.0/Python/codecs.c:109;CALL	50b630 <PyMem_Free>;
+0x590149;/usr/local/src/conda/python-3.12.0/Python/codecs.c:143;MOV	%R14,0x10(%RSP);
+0x59014e;/usr/local/src/conda/python-3.12.0/Python/codecs.c:144;TEST	%R14,%R14;
+0x590151;:0;JE	5902c1 <_PyCodec_Lookup+0x211>;
+0x590157;/usr/local/src/conda/python-3.12.0/Python/codecs.c:147;LEA	0x10(%RSP),%RDI;
+0x59015c;:0;CALL	50aea0 <PyUnicode_InternInPlace>;
+0x590161;/usr/local/src/conda/python-3.12.0/Python/codecs.c:150;MOV	0x10(%RSP),%RBP;
+0x590166;:0;MOV	0x4e8(%RBX),%RDI;
+0x59016d;:0;MOV	%RBP,%RSI;
+0x590170;:0;CALL	511cb0 <PyDict_GetItemWithError>;
+0x590175;:0;MOV	%RAX,%R12;
+0x590178;/usr/local/src/conda/python-3.12.0/Python/codecs.c:151;TEST	%RAX,%RAX;
+0x59017b;:0;JE	5901bb <_PyCodec_Lookup+0x10b>;
+0x59017d;/usr/local/src/conda/python-3.12.0/Include/object.h:644;MOV	(%RAX),%R10D;
+0x590180;:0;INC	%R10D;
+0x590183;/usr/local/src/conda/python-3.12.0/Include/object.h:644;JE	590188 <_PyCodec_Lookup+0xd8>;
+0x590185;/usr/local/src/conda/python-3.12.0/Include/object.h:647;MOV	%R10D,(%RAX);
+0x590188;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RBP),%R11;
+0x59018c;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%R11D,%R11D;
+0x59018f;:0;JNS	45fc20 <_PyCodec_Lookup.cold+0xfe>;
+0x590195;/usr/local/src/conda/python-3.12.0/Python/codecs.c:211;MOV	0x18(%RSP),%RAX;
+0x59019a;:0;SUB	%FS:0x28,%RAX;
+0x5901a3;:0;JNE	5902c9 <_PyCodec_Lookup+0x219>;
+0x5901a9;:0;ADD	$0x28,%RSP;
+0x5901ad;:0;MOV	%R12,%RAX;
+0x5901b0;:0;POP	%RBX;
+0x5901b1;:0;POP	%RBP;
+0x5901b2;:0;POP	%R12;
+0x5901b4;:0;POP	%R13;
+0x5901b6;:0;POP	%R14;
+0x5901b8;:0;POP	%R15;
+0x5901ba;:0;RET;
+0x5901bb;/usr/local/src/conda/python-3.12.0/Python/codecs.c:156;CALL	5112b0 <PyErr_Occurred>;
+0x5901c0;/usr/local/src/conda/python-3.12.0/Python/codecs.c:156;TEST	%RAX,%RAX;
+0x5901c3;:0;JNE	5902b4 <_PyCodec_Lookup+0x204>;
+0x5901c9;/usr/local/src/conda/python-3.12.0/Python/codecs.c:161;MOV	0x4e0(%RBX),%RDI;
+0x5901d0;:0;CALL	571b50 <PyList_Size>;
+0x5901d5;:0;MOV	%RAX,0x8(%RSP);
+0x5901da;/usr/local/src/conda/python-3.12.0/Python/codecs.c:162;TEST	%RAX,%RAX;
+0x5901dd;:0;JS	5902b4 <_PyCodec_Lookup+0x204>;
+0x5901e3;/usr/local/src/conda/python-3.12.0/Python/codecs.c:172;MOV	$0,%R15D;
+0x5901e9;/usr/local/src/conda/python-3.12.0/Python/codecs.c:164;JE	45fb22 <_PyCodec_Lookup.cold>;
+0x5901ef;/usr/local/src/conda/python-3.12.0/Python/codecs.c:175;MOV	0x4e0(%RBX),%RDI;(2140) 
+0x5901f6;:0;MOV	%R15,%RSI;(2140) 
+0x5901f9;:0;CALL	5903c0 <PyList_GetItem>;(2140) 
+0x5901fe;:0;MOV	%RAX,%RDI;(2140) 
+0x590201;/usr/local/src/conda/python-3.12.0/Python/codecs.c:176;TEST	%RAX,%RAX;(2140) 
+0x590204;:0;JE	5902b4 <_PyCodec_Lookup+0x204>;(2140) 
+0x59020a;/usr/local/src/conda/python-3.12.0/Python/codecs.c:178;MOV	%RBP,%RSI;(2140) 
+0x59020d;:0;CALL	55be60 <PyObject_CallOneArg>;(2140) 
+0x590212;/usr/local/src/conda/python-3.12.0/Python/codecs.c:178;MOV	%RAX,%R14;(2140) 
+0x590215;/usr/local/src/conda/python-3.12.0/Python/codecs.c:179;TEST	%RAX,%RAX;(2140) 
+0x590218;:0;JE	5902b4 <_PyCodec_Lookup+0x204>;(2140) 
+0x59021e;/usr/local/src/conda/python-3.12.0/Python/codecs.c:181;CMP	$0x942580,%RAX;(2140) 
+0x590224;:0;JE	59027f <_PyCodec_Lookup+0x1cf>;(2140) 
+0x590226;/usr/local/src/conda/python-3.12.0/Include/object.h:967;MOV	0x8(%RAX),%RDX;
+0x59022a;/usr/local/src/conda/python-3.12.0/Python/codecs.c:185;TESTB	$0x4,0xab(%RDX);
+0x590231;:0;JE	45fb71 <_PyCodec_Lookup.cold+0x4f>;
+0x590237;/usr/local/src/conda/python-3.12.0/Python/codecs.c:185;CMPQ	$0x4,0x10(%RAX);
+0x59023c;:0;JNE	45fb71 <_PyCodec_Lookup.cold+0x4f>;
+0x590242;/usr/local/src/conda/python-3.12.0/Python/codecs.c:201;MOV	0x4e8(%RBX),%RDI;
+0x590249;:0;MOV	%R14,%RDX;
+0x59024c;:0;MOV	%RBP,%RSI;
+0x59024f;:0;CALL	50d730 <PyDict_SetItem>;
+0x590254;:0;TEST	%EAX,%EAX;
+0x590256;:0;JS	45fbe1 <_PyCodec_Lookup.cold+0xbf>;
+0x59025c;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RBP),%RDI;
+0x590260;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	%R14,%R12;
+0x590263;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%EDI,%EDI;
+0x590265;:0;JS	590195 <_PyCodec_Lookup+0xe5>;
+0x59026b;/usr/local/src/conda/python-3.12.0/Include/object.h:701;JMP	45fbc7 <_PyCodec_Lookup.cold+0xa5>;
+0x590270;/usr/local/src/conda/python-3.12.0/Python/codecs.c:136;CALL	617320 <_PyCodecRegistry_Init>;
+0x590275;/usr/local/src/conda/python-3.12.0/Python/codecs.c:136;TEST	%EAX,%EAX;
+0x590277;:0;JE	5900ff <_PyCodec_Lookup+0x4f>;
+0x59027d;:0;JMP	5902c1 <_PyCodec_Lookup+0x211>;
+0x59027f;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	0x3b22fa(%RIP),%RSI;(2140) 
+0x590286;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%ESI,%ESI;(2140) 
+0x590288;:0;JNS	45fb38 <_PyCodec_Lookup.cold+0x16>;(2140) 
+0x59028e;/usr/local/src/conda/python-3.12.0/Python/codecs.c:172;INC	%R15;(2140) 
+0x590291;/usr/local/src/conda/python-3.12.0/Python/codecs.c:172;CMP	%R15,0x8(%RSP);(2140) 
+0x590296;:0;JG	5901ef <_PyCodec_Lookup+0x13f>;(2140) 
+0x59029c;/usr/local/src/conda/python-3.12.0/Python/codecs.c:193;JNE	590242 <_PyCodec_Lookup+0x192>;
+0x59029e;/usr/local/src/conda/python-3.12.0/Python/codecs.c:195;MOV	0x3bb93b(%RIP),%RDI;
+0x5902a5;:0;MOV	%R13,%RDX;
+0x5902a8;:0;MOV	$0x689170,%ESI;
+0x5902ad;:0;XOR	%EAX,%EAX;
+0x5902af;:0;CALL	55b250 <PyErr_Format>;
+0x5902b4;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RBP),%R9;
+0x5902b8;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%R9D,%R9D;
+0x5902bb;:0;JNS	45fb57 <_PyCodec_Lookup.cold+0x35>;
+0x5902c1;/usr/local/src/conda/python-3.12.0/Python/codecs.c:137;XOR	%R12D,%R12D;
+0x5902c4;:0;JMP	590195 <_PyCodec_Lookup+0xe5>;
+0x5902c9;/usr/local/src/conda/python-3.12.0/Python/codecs.c:211;CALLQ	0x2cc4a9(%RIP);
+0x5902cf;/usr/local/src/conda/python-3.12.0/Python/codecs.c:211;JMP	45fc06 <_PyCodec_Lookup.cold+0xe4>;
+0x5902d4;/usr/local/src/conda/python-3.12.0/Python/codecs.c:211;NOPW	%CS:(%RAX,%RAX,1);
+0x5902df;:0;NOP;

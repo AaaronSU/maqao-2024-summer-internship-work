@@ -1,0 +1,16 @@
+address;source_location;insn;indent
+0x650413;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:787;TEST	%RBP,%RBP;
+0x650416;:0;JE	650434 <_odict_clear_nodes+0x54>;
+0x650418;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:789;MOV	(%RBP),%RDI;
+0x65041c;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:788;MOV	0x10(%RBP),%RBX;
+0x650420;/usr/local/src/conda/python-3.12.0/Include/object.h:243;MOV	(%RDI),%RAX;
+0x650423;/usr/local/src/conda/python-3.12.0/Include/object.h:701;TEST	%EAX,%EAX;
+0x650425;:0;JNS	650438 <_odict_clear_nodes+0x58>;
+0x650427;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:789;MOV	%RBP,%RDI;
+0x65042a;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:790;MOV	%RBX,%RBP;
+0x65042d;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:789;CALL	50b630 <PyMem_Free>;
+0x650432;/usr/local/src/conda/python-3.12.0/Objects/odictobject.c:790;JMP	650413 <_odict_clear_nodes+0x33>;
+0x650438;/usr/local/src/conda/python-3.12.0/Include/object.h:705;DEC	%RAX;
+0x65043b;:0;MOV	%RAX,(%RDI);
+0x65043e;:0;JE	48db54 <_odict_clear_nodes.cold>;
+0x650444;:0;JMP	650427 <_odict_clear_nodes+0x47>;

@@ -1,0 +1,83 @@
+address;source_location;insn;indent
+0x1257b0;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:681;PUSH	%RBX;
+0x1257b1;:0;SUB	$0x10,%RSP;
+0x1257b5;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:681;MOV	%FS:0x28,%RAX;
+0x1257be;:0;MOV	%RAX,0x8(%RSP);
+0x1257c3;:0;XOR	%EAX,%EAX;
+0x1257c5;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:683;TEST	%RDI,%RDI;
+0x1257c8;:0;JS	622fc <PyObject_Malloc.cold>;
+0x1257ce;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:685;MOV	0x283bb3(%RIP),%RAX;
+0x1257d5;:0;LEA	0x124(%RIP),%RDX;
+0x1257dc;:0;MOV	%RDI,%RBX;
+0x1257df;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:685;MOV	0x283b9a(%RIP),%RDI;
+0x1257e6;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:685;CMP	%RDX,%RAX;
+0x1257e9;:0;JNE	1258d7 <PyObject_Malloc+0x127>;
+0x1257ef;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1604;LEA	-0x1(%RBX),%RAX;
+0x1257f3;:0;CMP	$0x1ff,%RAX;
+0x1257f9;:0;JA	12588f <PyObject_Malloc+0xdf>;
+0x1257ff;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1608;LEA	-0x1(%RBX),%EDI;
+0x125802;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1609;LEA	0x283c37(%RIP),%RDX;
+0x125809;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1608;SHR	$0x4,%EDI;
+0x12580c;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1609;LEA	(%RDI,%RDI,1),%EAX;
+0x12580f;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1609;MOV	(%RDX,%RAX,8),%RDX;
+0x125813;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1612;MOV	0x10(%RDX),%RSI;
+0x125817;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1612;CMP	%RSI,%RDX;
+0x12581a;:0;JE	1258d0 <PyObject_Malloc+0x120>;
+0x125820;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1618;MOV	0x8(%RDX),%RAX;
+0x125824;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1617;INCL	(%RDX);
+0x125826;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1621;MOV	(%RAX),%RCX;
+0x125829;:0;MOV	%RCX,0x8(%RDX);
+0x12582d;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1621;TEST	%RCX,%RCX;
+0x125830;:0;JE	125850 <PyObject_Malloc+0xa0>;
+0x125832;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:686;MOV	0x8(%RSP),%RDX;(768) 
+0x125837;:0;SUB	%FS:0x28,%RDX;(768) 
+0x125840;:0;JNE	1258f1 <PyObject_Malloc+0x141>;(768) 
+0x125846;:0;ADD	$0x10,%RSP;
+0x12584a;:0;POP	%RBX;
+0x12584b;:0;RET;
+0x12584c;:0;NOPL	(%RAX);
+0x125850;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1434;MOV	0x28(%RDX),%ECX;
+0x125853;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1434;CMP	%ECX,0x2c(%RDX);
+0x125856;:0;JAE	125870 <PyObject_Malloc+0xc0>;
+0x125858;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1445;MOV	0x18(%RDX),%RDX;
+0x12585c;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1446;MOV	%RDX,0x18(%RSI);
+0x125860;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1447;MOV	%RSI,0x10(%RDX);
+0x125864;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1641;JMP	125832 <PyObject_Malloc+0x82>;
+0x125866;:0;NOPW	%CS:(%RAX,%RAX,1);
+0x125870;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1437;INC	%EDI;
+0x125872;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1436;MOV	%ECX,%ESI;
+0x125874;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1437;SAL	$0x4,%EDI;
+0x125877;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1436;ADD	%RDX,%RSI;
+0x12587a;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1437;ADD	%ECX,%EDI;
+0x12587c;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1436;MOV	%RSI,0x8(%RDX);
+0x125880;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1437;MOV	%EDI,0x28(%RDX);
+0x125883;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1438;MOVQ	$0,(%RSI);
+0x12588a;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1641;TEST	%RAX,%RAX;
+0x12588d;:0;JNE	125832 <PyObject_Malloc+0x82>;
+0x12588f;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:572;MOV	0x283b32(%RIP),%RAX;
+0x125896;:0;LEA	-0x18ed(%RIP),%RDX;
+0x12589d;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:572;MOV	0x283b1c(%RIP),%RDI;
+0x1258a4;:0;CMP	%RDX,%RAX;
+0x1258a7;:0;JNE	1258f7 <PyObject_Malloc+0x147>;
+0x1258a9;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:99;TEST	%RBX,%RBX;
+0x1258ac;:0;MOV	$0x1,%EDI;
+0x1258b1;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:99;CMOVNE	%RBX,%RDI;
+0x1258b5;:0;CALLQ	0x25926d(%RIP);
+0x1258bb;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1646;TEST	%RAX,%RAX;(768) 
+0x1258be;:0;JE	125832 <PyObject_Malloc+0x82>;(768) 
+0x1258c4;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1647;INCQ	0x2b0bf5(%RIP);(768) 
+0x1258cb;:0;JMP	125832 <PyObject_Malloc+0x82>;(768) 
+0x1258d0;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1630;CALL	1259e0 <allocate_from_new_pool>;
+0x1258d5;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:1630;JMP	12588a <PyObject_Malloc+0xda>;
+0x1258d7;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:685;MOV	0x8(%RSP),%RDX;
+0x1258dc;:0;SUB	%FS:0x28,%RDX;
+0x1258e5;:0;JNE	1258f1 <PyObject_Malloc+0x141>;
+0x1258e7;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:686;ADD	$0x10,%RSP;
+0x1258eb;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:685;MOV	%RBX,%RSI;
+0x1258ee;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:686;POP	%RBX;
+0x1258ef;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:685;JMP	%RAX;
+0x1258f1;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:686;CALLQ	0x258e71(%RIP);(768) 
+0x1258f7;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:572;MOV	%RBX,%RSI;(768) 
+0x1258fa;:0;CALL	%RAX;(768) 
+0x1258fc;:0;JMP	1258bb <PyObject_Malloc+0x10b>;(768) 
+0x1258fe;/usr/local/src/conda/python-3.9.19/Objects/obmalloc.c:572;XCHG	%AX,%AX;

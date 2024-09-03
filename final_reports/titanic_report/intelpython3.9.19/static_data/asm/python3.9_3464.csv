@@ -1,0 +1,36 @@
+address;source_location;insn;indent
+0x2269fa;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:455;MOV	%R13,%RAX;
+0x2269fd;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:454;MOV	0x20(%RBP),%RDX;
+0x226a01;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:455;SAL	$0x4,%RAX;
+0x226a05;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:455;ADD	0x28(%RBP),%RAX;
+0x226a09;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:456;CMP	%R13,%RDX;  (3463) 
+0x226a0c;:0;JL	226a86 <set_intersection+0x196>;  (3463) 
+0x226a0e;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:456;MOV	(%RAX),%RBX;  (3463) 
+0x226a11;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:457;INC	%R13;  (3463) 
+0x226a14;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:456;TEST	%RBX,%RBX;  (3463) 
+0x226a17;:0;JE	226a1e <set_intersection+0x12e>;  (3463) 
+0x226a19;:0;CMP	%R14,%RBX;  (3463) 
+0x226a1c;:0;JNE	226a24 <set_intersection+0x134>;  (3463) 
+0x226a1e;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:458;ADD	$0x10,%RAX;  (3463) 
+0x226a22;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:458;JMP	226a09 <set_intersection+0x119>;  (3463) 
+0x226a24;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1209;MOV	0x8(%RAX),%R15;
+0x226a28;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RBX);
+0x226a2b;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:301;MOV	%RBX,%RSI;
+0x226a2e;:0;MOV	%R12,%RDI;
+0x226a31;:0;MOV	%R15,%RDX;
+0x226a34;:0;CALL	171770 <set_lookkey>;
+0x226a39;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:302;TEST	%RAX,%RAX;
+0x226a3c;:0;JE	226b62 <set_intersection+0x272>;
+0x226a42;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1217;CMPQ	$0,(%RAX);
+0x226a46;:0;JNE	226a57 <set_intersection+0x167>;
+0x226a48;/usr/local/src/conda/python-3.9.19/Include/object.h:422;DECQ	(%RBX);
+0x226a4b;:0;JNE	2269fa <set_intersection+0x10a>;
+0x226a4d;/usr/local/src/conda/python-3.9.19/Include/object.h:430;MOV	%RBX,%RDI;
+0x226a50;:0;CALL	1296a0 <_Py_Dealloc>;
+0x226a55;:0;JMP	2269fa <set_intersection+0x10a>;
+0x226a57;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1218;MOV	(%RSP),%RDI;
+0x226a5b;:0;MOV	%R15,%RDX;
+0x226a5e;:0;MOV	%RBX,%RSI;
+0x226a61;:0;CALL	1607b0 <set_add_entry>;
+0x226a66;/usr/local/src/conda/python-3.9.19/Objects/setobject.c:1218;TEST	%EAX,%EAX;
+0x226a68;:0;JE	226a48 <set_intersection+0x158>;

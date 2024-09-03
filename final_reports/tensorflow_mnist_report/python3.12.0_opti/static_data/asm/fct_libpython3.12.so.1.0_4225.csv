@@ -1,0 +1,136 @@
+address;source_location;insn;indent
+0x313da0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:432;PUSH	%RBP;
+0x313da1;:0;MOV	%RSP,%RBP;
+0x313da4;:0;PUSH	%R15;
+0x313da6;:0;PUSH	%R14;
+0x313da8;:0;PUSH	%R13;
+0x313daa;:0;PUSH	%R12;
+0x313dac;:0;PUSH	%RBX;
+0x313dad;:0;MOV	%RDI,%RBX;
+0x313db0;:0;SUB	$0x38,%RSP;
+0x313db4;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:432;MOV	%FS:0x28,%R15;
+0x313dbd;:0;MOV	%R15,-0x38(%RBP);
+0x313dc1;:0;MOV	%EDX,%R15D;
+0x313dc4;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:440;TEST	%RSI,%RSI;
+0x313dc7;:0;JS	313f38 <PyThread_acquire_lock_timed+0x198>;
+0x313dcd;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:449;MOV	%RSI,%RDI;
+0x313dd0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:449;CALL	10b6f0 <_PyTime_FromMicrosecondsClamp@plt>;
+0x313dd5;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:449;MOV	%RAX,%R14;
+0x313dd8;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:459;CALL	1082c0 <_PyTime_GetMonotonicClock@plt>;
+0x313ddd;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:459;MOV	%R14,%RSI;
+0x313de0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:460;LEA	-0x50(%RBP),%R13;
+0x313de4;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:459;MOV	%RAX,%RDI;
+0x313de7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:459;CALL	107fc0 <_PyTime_Add@plt>;
+0x313dec;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:460;MOV	%R13,%RSI;
+0x313def;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:459;MOV	%RAX,%RDI;
+0x313df2;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:460;CALL	1083e0 <_PyTime_AsTimespec_clamp@plt>;
+0x313df7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;TEST	%R15D,%R15D;
+0x313dfa;:0;SETNE	%R12B;
+0x313dfe;:0;TEST	%R14,%R14;
+0x313e01;:0;JG	313e90 <PyThread_acquire_lock_timed+0xf0>;
+0x313e07;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:482;JE	313ef7 <PyThread_acquire_lock_timed+0x157>;
+0x313e0d;:0;JMP	313e14 <PyThread_acquire_lock_timed+0x74>;
+0x313e0f;:0;NOP;
+0x313e10;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;TEST	%DL,%DL;(3726) 
+0x313e12;:0;JNE	313e33 <PyThread_acquire_lock_timed+0x93>;(3726) 
+0x313e14;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:486;MOV	%RBX,%RDI;(3726) 
+0x313e17;:0;CALL	1073c0 <sem_wait@plt>;(3726) 
+0x313e1c;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;CMP	$-0x1,%EAX;(3726) 
+0x313e1f;:0;JNE	313e28 <PyThread_acquire_lock_timed+0x88>;(3726) 
+0x313e21;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;CALL	109960 <__errno_location@plt>;(3726) 
+0x313e26;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;MOV	(%RAX),%EAX;(3726) 
+0x313e28;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;CMP	$0x4,%EAX;(3726) 
+0x313e2b;:0;SETNE	%DL;(3726) 
+0x313e2e;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;TEST	%R12B,%R12B;(3726) 
+0x313e31;:0;JE	313e10 <PyThread_acquire_lock_timed+0x70>;(3726) 
+0x313e33;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:510;TEST	%R15D,%R15D;
+0x313e36;:0;JE	313f20 <PyThread_acquire_lock_timed+0x180>;
+0x313e3c;:0;TEST	%DL,%DL;
+0x313e3e;:0;JNE	313f20 <PyThread_acquire_lock_timed+0x180>;
+0x313e44;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:532;CMP	$0x4,%EAX;
+0x313e47;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:532;SETE	%AL;
+0x313e4a;:0;MOVZX	%AL,%EAX;
+0x313e4d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:532;AND	%R12D,%EAX;
+0x313e50;:0;ADD	%EAX,%EAX;
+0x313e52;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:539;MOV	-0x38(%RBP),%RDX;
+0x313e56;:0;SUB	%FS:0x28,%RDX;
+0x313e5f;:0;JNE	313f67 <PyThread_acquire_lock_timed+0x1c7>;
+0x313e65;:0;ADD	$0x38,%RSP;
+0x313e69;:0;POP	%RBX;
+0x313e6a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:539;POP	%R12;
+0x313e6c;:0;POP	%R13;
+0x313e6e;:0;POP	%R14;
+0x313e70;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:539;POP	%R15;
+0x313e72;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:539;POP	%RBP;
+0x313e73;:0;RET;
+0x313e74;:0;NOPL	(%RAX);
+0x313e78;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;CALL	109960 <__errno_location@plt>;(3724) 
+0x313e7d;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;MOV	(%RAX),%EAX;(3724) 
+0x313e7f;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;CMP	$0x4,%EAX;(3724) 
+0x313e82;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;SETNE	%DL;(3724) 
+0x313e85;:0;JNE	313eb4 <PyThread_acquire_lock_timed+0x114>;(3724) 
+0x313e87;:0;TEST	%R12B,%R12B;(3724) 
+0x313e8a;:0;JNE	313eb4 <PyThread_acquire_lock_timed+0x114>;(3724) 
+0x313e8c;:0;NOPL	(%RAX);(3724) 
+0x313e90;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:472;MOV	%R13,%RDX;(3724) 
+0x313e93;:0;MOV	$0x1,%ESI;(3724) 
+0x313e98;:0;MOV	%RBX,%RDI;(3724) 
+0x313e9b;:0;CALL	108e10 <sem_clockwait@plt>;(3724) 
+0x313ea0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;CMP	$-0x1,%EAX;(3724) 
+0x313ea3;:0;JE	313e78 <PyThread_acquire_lock_timed+0xd8>;(3724) 
+0x313ea5;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;CMP	$0x4,%EAX;(3724) 
+0x313ea8;:0;SETNE	%DL;(3724) 
+0x313eab;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;TEST	%R12B,%R12B;(3724) 
+0x313eae;:0;JNE	313eb4 <PyThread_acquire_lock_timed+0x114>;(3724) 
+0x313eb0;:0;TEST	%DL,%DL;(3724) 
+0x313eb2;:0;JE	313e90 <PyThread_acquire_lock_timed+0xf0>;(3724) 
+0x313eb4;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:510;TEST	%R15D,%R15D;
+0x313eb7;:0;JE	313ebd <PyThread_acquire_lock_timed+0x11d>;
+0x313eb9;:0;TEST	%DL,%DL;
+0x313ebb;:0;JE	313e44 <PyThread_acquire_lock_timed+0xa4>;
+0x313ebd;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:512;CMP	$0x6e,%EAX;
+0x313ec0;:0;JE	313f60 <PyThread_acquire_lock_timed+0x1c0>;
+0x313ec6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:514;TEST	%EAX,%EAX;
+0x313ec8;:0;JNE	10bab6 <PyThread_acquire_lock_timed.cold+0x2e>;
+0x313ece;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:531;MOV	$0x1,%EAX;
+0x313ed3;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:531;JMP	313e52 <PyThread_acquire_lock_timed+0xb2>;
+0x313ed8;:0;NOPL	(%RAX,%RAX,1);
+0x313ee0;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;CMP	$0x4,%EAX;(3725) 
+0x313ee3;:0;SETNE	%DL;(3725) 
+0x313ee6;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;TEST	%R12B,%R12B;(3725) 
+0x313ee9;:0;JNE	313e33 <PyThread_acquire_lock_timed+0x93>;(3725) 
+0x313eef;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;TEST	%DL,%DL;(3725) 
+0x313ef1;:0;JNE	313e33 <PyThread_acquire_lock_timed+0x93>;(3725) 
+0x313ef7;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:483;MOV	%RBX,%RDI;(3725) 
+0x313efa;:0;CALL	109cf0 <sem_trywait@plt>;(3725) 
+0x313eff;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;CMP	$-0x1,%EAX;(3725) 
+0x313f02;:0;JNE	313ee0 <PyThread_acquire_lock_timed+0x140>;(3725) 
+0x313f04;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;CALL	109960 <__errno_location@plt>;(3725) 
+0x313f09;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:426;MOV	(%RAX),%EAX;(3725) 
+0x313f0b;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;CMP	$0x4,%EAX;(3725) 
+0x313f0e;:0;SETNE	%DL;(3725) 
+0x313f11;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:491;TEST	%R12B,%R12B;(3725) 
+0x313f14;:0;JE	313eef <PyThread_acquire_lock_timed+0x14f>;(3725) 
+0x313f16;:0;JMP	313e33 <PyThread_acquire_lock_timed+0x93>;
+0x313f1b;:0;NOPL	(%RAX,%RAX,1);
+0x313f20;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:520;TEST	%R14,%R14;
+0x313f23;:0;JNE	313f50 <PyThread_acquire_lock_timed+0x1b0>;
+0x313f25;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:521;CMP	$0xb,%EAX;
+0x313f28;:0;JE	313f60 <PyThread_acquire_lock_timed+0x1c0>;
+0x313f2a;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:522;TEST	%EAX,%EAX;
+0x313f2c;:0;JE	313ece <PyThread_acquire_lock_timed+0x12e>;
+0x313f2e;:0;JMP	10ba88 <PyThread_acquire_lock_timed.cold>;
+0x313f33;:0;NOPL	(%RAX,%RAX,1);
+0x313f38;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:452;MOV	$-0x1,%RDI;
+0x313f3f;:0;CALL	10b290 <_PyTime_FromNanoseconds@plt>;
+0x313f44;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:452;MOV	%RAX,%R14;
+0x313f47;:0;JMP	313dd8 <PyThread_acquire_lock_timed+0x38>;
+0x313f4c;:0;NOPL	(%RAX);
+0x313f50;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:526;TEST	%EAX,%EAX;
+0x313f52;:0;JE	313ece <PyThread_acquire_lock_timed+0x12e>;
+0x313f58;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:526;JMP	10ba9f <PyThread_acquire_lock_timed.cold+0x17>;
+0x313f5d;:0;NOPL	(%RAX);
+0x313f60;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:535;XOR	%EAX,%EAX;
+0x313f62;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:538;JMP	313e52 <PyThread_acquire_lock_timed+0xb2>;
+0x313f67;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:539;CALL	109c10 <__stack_chk_fail@plt>;
+0x313f6c;/tmp/python-build.20240827235536.29272/Python-3.12.0/Python/thread_pthread.h:539;NOPL	(%RAX);

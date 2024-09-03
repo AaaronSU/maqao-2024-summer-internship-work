@@ -1,0 +1,25 @@
+address;source_location;insn;indent
+0x125de0;/usr/local/src/conda/python-3.9.19/Include/cpython/objimpl.h:66;SUB	$0x28,%RSP;
+0x125de4;/usr/local/src/conda/python-3.9.19/Include/cpython/objimpl.h:66;MOV	%FS:0x28,%RAX;
+0x125ded;:0;MOV	%RAX,0x18(%RSP);
+0x125df2;:0;XOR	%EAX,%EAX;
+0x125df4;/usr/local/src/conda/python-3.9.19/Include/object.h:138;MOV	%RSI,0x8(%RDI);
+0x125df8;/usr/local/src/conda/python-3.9.19/Include/cpython/objimpl.h:69;TESTB	$0x2,0xa9(%RSI);
+0x125dff;:0;JNE	125e2a <_PyObject_INIT.lto_priv.0+0x4a>;
+0x125e01;/usr/local/src/conda/python-3.9.19/Objects/object.c:1824;MOV	0x2593d5(%RIP),%EAX;
+0x125e07;:0;TEST	%EAX,%EAX;
+0x125e09;:0;JNE	125e41 <_PyObject_INIT.lto_priv.0+0x61>;
+0x125e0b;/usr/local/src/conda/python-3.9.19/Include/object.h:133;MOVQ	$0x1,(%RDI);
+0x125e12;/usr/local/src/conda/python-3.9.19/Include/cpython/objimpl.h:74;MOV	0x18(%RSP),%RAX;
+0x125e17;:0;SUB	%FS:0x28,%RAX;
+0x125e20;:0;JNE	125e3b <_PyObject_INIT.lto_priv.0+0x5b>;
+0x125e22;:0;MOV	%RDI,%RAX;
+0x125e25;:0;ADD	$0x28,%RSP;
+0x125e29;:0;RET;
+0x125e2a;/usr/local/src/conda/python-3.9.19/Include/object.h:408;INCQ	(%RSI);
+0x125e2d;/usr/local/src/conda/python-3.9.19/Objects/object.c:1824;CMPL	$0,0x2593a8(%RIP);
+0x125e34;:0;JE	125e0b <_PyObject_INIT.lto_priv.0+0x2b>;
+0x125e36;:0;JMP	62371 <_PyObject_INIT.lto_priv.0.cold>;
+0x125e3b;/usr/local/src/conda/python-3.9.19/Include/cpython/objimpl.h:74;CALLQ	0x258927(%RIP);
+0x125e41;/usr/local/src/conda/python-3.9.19/Include/cpython/objimpl.h:74;JMP	62371 <_PyObject_INIT.lto_priv.0.cold>;
+0x125e46;:0;NOPW	%CS:(%RAX,%RAX,1);

@@ -1,0 +1,19 @@
+address;source_location;insn;indent
+0x1bdb60;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/dictobject.c:2366;INC	%R12;
+0x1bdb63;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/dictobject.c:2366;CMP	%R12,%RCX;
+0x1bdb66;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/dictobject.c:2366;JE	1bdba0 <dict_dealloc+0x110>;
+0x1bdb68;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/dictobject.c:2367;MOV	(%R13,%R12,8),%RDI;
+0x1bdb6d;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:798;TEST	%RDI,%RDI;
+0x1bdb70;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:798;JE	1bdb60 <dict_dealloc+0xd0>;
+0x1bdb72;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:243;MOV	(%RDI),%RAX;
+0x1bdb75;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;TEST	%EAX,%EAX;
+0x1bdb77;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:701;JS	1bdb60 <dict_dealloc+0xd0>;
+0x1bdb79;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;DEC	%RAX;
+0x1bdb7c;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;MOV	%RAX,(%RDI);
+0x1bdb7f;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;JNE	1bdb60 <dict_dealloc+0xd0>;
+0x1bdb81;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:705;MOV	%RCX,-0x40(%RBP);
+0x1bdb85;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/dictobject.c:2366;INC	%R12;
+0x1bdb88;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;CALL	10a620 <_Py_Dealloc@plt>;
+0x1bdb8d;/tmp/python-build.20240827235536.29272/Python-3.12.0/./Include/object.h:706;MOV	-0x40(%RBP),%RCX;
+0x1bdb91;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/dictobject.c:2366;CMP	%R12,%RCX;
+0x1bdb94;/tmp/python-build.20240827235536.29272/Python-3.12.0/Objects/dictobject.c:2366;JNE	1bdb68 <dict_dealloc+0xd8>;

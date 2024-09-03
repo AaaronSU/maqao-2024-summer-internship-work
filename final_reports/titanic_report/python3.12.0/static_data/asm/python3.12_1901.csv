@@ -1,0 +1,20 @@
+address;source_location;insn;indent
+0x57b0d0;/usr/local/src/conda/python-3.12.0/Include/object.h:234;MOV	0x10(%RBP),%RBX;
+0x57b0d4;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:957;LEA	0x1(%RBX),%RSI;
+0x57b0d8;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:954;CMP	%RBX,0x20(%RBP);
+0x57b0dc;:0;JLE	57b2cf <list_extend+0x46f>;
+0x57b0e2;/usr/local/src/conda/python-3.12.0/Include/cpython/listobject.h:44;MOV	0x18(%RBP),%R8;
+0x57b0e6;:0;MOV	%RAX,(%R8,%RBX,8);
+0x57b0ea;/usr/local/src/conda/python-3.12.0/Include/object.h:283;MOV	%RSI,0x10(%RBP);
+0x57b0ee;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:944;MOV	%R13,%RDI;
+0x57b0f1;:0;CALL	%R14;
+0x57b0f4;:0;MOV	%RAX,%R15;
+0x57b0f7;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:945;TEST	%RAX,%RAX;
+0x57b0fa;:0;JNE	57b0d0 <list_extend+0x270>;
+0x57b2cf;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:323;MOV	%RBP,%RDI;
+0x57b2d2;:0;CALL	514ba0 <list_resize>;
+0x57b2d7;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:323;TEST	%EAX,%EAX;
+0x57b2d9;:0;JS	457cf0 <list_extend.cold+0x77>;
+0x57b2df;/usr/local/src/conda/python-3.12.0/Include/cpython/listobject.h:44;MOV	0x18(%RBP),%RDI;
+0x57b2e3;:0;MOV	%R15,(%RDI,%RBX,8);
+0x57b2e7;/usr/local/src/conda/python-3.12.0/Objects/listobject.c:328;JMP	57b0ee <list_extend+0x28e>;

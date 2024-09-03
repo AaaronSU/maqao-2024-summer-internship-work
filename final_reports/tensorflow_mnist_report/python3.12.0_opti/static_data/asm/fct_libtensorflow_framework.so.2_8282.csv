@@ -1,0 +1,159 @@
+address;source_location;insn;indent
+0x6419660;:0;PUSH	%RBP;
+0x6419661;:0;MOV	%RSP,%RBP;
+0x6419664;:0;PUSH	%R15;
+0x6419666;:0;PUSH	%R14;
+0x6419668;:0;PUSH	%R13;
+0x641966a;:0;PUSH	%R12;
+0x641966c;:0;PUSH	%RBX;
+0x641966d;:0;SUB	$0x198,%RSP;
+0x6419674;:0;MOV	%RDX,%R14;
+0x6419677;:0;MOV	%ESI,%R15D;
+0x641967a;:0;MOV	%RDI,%RBX;
+0x641967d;:0;MOV	%FS:0x28,%RAX;
+0x6419686;:0;MOV	%RAX,-0x30(%RBP);
+0x641968a;:0;MOVL	$0,-0x1b8(%RBP);
+0x6419694;:0;MOV	%ESI,-0x1c0(%RBP);
+0x641969a;:0;TEST	%ESI,%ESI;
+0x641969c;:0;JS	64197d3 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x173>;
+0x64196a2;:0;MOV	0x18(%RBX),%RAX;
+0x64196a6;:0;SHR	$0x1,%RAX;
+0x64196a9;:0;MOV	%RAX,-0x1b8(%RBP);
+0x64196b0;:0;MOV	%R15D,%ECX;
+0x64196b3;:0;MOV	%RCX,-0x1c0(%RBP);
+0x64196ba;:0;CMP	%RCX,%RAX;
+0x64196bd;:0;JBE	6419843 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x1e3>;
+0x64196c3;:0;MOV	0x10(%RBX),%RAX;(9850) 
+0x64196c7;:0;MOV	0x20(%RAX),%RAX;(9850) 
+0x64196cb;:0;MOV	0x8(%RAX),%RAX;(9850) 
+0x64196cf;:0;MOVSXD	%R15D,%R13;(9850) 
+0x64196d2;:0;TESTB	$0x1,0x100(%RAX);(9850) 
+0x64196d9;:0;JE	64196e4 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x84>;(9850) 
+0x64196db;:0;MOV	0x108(%RAX),%RAX;(9850) 
+0x64196e2;:0;JMP	64196ea <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x8a>;(9850) 
+0x64196e4;:0;ADD	$0x108,%RAX;(9850) 
+0x64196ea;:0;CMPL	$0x64,(%RAX,%R13,4);(9850) 
+0x64196ef;:0;JG	6419811 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x1b1>;(9850) 
+0x64196f5;:0;LEA	0x20(%RBX),%R12;
+0x64196f9;:0;TESTB	$0x1,0x18(%RBX);
+0x64196fd;:0;MOV	%R12,%RAX;
+0x6419700;:0;JE	6419706 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0xa6>;
+0x6419702;:0;MOV	0x20(%RBX),%RAX;
+0x6419706;:0;SAL	$0x4,%R13;
+0x641970a;:0;MOVQ	$0,-0x1b8(%RBP);
+0x6419715;:0;CMPQ	$0,0x8(%RAX,%R13,1);
+0x641971b;:0;JNE	641988c <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x22c>;
+0x6419721;:0;MOV	%RBX,%RDI;
+0x6419724;:0;MOV	%R15D,%ESI;
+0x6419727;:0;MOV	%R14,%RDX;
+0x641972a;:0;CALL	76465b0 <_ZN10tensorflow15OpKernelContext37maybe_set_output_by_allocate_and_copyEiRKNS_6TensorE@plt>;
+0x641972f;:0;TEST	%AL,%AL;
+0x6419731;:0;JNE	64197ae <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x14e>;
+0x6419733;:0;MOV	$0x20,%EDI;
+0x6419738;:0;CALL	76325c0 <_Znwm@plt>;
+0x641973d;:0;MOV	%RAX,%R15;
+0x6419740;:0;MOV	0x10(%R14),%RAX;
+0x6419744;:0;MOV	%RAX,0x10(%R15);
+0x6419748;:0;CMPB	$0x2,0xf(%R14);
+0x641974d;:0;JNE	6419761 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x101>;
+0x641974f;:0;MOVB	$0,0xf(%R15);
+0x6419754;:0;MOV	%R15,%RDI;
+0x6419757;:0;MOV	%R14,%RSI;
+0x641975a;:0;CALL	76326b0 <_ZN10tensorflow14TensorShapeRep12SlowCopyFromERKS0_@plt>;
+0x641975f;:0;JMP	641976b <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x10b>;
+0x6419761;:0;VMOVUPS	(%R14),%XMM0;
+0x6419766;:0;VMOVUPS	%XMM0,(%R15);
+0x641976b;:0;MOV	0x18(%R14),%RAX;
+0x641976f;:0;MOV	%RAX,0x18(%R15);
+0x6419773;:0;TEST	%RAX,%RAX;
+0x6419776;:0;JE	641977d <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x11d>;
+0x6419778;:0;LOCK INCQ	0x8(%RAX);
+0x641977d;:0;TESTB	$0x1,0x18(%RBX);
+0x6419781;:0;MOV	%R12,%RAX;
+0x6419784;:0;JE	641978a <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x12a>;
+0x6419786;:0;MOV	0x20(%RBX),%RAX;
+0x641978a;:0;MOVQ	$0,(%RAX,%R13,1);
+0x6419792;:0;MOV	%R15,0x8(%RAX,%R13,1);
+0x6419797;:0;TESTB	$0x1,0x18(%RBX);
+0x641979b;:0;JE	64197a1 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x141>;
+0x641979d;:0;MOV	0x20(%RBX),%R12;
+0x64197a1;:0;MOV	0x8(%R12,%R13,1),%RSI;
+0x64197a6;:0;MOV	%RBX,%RDI;
+0x64197a9;:0;CALL	76465c0 <_ZN10tensorflow15OpKernelContext38maybe_track_allocations_for_set_outputERKNS_6TensorE@plt>;
+0x64197ae;:0;MOV	%FS:0x28,%RAX;
+0x64197b7;:0;CMP	-0x30(%RBP),%RAX;
+0x64197bb;:0;JNE	64198e1 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x281>;
+0x64197c1;:0;ADD	$0x198,%RSP;
+0x64197c8;:0;POP	%RBX;
+0x64197c9;:0;POP	%R12;
+0x64197cb;:0;POP	%R13;
+0x64197cd;:0;POP	%R14;
+0x64197cf;:0;POP	%R15;
+0x64197d1;:0;POP	%RBP;
+0x64197d2;:0;RET;
+0x64197d3;:0;LEA	-0x59d13ee(%RIP),%RDX;
+0x64197da;:0;LEA	-0x1b8(%RBP),%RDI;
+0x64197e1;:0;LEA	-0x1c0(%RBP),%RSI;
+0x64197e8;:0;CALL	76337f0 <_ZN3tsl8internal17MakeCheckOpStringIiiEEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKT_RKT0_PKc@plt>;
+0x64197ed;:0;TEST	%RAX,%RAX;
+0x64197f0;:0;JE	64196c3 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x63>;
+0x64197f6;:0;MOV	%RAX,%R12;
+0x64197f9;:0;LEA	-0x59d668b(%RIP),%RSI;
+0x6419800;:0;LEA	-0x1b8(%RBP),%RBX;
+0x6419807;:0;MOV	%RBX,%RDI;
+0x641980a;:0;MOV	$0x3dd,%EDX;
+0x641980f;:0;JMP	641987f <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x21f>;
+0x6419811;:0;LEA	-0x59d66a3(%RIP),%RSI;(9850) 
+0x6419818;:0;LEA	-0x1b8(%RBP),%RBX;(9850) 
+0x641981f;:0;MOV	%RBX,%RDI;(9850) 
+0x6419822;:0;MOV	$0x3e0,%EDX;(9850) 
+0x6419827;:0;CALL	76329f0 <_ZN3tsl8internal15LogMessageFatalC1EPKci@plt>;(9850) 
+0x641982c;:0;LEA	-0x5a0e668(%RIP),%RSI;(9850) 
+0x6419833;:0;MOV	%RBX,%RDI;(9850) 
+0x6419836;:0;CALL	763a710 <_ZStlsIN3tsl8internal15LogMessageFatalEA32_cENSt9enable_ifIXsr6__and_ISt6__not_ISt19is_lvalue_referenceIT_EESt33__is_convertible_to_basic_ostreamIS7_ESt15__is_insertableINSB_14__ostream_typeERKT0_vEEE5valueESD_E4typeEOS7_SG_@plt>;(9850) 
+0x641983b;:0;MOV	%RBX,%RDI;(9850) 
+0x641983e;:0;CALL	7632a10 <_ZN3tsl8internal15LogMessageFatalD1Ev@plt>;(9850) 
+0x6419843;:0;LEA	-0x5a08fa1(%RIP),%RDX;(9850) 
+0x641984a;:0;LEA	-0x1c0(%RBP),%RDI;(9850) 
+0x6419851;:0;LEA	-0x1b8(%RBP),%RSI;(9850) 
+0x6419858;:0;CALL	763a570 <_ZN3tsl8internal17MakeCheckOpStringImmEEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKT_RKT0_PKc@plt>;(9850) 
+0x641985d;:0;TEST	%RAX,%RAX;(9850) 
+0x6419860;:0;JE	64196c3 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x63>;(9850) 
+0x6419866;:0;MOV	%RAX,%R12;
+0x6419869;:0;LEA	-0x59d66fb(%RIP),%RSI;
+0x6419870;:0;LEA	-0x1b8(%RBP),%RBX;
+0x6419877;:0;MOV	%RBX,%RDI;
+0x641987a;:0;MOV	$0x3de,%EDX;
+0x641987f;:0;CALL	76329f0 <_ZN3tsl8internal15LogMessageFatalC1EPKci@plt>;
+0x6419884;:0;MOV	%RBX,%RDI;
+0x6419887;:0;MOV	%R12,%RSI;
+0x641988a;:0;JMP	64198d4 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0x274>;
+0x641988c;:0;LEA	(%RAX,%R13,1),%RDI;
+0x6419890;:0;ADD	$0x8,%RDI;
+0x6419894;:0;LEA	-0x5a8d7d0(%RIP),%RDX;
+0x641989b;:0;LEA	-0x1b8(%RBP),%RSI;
+0x64198a2;:0;CALL	76465d0 <_ZN3tsl8internal17MakeCheckOpStringIPN10tensorflow6TensorEDnEEPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKT_RKT0_PKc@plt>;
+0x64198a7;:0;TEST	%RAX,%RAX;
+0x64198aa;:0;JE	6419721 <_ZN10tensorflow15OpKernelContext10set_outputEiRKNS_6TensorE+0xc1>;
+0x64198b0;:0;LEA	-0x59d6742(%RIP),%RSI;
+0x64198b7;:0;LEA	-0x1b8(%RBP),%RBX;
+0x64198be;:0;MOV	%RBX,%RDI;
+0x64198c1;:0;MOV	$0x3e1,%EDX;
+0x64198c6;:0;MOV	%RAX,%R14;
+0x64198c9;:0;CALL	76329f0 <_ZN3tsl8internal15LogMessageFatalC1EPKci@plt>;
+0x64198ce;:0;MOV	%RBX,%RDI;
+0x64198d1;:0;MOV	%R14,%RSI;
+0x64198d4;:0;CALL	7632a00 <_ZStlsIN3tsl8internal15LogMessageFatalENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENSt9enable_ifIXsr6__and_ISt6__not_ISt19is_lvalue_referenceIT_EESt33__is_convertible_to_basic_ostreamISC_ESt15__is_insertableINSG_14__ostream_typeERKT0_vEEE5valueESI_E4typeEOSC_SL_@plt>;
+0x64198d9;:0;MOV	%RBX,%RDI;
+0x64198dc;:0;CALL	7632a10 <_ZN3tsl8internal15LogMessageFatalD1Ev@plt>;
+0x64198e1;:0;CALL	7632560 <__stack_chk_fail@plt>;
+0x64198e6;:0;INT	$0x3;
+0x64198e7;:0;INT	$0x3;
+0x64198e8;:0;INT	$0x3;
+0x64198e9;:0;INT	$0x3;
+0x64198ea;:0;INT	$0x3;
+0x64198eb;:0;INT	$0x3;
+0x64198ec;:0;INT	$0x3;
+0x64198ed;:0;INT	$0x3;
+0x64198ee;:0;INT	$0x3;
+0x64198ef;:0;INT	$0x3;

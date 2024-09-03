@@ -1,0 +1,11 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_c_extension_lib.c: 236 - 247
+--------------------------------------------------------------------------------
+
+236:         for (Py_ssize_t j = 0; j < PyList_Size(A_row); j++) {
+237:             PyObject *A_elem = PyList_GetItem(A_row, j);
+238:             PyObject *B_elem = PyList_GetItem(B_row, j);
+239: 
+240:             PyObject *C_elem = PyFloat_FromDouble(PyFloat_AsDouble(A_elem) + PyFloat_AsDouble(B_elem));
+241:             if (C_elem == NULL) {
+[...]
+247:             PyList_SetItem(C_row, j, C_elem);

@@ -1,0 +1,40 @@
+/home/aaron/python_al/python_al_dense_code/al_dense_cython_lib.c: 9743 - 9765
+--------------------------------------------------------------------------------
+
+9743:     if (unlikely(!j)) return NULL;
+9744:     r = PyObject_GetItem(o, j);
+9745:     Py_DECREF(j);
+9746:     return r;
+9747: }
+9748: static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
+[...]
+9754:         wrapped_i += PyList_GET_SIZE(o);
+9755:     }
+9756:     if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
+9757:         PyObject *r = PyList_GET_ITEM(o, wrapped_i);
+9758:         Py_INCREF(r);
+9759:         return r;
+9760:     }
+9761:     return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+9762: #else
+9763:     return PySequence_GetItem(o, i);
+9764: #endif
+9765: }
+/home/aaron/.conda/envs/anon/include/python3.12/object.h: 233 - 705
+--------------------------------------------------------------------------------
+
+233:     return  _PyVarObject_CAST(ob)->ob_size;
+[...]
+242:     return _Py_CAST(PY_INT32_T, op->ob_refcnt) < 0;
+[...]
+643:     if (new_refcnt == 0) {
+644:         return;
+645:     }
+646:     op->ob_refcnt_split[PY_BIG_ENDIAN] = new_refcnt;
+[...]
+700:     if (_Py_IsImmortal(op)) {
+701:         return;
+702:     }
+703:     _Py_DECREF_STAT_INC();
+704:     if (--op->ob_refcnt == 0) {
+705:         _Py_Dealloc(op);
